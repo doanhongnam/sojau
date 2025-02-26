@@ -1,0 +1,243 @@
+{% liquid
+    assign displayStyle = section.settings.type
+    assign classPortfolioWidth = section.settings.portfolio_width
+
+%}
+{% liquid case displayStyle
+    when '1'
+        assign classDisplayStyle = ' tp-portfolio__style-1'
+    when '2'
+        assign classDisplayStyle = ' tp-portfolio__style-2'
+    when '3'
+        assign classDisplayStyle = ' tp-portfolio__style-3'
+    when '4'
+        assign classDisplayStyle = ' tp-portfolio__style-4'
+endcase %}
+
+{% liquid assign listPortfolio = section.blocks
+    assign listFilterTag = '' | split: '' %}
+
+{% liquid for block in listPortfolio
+    assign filterTagName = block.settings.filter_tag | split: '_' | first | split: ', '
+    assign listFilterTag = listFilterTag | concat: filterTagName
+endfor %}
+
+<div class="tp-portfolio-main">
+  {% assign listFilterTagUniq = listFilterTag | uniq %}
+  {% assign tagActiveCurrent = '' %}
+  <div class="tabs-filter">
+    {% for item in listFilterTagUniq %}
+      {% if forloop.first %}
+        {% assign tagActiveCurrent = item %}
+      {% endif %}
+      <p class="tab{% if forloop.first %} active-tag{% endif %}" data-value="{{ item }}">{{ item }}</p>
+    {% endfor %}
+  </div>
+
+  <input type="hidden" id="tag_filter" value="{{ tagActiveCurrent }}">
+  <div class="tp-portfolio {{ classPortfolioWidth }}">
+    <div class="wrapper-portfolio {{ classDisplayStyle }}">
+        {% for block in listPortfolio %}
+            {% liquid
+                assign title = block.settings.title
+                assign link = block.settings.link
+                assign index = forloop.index
+                assign filterTag = block.settings.filter_tag
+            %}
+
+            <div class="item" data-tag="{{ filterTag }}" data-index="{{ index | minus: 1 }}">
+                <div class="{% if displayStyle == '1' or displayStyle == '2' %}modal-item__image{% endif %} item__image"
+                     data-index="{{ index | minus: 1 }}">
+                    {% if block.settings.image != blank %}
+                        <img src="{{ block.settings.image | image_url: width: block.settings.image.width, height: block.settings.image.height }}"
+                             alt="{{ block.settings.image.alt }}" loading="lazy"
+                             width="{{ block.settings.image.width }}"
+                             height="{{ block.settings.image.height }}">
+                    {% else %}
+                        {{ 'product-1' | placeholder_svg_tag: "default-image" }}
+                    {% endif %}
+                    {% case displayStyle %}
+                        {% when displayStyle == '1' or displayStyle == '2' %}
+                            {% render 'icon', icon_name: 'icon-zoom' %}
+                    {% endcase %}
+                </div>
+
+                {% if title %}
+                    <a href="{% if link != blank %}{{ link }}{% else %}#{% endif %}" class="item__link"
+                       title="{{ title }}">
+                        <h3>{{ title }}</h3>
+                    </a>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+  {% render 'modal-swiper-gallery',
+      id: 'modal_gallery',
+      listItemGallery: listPortfolio,
+      typePage: "portfolio",
+      elementClickEvent1: 'item__image',
+      elementClickEvent2: 'icon-zoom'
+   %}
+
+</div>
+{% style %}
+
+@media(min-width: 1024px) {
+  #shopify-section-{{ section.id }}{
+    margin-bottom: {{ section.settings.margin_bottom_desktop }}px
+  }
+}
+
+@media(min-width: 768px) and(max-width: 1023px) {
+  #shopify-section-{{ section.id }}{
+    margin-bottom: {{ section.settings.margin_bottom_table }}px
+  }
+}
+
+@media(max-width: 767px) {
+  #shopify-section-{{ section.id }}{
+    margin-bottom: {{ section.settings.margin_bottom_mobile }}px
+  }
+}
+
+{% endstyle %}
+
+
+{% schema %}
+{
+  "name":"Portfolio grid",
+  "tag":"section",
+  "settings":[
+    {
+      "type":"select",
+      "id":"portfolio_width",
+      "label":"Portfolio width",
+      "options":[
+      {
+        "value":"container",
+        "label":"Container"
+      },
+      {
+        "value":"full_width",
+        "label":"Full width"
+      }
+      ],
+      "default":"full_width"
+    },
+     {
+        "id":"type",
+        "type":"select",
+        "label":"Display style",
+        "default":"1",
+        "options":[
+           {
+              "label":"Style 1",
+              "value":"1"
+           },
+           {
+              "label":"Style 2",
+              "value":"2"
+           },
+           {
+              "label":"Style 3",
+              "value":"3"
+           },
+           {
+            "label":"Style 4",
+            "value":"4"
+         }
+        ]
+     },
+     {
+        "type":"header",
+        "content":"Margin bottom"
+     },
+     {
+         "type": "paragraph",
+         "content": "Unit: pixel"
+        },
+     {
+        "type":"number",
+        "id":"margin_bottom_desktop",
+        "label":"Margin bottom (desktop)",
+        "default":100
+     },
+     {
+        "type":"number",
+        "id":"margin_bottom_table",
+        "label":"Margin bottom (tablet)",
+        "default":70
+     },
+     {
+        "type":"number",
+        "id":"margin_bottom_mobile",
+        "label":"Margin bottom mobile",
+        "default":70
+     }
+  ],
+  "blocks":[
+     {
+        "type":"portfolio_item",
+        "name":"Portfolio item",
+        "settings":[
+           {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Portfolio Image"
+           },
+           {
+              "type":"text",
+              "id":"title",
+              "label":"Title",
+              "default":"Pharmacological"
+           },
+           {
+              "type":"url",
+              "id":"link",
+              "label":"Link"
+           },
+           {
+              "type":"text",
+              "id":"filter_tag",
+              "label":"Filter tag",
+              "default":"All"
+           }
+        ]
+     }
+  ],
+  "presets":[
+     {
+        "name":"Portfolio grid",
+        "category":"Custom content",
+        "blocks":[
+           {
+              "type":"portfolio_item"
+           },
+           {
+              "type":"portfolio_item"
+           },
+           {
+              "type":"portfolio_item"
+           },
+           {
+              "type":"portfolio_item"
+           },
+           {
+              "type":"portfolio_item"
+            },
+            {
+               "type":"portfolio_item"
+            },
+            {
+               "type":"portfolio_item"
+            },
+            {
+               "type":"portfolio_item"
+            }
+        ]
+     }
+  ]
+}
+{% endschema %}

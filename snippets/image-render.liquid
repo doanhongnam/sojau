@@ -1,0 +1,55 @@
+
+{% comment %}
+  Renders image for all product card
+  Usage:
+    {% render 'image-render', source_img: image source, settings: settings %}
+{% endcomment %}
+{%- liquid
+        assign container_width = settings.ctn_width
+        assign aspect_ratio_value = settings.image_ratio
+        assign custom_ratio = settings.custom_ratio
+        if aspect_ratio_value != blank
+                if aspect_ratio_value == "custom"
+                        assign aspect_ratio = custom_ratio | replace: ":", "/"
+                else
+                        if aspect_ratio_value == "adapt"
+                                assign aspect_ratio = "auto"
+                        else
+                                assign aspect_ratio = aspect_ratio_value
+                        endif
+                endif
+        endif
+
+        assign container_width = ''
+        if container == 'default'
+                assign container_width = '1260'
+        elsif container == custom_width
+                assign container_width = custom_container
+        endif
+
+        assign width_default = container_width | minus: 130 | divided_by: 4 | append: 'px'
+        if width
+                assign width_default = width
+        endif
+-%}
+<img
+        style="aspect-ratio: {{ aspect_ratio }}"
+        class="global-source_img-settings global-source_img-settings--no-shadow"
+        srcset="
+                {%- if source_img.preview_image.width >= 165 -%}{{ source_img.preview_image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if source_img.preview_image.width >= 330 -%}{{ source_img.preview_image | image_url: width: 330 }} 330w,{%- endif -%}
+                {%- if source_img.preview_image.width >= 535 -%}{{ source_img.preview_image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if source_img.preview_image.width >= 750 -%}{{ source_img.preview_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if source_img.preview_image.width >= 1000 -%}{{ source_img.preview_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                {%- if source_img.preview_image.width >= 1500 -%}{{ source_img.preview_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if source_img.preview_image.width >= 3000 -%}{{ source_img.preview_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {{ source_img.preview_image | image_url | image_url }} {{ source_img.preview_image.width }}w
+        "
+        sizes="(min-width: {{ container_width }}px) {{ width_default }}, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+        src="{{ source_img.preview_image | image_url: width: width | default: source_img.preview_image.width }}"
+        alt="{{ source_img.alt | escape }}"
+        loading="lazy"
+        width="{{ width | default: source_img.preview_image.width }}"
+        height="{{ height | default: source_img.preview_image.height }}"
+        data-source_img-id="{{ source_img.id }}"
+/>

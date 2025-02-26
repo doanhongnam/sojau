@@ -1,0 +1,31 @@
+{% comment %}
+    Renders header logo for header section
+
+    Usage:
+    {% render 'header-logo', type: 'menu-left' %}
+{% endcomment %}
+{% liquid
+        assign settings = section.settings
+        assign logo_val = settings.logo
+%}
+<div class="header__logo">
+{%- if request.page_type == 'index' -%}
+    <h1 class="header__heading">
+        {%- endif -%}
+        <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+            {%- if logo_val != blank -%}
+                <img src="{{ logo_val | image_url: width: logo_val.width , height: logo_val.height }}"
+                    loading="lazy"
+                    class="header__heading-logo"
+                    width="{{ settings.logo.width }}"
+                    height="{{ settings.logo.height }}"
+                    alt="{{ settings.logo.alt | default: shop.name | escape }}"
+               >        
+            {%- else -%}
+                <span class="h2">{{ shop.name }}</span>
+            {%- endif -%}
+        </a>
+        {%- if request.page_type == 'index' -%}
+    </h1>
+    {%- endif -%}
+</div>

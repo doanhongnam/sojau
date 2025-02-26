@@ -1,0 +1,428 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "79a2d508-2d82-495c-bedf-e95eb69a85fc": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "c6c724b3-9dd4-41e5-bce4-d8182ebb9d88": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Product Item Layouts",
+        "sub_title": "<p>STOREPIFY Theme offers users a wide variety of customizing possibilities that you can manage directly on the website without any coding requirement.<br/>You can apply these Product Item Layouts on many pages like HomePage, Product Listing Page, or Product Detail Page.<br/>Below is the available pre-built Product Item Layouts for you:</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 62,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "4ebd4ee9-8bdd-4c30-be95-b2a554ed8ad7": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "a594dac5-f593-4f39-a93e-d998c8c99c8f": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "1. Product Item - Default Layout",
+        "description": "<p>Default product item style</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "2e935243-3c1d-4c14-970e-c8d76856d7db": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "2. Product Item - Select Options",
+        "description": "<p>Select option variants then add to cart</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "layout_2",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "390d1c8a-893a-4b82-8a82-b6b1b8e2f11c": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "3. Product Item - Square Image",
+        "description": "<p>You can use any size and shape for the product's picture, from square, rectangular to the actual size</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "0bce3bf2-1cac-4ae5-af5a-c2f9fa91f32c": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "4. Product Item - Change Font Weight",
+        "description": "<p>You can change font weight of title, price and price color</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "c4ca1e13-0b49-4ff6-9f3e-ec345e3d16f8": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "5. Product Item - No Action Buttons",
+        "description": "<p>You can hide or show many actions like wishlist, compare, quick view, and add to the cart buttons</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "84d382c4-2fdb-4237-9032-8ca86b2ff853": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "6. Product Item - Box Shadow",
+        "description": "<p>Can you choose whether to show a box shadow or not</p>",
+        "display_type": "normal",
+        "collection": "clogs",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "9360184c-11a6-4ced-bd6b-63dfefd2479c": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "7. Product Item - Show Rating",
+        "description": "<p>You can hide or show rating icons</p>",
+        "display_type": "normal",
+        "collection": "clogs-best-seller",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "b663be30-c6d7-4796-8ce9-1e2aa1bc38f9": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "8. Product Item - Hide Variants",
+        "description": "<p>You can hide or show the product's variants</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "a80ca854-5772-44d2-a6c3-1f80a676ed27": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "9. Product Item - Second Image on Hover",
+        "description": "<p>Show the second image on item hover</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "3b86428c-f013-4b15-a69c-254dab881617": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "10. Product Item - Show Countdown",
+        "description": "<p>You can hide or show countdown</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "6122244e-840a-4162-8c20-d3ef85034977": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "11. Product Item -  Content Position",
+        "description": "<p>You can choose to display content on the position left, center, or right</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "3ce18912-162d-42a7-b4cb-54cca6e01308": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "12. Product Item - Price Styling",
+        "description": "<p>When there is a price comparison, you can choose to display the price on 01 row or 02 rows</p>",
+        "display_type": "normal",
+        "collection": "cosmetics",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "55fa51bd-a443-4a27-bf4e-ff75c62ac22f": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "13. Product Item - Display Sale Badge",
+        "description": "<p>You can choose to display the text as Sale or Percent or hide it</p>",
+        "display_type": "normal",
+        "collection": "cosmetics",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "a546e8e0-1a93-4bf4-aaed-7b8dfca35446": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "14. Product Item - Action Button Styles",
+        "description": "<p>You can choose to style an action circle or square</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [
+          "men"
+        ],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "9cd7683a-a2c6-46b5-b95e-87e104bb5afb": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "15. Product Item - Action Buttons Position",
+        "description": "<p>You could show action top left, top right, center, bottom or none</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "22ab591a-e7a0-4ce8-af3f-1716fb2c3258": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "16. Product Item - Size Variant Style",
+        "description": "<p>You can choose to display the style size as a background or underline</p>",
+        "display_type": "normal",
+        "collection": "men",
+        "background_color": "",
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "79a2d508-2d82-495c-bedf-e95eb69a85fc",
+    "c6c724b3-9dd4-41e5-bce4-d8182ebb9d88",
+    "4ebd4ee9-8bdd-4c30-be95-b2a554ed8ad7",
+    "a594dac5-f593-4f39-a93e-d998c8c99c8f",
+    "2e935243-3c1d-4c14-970e-c8d76856d7db",
+    "390d1c8a-893a-4b82-8a82-b6b1b8e2f11c",
+    "0bce3bf2-1cac-4ae5-af5a-c2f9fa91f32c",
+    "c4ca1e13-0b49-4ff6-9f3e-ec345e3d16f8",
+    "84d382c4-2fdb-4237-9032-8ca86b2ff853",
+    "9360184c-11a6-4ced-bd6b-63dfefd2479c",
+    "b663be30-c6d7-4796-8ce9-1e2aa1bc38f9",
+    "a80ca854-5772-44d2-a6c3-1f80a676ed27",
+    "3b86428c-f013-4b15-a69c-254dab881617",
+    "6122244e-840a-4162-8c20-d3ef85034977",
+    "3ce18912-162d-42a7-b4cb-54cca6e01308",
+    "55fa51bd-a443-4a27-bf4e-ff75c62ac22f",
+    "a546e8e0-1a93-4bf4-aaed-7b8dfca35446",
+    "9cd7683a-a2c6-46b5-b95e-87e104bb5afb",
+    "22ab591a-e7a0-4ce8-af3f-1716fb2c3258"
+  ]
+}

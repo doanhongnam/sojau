@@ -1,0 +1,413 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1655948009a339c3f2": {
+      "type": "slide",
+      "blocks": {
+        "11da87e8-01f1-4290-8d08-45539a366641": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/home-default-bg1.png",
+            "overlay_slide": 0,
+            "position_content": "left-content",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop </p><p>Scoop Back Knitted</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#000000",
+            "color_description_2": "#000000",
+            "button_type": "round-button"
+          }
+        },
+        "d68e228c-6036-4890-8970-c71a18dc810e": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/home-default-bg2.png",
+            "overlay_slide": 0,
+            "position_content": "right-content",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop </p><p>Scoop Back Knitted</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#000000",
+            "color_description_2": "#000000",
+            "button_type": "round-button"
+          }
+        },
+        "2f61f1e4-e49d-40bd-8f88-c36c564779d5": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/home-default-bg3.png",
+            "overlay_slide": 0,
+            "position_content": "right-content",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop </p><p>Scoop Back Knitted</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#000000",
+            "color_description_2": "#000000",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "11da87e8-01f1-4290-8d08-45539a366641",
+        "d68e228c-6036-4890-8970-c71a18dc810e",
+        "2f61f1e4-e49d-40bd-8f88-c36c564779d5"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 10,
+        "position_pagination": "center_bottom",
+        "pag_bg": "#000000",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1655950070f62edda6": {
+      "type": "service",
+      "blocks": {
+        "be550fc1-84cf-4355-ab45-16aa58c2dc5b": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-free_1.png",
+            "title_service": "Free US Delivery",
+            "description_service": "Free delivery for US",
+            "padding_top_bottom": 0,
+            "background_item_service": "#ffffff",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "e7de4b66-f779-40d6-87cb-ab71263f7216": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-online-chat_1.png",
+            "title_service": "24/7 Customer Services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "padding_top_bottom": 0,
+            "background_item_service": "#ffffff",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "03fbe556-3cd1-49c8-9315-286f74cdc07e": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/Fast_Access_2.png",
+            "title_service": "12 - Month Warranty",
+            "description_service": "On all ours products",
+            "padding_top_bottom": 0,
+            "background_item_service": "#ffffff",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "be550fc1-84cf-4355-ab45-16aa58c2dc5b",
+        "e7de4b66-f779-40d6-87cb-ab71263f7216",
+        "03fbe556-3cd1-49c8-9315-286f74cdc07e"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "gap_item": 0,
+        "layout_service": "layout-service-1",
+        "service_bg": "rgba(0,0,0,0)",
+        "show_border_right": true,
+        "margin_bottom_desktop": 70,
+        "margin_bottom_table": 50,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1655959832de4a9fc7": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "Best Sellers",
+        "description": "",
+        "display_type": "tab",
+        "collection": "",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [
+          "women",
+          "men",
+          "new-arrivals"
+        ],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "View More",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166245267025931677": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "The Latest News",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "background_title": "",
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1662452633f33e85c8": {
+      "type": "lastest-news",
+      "settings": {
+        "blog": "shopify-blog",
+        "width_blog": "container",
+        "position_content": "left",
+        "post_limit": 3,
+        "gap_item_blog": 30,
+        "show_date": true,
+        "show_button_discover": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1662453015d3dadd27": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16624527076ff3931c": {
+      "type": "tp-instagram",
+      "blocks": {
+        "81849b9d-063a-4596-8f7c-5914e42c4180": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig1.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUHFzPF9o/"
+          }
+        },
+        "8ee73743-5876-44f3-be04-227699191536": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig2.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUFAkvnHQ/"
+          }
+        },
+        "6bba2fdd-1540-4f22-b4e7-fbcd2540fd2e": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig3.png",
+            "link_instagram": "https://www.instagram.com/p/CjhHFe9PpQ5/"
+          }
+        },
+        "a7fd0570-eea7-415d-b002-5c90882f83ea": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig4.png",
+            "link_instagram": "https://www.instagram.com/p/CjXT9nvvV8K/"
+          }
+        },
+        "39e851a8-8264-4e84-9db8-12de8be28122": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig5.png",
+            "link_instagram": "https://www.instagram.com/p/CjXT7pHvNa0/"
+          }
+        },
+        "1bc1c1f9-0fc3-48fa-8ee6-a096fc488472": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig6.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUuJYPj4g/"
+          }
+        }
+      },
+      "block_order": [
+        "81849b9d-063a-4596-8f7c-5914e42c4180",
+        "8ee73743-5876-44f3-be04-227699191536",
+        "6bba2fdd-1540-4f22-b4e7-fbcd2540fd2e",
+        "a7fd0570-eea7-415d-b002-5c90882f83ea",
+        "39e851a8-8264-4e84-9db8-12de8be28122",
+        "1bc1c1f9-0fc3-48fa-8ee6-a096fc488472"
+      ],
+      "settings": {
+        "ins_ctn": "container-fluid",
+        "title_instagram": "@ FOLLOW US ON",
+        "sub_title_instagram": "INSTAGRAM",
+        "profile": "https://www.instagram.com/storepify/",
+        "data_instagram": "custom_data",
+        "gap_item": 0,
+        "instagram_to_show": 6,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166245282039fb4320": {
+      "type": "newsletter",
+      "blocks": {
+        "166245282067433c2e-0": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be in touch with us:</p>"
+          }
+        },
+        "166245282067433c2e-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "166245282067433c2e-0",
+        "166245282067433c2e-1"
+      ],
+      "settings": {
+        "display_layout": "newsletter-layout_1",
+        "newsletter_background": "#ffe8d4",
+        "color_bg_button": "#2e2e2e",
+        "color_text_button": "#ffffff",
+        "color_newsletter": "#000000",
+        "show_social": false,
+        "padding_top": 18,
+        "padding_bottom": 18,
+        "margin_bottom_desktop": 80
+      }
+    },
+    "14b5da63-bde1-4588-bfde-9788426afa75": {
+      "type": "banner-slide",
+      "disabled": true,
+      "blocks": {
+        "template--15917315129538__14b5da63-bde1-4588-bfde-9788426afa75-1670577114b4ee80cb-0": {
+          "type": "bnslide_item",
+          "settings": {
+            "image": "shopify://shop_images/demo3_01.png",
+            "title": "Save off",
+            "percent": "50%",
+            "sub_title": "New Offer Products",
+            "cd_year": 2023,
+            "cd_month": "12",
+            "cd_days": "28",
+            "color_text_count_down": "#ffffff",
+            "color_bg_count_down": "#71af19",
+            "link_button": "",
+            "button_type": "round-button"
+          }
+        },
+        "template--15917315129538__14b5da63-bde1-4588-bfde-9788426afa75-1670577114b4ee80cb-1": {
+          "type": "bnslide_item",
+          "settings": {
+            "title": "Save off",
+            "percent": "50%",
+            "sub_title": "New Offer Products",
+            "cd_year": 2023,
+            "cd_month": "12",
+            "cd_days": "28",
+            "color_text_count_down": "#ffffff",
+            "color_bg_count_down": "#71af19",
+            "link_button": "",
+            "button_type": "round-button"
+          }
+        },
+        "template--15917315129538__14b5da63-bde1-4588-bfde-9788426afa75-1670577114b4ee80cb-2": {
+          "type": "bnslide_item",
+          "settings": {
+            "title": "Save off",
+            "percent": "50%",
+            "sub_title": "New Offer Products",
+            "cd_year": 2023,
+            "cd_month": "12",
+            "cd_days": "28",
+            "color_text_count_down": "#ffffff",
+            "color_bg_count_down": "#71af19",
+            "link_button": "",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "template--15917315129538__14b5da63-bde1-4588-bfde-9788426afa75-1670577114b4ee80cb-0",
+        "template--15917315129538__14b5da63-bde1-4588-bfde-9788426afa75-1670577114b4ee80cb-1",
+        "template--15917315129538__14b5da63-bde1-4588-bfde-9788426afa75-1670577114b4ee80cb-2"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40,
+        "pagi_color": "#ffb12b"
+      }
+    }
+  },
+  "order": [
+    "1655948009a339c3f2",
+    "1655950070f62edda6",
+    "1655959832de4a9fc7",
+    "166245267025931677",
+    "1662452633f33e85c8",
+    "1662453015d3dadd27",
+    "16624527076ff3931c",
+    "166245282039fb4320",
+    "14b5da63-bde1-4588-bfde-9788426afa75"
+  ]
+}

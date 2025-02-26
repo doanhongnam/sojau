@@ -1,0 +1,43 @@
+{% liquid
+    assign ed_in = block.settings.ed_in
+    assign ed_delay = block.settings.ed_delay
+    assign ed_additional = block.settings.ed_additional
+
+    if block.settings.ed_icon == true
+        render 'icon', icon_name: 'icon-truck'
+    endif
+    assign range = ed_delay | times: 24 | times: 60 | times: 60
+    assign deliver_in = ed_in | times: 24 | times: 60 | times: 60
+    assign now = 'now' | date: '%s'
+    assign from = now | plus: deliver_in | minus: range | date: '%b %d'
+    assign to = now | plus: deliver_in | plus: range | date: '%b %d'
+
+    if block.settings.use_spacing
+        render 'block-margin-bottom', className: "tp-delivery-times", block: block
+        assign classDefault = ""
+    else
+        assign classDefault = " mb-3.75"
+    endif
+%}
+<div class="tp-delivery-times flex flex-col items-start{{ classDefault }}">
+    {% if from != blank and to != blank %}
+        <div class="flex flex-row items-start mb-5">
+            {% #render 'icon', icon_name: 'icon-delivery' %}
+            <p class="ml-3.75 font-normal">{{ block.settings.ed_text }} {{ from }} - {{ to }} if you order today</p>
+        </div>
+    {% endif %}
+
+    {% if block.settings.ed_badges_image != blank %}
+        <div class="tp-trust-badge">
+
+            <img
+                    src="{{ block.settings.ed_badges_image | image_url: width: block.settings.ed_badges_image.width, height: block.settings.ed_badges_image.height }}"
+                    alt="{{ block.settings.ed_badges_image.alt }}"
+                    width="{{ block.settings.ed_badges_image.width }}"
+                    height="{{ block.settings.ed_badges_image.height }}"
+                    loading="lazy"
+            >
+
+        </div>
+    {% endif %}
+</div>

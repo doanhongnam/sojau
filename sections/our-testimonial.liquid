@@ -1,0 +1,292 @@
+{% liquid
+  assign displayType = section.settings.display_type
+  if displayType == 'layout_1'
+    assign classDisplayType = 'tp-our-testimonial__layout-1'
+  elsif displayType == 'layout_2'
+    assign classDisplayType = 'tp-our-testimonial__layout-2'
+  else
+    assign classDisplayType = 'tp-our-testimonial__layout-3'
+  endif
+%}
+
+<div class="tp-our-testimonial tp-our-testimonial-{{ section.id }}">
+  <div id="go-to-testimonial"></div>
+  {%- if displayType == 'layout_4' -%}
+    <div class="testimonial-layout4 tp-our-testimonial__bg container" id="testimonial">
+      <div class="tp-our-testimonial__top text-center mb-12.5">
+        {% if section.settings.heading != blank %}
+          <h2 class="tp-section__title">{{ section.settings.heading }}</h2>
+        {% endif %}
+      </div>
+      <div class="testimonial-layout4__wrap flex items-center justify-center gap-12.5">
+        {% for block in section.blocks %}
+          <div class="testimonial-layout4__item">
+            {% assign imageTestimonial = block.settings.image_testimonial %}
+            {% if imageTestimonial != blank %}
+              <img
+                class="testimonial-layout4__img mb-2.5"
+                src="{{ imageTestimonial | image_url: width: imageTestimonial.width , height: imageTestimonial.height }}"
+                alt="image collection"
+                width="{{imageTestimonial.width}}"
+                height="{{imageTestimonial.height}}"
+                loading="lazy"
+              >
+            {% else %}
+              {% render 'no-image', text_size: '', width: 80, height: 80 %}
+            {% endif %}
+
+            {% if block.settings.title_testimonial != blank %}
+              <h5 class="tp-content__title mb-2.5">{{ block.settings.title_testimonial }}</h5>
+            {% endif %}
+
+            {% if block.settings.description_testimonial != blank %}
+              <p class="tp-content__description mb-2.5">{{ block.settings.description_testimonial }}</p>
+            {% endif %}
+
+            {% if block.settings.name_testimonial != blank %}
+              <span class="tp-content__name mb-2.5">{{ block.settings.name_testimonial }}</span>
+            {% endif %}
+            <div class="testimonial-layout4__content">
+              <div class="tp-content__star">
+                {% liquid
+                  for i in (1..5)
+                    render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                  endfor
+                %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {%- else -%}
+    <div class="tp-our-testimonial__bg {{ classDisplayType }}">
+      <div class="tp-our-testimonial__wrapper container">
+        {% if section.settings.heading != blank or section.settings.show_pagination %}
+          <div class="tp-our-testimonial__top d-flex align-items-center justify-content-between mb-12.5">
+            {% if section.settings.heading != blank %}
+              <h2 class="tp-section__title">{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.show_pagination %}
+              <div class="tp-our-testimonial__pagination"></div>
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="tp-our-testimonial__border">
+          <div class="tp-our-testimonial__main swiper" data-layout="{{ displayType }}">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class=" swiper-slide">
+                  <div class="tp-our-testimonial__item tp-our-testimonial__item-{{ forloop.index }} d-flex justify-content-start align-items-start">
+                    {% assign imageTestimonial = block.settings.image_testimonial %}
+                    {% if imageTestimonial != blank %}
+                      <img
+                        class="tp-our-testimonial__img mr-7.5"
+                        src="{{ imageTestimonial | image_url: width: imageTestimonial.width , height: imageTestimonial.height }}"
+                        alt="image collection"
+                        width="{{imageTestimonial.width}}"
+                        height="{{imageTestimonial.height}}"
+                        loading="lazy"
+                      >
+                    {% else %}
+                      {% render 'no-image', text_size: '', width: 130, height: 100 %}
+                    {% endif %}
+                    <div class="tp-our-testimonial__content">
+                      {% if displayType == 'layout_3' %}
+                        <svg
+                          class="m-auto mb-5"
+                          fill="none"
+                          height="34"
+                          viewbox="0 0 61 34"
+                          width="61"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M12.721 0H30.596L17.875 33.4084H0L12.721 0ZM42.5127 0H60.3877L47.6667 33.4084H29.7917L42.5127 0Z" fill="#FFAE47"/>
+                        </svg>
+                      {% else %}
+                        <div class="tp-content__star mb-2.5">
+                          {% liquid
+                            render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                            render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                            render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                            render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                            render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                          %}
+                        </div>
+                      {%- endif -%}
+                      <div class="tp-content__wrapper">
+                        {% if block.settings.title_testimonial != blank %}
+                          <h5 class="tp-content__title mb-2.5">{{ block.settings.title_testimonial }}</h5>
+                        {% endif %}
+                        {% if block.settings.description_testimonial != blank %}
+                          <p class="tp-content__description mb-3.75">{{ block.settings.description_testimonial }}</p>
+                        {% endif %}
+                        {% if block.settings.name_testimonial != blank %}
+                          <span class="tp-content__name">{{ block.settings.name_testimonial }}</span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            {% if displayType == 'layout_3' %}
+              <div class="tp-our-testimonial-prev navigation-item">
+                {% render 'icon', icon_name: 'icon-prev-type2', width: '33', height: '21' %}
+              </div>
+              <div class="tp-our-testimonial-next navigation-item">
+                {% render 'icon', icon_name: 'icon-next-type2', width: '33', height: '21' %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% render 'margin-bottom' %}
+
+{% style %}
+  .tp-our-testimonial-{{ section.id }}{
+    background: {{ section.settings.background_testimonial }};
+  }
+    .tp-our-testimonial__bg {
+      padding: {{ section.settings.padding_top_bottom }}px 0
+    }
+
+    {% for block in section.blocks %}
+      .tp-our-testimonial__item-{{ forloop.index }}{
+      background: {{ block.settings.background_testimonial_item }}}
+    {% endfor %}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title testimonial",
+      "default": "Our Testimonial"
+    },
+    {
+      "type": "color",
+      "id": "background_testimonial",
+      "label": "Background",
+      "default": "#fff"
+    },
+    {
+      "type": "select",
+      "id": "display_type",
+      "label": "Display type",
+      "options": [
+        {
+          "value": "layout_1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout_2",
+          "label": "Layout 2"
+        },
+        {
+          "value": "layout_3",
+          "label": "Layout 3"
+        },
+        {
+          "value": "layout_4",
+          "label": "Layout 4"
+        }
+      ],
+      "default": "layout_1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top & bottom",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show pagination",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "our_testimonial_item",
+      "name": " Testimonials",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_testimonial",
+          "label": " Image testimonial"
+        },
+        {
+          "type": "text",
+          "id": "title_testimonial",
+          "label": "Title testimonial",
+          "default": "Love my new purchase"
+        },
+        {
+          "type": "textarea",
+          "id": "description_testimonial",
+          "label": "Description testimonial",
+          "default": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray"
+        },
+        {
+          "type": "text",
+          "id": "name_testimonial",
+          "label": "Name testimonial",
+          "default": "Maria Emilia"
+        },
+        {
+          "type": "color",
+          "id": "background_testimonial_item",
+          "label": "Background",
+          "default": "#fff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our testimonial",
+      "category": "Custom content"
+    }
+  ]
+}
+{% endschema %}

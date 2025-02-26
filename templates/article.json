@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1660297400b570e9e4": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_comment": true
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "3cdb65b5-d64c-484f-a51f-ab49ecf1f76d": {
+          "type": "categories",
+          "settings": {
+            "title": "Categories",
+            "menu": "legal"
+          }
+        },
+        "93ea250c-25dd-4104-9e8d-818e3500d5b7": {
+          "type": "recent_post",
+          "settings": {
+            "title": "Recent Post",
+            "sidebar_recent_blog_name": ""
+          }
+        },
+        "49a31e84-5b86-48d6-bb17-fa0637e434d5": {
+          "type": "tags",
+          "settings": {
+            "title": "Tags"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "content",
+        "3cdb65b5-d64c-484f-a51f-ab49ecf1f76d",
+        "93ea250c-25dd-4104-9e8d-818e3500d5b7",
+        "49a31e84-5b86-48d6-bb17-fa0637e434d5"
+      ],
+      "settings": {
+        "blog_show_social": true
+      }
+    }
+  },
+  "order": [
+    "1660297400b570e9e4",
+    "main"
+  ]
+}

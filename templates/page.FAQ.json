@@ -1,0 +1,119 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1662975519e51fd765": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1663035763149ab691": {
+      "type": "default-page-title",
+      "settings": {
+        "g_title": "Frequently Asked Questions",
+        "g_sub": "Need Help? We've got you covered!",
+        "horizontal_alignment": "center",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "main": {
+      "type": "FAQ",
+      "blocks": {
+        "fef6b4d6-716a-4675-a218-38b93aa845da": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "203c4755-afeb-4f24-858d-02095eb4c5a9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "20c42676-1d3c-490b-a4cb-14d0fbf6efc6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "d854cef9-5960-40e0-822b-93eb86e2fcd4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "a7c0f4d4-b2ab-4a45-9fcb-8fce77618b0a": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "aa6ae259-7f2d-43f4-ab01-90f861e2e0f8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "7870fe2f-5ec6-4d3b-9797-851af2dbd391": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "3a8f49b2-5820-4ecc-8053-9af01c3a6736": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I place an order?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fef6b4d6-716a-4675-a218-38b93aa845da",
+        "203c4755-afeb-4f24-858d-02095eb4c5a9",
+        "20c42676-1d3c-490b-a4cb-14d0fbf6efc6",
+        "d854cef9-5960-40e0-822b-93eb86e2fcd4",
+        "a7c0f4d4-b2ab-4a45-9fcb-8fce77618b0a",
+        "aa6ae259-7f2d-43f4-ab01-90f861e2e0f8",
+        "7870fe2f-5ec6-4d3b-9797-851af2dbd391",
+        "3a8f49b2-5820-4ecc-8053-9af01c3a6736"
+      ],
+      "settings": {
+        "type_faqs": "faqs_type2",
+        "title": "",
+        "sub_title": "",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "1662975519e51fd765",
+    "1663035763149ab691",
+    "main"
+  ]
+}

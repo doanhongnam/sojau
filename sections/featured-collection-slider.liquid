@@ -1,0 +1,403 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout
+  assign layoutSlider = section.settings.layout_slider
+  assign styleButton = section.settings.button_type
+%}
+
+<style>
+  .tp-fcl__top.text-left {
+    text-align: left !important;
+  }
+  .tp-fcl__top.text-center {
+    text-align: center !important;
+  }
+  .tp-fcl__top.text-right {
+    text-align: right !important;
+  }
+</style>
+
+<div class="tp-featured-collection tp-featured-collection-{{ section.id }} {{ WidthLayout }}">
+  <div
+    class="tp-fcl__main tp-fcl__main-{{ section.id }} tp-fcl__slider {{ layoutSlider }}"
+    data-slide="{{ layoutSlider }}"
+  >
+    {% if layoutSlider == 'layout-slider-4' %}
+      {% render 'fcl-layout-slider-4' %}
+    {% else %}
+      <div class="tp-fcl__top mb-12.5">
+        {% if section.settings.title != blank %}
+          <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if layoutSlider == 'layout-slider-1' %}
+          <div class="tp-fcl__mid flex justify-between items-center">
+            {% if section.settings.description != blank %}
+              <div class="mb-0 select-none">{{ section.settings.description }}</div>
+            {% endif %}
+            {% if section.settings.show_navigation %}
+              <div class="swiper-button__nav swiper-nav-default flex flex-row items-center justify-center">
+                <div class="swiper-nav-prev swiper-nav-default__item">
+                  {% render 'icon', icon_name: 'icon-prev-type1', width: 8, height: 12 %}
+                </div>
+                <div class="swiper-nav-next swiper-nav-default__item">
+                  {% render 'icon', icon_name: 'icon-next-type1', width: 8, height: 12 %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      {% liquid
+        if section.settings.collection != blank
+          assign collection = collections[section.settings.collection]
+        endif
+      %}
+
+      {% if collection != blank %}
+        {%- paginate collection.products by section.settings.products_to_show -%}
+          <div class="tp-fcl__main-wrapper relative">
+            <div
+              class="swiper fcSwiper"
+              data-type="{{ layoutSlider }}"
+              data-slides-perview="{{ section.settings.sliders_perview }}"
+            >
+              <div class="swiper-wrapper">
+                {% assign collectionProducts = collection.products | sort: 'published_at' | reverse %}
+                {%- for product in collectionProducts -%}
+                  {% liquid
+                    assign lazy_load = false
+                    if forloop.index > 2
+                      assign lazy_load = true
+                    endif
+                  -%}
+                  <div class="grid__item swiper-slide">
+                    {% render 'card-product',
+                      card_product: product,
+                      section: section,
+                      layoutProductItem: section.settings.product_item_layout,
+                      lazy_load: lazy_load
+                    %}
+                  </div>
+                {%- endfor -%}
+              </div>
+              {% if section.settings.show_pagigation %}
+                {% if layoutSlider == 'layout-slider-1' %}
+                  <div class="swiper-pagination mt-[50px] relative bottom-0"></div>
+                {% endif %}
+                {% if layoutSlider == 'layout-slider-3' %}
+                  <div class="swiper-scrollbar"></div>
+                {% endif %}
+              {% endif %}
+              {% if section.settings.show_navigation %}
+                {% if layoutSlider == 'layout-slider-3' %}
+                  <div class="swiper-button__nav swiper-nav-default flex flex-row items-center justify-center">
+                    <div class="swiper-nav-prev swiper-nav-default__item">
+                      {% render 'icon', icon_name: 'icon-prev-type1', width: 8, height: 12 %}
+                    </div>
+                    <div class="swiper-nav-next swiper-nav-default__item">
+                      {% render 'icon', icon_name: 'icon-next-type1', width: 8, height: 12 %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+            </div>
+            {% if layoutSlider == 'layout-slider-2' %}
+              {% if section.settings.show_navigation %}
+                <div class="swiper-nav-prev swiper-nav-item">
+                  {% render 'icon', icon_name: 'icon-prev-type3' %}
+                </div>
+                <div class="swiper-nav-next swiper-nav-item">
+                  {% render 'icon', icon_name: 'icon-next-type3' %}
+                </div>
+              {% endif %}
+            {% endif %}
+            {% if section.settings.text_button != blank %}
+              <div class="fcl-load-more">
+                <a
+                  href="{{ collection.url | default: '#' }}"
+                  class="tp-btn {{ styleButton }}"
+                >
+                  {{ section.settings.text_button }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {% endpaginate %}
+      {% else %}
+        {% liquid
+          assign numbers = '1,2,3,4,5,6' | split: ','
+        -%}
+        <div class="tp-fcl__main-wrapper relative">
+          <div
+            class="swiper fcSwiper"
+            data-type="{{ layoutSlider }}"
+            data-slides-perview="{{ section.settings.sliders_perview }}"
+          >
+            <div class="swiper-wrapper">
+              {% for item in numbers -%}
+                <div class="grid__item swiper-slide">
+                  {% render 'card-product-no-data' %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  {% if section.settings.background_image != blank or section.settings.background_color != blank %}
+  .tp-featured-collection-{{ section.id }} {
+  {% if section.settings.background_image != blank %} background: url('{{ section.settings.background_image | image_url: width: section.settings.background_image.width, height: section.settings.background_image.height }}');
+      background-repeat: round;
+  {% elsif section.settings.background_color != blank %} background: {{ section.settings.background_color }};
+  {% endif %}
+  }
+
+  {% endif %}
+  .tp-fcl__main-{{ section.id }} {
+      padding: {{ section.settings.padding_top_bottom }}px 0;
+  }
+</style>
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Featured Collection Slide",
+  "tag": "section",
+  "class": "section relative",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Product by",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label",
+      "default": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Pading top and bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 8,
+      "label": "t:sections.featured-collection.settings.products_to_show.label"
+    },
+
+    {
+      "type": "select",
+      "id": "layout_slider",
+      "label": "Layout slide",
+      "options": [
+        {
+          "value": "layout-slider-1",
+          "label": "Layout slider 1"
+        },
+        {
+          "value": "layout-slider-2",
+          "label": "Layout slider 2"
+        },
+        {
+          "value": "layout-slider-3",
+          "label": "Layout slider 3"
+        },
+        {
+          "value": "layout-slider-4",
+          "label": "Layout slider 4"
+        }
+      ],
+      "default": "layout-slider-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show navigation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagigation",
+      "label": "Show pagigation",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "sliders_perview",
+      "label": "Sliders perview",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "3.5",
+          "label": "3.5"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "4.5",
+          "label": "4.5"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        },
+        {
+          "value": "5.5",
+          "label": "5.5"
+        }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "product_item_layout",
+      "label": "Product item layout",
+      "options": [
+        {
+          "value": "use_global",
+          "label": "Use global"
+        },
+        {
+          "value": "layout_1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout_2",
+          "label": "Layout 2"
+        },
+        {
+          "value": "layout_3",
+          "label": "Layout 3"
+        }
+      ],
+      "default": "use_global"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "text_button",
+      "label": "Text button",
+      "default": "Shop now",
+      "info": "To blank to hide the node"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "options": [
+        {
+          "value": "tp-btn__primary",
+          "label": "Button primary"
+        },
+        {
+          "value": "tp-btn__secondary",
+          "label": "Button secondary"
+        },
+        {
+          "value": "tp-btn__alternate",
+          "label": "Button alternate"
+        },
+        {
+          "value": "tp-btn__underline",
+          "label": "Button underline"
+        }
+      ],
+      "label": "Button type",
+      "default": "tp-btn__primary"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Featured Collection Slide"
+    }
+  ]
+}
+{% endschema %}

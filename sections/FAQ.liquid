@@ -1,0 +1,202 @@
+{%- if section.settings.type_faqs == 'faqs_type1' -%}
+  <div class="wrapper-faq wrapper-faq-{{ section.id }} faq-type1" id="faqs">
+    <div class="container">
+      <div class="faq-head">
+        <h1>{{ section.settings.title }}</h1>
+        <p>{{ section.settings.sub_title }}</p>
+      </div>
+
+      {% liquid
+        assign sizeBlocks = section.blocks.size
+        assign leftSize = sizeBlocks | times: 1
+        assign rightSize = sizeBlocks | times: 1
+      %}
+      <div class="faq-type1__list faq__list--left">
+        <div class="faq-type1__content faq-content">
+          {% for block in section.blocks %}
+            {% if forloop.index <= leftSize %}
+              {% if block.type == 'faq_item' %}
+                <div class="faq-type1__item faq-content__item hide-faq">
+                  <div class="faq-type1__question item--question">
+                    <h4>{{ block.settings.question }}</h4>
+                    {% render 'icon', icon_name: 'icon-faq' %}
+                  </div>
+                  <div class="faq-type1__ask item--ask">
+                    {{ block.settings.ask }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- else -%}
+  <div class="wrapper-faq wrapper-faq-{{ section.id }}">
+    <div class="container">
+      <div class="faq-head">
+        <h1>{{ section.settings.title }}</h1>
+        <p>{{ section.settings.sub_title }}</p>
+      </div>
+
+      <div class="wrapper-faq__list">
+        {% liquid
+          assign sizeBlocks = section.blocks.size
+          assign leftSize = sizeBlocks | divided_by: 2 | times: 1
+          assign rightSize = sizeBlocks | minus: leftSize | times: 1
+        %}
+
+        <div class="faq__list--left">
+          <div class="faq-content">
+            {% for block in section.blocks %}
+              {% if forloop.index <= leftSize %}
+                {% if block.type == 'faq_item' %}
+                  <div class="faq-content__item hide-faq">
+                    <div class="item--question">
+                      <h3>{{ block.settings.question }}</h3>
+                      {% render 'icon', icon_name: 'icon-faq' %}
+                    </div>
+
+                    <div class="item--ask">
+                      {{ block.settings.ask }}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="faq__list--right">
+          <div class="faq-content">
+            {% for block in section.blocks %}
+              {% if forloop.index <= sizeBlocks and forloop.index > leftSize %}
+                {% if block.type == 'faq_item' %}
+                  <div class="faq-content__item hide-faq">
+                    <div class="item--question">
+                      <h3>{{ block.settings.question }}</h3>
+                      {% render 'icon', icon_name: 'icon-faq' %}
+                    </div>
+                    <div class="item--ask">
+                      {{ block.settings.ask }}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% render 'margin-bottom' %}
+
+<script>
+  function initFAQ() {
+    const faqQuestions = document.querySelectorAll('.wrapper-faq-{{ section.id }} .item--question');
+    if (faqQuestions.length > 0) {
+      faqQuestions.forEach((item) => {
+        item.addEventListener('click', function () {
+          const faqContentItem = this.closest('.faq-content__item');
+          faqContentItem && faqContentItem.classList.toggle('hide-faq');
+        });
+      });
+    }
+  }
+
+  initFAQ();
+  document.addEventListener('shopify:section:load', initFAQ);
+  document.addEventListener('shopify:section:unload', initFAQ);
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "type_faqs",
+      "options": [
+        {
+          "value": "faqs_type1",
+          "label": "Faqs type 1"
+        },
+        {
+          "value": "faqs_type2",
+          "label": "Faqs type 2"
+        }
+      ],
+      "default": "faqs_type1",
+      "label": "Choose type"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "sub_title",
+      "label": "Sub title",
+      "default": "Need Help? We've got you covered!"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 50
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Faq item",
+      "type": "faq_item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "question",
+          "label": "Question",
+          "default": "How do I place an order?"
+        },
+        {
+          "type": "richtext",
+          "id": "ask",
+          "label": "Ask",
+          "default": "<p>In order to process your order we require the following information:<\/p><p>- Your shipping, order information & billing address.<\/p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}

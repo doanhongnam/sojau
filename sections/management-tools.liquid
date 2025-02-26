@@ -1,0 +1,154 @@
+<div class="management-tools">
+  <div class="management-tools__tab management-tools__tabsettings" id="tabsettings">
+    <div class="management-tools__wrap">
+          <div class="management-tools__item management-hv1">
+            <a
+              href="https://storepify.thimpress.com/pages/demo"
+              target="_blank"
+              class="management-tools__block">
+              <div class="management-tools__image">
+                {% render 'icon', icon_name: 'layer' %}
+              </div>
+            </a>
+          </div>
+
+          <div class="management-tools__item management-hv2">
+            <a
+              href="https://1.envato.market/154NPd"
+              target="_blank"
+              class="management-tools__block">
+              <div class="management-tools__image">
+                {% render 'icon', icon_name: 'icon-white-cart' %}
+              </div>
+            </a>
+          </div>
+            {% assign rtl = true %}
+            {% if cart.attributes.rtl_click == "true" %}
+              {% assign rtlAttributes = true %}
+            {% else %}
+              {% assign rtlAttributes = false %}
+            {% endif %}
+
+            {% if rtl %}
+              <div class="management-tools__item management-hv4">
+                <div class="management-tools__image">
+                  <span class="text-xs text-white font-medium rtl-click" data-rtl="{{ rtlAttributes }}">
+                    {% if rtlAttributes == true %}
+                      LTR
+                      <style>
+                        .management-hv4::before {
+                          content: "Left to right";
+                        }
+                      </style>
+                    {% else %}
+                      RTL
+                      <style>
+                        .management-hv4::before {
+                          content: "Right to left";
+                        }
+                      </style>
+                    {% endif %}
+                  </span>
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="management-tools__item ev-color management-hv3">
+              <div class="management-tools__block">
+                <div class="management-tools__image">
+                  {% render 'icon', icon_name: 'icon-color' %}
+                </div>
+              </div>
+              <div class="management-color">
+                <ul class="management-color__list flex items-center">
+                  <li class="management-color__item">
+                    <div class="management-data is-color " data-color="{{ settings.color_accent }}"></div>
+                  </li>
+                  <li class="management-color__item">
+                    <div class="management-color__item1 management-data" data-color="#CF0A0A" style="background: #CF0A0A"></div>
+                  </li>
+                  <li class="management-color__item">
+                    <div class="management-color__item2 management-data" data-color="#59CE8F" style="background: #59CE8F"></div>
+                  </li>
+                  <li class="management-color__item">
+                    <div class="management-color__item3 management-data" data-color="#BE3455" style="background: #BE3455"></div>
+                  </li>
+                 <li class="management-color__item">
+                    <div class="management-color__item4 management-data" data-color="#FF7F5B" style="background: #FF7F5B"></div>
+                  </li>
+                  <li class="management-color__item">
+                    <div class="management-color__item5 management-data" data-color="#95389E" style="background: #95389E"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  {% comment %} const evColor = document.querySelector(".ev-color");
+  if (evColor) {
+    evColor.addEventListener("click", function() {
+      const managementColor = document.querySelector(".management-color")
+      managementColor.classList.toggle("is-sv-color")
+    })
+  } {% endcomment %}
+
+  const managementData = document.querySelectorAll(".management-data");
+  const iscolorselected = localStorage.getItem("iscolorselected");
+  const iscolorvalue = localStorage.getItem("iscolorvalue");
+  if (managementData.length > 0) {
+    managementData.forEach(function(item) {
+      item.addEventListener("click", function(e) {
+
+        const isColor = document.querySelector('.management-data.is-color')
+        let dataAttr = ''
+        if (isColor) {
+          isColor.classList.remove("is-color")
+          dataAttr = this.getAttribute("data-color")
+        }
+
+        item.classList.add("is-color");
+        const bodyColor = document.body
+        var r = document.querySelector(':root');
+        const colorStorage = localStorage.getItem("iscolorselected");
+
+        if (colorStorage === "true") {
+          bodyColor.classList.remove("issetcolor");
+        }
+        r.style.setProperty('--color-accent', dataAttr);
+
+        if (dataAttr === "#0088cc") {
+          bodyColor.classList.remove("issetcolor");
+            localStorage.removeItem("iscolorselected");
+            localStorage.removeItem("iscolorvalue");
+        }else{
+            bodyColor.classList.add("issetcolor");
+            localStorage.setItem("iscolorselected", "true");
+            localStorage.setItem("iscolorvalue", dataAttr);
+        }
+
+      })
+    })
+  }
+
+
+
+  if(iscolorselected === "true") {
+    const bodyColor = document.body
+    var r = document.querySelector(':root');
+    r.style.setProperty('--color-accent', iscolorvalue);
+    bodyColor.classList.add("issetcolor");
+  }
+
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Management tools",
+  "tag": "section"
+}
+{% endschema %}

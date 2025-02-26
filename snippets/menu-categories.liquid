@@ -1,0 +1,204 @@
+{% liquid
+  assign hasMenuCate = false
+  for block in section.blocks
+    case block.type
+      when 'menu_category'
+        assign hasMenuCate = true
+        break
+      else
+
+    endcase
+  endfor
+%}
+
+{% if hasMenuCate %}
+  <div class="menu-categories " style="background-color: {{ section.settings.menu_categories_bg }};">
+    <div class="menu-categories__nav flex items-center justify-between">
+      <div class="nav__title--icon flex items-center">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H18V2H0V0Z" fill="black"/>
+          <path d="M0 6H18V8H0V6Z" fill="black"/>
+          <path d="M0 12H18V14H0V12Z" fill="black"/>
+        </svg>
+        <p class="title">{{ section.settings.text_menu_cate }}</p>
+      </div>
+      <svg
+        class="icon-dropdown"
+        width="13"
+        height="7"
+        viewBox="0 0 13 7"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12 1L6.5 6L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <style>
+        .menu-categories__nav, .nav__title--icon p{
+          color:{{ section.settings.menu_categories_text_color }};
+        }
+        .nav__title--icon path{
+        fill: {{ section.settings.menu_categories_text_color }};
+        }
+        .menu-categories__nav .icon-dropdown path{
+        stroke: {{ section.settings.menu_categories_text_color }};
+        }
+      </style>
+      <div class="wrapper-mega-menu-all-cate  {% if template == 'index' %}show-all-menu-cate{% endif %}">
+        {% if section.blocks.size > 0 %}
+          <div class="menu-categories__content">
+            <ul
+              style="
+                border-left: 3px solid {{ section.settings.menu_categories_bg }};
+                border-bottom: 3px solid {{ section.settings.menu_categories_bg }};
+                border-right: 3px solid {{ section.settings.menu_categories_bg }};
+              "
+            >
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'menu_category' %}
+                    {% liquid
+                      assign backgroundImage = block.settings.background_image
+                    %}
+                    <li class="cate-menu-lv1" data-category-name="{{ block.settings.category_name }}">
+                      {% if block.settings.menu_categories_target != blank %}
+                        <div class="cate-title flex justify-between items-center">
+                          <div class="menu-categories__content--title flex items-center">
+                            {% if block.settings.icon != blank %}
+                              <img
+                                src="{{ block.settings.icon | image_url: width: block.settings.icon.width , height: block.settings.icon.height }}"
+                                alt="icon-{{ block.settings.category_name }}"
+                                width="{{ block.settings.icon.width }}"
+                                height="{{ block.settings.icon.height }}"
+                                loading="lazy"
+                              >
+                            {% else %}
+                              {{ 'collection-6' | placeholder_svg_tag: 'icon-header-img-default' }}
+                            {% endif %}
+                            <span class="menu-categories__content--title"> {{ block.settings.category_name }}</span>
+                          </div>
+                          {% render 'icon', icon_name: 'icon-next-type1', width: 9, height: 9 %}
+                        </div>
+                      {% else %}
+                        {% assign urlTarget = block.settings.url_category | default: '#' %}
+                        <div class="cate-title flex items-center">
+                          {% if block.settings.icon != blank %}
+                            <img
+                              src="{{ block.settings.icon | image_url: width: block.settings.icon.width , height: block.settings.icon.height }}"
+                              alt="icon-{{ block.settings.category_name }}"
+                              width="{{ block.settings.icon.width }}"
+                              height="{{ block.settings.icon.height }}"
+                              loading="lazy"
+                            >
+                          {% else %}
+                            {{ 'collection-6' | placeholder_svg_tag: 'icon-header-img-default' }}
+                          {% endif %}
+                          <a class="menu-categories__content--title" href="{{ urlTarget }}">
+                            {{- block.settings.category_name -}}
+                          </a>
+                        </div>
+                      {% endif %}
+
+                      {% if block.settings.menu_categories_target != blank %}
+                        <div
+                          class="sub-menu-category"
+                          data-category-name-belong="{{ block.settings.category_name }}"
+                          {% if backgroundImage != blank %}
+                            style="
+                              background-image: url('{{ backgroundImage | image_url: width: backgroundImage.width, height: backgroundImage.height }}');
+                              background-repeat: no-repeat;
+                              background-position: right bottom;
+                            "
+                          {% endif %}
+                        >
+                          <div class="list-mn-category flex flex-wrap">
+                            {%- for link in block.settings.menu_categories_target.links -%}
+                              <ul>
+                                {% if link.links.size > 0 %}
+                                  <li>
+                                    <a
+                                      href="{{ link.url }}"
+                                      title="{{ link.title | escape }}"
+                                      class="sub-cate-lv1"
+                                      data-level="{{ link.levels }}"
+                                    >
+                                      {{ link.title | escape }}
+                                    </a>
+                                  </li>
+                                  <ul>
+                                    {% for child_link in link.links %}
+                                      <li>
+                                        <a
+                                          href="{{ child_link.url }}"
+                                          title="{{ child_link.title | escape }}"
+                                          class=""
+                                          data-level="{{ child_link.levels }}"
+                                        >
+                                          {{ child_link.title | escape }}
+                                        </a>
+                                      </li>
+                                    {% endfor %}
+                                  </ul>
+                                {% else %}
+                                  <li class="sub-cate-lv2">
+                                    <a
+                                      href="{{ link.url }}"
+                                      title="{{ link.title | escape }}"
+                                      class=""
+                                      data-level="{{ link.levels }}"
+                                    >
+                                      {{ link.title | escape }}
+                                    </a>
+                                  </li>
+                                {% endif %}
+                              </ul>
+                            {% endfor %}
+                          </div>
+
+                          {% if block.settings.banner != blank %}
+                            <div class="list-banner">
+                              <img
+                                src="{{ block.settings.banner | image_url: width: block.settings.banner.width, height: block.settings.banner.height }}"
+                                width="{{ block.settings.banner.width }}"
+                                height="{{ block.settings.banner.height }}"
+                                loading="lazy"
+                                alt="{{ block.settings.banner.alt }}"
+                              >
+                              <div class="infomation-banner">
+                                {% if block.settings.banner_title != blank %}
+                                  <h3>{{ block.settings.banner_title }}</h3>
+                                {% endif %}
+
+                                {% if block.settings.sub_title != blank %}
+                                  <p>{{ block.settings.sub_title }}</p>
+                                {% endif %}
+
+                                <a
+                                  class="tp-btn tp-btn__primary"
+                                  href="
+                                    {% if block.settings.url_shop_now != blank %}
+                                        {{ block.settings.url_shop_now }}
+                                    {% else %}
+                                        #
+                                    {% endif %}
+                                  "
+                                >
+                                  Shop Now
+                                </a>
+                              </div>
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    </li>
+
+                  {% else %}
+
+                {% endcase %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

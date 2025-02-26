@@ -1,0 +1,127 @@
+{% comment %}
+  Renders a product card
+                                                                    
+  Accepts:
+  - card_product: {Object} Product Liquid object (optional)
+  - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+  - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+  - show_vendor: {Boolean} Show the product vendor. Default: false
+  - show_rating: {Boolean} Show the product rating. Default: false
+  - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
+  - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+  - show_quick_add: {Boolean} Show the quick add button.
+  - section_id: {String} The ID of the section that contains this card.
+
+  Usage:
+  {% render 'card-product', show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+{%- liquid
+  assign ratio = 1
+  if card_product.featured_media and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif card_product.featured_media and media_aspect_ratio == 'adapt'
+    assign ratio = card_product.featured_media.aspect_ratio
+  endif
+  if ratio == 0 or ratio == nil
+    assign ratio = 1
+  endif
+-%}
+{%- if card_product and card_product != empty -%}
+  <div class="card-wrapper relative">
+    <div class="card">
+      <div class="card__inner">
+        <div class="card__media">
+          <span class="close-compare-item" data-product-handle="{{ product.handle }}">
+            {% render 'icon', icon_name: 'icon-close' %}
+          </span>
+          {%- if card_product.featured_media -%}
+            <div class="media main-img{%- if show_secondary_image -%} have-two-image{%- endif -%}">
+              <a href="{{ card_product.url }}">
+                <img src="{{ card_product.featured_media | image_url: width: 533 }}" alt="{{ card_product.featured_media.alt | escape }}" class="motion-reduce" {% unless lazy_load == false %} loading="lazy" {% endunless %} width="{{ card_product.featured_media.width }}" height="{{ card_product.featured_media.height }}">
+              </a>
+            </div>
+            {%- if card_product.media[1] != nil and show_secondary_image -%}
+              <div class="media hover-img">
+                <a href="{{ card_product.url }}">
+                  <img src="{{ card_product.media[1] | image_url: width: 533 }}" alt="{{ card_product.media[1].alt | escape }}" class="motion-reduce" loading="lazy" width="{{ card_product.media[1].width }}" height="{{ card_product.media[1].height }}">
+                </a>
+              </div>
+            {%- endif -%}
+          {% else %}
+            <div class="media no-image">
+                {% render 'no-image', text_size: 'No image' %}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}" {% if card_product.featured_media or settings.card_style == 'card' %} id="title-{{ section_id }}-{{ card_product.id }}" {% endif %}>
+            <a href="{{ card_product.url }}" class="full-unstyled-link">
+              {{ card_product.title | escape }}
+            </a>
+          </h3>
+          <div class="card-information">
+            {%- if show_vendor -%}
+              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+              <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+            {%- endif -%}
+            {% assign priceId = 'price-' | append: section.id | append: '-' | append: card_product.id %}
+            {% render 'price', product: card_product, price_class: 'product-item-storepify', id: priceId %}
+            <div class="add-to-cart-compare">
+              <product-form>
+                {%- form 'product', card_product, class: product_form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                  <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" disabled>
+                  <button type="submit" name="add" class="quick-add__submit btn-border hover-left-to-right btn-border-radius" aria-haspopup="dialog" aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}" aria-live="polite" data-sold-out-message="true" {% if card_product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                    <span class="add-to-cart-text">
+                      {%- if card_product.selected_or_first_available_variant.available -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
+                    </span>
+                    <span class="sold-out-message hidden">
+                      {{ 'products.product.sold_out' | t }}
+                    </span>
+                    {% render 'icon', icon_name: 'icon-loading', class: 'add-to-cart-loading  m-auto hidden', width: 26, height: 26 %}
+                  </button>
+                {%- endform -%}
+              </product-form>
+            </div>
+            {% if card_product.vendor != blank %}
+              <div class="brand item-info">
+                <p class="title">{{ 'products.product.vendor' | t }}</p>
+                <p class="content">{{ card_product.vendor }}</p>
+              </div>
+            {% endif %}
+
+            {%- unless card_product.has_only_default_variant -%}
+              <variant-radios-storepify class="no-js-hidden" data-section="{{ section.id }}" data-product-id="{{ card_product.id }}" data-url="{{ card_product.url }}">
+                {%- for option in card_product.options_with_values -%}
+                  <div class="item-info">
+                    <p class="title">{{ option.name }}</p>
+                    <fieldset class="js content product-form__input{% if option.name == 'color' or option.name == 'Color' %} list-variant-color {% else %} list-variant{% endif %}">
+                      {%- for value in option.values -%}
+                        <input type="radio" id="{{ section.id }}-{{ card_product.id }}-{{ option.position }}-{{ forloop.index0 }}" name="{{ option.name }}" value="{{ value | escape }}" form="{{ product_form_id }}" {% if option.selected_value == value %} checked {% endif %}>
+                        <label flow="up" tooltip="{{ value }}" for="{{ section.id }}-{{ card_product.id }}-{{ option.position }}-{{ forloop.index0 }}" {% if option.name == 'color' or option.name == 'Color' %} style="background-color: {{ value }};" {% if option.selected_value == value %} class="active" {% endif %} {% endif %}>
+                          {% if option.name != 'color' and option.name != 'Color' %}
+                            {{ value }}
+                          {% endif %}
+                        </label>
+                      {%- endfor -%}
+                    </fieldset>
+                  </div>
+                {%- endfor -%}
+                <script type="application/json">
+
+{{ card_product.variants | json }}
+
+</script>
+              </variant-radios-storepify>
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

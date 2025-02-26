@@ -1,0 +1,59 @@
+<div class="featured-post section-blog featured-info__item">
+  <div class="featured-info__item__top flex items-center justify-between">
+    <h3 class="featured-info-title">{{ block.settings.heading }}</h3>
+    <div class="featured-info-navigation flex items-center">
+      <div class="featured-post-prev mr-2.5 featured-info-naviga-prev">
+        {% render 'icon', icon_name: 'icon-prev-type1' %}
+      </div>
+      <div class="featured-post-next featured-info-naviga-next">
+        {% render 'icon', icon_name: 'icon-next-type1' %}
+      </div>
+    </div>
+  </div>
+  <div class="swiper featured-post__list blog-list">
+    <div class="swiper-wrapper">
+      {% if block.settings.blog.articles != blank %}
+        {%- for article in block.settings.blog.articles limit: 5 -%}
+          <div class="swiper-slide blog-item featured-post__item">
+            {%-
+              render 'article-card-slidebar',
+              show_date: block.settings.show_date,
+              show_button_discover: block.settings.show_button_discover,
+              article: article,
+            -%}
+          </div>
+        {%- endfor -%}
+      {% else %}
+        {%- assign range = (1..4) -%}
+        {% for star in range %}
+          <div class="swiper-slide blog-item featured-post__item">
+            <div class="blog-item-no-data">
+              <div class="blog-item-no-data__image"></div>
+              <div class="blog-item-no-data__content">
+                <h3 class="card__heading">Blog title</h3>
+                <p class="content-desc mb-4">
+                  Whether you’re shopping for the makeup pro or the wash and go, our range of beauty gifts
+                </p>
+              </div>
+              <div class="article-card__date-comment flex items-center">
+                <span class="circle-divider mr-7.5 gap-3 flex items-center justify-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
+                    <path d="M17.8571 2.35714H15.7143V0.785729C15.7143 0.351776 15.3945 0 15 0C14.6055 0 14.2857 0.351776 14.2857 0.785729V2.35714H5.71427V0.785729C5.71427 0.351776 5.39447 0 5.00001 0C4.60555 0 4.28571 0.351776 4.28571 0.785729V2.35714H2.14286C0.959388 2.35714 0 3.41247 0 4.71428V19.6429C0 20.9447 0.959388 22 2.14286 22H17.8571C19.0406 22 20 20.9447 20 19.6429V4.71428C20 3.41247 19.0406 2.35714 17.8571 2.35714ZM18.5714 19.6429C18.5714 20.0768 18.2516 20.4286 17.8571 20.4286H2.14286C1.74835 20.4286 1.42856 20.0768 1.42856 19.6429V9.42857H18.5714V19.6429ZM18.5714 7.85715H1.42856V4.71428C1.42856 4.28033 1.74835 3.92855 2.14286 3.92855H4.28571V5.49997C4.28571 5.93392 4.60551 6.28569 5.00001 6.28569C5.39451 6.28569 5.71431 5.93392 5.71431 5.49997V3.92855H14.2857V5.49997C14.2857 5.93392 14.6055 6.28569 15 6.28569C15.3945 6.28569 15.7143 5.93392 15.7143 5.49997V3.92855H17.8572C18.2517 3.92855 18.5715 4.28033 18.5715 4.71428V7.85715H18.5714Z" fill="#FFAE47"></path>
+                    <path d="M14.7722 11.2302C14.4954 10.9362 14.0566 10.9362 13.7798 11.2302L8.57048 16.9604L6.21832 14.3731C5.93456 14.0716 5.48238 14.0803 5.20833 14.3924C4.94097 14.6969 4.94097 15.1796 5.20833 15.4841L8.06548 18.6269C8.34443 18.9336 8.79656 18.9336 9.07547 18.6269L14.7897 12.3412C15.0638 12.0291 15.0559 11.5317 14.7722 11.2302Z" fill="#FFAE47"></path>
+                  </svg>
+                  Oct 10, 2022
+                </span>
+                <span class="circle-divider circle-divider-comment gap-3 flex items-center justify-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23" fill="none">
+                    <path d="M23.3505 1H2.64949C2.21226 1.00035 1.79303 1.16205 1.48379 1.44962C1.17455 1.7372 1.00057 2.12715 1 2.53393V14.841C1.00054 15.2479 1.17455 15.6379 1.48383 15.9254C1.79311 16.213 2.2124 16.3747 2.64967 16.375H3.50968V21.5862C3.50953 21.6679 3.53546 21.7477 3.58417 21.8156C3.63289 21.8835 3.7022 21.9364 3.78331 21.9676C3.8374 21.9891 3.89564 22.0001 3.95445 22C4.07155 22 4.18393 21.9571 4.26713 21.8804L10.2542 16.375H23.3505C23.7878 16.3747 24.207 16.213 24.5162 15.9254C24.8255 15.6378 24.9995 15.2478 25 14.841V2.53393C24.9994 2.12715 24.8254 1.7372 24.5162 1.44962C24.207 1.16205 23.7877 1.00035 23.3505 1ZM24.1105 14.841C24.1101 15.0284 24.0298 15.208 23.8873 15.3404C23.7448 15.4728 23.5517 15.5472 23.3503 15.5474H10.0716C9.95447 15.5473 9.84205 15.5904 9.75884 15.6671L4.39905 20.5952V15.9607C4.39905 15.8509 4.35219 15.7457 4.26878 15.6681C4.18537 15.5905 4.07224 15.5469 3.95428 15.5469H2.64949C2.4481 15.5467 2.25499 15.4723 2.1125 15.3399C1.97001 15.2075 1.88977 15.0279 1.88937 14.8406V2.53393C1.88977 2.34657 1.97001 2.167 2.1125 2.03459C2.25499 1.90218 2.4481 1.82774 2.64949 1.82759H23.3505C23.5519 1.82774 23.745 1.90218 23.8875 2.03459C24.03 2.167 24.1102 2.34657 24.1106 2.53393L24.1105 14.841Z" fill="#FFAE47" stroke="#FFAE47" stroke-width="0.5"></path>
+                  </svg>
+                  0 Comments
+                </span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>

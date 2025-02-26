@@ -1,0 +1,245 @@
+{% liquid
+  assign widthBlog = section.settings.width_blog
+  assign classWidthBlog = 'tp-lastest-news__full-width'
+  if widthBlog == 'container'
+    assign classWidthBlog = 'container'
+  endif
+
+  assign display_layout = section.settings.display_layout
+
+  assign positionContent = section.settings.position_content
+  assign classPositionContent = 'tp-lastest-news__content-left'
+  if positionContent == 'center'
+    assign classPositionContent = 'tp-lastest-news__content-center'
+  endif
+  assign box_shadow_item = section.settings.box_shadow_item
+%}
+
+<div class="tp-lastest-news {{ classWidthBlog }}">
+  <div class="blog-list {{ display_layout }}">
+    {% if section.settings.blog.articles %}
+      {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
+        <div class="blog-item blog-item-{{ forloop.index }} {{ classPositionContent }}">
+          {%- render 'article-card-slidebar',
+            show_date: section.settings.show_date,
+            show_button_discover: section.settings.show_button_discover,
+            article: article,
+            paginate_pages: paginate.current_page
+          -%}
+        </div>
+      {%- endfor -%}
+    {% else %}
+      {%- assign range = (1..3) -%}
+      {% for star in range %}
+        {% render 'article-card-no-data' %}
+      {%- endfor -%}
+    {% endif %}
+  </div>
+</div>
+<style>
+  .tp-lastest-news .blog-list {
+    gap: {{ section.settings.gap_item_blog }}px;
+  }
+
+  .tp-lastest-news .layout_3 {
+    gap: 0;
+  }
+
+  /* all color content */
+  .blog-list .article-card-content .circle-divider {
+    color: {{ section.settings.content_text }}
+  }
+  .article-card__title {
+    color: {{ section.settings.content_text }}
+  }
+  .blog-list .article-card-content .article-card__excerpt {
+    color: {{ section.settings.content_text }} !important;
+  }
+  .blog-list .article-card-content .discover-content {
+    color: {{ section.settings.content_text }}
+  }
+  .blog-list .article-card-content .discover-content:before {
+    background: {{ section.settings.content_text }}
+  }
+  .blog-list .article-card-content svg path {
+    fill: {{ section.settings.content_text }}
+  }
+
+  /* all Overlay image */
+  .blog-list .article-card__image::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / {{ section.settings.rgb_image }}%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  {% if box_shadow_item %}
+    .blog-list {
+      padding: 15px 0;
+    }
+    .blog-item {
+      box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.16);
+      -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.16);
+      -moz-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.16);
+      border: 1px solid #f6f6f6;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+    }
+    .article-card-content {
+      padding: 0 20px;
+    }
+    .blog-item:hover {
+      box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.05);
+      -webkit-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.05);
+    }
+  {% endif %}
+</style>
+{% render 'margin-bottom' %}
+
+{% schema %}
+  {
+    "name": "Lastest news",
+    "class": "lastest-news section-blog",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "blog",
+        "id": "blog",
+        "label": "t:sections.featured-blog.settings.blog.label"
+      },
+      {
+        "type": "select",
+        "id": "width_blog",
+        "label": "Width blog",
+        "options": [
+          {
+            "value": "container",
+            "label": "Container"
+          }, {
+            "value": "full_width",
+            "label": "Full width"
+          }
+        ],
+        "default": "container"
+      },
+      {
+        "type": "select",
+        "id": "display_layout",
+        "label": "Display layout",
+        "options": [
+          {
+            "value": "layout_1",
+            "label": "Layout 1"
+          }, {
+            "value": "layout_2",
+            "label": "Layout 2"
+          },
+          {
+            "value": "layout_3",
+            "label": "Layout 3"
+          },
+          {
+            "value": "layout_4",
+            "label": "Layout 4"
+          }
+        ],
+        "default": "layout_1"
+      },
+      {
+        "type": "select",
+        "id": "position_content",
+        "label": "Position content",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "default": "left"
+      }, {
+        "type": "range",
+        "id": "post_limit",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "default": 3,
+        "label": "t:sections.featured-blog.settings.post_limit.label"
+      }, {
+        "type": "range",
+        "id": "gap_item_blog",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "default": 30,
+        "label": "Gap item blog"
+      }, {
+        "type": "checkbox",
+        "id": "box_shadow_item",
+        "default": false,
+        "label": "Box shadow item"
+      }, {
+        "type": "checkbox",
+        "id": "show_date",
+        "default": true,
+        "label": "t:sections.main-blog.settings.show_date.label"
+      }, {
+        "type": "checkbox",
+        "id": "show_button_discover",
+        "default": true,
+        "label": "Show button discover"
+      },
+      {
+        "type": "color",
+        "id": "content_text",
+        "label": "Content color",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "rgb_image",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Overlay image",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:sections.margin_bottom.content"
+      }, {
+        "type": "paragraph",
+        "content": "Unit: pixel"
+      }, {
+        "type": "number",
+        "id": "margin_bottom_desktop",
+        "label": "t:sections.margin_bottom.desktop.label",
+        "default": 80
+      }, {
+        "type": "number",
+        "id": "margin_bottom_table",
+        "label": "t:sections.margin_bottom.tablet.label",
+        "default": 60
+      }, {
+        "type": "number",
+        "id": "margin_bottom_mobile",
+        "label": "t:sections.margin_bottom.mobile.label",
+        "default": 40
+      }
+    ],
+    "presets": [
+      {
+        "name": "Lastest news"
+      }
+    ]
+  }
+{% endschema %}

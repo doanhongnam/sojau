@@ -1,0 +1,117 @@
+<div class="tp-list-collection tp-list-collection--type3 tp-list-collection--area" data-type="3" id="list-products">
+  <div class="tp-list-collection__slider fullwidth">
+    <div class="tp-list-collection__top">
+      {% if section.settings.heading != blank %}
+        <h2 class="tp-title-section">{{ section.settings.heading }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="relative">
+      <div class="swiper tp-list-collection__main swiper--lazy" data-list-collection-type="3">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            {% if block.type == 'item' %}
+
+            <div class="tp-list-collection__item swiper-slide">
+              <div class="relative flex flex-row items-center justify-center overflow-hidden image-collection-item">
+                {% assign ImageCollection = block.settings.image %}
+                {% if ImageCollection != blank %}
+                  <img class="tp-list-collection__img object-cover" src="{{ ImageCollection | image_url: width: ImageCollection.width, height: ImageCollection.height }}" alt="image collection" width="{{ ImageCollection.width }}" height="{{ ImageCollection.height }}" loading="lazy">
+                {% else %}
+                  {% render 'no-image', text_size: '290x490', width: 290, height: 490 %}
+                {% endif %}
+                <button class="shop-now absolute opacity-0 invisible transition duration-300 ease-in-out overflow-hidden">
+                  <a class="hvr-bounce-to-right px-[30px] py-[10px] bg-white rounded-3xl overflow-hidden" href="{{ collection.url }}" title="{{ collection.title | escape }}">Shop Now</a>
+                </button>
+              </div>
+              <div class="title relative">
+
+                {% if block.settings.name != blank %}
+                  <h3 class="tp-list-collection__title pb-0">
+                    <a href="{{ block.settings.url }}" title="{{ block.settings.title | escape }}">
+                      {{ block.settings.name | escape }}
+                    </a>
+                  </h3>
+                {% endif %}
+              </div>
+            </div>
+
+            {% endif %}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% render 'margin-bottom' %}
+{% schema %}
+  {
+    "name": "Single product featured",
+    "tag": "section",
+    "class": "tp-list-collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Collection heading",
+        "default": "Products of the same Brand"
+      }, {
+         "type":"header",
+         "content":"t:sections.margin_bottom.content"
+      },
+      {
+         "type": "paragraph",
+         "content": "Unit: pixel"
+        },
+      {
+         "type":"number",
+         "id":"margin_bottom_desktop",
+         "label":"t:sections.margin_bottom.desktop.label",
+         "default":80
+      },
+      {
+         "type":"number",
+         "id":"margin_bottom_table",
+         "label":"t:sections.margin_bottom.tablet.label",
+         "default":60
+      },
+      {
+         "type":"number",
+         "id":"margin_bottom_mobile",
+         "label":"t:sections.margin_bottom.mobile.label",
+         "default":40
+      }
+
+    ],
+    "blocks": [
+      {
+        "name": "Item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, 
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name",
+            "default": "Vegan Dry Hair Treatment"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Single product featured",
+        "category": "Custom content"
+      }
+    ]
+  }
+{% endschema %}

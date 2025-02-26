@@ -1,0 +1,155 @@
+{% unless settings.shipping_calculator == 'Disabled' %}
+  <div id="shipping-calculator" class="tp-shipping-calculator">
+    <h5 class="mb-5">{{ settings.shipping_calculator_heading | default: 'Get shipping estimates' }}</h5>
+
+    <div class="mb-5 tp-shipping-calculator__form-field">
+      <p class="field-top">
+        <select
+          id="address_country"
+          name="address[country]"
+          data-default="{% if shop.customer_accounts_enabled and customer %}{{ customer.default_address.country }}{% elsif settings.shipping_calculator_default_country != '' %}{{ settings.shipping_calculator_default_country }}{% endif %}"
+        >
+          {{ country_option_tags }}
+        </select>
+      </p>
+      <div class="field-bottom flex items-center justify-start">
+        <p class="field mr-4 flex-1" id="address_province_container">
+          <select
+            id="address_province"
+            name="address[province]"
+            data-default="{% if shop.customer_accounts_enabled and customer and customer.default_address.province != '' %}{{ customer.default_address.province }}{% endif %}"
+          ></select>
+        </p>
+        <p class="field flex-1">
+          <input
+            type="text"
+            id="address_zip"
+            placeholder="Zip code"
+            name="address[zip]"
+            {% if shop.customer_accounts_enabled %}
+              value="{{ customer.default_address.zip }}"
+            {% endif %}
+          >
+        </p>
+      </div>
+      <div class="field-btn">
+        <button
+          type="button"
+          class="get-rates tp-btn tp-btn__secondary w-full"
+        >
+          {{ settings.shipping_calculator_submit_button_label | default: 'Calculate Shipping' }}
+        </button>
+      </div>
+    </div>
+
+    <div id="wrapper-response"></div>
+  </div>
+
+  <script async src="/services/javascripts/countries.js"></script>
+
+  <script>
+    //----------shipping cart----------//
+
+    var shippingCart = document.querySelector('#shipping-calculator');
+    if (shippingCart) {
+      const btnCalculateShipping = shippingCart.querySelector('.get-rates');
+      const wrapperResponse = shippingCart.querySelector('#wrapper-response');
+      const addressCountry = shippingCart.querySelector('#address_country');
+      const dataProvinces = shippingCart.querySelector('#address_province');
+      const addressProvinceWrapper = shippingCart.querySelector('#address_province_container');
+
+      if (addressCountry) {
+        // var dataDefault = addressCountry.getAttribute('data-default');
+        // if(dataDefault == ''){
+        //   addressCountry.value = 'United States'
+
+        //   const dataProvinceUnitedStates = Object.values(Countries)[231].province_codes
+
+        //   var provinceKey = Object.keys(dataProvinceUnitedStates)
+        //   var provinceValue = Object.values(dataProvinceUnitedStates)
+
+        //   let html = ''
+        //   provinceKey.forEach(function(item){
+        //     html += `
+        //         <option value="">${item}</option>
+        //       `
+        //   })
+
+        //     dataProvinces.innerHTML = html
+
+        //     var optionAddressProvince = dataProvinces.querySelectorAll('option');
+        //     optionAddressProvince.forEach(function(item){
+        //       console.log(item);
+        //       provinceValue.forEach(function(itemValue){
+        //         console.log(itemValue);
+        //         item.setAttribute('value', `${itemValue}`)
+        //       })
+
+        //     })
+
+        // }
+
+        addressCountry.addEventListener('change', function (e) {
+          const countryTarget = Countries[this.value];
+          const countryCode = countryTarget.code;
+          e.target.setAttribute('country-code', `${countryCode}`);
+          // render province if has
+          if (countryTarget.province_codes != null) {
+            let html = '';
+            for (const [key, value] of Object.entries(countryTarget.province_codes)) {
+              html += `
+            <option value="${value}">${key}</option>
+          `;
+            }
+
+            dataProvinces.innerHTML = html;
+            addressProvinceWrapper.classList.remove('hidden');
+            if (countryTarget.provinces == null) {
+              addressProvinceWrapper.classList.add('hidden');
+            }
+          }
+        });
+      }
+
+      btnCalculateShipping.addEventListener('click', function () {
+        const dataZip = shippingCart.querySelector('#address_zip').value;
+        const dataCountry = shippingCart.querySelector('#address_country').getAttribute('country-code');
+        const dataProvince = shippingCart.querySelector('#address_province').value;
+
+        let shipping_address = {
+          zip: dataZip,
+          country: `${dataCountry}`,
+          province: `${dataProvince}`,
+        };
+
+        fetch(
+          `/cart/shipping_rates.json?shipping_address%5Bzip%5D=${shipping_address.zip}&shipping_address%5Bcountry%5D=${shipping_address.country}&shipping_address%5Bprovince%5D=${shipping_address.province}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            const dataShippingRates = data.shipping_rates;
+            const count = dataShippingRates.length;
+            let html = '';
+            html += `
+            <div class="scd__addon-message py-5">
+              <p class="mb-3 text-base">We found ${count} shipping rate(s) for your address:</p>
+              `;
+            dataShippingRates.forEach((item) => {
+              const namedataShipping = item.name;
+              const currencyShipping = item.currency;
+              const priceShipping = item.price;
+              html += `
+                  <p>${namedataShipping}:
+                      <span>${window.currencyStrings.symbol}${priceShipping}</span>
+                  </p>
+                `;
+            });
+            html += `
+            </div>
+            `;
+            wrapperResponse.innerHTML = html;
+          });
+      });
+    }
+  </script>
+{% endunless %}

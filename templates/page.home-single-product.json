@@ -1,0 +1,347 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "2f8ed182-fa20-444c-97cb-3053999c62a9": {
+      "type": "menu-onepage",
+      "blocks": {
+        "082d899f-6d32-425e-a59a-b3dbc79335c1": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Home",
+            "href_item": "custom-link",
+            "custom_link": "/"
+          }
+        },
+        "fd813606-e093-4376-b1d7-3159a29856ee": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Features",
+            "href_item": "nature",
+            "custom_link": ""
+          }
+        },
+        "52321074-3005-4b1a-bf60-d7793c579fc2": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Testimonials",
+            "href_item": "testimonial",
+            "custom_link": ""
+          }
+        },
+        "4745b6e0-135d-48af-8a50-92b402ecd280": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Faqs",
+            "href_item": "faqs",
+            "custom_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "082d899f-6d32-425e-a59a-b3dbc79335c1",
+        "fd813606-e093-4376-b1d7-3159a29856ee",
+        "52321074-3005-4b1a-bf60-d7793c579fc2",
+        "4745b6e0-135d-48af-8a50-92b402ecd280"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/storepify_black_1.png",
+        "container_config": "container"
+      }
+    },
+    "6c31b0d4-0238-43a6-94f3-858d8f2fa07e": {
+      "type": "slide",
+      "blocks": {
+        "c5e40e49-92d7-4ce6-bb80-14b621c55933": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Bg_2_1.png",
+            "position_content": "left-content",
+            "sub_title": "New In: Face & Body",
+            "title": "<p>Makeup Brush SetJessup</p><p>Makeup Brushes</p>",
+            "description_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p><p>sed do eiusmod tempor incididunt ut lab</p>",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#000000",
+            "color_title": "#000000",
+            "color_description": "#000000",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "c5e40e49-92d7-4ce6-bb80-14b621c55933"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": false,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "center_bottom",
+        "pag_bg": "#000000",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "main": {
+      "type": "featured-product",
+      "disabled": true,
+      "settings": {
+        "product": "love-beauty-and-planet-smooth-and-serene-dry-hair",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "999fd723-b228-4aec-8adb-f5ef99acf52a": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "We’ve cancelled stains.",
+        "sub_title": "<p>V34 works to brighten teeth by utilising colour correcting technology. By counter-balancing the different<br/>hues in your teeth, V34 conceals stains and improves brightness.</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "8f5f8582-982c-4e45-af45-87bc3fc317a3": {
+      "type": "nature",
+      "blocks": {
+        "92a4e142-d458-4ebf-9d84-1b39998702a1": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Group_854.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "Bet you haven’t tried it for your teeth.b Here’s how it works",
+            "nature_brief": "<p>Colour correction all starts on the colour wheel, where purple and yellow are complementary colours opposite to each other. Applying purple onto your teeth will neutralise the yellow undertones and cancel them, revealing a perceptively brighter shade of white. Pretty cool right?<p>",
+            "nature_btn": "Get it now",
+            "nature_link": ""
+          }
+        },
+        "cc84e0c3-fa4d-4d86-aed5-9b1409f17bf0": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Group_855.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "Bet you haven’t tried it for your teeth. Here’s how it works",
+            "nature_brief": "<p>Jessup combination of two water-soluble dyes allow for any shade of yellow to be cancelled for the brightest smile, without leaving behind any residue.</p>",
+            "nature_btn": "Get it now",
+            "nature_link": ""
+          }
+        },
+        "46ed88a5-f004-4f8f-8c25-8a76c5fd457c": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Group_856.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "Are you new to whitening, or have you  already whitened your teeth? Jessup is for you.",
+            "nature_brief": "<p>Colour correct your teeth after using theTeeth Whitening Kit, or use this product as your first step to a brighter smile.</p>",
+            "nature_btn": "Get it now",
+            "nature_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "92a4e142-d458-4ebf-9d84-1b39998702a1",
+        "cc84e0c3-fa4d-4d86-aed5-9b1409f17bf0",
+        "46ed88a5-f004-4f8f-8c25-8a76c5fd457c"
+      ],
+      "settings": {
+        "nature_ctn": "container-small",
+        "nature_id": "nature",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "689e75f5-f4b1-4352-821d-ab0b709b321f": {
+      "type": "featured-product",
+      "settings": {
+        "product": "rimless-mid-square-sunglasses",
+        "background": "shopify://shop_images/Group_821.png",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "9caa1717-a266-4484-afb6-cd07e7bef7d4": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "The future of smile care",
+        "sub_title": "<p>What others have to say</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "0792250a-5303-4be1-90d6-65f76ab2f8b7": {
+      "type": "our-testimonial",
+      "blocks": {
+        "cd90e366-6fa5-4e23-85f6-7d38a494b050": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_91_3442e9b0-81c1-46cb-a857-5c88a77c79e1.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "21752be5-daba-4e4c-8593-ebd01357b4e6": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_92_2.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "7324dfcd-42ef-4986-ba94-2c657a19e7c6": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_92_1_3c14df89-6180-4187-bdc5-af5b57ef4697.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "cd90e366-6fa5-4e23-85f6-7d38a494b050",
+        "21752be5-daba-4e4c-8593-ebd01357b4e6",
+        "7324dfcd-42ef-4986-ba94-2c657a19e7c6"
+      ],
+      "settings": {
+        "heading": "",
+        "background_testimonial": "#ffffff",
+        "display_type": "layout_4",
+        "padding_top_bottom": 0,
+        "show_pagination": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "b4451408-1bb7-49d8-9e2b-4deddaf47507": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type2",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "991729bb-a18c-474a-b8d7-7ee8f73c9877": {
+      "type": "FAQ",
+      "blocks": {
+        "04dbb638-d10a-47ea-afd8-a8efd6fe5b74": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Jessup work?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "d3d2cf5d-167b-48f2-9629-44547ac2b16e": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How and when should I use V34 Colour Corrector Serum?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "c04a902e-326a-4af1-8c7b-642a9325ad5d": {
+          "type": "faq_item",
+          "settings": {
+            "question": "List of ingredients",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "d3a11eb3-9d6e-47f1-9d4c-c85f39c824dd": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is  Jessup Colour Corrector Serum?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        },
+        "cc4a65e6-6605-4084-b560-5592e1c49f5b": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I use  Jessup with veneers, caps, implants, bridges, or bonded teeth?",
+            "ask": "<p>In order to process your order we require the following information:</p><p>- Your shipping, order information & billing address.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "04dbb638-d10a-47ea-afd8-a8efd6fe5b74",
+        "d3d2cf5d-167b-48f2-9629-44547ac2b16e",
+        "c04a902e-326a-4af1-8c7b-642a9325ad5d",
+        "d3a11eb3-9d6e-47f1-9d4c-c85f39c824dd",
+        "cc4a65e6-6605-4084-b560-5592e1c49f5b"
+      ],
+      "settings": {
+        "type_faqs": "faqs_type1",
+        "title": "Got questions? We’ve got answers",
+        "sub_title": "",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "88da613f-d5e2-4c5f-a283-e49259982adb": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type2",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "2f8ed182-fa20-444c-97cb-3053999c62a9",
+    "6c31b0d4-0238-43a6-94f3-858d8f2fa07e",
+    "main",
+    "999fd723-b228-4aec-8adb-f5ef99acf52a",
+    "8f5f8582-982c-4e45-af45-87bc3fc317a3",
+    "689e75f5-f4b1-4352-821d-ab0b709b321f",
+    "9caa1717-a266-4484-afb6-cd07e7bef7d4",
+    "0792250a-5303-4be1-90d6-65f76ab2f8b7",
+    "b4451408-1bb7-49d8-9e2b-4deddaf47507",
+    "991729bb-a18c-474a-b8d7-7ee8f73c9877",
+    "88da613f-d5e2-4c5f-a283-e49259982adb"
+  ]
+}

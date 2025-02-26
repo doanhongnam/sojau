@@ -1,0 +1,340 @@
+<div class="{{ section.settings.width_layout }}">
+<div class="banner-lookbook">
+  {% if section.settings.type_lookbook == 'one_image' %}
+    <div class="banner-lookbook__bg">
+      {% liquid
+            assign ImageBanner = section.settings.image_backgroud
+          %}
+      {% if ImageBanner != blank %}
+        <img class="full-img" src="{{ ImageBanner | image_url: width: ImageBanner.width , height: ImageBanner.height }}" alt="slider background image" width="{{ ImageBanner.width }}" height="{{ ImageBanner.height }}" loading="lazy">
+      {% else %}
+        {% render 'no-image-banner', text_size: '', %}
+      {% endif %}
+    </div>
+    <div class="banner-lookbook__pins">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'one-image' %}
+          {% assign positionProduct = block.settings.position_product %}
+            <div id="banner-lookbook__pin-{{ block.id }}" class="banner-lookbook__pin banner-lookbook__animate">
+              <div class="banner-lookbook__pin-holder {{ positionProduct }}">
+                <div class="banner-lookbook__product">
+                  <div class="banner-lookbook__close">
+                    {% render 'icon', icon_name: 'icon-close' %}
+                  </div>
+                  {%- assign product = block.settings.product -%}
+                  {% if product != blank %}
+                    <img class="img-banner" src="{{ product | image_url: width: product.width , height: product.height }}" alt="slider background image" width="{{product.width}}" height="" loading="lazy">
+                  {% else %}
+                    {% render 'no-image', text_size:'', width: 300, height: 200, %}
+                  {% endif %}
+                  <h3 class="card__heading">
+                    <a href="{{ product.url }}">
+                      {{ product.title }}
+                    </a>
+                  </h3>
+                  <div class="flex items-center justify-between">
+                    <div class="price-item">  
+                  {% assign priceId = 'price-' | append: section.id | append: '-' | append: card_product.id %}
+                  {% render 'price', product: product, price_class: 'product-item-storepify', id: priceId %}
+                    </div>
+                    <a href="{{ product.url }}" class="btn-product hover-left-to-right">Add to cart</a>
+                  </div> 
+                </div>
+              </div>
+              <style>
+                #banner-lookbook__pin-{{ block.id }}{
+                  top: {{ block.settings.position_top }}%;
+                  left: {{ block.settings.position_left }}%;
+                  background:{{ block.settings.background_pin }}
+                };
+              </style>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  {% else %}
+   
+  <div class="banner-lookbook__many-images">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'many-images' %}
+        <div class="banner-lookbook__item relative {% if forloop.first %}active-item{% endif %}" style="--image-height:{{ block.settings.image_lookbook.height }}">
+            {% assign ImageBanner = block.settings.image_lookbook %}
+            {% if ImageBanner != blank %}
+              <img class="full-img" src="{{ ImageBanner | image_url: width: ImageBanner.width , height: ImageBanner.height }}" alt="slider background image" width="{{ ImageBanner.width }}" height="{{ ImageBanner.height }}" loading="lazy">
+            {% else %}
+              {% render 'no-image-banner', text_size: '', %}
+            {% endif %}
+          <div class="banner-lookbook__pins">
+            {% assign positionProduct = block.settings.position_product %}
+            <div id="banner-lookbook__pin-{{ block.id }}" class="banner-lookbook__pin banner-lookbook__animate">
+              <div class="banner-lookbook__pin-holder {{ positionProduct }}">
+                <div class="banner-lookbook__product">
+                  <div class="banner-lookbook__close">
+                    {% render 'icon', icon_name: 'icon-close' %}
+                  </div>
+                  {%- assign product = block.settings.product -%}
+                  {% if product != blank %}
+                    <img class="img-banner" src="{{ product | image_url: width: product.width , height: product.height }}" alt="slider background image" width="{{product.width}}" height="" loading="lazy">
+                  {% else %}
+                    {% render 'no-image', text_size:'', width: 300, height: 200, %}
+                  {% endif %}
+                  <h3 class="card__heading">
+                    <a href="{{ product.url }}">
+                      {{ product.title }}
+                    </a>
+                  </h3>
+                  <div class="flex items-center justify-between">
+                    <div class="price-item">  
+                  {% assign priceId = 'price-' | append: section.id | append: '-' | append: card_product.id %}
+                  {% render 'price', product: product, price_class: 'product-item-storepify', id: priceId %}
+                    </div>
+                    <a href="{{ product.url }}" class="btn-product hover-left-to-right">Add to cart</a>
+                  </div> 
+                </div>
+              </div>
+              <style>
+                #banner-lookbook__pin-{{ block.id }}{
+                  top: {{ block.settings.position_top }}%;
+                  left: {{ block.settings.position_left }}%;
+                  background:{{ block.settings.background_pin }}
+                };
+              </style>
+            </div>
+          </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+  </div>
+  {% endif %}
+</div>
+</div>
+{% render 'margin-bottom' %}
+
+{%- schema -%}
+  {
+   "name":"Banner lookbook",
+   "tag":"section",
+   "settings":[
+      {
+         "type":"select",
+         "id":"width_layout",
+         "label":"Width layout",
+         "options":[
+            {
+               "value":"container",
+               "label":"Container"
+            },
+            {
+               "value":"full-width",
+               "label":"Full width"
+            }
+         ],
+         "default":"container"
+      },
+      {
+         "type":"select",
+         "id":"type_lookbook",
+         "label":"Type lookbook",
+         "options":[
+            {
+               "value":"one_image",
+               "label":"One image"
+            },
+            {
+               "value":"many_images",
+               "label":"Many images"
+            }
+         ],
+         "default":"one_image"
+      },
+      {
+         "type":"image_picker",
+         "id":"image_backgroud",
+         "label":"Image backgroud"
+      },
+      {
+         "type":"header",
+         "content":"t:sections.margin_bottom.content"
+      },
+      {
+         "type": "paragraph",
+         "content": "Unit: pixel"
+        },
+      {
+         "type":"number",
+         "id":"margin_bottom_desktop",
+         "label":"t:sections.margin_bottom.desktop.label",
+         "default":80
+      },
+      {
+         "type":"number",
+         "id":"margin_bottom_table",
+         "label":"t:sections.margin_bottom.tablet.label",
+         "default":60
+      },
+      {
+         "type":"number",
+         "id":"margin_bottom_mobile",
+         "label":"t:sections.margin_bottom.mobile.label",
+         "default":40
+      }
+   ],
+   "blocks":[
+      {
+         "type":"one-image",
+         "name":"One image",
+         "settings":[
+            {
+               "type":"color",
+               "id":"background_pin",
+               "label":"Background pin",
+               "default":"#1aaa61"
+            },
+            {
+               "type":"product",
+               "id":"product",
+               "label":"Product"
+            },
+            {
+               "type":"range",
+               "id":"position_top",
+               "min":0,
+               "max":100,
+               "step":1,
+               "unit":"px",
+               "label":"Position top",
+               "default":50
+            },
+            {
+               "type":"range",
+               "id":"position_left",
+               "min":0,
+               "max":100,
+               "step":1,
+               "unit":"px",
+               "label":"Position left",
+               "default":50
+            },
+            {
+               "type":"select",
+               "id":"position_product",
+               "label":"Position product",
+               "options":[
+                  {
+                     "value":"top-left",
+                     "label":"Top left"
+                  },
+                  {
+                     "value":"top-center",
+                     "label":"Top center"
+                  },
+                  {
+                     "value":"top-right",
+                     "label":"Top right"
+                  },
+                  {
+                     "value":"bottom-left",
+                     "label":"Bottom left"
+                  },
+                  {
+                     "value":"bottom-center",
+                     "label":"Bottom center"
+                  },
+                  {
+                     "value":"bottom-right",
+                     "label":"Bottom right"
+                  }
+               ],
+               "default":"top-center"
+            }
+         ]
+      },
+      {
+         "type":"many-images",
+         "name":"Many image",
+         "settings":[
+            {
+               "type":"image_picker",
+               "id":"image_lookbook",
+               "label":"Image lookbook"
+            },
+            {
+               "type":"color",
+               "id":"background_pin",
+               "label":"Background pin",
+               "default":"#1aaa61"
+            },
+            {
+               "type":"product",
+               "id":"product",
+               "label":"Product"
+            },
+            {
+               "type":"range",
+               "id":"position_top",
+               "min":0,
+               "max":100,
+               "step":1,
+               "unit":"px",
+               "label":"Position top",
+               "default":50
+            },
+            {
+               "type":"range",
+               "id":"position_left",
+               "min":0,
+               "max":100,
+               "step":1,
+               "unit":"px",
+               "label":"Position left",
+               "default":50
+            },
+            {
+               "type":"select",
+               "id":"position_product",
+               "label":"Position product",
+               "options":[
+                  {
+                     "value":"top-left",
+                     "label":"Top left"
+                  },
+                  {
+                     "value":"top-center",
+                     "label":"Top center"
+                  },
+                  {
+                     "value":"top-right",
+                     "label":"Top right"
+                  },
+                  {
+                     "value":"bottom-left",
+                     "label":"Bottom left"
+                  },
+                  {
+                     "value":"bottom-center",
+                     "label":"Bottom center"
+                  },
+                  {
+                     "value":"bottom-right",
+                     "label":"Bottom right"
+                  }
+               ],
+               "default":"top-center"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"Banner lookbook",
+         "blocks":[
+            {
+               "type":"one-image"
+            }
+         ]
+      }
+   ]
+}
+{%- endschema -%}

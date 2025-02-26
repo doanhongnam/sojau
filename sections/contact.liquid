@@ -1,0 +1,220 @@
+<div class="tp-contact-2">
+  <div class="container">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'contact-info' -%}
+          <div class="tp-contact-2__info flex items-stretch">
+            <div class="tp-contact-2__info__left w-1/2">
+              {% if block.settings.title_info != blank %}
+                <h2 class="contact-title">{{ block.settings.title_info }}</h2>
+              {% endif %}
+              {% if block.settings.number_phone != blank %}
+                <div class="contact-phone flex items-center justify-center mb-1.25">
+                  {% render 'icon', icon_name: 'icon-phone-2' %}
+                  <span class="ml-2.5">{{ block.settings.number_phone }}</span>
+                </div>
+              {% endif %}
+              {% if block.settings.email != blank %}
+                <div class="contact-email flex items-center justify-center mb-1.25">
+                  {% render 'icon', icon_name: 'icon-email-2' %}
+                  <span class="ml-2.5">{{ block.settings.email }}</span>
+                </div>
+              {% endif %}
+              {% if block.settings.address != blank %}
+                <div class="contact-address flex items-center justify-center mb-1.25">
+                  {% render 'icon', icon_name: 'icon-address' %}
+                  <span class="ml-2.5">{{ block.settings.address }}</span>
+                </div>
+              {% endif %}
+              {% if block.settings.show_social != blank %}
+                <div class="contact-social flex items-center justify-center mt-8">
+                  <ul class="flex items-center justify-content-between">
+                    {%- if settings.social_pinterest_link != blank -%}
+                      <li class="mb-0 ">
+                        <a href="{{ settings.social_pinterest_link }}" class="link link--text list-social__link" title="{{ 'general.social.links.pinterest' | t }}">
+                          {% render 'icon', icon_name: 'icon-pinterest' %}
+                        </a>
+                      </li>
+                    {%- endif -%}
+                    {%- if settings.social_instagram_link != blank -%}
+                      <li class="mb-0">
+                        <a href="{{ settings.social_instagram_link }}" class="link link--text list-social__link" title="{{ 'general.social.links.instagram' | t }}">
+                          {% render 'icon', icon_name: 'icon-instagam' %}
+                        </a>
+                      </li>
+                    {%- endif -%}
+                    {%- if settings.social_facebook_link != blank -%}
+                      <li class="mb-0">
+                        <a href="{{ settings.social_facebook_link }}" class="link link--text list-social__link" title="{{ 'general.social.links.facebook' | t }}">
+                          {% render 'icon', icon_name: 'icon-facebook' %}
+                        </a>
+                      </li>
+                    {%- endif -%}
+                    {%- if settings.social_twitter_link != blank -%}
+                      <li class="mb-0">
+                        <a href="{{ settings.social_twitter_link }}" class="link link--text list-social__link" title="{{ 'general.social.links.twitter' | t }}">
+                          {% render 'icon', icon_name: 'icon-twitter' %}
+                        </a>
+                      </li>
+                    {%- endif -%}
+                  </ul>
+                </div>
+              {% endif %}
+            </div>
+            <div class="tp-contact-2__info__right w-1/2">
+              {% liquid
+                assign ImageContact = block.settings.image_contact
+             %}
+              {% if ImageContact != blank %}
+                <img class="full-img" src="{{ ImageContact | image_url: width: ImageContact.width , height: ImageContact.height }}" alt="slider background image" width="{{ ImageContact.width }}" height="{{ ImageContact.height }}" loading="lazy">
+              {% else %}
+                {% render 'no-image-banner', text_size: '', %}
+              {% endif %}
+            </div>
+          </div>
+        {%- when 'contact-map' -%}
+          <div class="tp-contact-2__map flex items-stretch">
+            <div class="tp-contact-2__map__left w-1/2">
+              <div class="iframe-maps">{{ block.settings.iframe_address }}</div>
+            </div>
+            <div class="tp-contact-2__map__right w-1/2">
+              {% if block.settings.title_form != blank %}
+                <h2 class="contact-title">{{ block.settings.title_form }}</h2>
+              {% endif %}
+              {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
+                {%- if form.posted_successfully? -%}
+                  <div autofocus class="form-status form-status-list form__message" tabindex="-1">{% render 'icon', icon_name: 'icon-success' %}
+                    {{ 'templates.contact.form.post_success' | t }}</div>
+                {%- elsif form.errors -%}
+                  <div class="form__message">
+                    <ul class="form-status-list caption-large" role="list">
+                      <li>
+                        <a class="link" href="#ContactForm-email" style="color: tomato;">
+                          {{ form.errors.translated_fields['email'] | capitalize }}
+                          {{ form.errors.messages['email'] }}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                {%- endif -%}
+                <div class="contact__fields mb-4">
+                  <div class="field field--with-error">
+                    <input autocomplete="email" type="email" id="ContactForm-email" class="field__input" name="contact[email]" spellcheck="false" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" aria-required="true" {% if form.errors contains 'email' %} aria-invalid="true"aria-describedby="ContactForm-email-error"{% endif %} placeholder="{{ 'templates.contact.form.email' | t }}">
+                  </div>
+                </div>
+                <div class="field mb-4">
+                  <textarea rows="3" id="ContactForm-body" class="text-area field__input" name="contact[{{ 'templates.contact.form.comment' | t }}]" placeholder="{{ 'templates.contact.form.comment' | t }}">
+                    {{- form.body -}}
+                  </textarea>
+                </div>
+                <div class="contact__button">
+                  <button class="tp-btn tp-btn__primary w-full" type="submit">
+                    {{ 'templates.contact.form.send' | t }}
+                  </button>
+                </div>
+              {%- endform -%}
+            </div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+{% render 'margin-bottom' %}
+{% schema %}
+  {
+    "name": "Contact",
+    "tag": "section",
+    "settings": [
+      {
+         "type":"header",
+         "content":"t:sections.margin_bottom.content"
+      },
+      {
+         "type":"number",
+         "id":"margin_bottom_desktop",
+         "label":"t:sections.margin_bottom.desktop.label",
+         "default":80
+      },
+      {
+         "type":"number",
+         "id":"margin_bottom_table",
+         "label":"t:sections.margin_bottom.tablet.label",
+         "default":60
+      },
+      {
+         "type":"number",
+         "id":"margin_bottom_mobile",
+         "label":"t:sections.margin_bottom.mobile.label",
+         "default":40
+      }
+    ],
+    "blocks": [
+      {
+        "type": "contact-info",
+        "name": "Contact info",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title_info",
+            "label": "Title info",
+            "default": "Get in touch with us"
+          },
+          {
+            "type": "richtext",
+            "id": "number_phone",
+            "label": "Number phone",
+            "default": "<p>+88 541 66 38</p>"
+          },
+          {
+            "type": "richtext",
+            "id": "address",
+            "label": "Address",
+            "default": "<p>66-764 City, Street 23</p>"
+          },
+          {
+            "type": "richtext",
+            "id": "email",
+            "label": "Email",
+            "default": "<p>storepify@company.com</p>"
+          }, {
+            "type": "checkbox",
+            "id": "show_social",
+            "default": false,
+            "label": "Show social media icons"
+          }, {
+            "type": "image_picker",
+            "id": "image_contact",
+            "label": "Image contact"
+          }
+        ]
+      }, {
+        "name": "Contact map",
+        "type": "contact-map",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title_form",
+            "label": "Title form",
+            "default": "Send us a message"
+          }, {
+            "type": "textarea",
+            "id": "iframe_address",
+            "label": "Contact Address Iframe"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Contact",
+        "blocks": [
+          {
+            "type": "contact-info"
+          }, {
+            "type": "contact-map"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

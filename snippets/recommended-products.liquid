@@ -1,0 +1,30 @@
+{% liquid
+    assign recommen_title = settings.recommen_title
+    assign recommen_sub = settings.recommen_sub
+    assign product_list = settings.recommen_product_list
+    assign start_time = settings.recommen_start_time
+    assign data_limit = settings.recommen_limit_show
+    assign no_show_again = settings.recommen_no_show_again
+%}
+
+{% comment %}Call resource{% endcomment %}
+<script src="{{ 'recommend-popup.js' | asset_url }}" defer="defer"></script>
+
+{% if product_list != blank %}
+    <div class="recommen-pr fixed top-0 w-full h-full px-7.5 py-7.5">
+        <div class="recommen-pr__wrap z-50 fixed top-2/4 left-2/4 bg-white w-full max-w-4xl">
+            <div class="recommen-pr__element recommen-popup px-7.5 py-7.5 overflow-x-hidden" data-start="{{ start_time | times: 60000 }}" data-limit ="{{ data_limit | times: 1 }}" data-no-show="{{ no_show_again | default: false }}">
+                <div class="recommen-pr__above mb-7.5">
+                    <h2 class="recommen-pr__title mb-5 text-black font-normal md:text-4xl text-3xl text-center">{{ recommen_title }}</h2>
+                    <p class="recommen-pr__sub text-sm md:text-base text-center text-current md:w-3/4 m-auto text-center">{{ recommen_sub }}</p>
+                </div>
+                <div class="recommen-pr__below grid md:grid-cols-4 grid-cols-2 gap-7.5">
+                    {% for product in product_list %}
+                        {% render 'card-product', card_product: product, layoutProductItem: settings.product_item_layout, lazy_load: lazy_load %}
+                    {% endfor %}
+                </div>
+            </div>
+            <button type="button" class="recommen-pr__close absolute top-0 right-0 w-7 h-7 bg-slate-400 duration-300 hover:bg-blue-500 text-white" id="close-recommen-pr">x</button>
+        </div>
+    </div>
+{% endif %}

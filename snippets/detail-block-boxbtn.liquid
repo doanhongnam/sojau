@@ -1,0 +1,128 @@
+<div class="tp-box-btn button--full-width flex items-stretch">
+  <div class="tp-box-btn-wrap flex items-center justify-start button--full-width">
+    <div {{ block.shopify_attributes }} class="qty-wrapper__cart button--full-width">
+      <product-form class="product-form">
+        {%- form 'product',
+          product,
+          id: product_form_id,
+          class: 'form',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+            class="input-detail-variant"
+          >
+        <input type="hidden" id="hidden_name" name = "properties[Personalization]" value="">
+          <input type="hidden" name="quantity" value="" class="input-detail-quantity">
+          <div class="product-form__buttons">
+            <button
+              type="submit"
+              name="add"
+              id = "abc"
+              class="
+                {{ block.settings.button_type }} tp-btn product-form__submit button button--full-width
+                {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}
+              "
+              {% if product.selected_or_first_available_variant.available == false %}
+                disabled
+              {% endif %}
+            >
+              {% render 'icon', icon_name: 'icon-cart' %}
+              <span class="add-to-cart-text font-medium leading-none">
+                {%- if product.selected_or_first_available_variant.available -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+              </span>
+              {% render 'icon',
+                icon_name: 'icon-loading',
+                class: 'add-to-cart-loading m-auto hidden',
+                width: 76,
+                height: 22,
+                color: '#ffffff'
+              %}
+            </button>
+            {%- if block.settings.show_dynamic_checkout -%}
+              {{ form | payment_button }}
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      </product-form>
+    </div>
+  </div>
+</div>
+<!-- Modal HTML structure -->
+<div style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;" id="overlay">
+  <div style="display: flex; justify-content: center; align-items: center; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 5px; z-index: 1001;" id="alertBox">
+    Please enter your personalization.
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('abc');
+  const hiddenInput = document.getElementById('hidden_name');
+  const overlay = document.getElementById('overlay');
+
+ const textarea = document.getElementById('personalization-name');
+
+  // Add an event listener to the textarea
+ textarea.addEventListener('input', function() {
+    // Update the value of the hidden input with the value from the textarea
+  hiddenInput.value = textarea.value;
+ });
+{% if product.tags contains 'PS' or product.tags contains 'Personalized' %}
+  button.addEventListener('click', function(event) {
+    if (hiddenInput.value.trim() === '') {
+      event.preventDefault(); // Prevent form submission
+      overlay.style.display = 'block'; // Show the overlay
+    }
+  });
+{% endif %}
+  // Close the overlay when clicking outside the alert box
+  overlay.addEventListener('click', function() {
+    overlay.style.display = 'none'; // Hide the overlay
+  });
+</script>
+{% comment %} {% render 'detail-wishlist-compare', product: product, block: block %} {% endcomment %}
+
+{% comment %} <style>
+  {% if block.settings.show_wishlist or block.settings.show_compare %}
+  @media (min-width:768px) and (max-width: 992px) {
+      .box-btn__wrap{
+          flex-wrap: wrap;
+      }
+      .tp-wishlist-compare{
+        margin-left: -20px;
+      }
+      .tp-qty-wrapper, .tp-box-btn, .tp-box-wrapper{
+        margin-bottom: 20px;
+      }
+    }
+    @media  (max-width: 400px) {
+        .box-btn__wrap{
+            overflow: hidden;
+        }
+        .tp-compare{
+            display: none;
+        }
+        .tp-qty-wrapper, .tp-box-btn, .tp-box-wrapper{
+          margin-bottom: 20px;
+        }
+        .product-form__input .tp-item__quantity{
+            margin-right: 10px !important;
+        }
+        .tp-wishlist{
+            margin-left: 10px !important;
+        }
+      }
+      @media  (max-width: 345px) {
+        .tp-wishlist{
+            display: none;
+        }
+      }
+  {% endif %}
+</style> {% endcomment %}

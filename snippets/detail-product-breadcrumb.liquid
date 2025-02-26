@@ -1,0 +1,51 @@
+<ul class="detail-beadcrumb flex items-center mb-3.75">
+    <li class="flex items-center">
+        <a class="active hvr-line-left-to-right-1px mr-3.75" href="/">{{ 'breadcrumb.home.label' | t }}</a>
+        /
+    </li>
+    {%- if template contains 'product' -%}
+        {% if product.collections %}
+            {% if product.collections != blank %}
+                <li class="flex items-center ml-3.75">
+                    {% for collection in product.collections %}
+                        {% if show == 'first' %}
+                            {% if forloop.first == true %}
+                                <a
+                                        class="active hvr-line-left-to-right-1px mr-3.75"
+                                        href="{{ collection.url }}"
+                                        class="bread-crumb__item"
+                                        title="{{- collection.title | escape -}}"
+                                >
+                                    {{- collection.title | escape -}}
+                                </a>
+                            {% endif %}
+                        {% elsif show == 'last' %}
+                            {% if forloop.last == true %}
+                                <a
+                                        class="active hvr-line-left-to-right-1px mr-3.75"
+                                        href="{{ collection.url }}"
+                                        class="bread-crumb__item"
+                                        title="{{- collection.title | escape -}}"
+                                >
+                                    {{- collection.title | escape -}}
+                                </a>
+                            {% endif %}
+                        {% else %}
+                            <a
+                                    class="active hvr-line-left-to-right-1px"
+                                    href="{{ collection.url }}"
+                                    class="bread-crumb__item"
+                                    title="{{- collection.title | escape -}}"
+                            >
+                                {{- collection.title | escape -}}
+                            </a>
+                            {%- if forloop.last != true -%}
+                                ,
+                            {%- endif -%}
+                        {% endif %}
+                    {% endfor %}
+                </li>
+            {% endif %}
+        {%- endif -%}
+    {%- endif -%}
+</ul>

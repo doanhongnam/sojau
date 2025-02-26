@@ -1,0 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "165770078818653e11": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "collection_list": [
+          "apple-serries",
+          "becton-dickinson-pens-syringe",
+          "best-lellars",
+          "best-seller",
+          "blood-pressure",
+          "body-scrub",
+          "body-scrub-1"
+        ],
+        "products_per_page": 16,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "price_type": "slider",
+        "price_range_config": "10-30,30-50,50-100,100-300",
+        "enable_apply_button": false,
+        "pagination_type": "pagination",
+        "type_load_more": "click",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "165770078818653e11",
+    "product-grid"
+  ]
+}

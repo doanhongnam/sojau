@@ -1,0 +1,128 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "166182796302a6a63b": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "5a978f69-ced4-41c4-843b-91c52eea763e": {
+      "type": "default-page-title",
+      "settings": {
+        "g_title": "Store Location Version 1",
+        "g_sub": "",
+        "horizontal_alignment": "center",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "page_width": "container",
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "show_title": true
+      }
+    },
+    "e0b66ac5-39ec-4fbf-93a0-163d9b925343": {
+      "type": "store-location",
+      "blocks": {
+        "d1f25fa6-7800-4124-8cde-1d7d52c61faa": {
+          "type": "store",
+          "settings": {
+            "st_image": "shopify://shop_images/st-1_1_1.jpg",
+            "st_name": "BarPaint Store",
+            "st_brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ",
+            "st_address": "938 Owagner Lane, Seattle, Washington, USA",
+            "st_hotline": "Hotline: 206-338-6651",
+            "st_email": "Email: info@gmail.com",
+            "st_open": "Mon-Fri: 8PM-20PM",
+            "st_closed": "Sat-Sun: Closed",
+            "st_texturl": "See Inventory",
+            "st_url": "shopify://pages/contact-1"
+          }
+        },
+        "b0c13408-5967-48a2-be4e-91c7e8da6402": {
+          "type": "store",
+          "settings": {
+            "st_image": "shopify://shop_images/st-2_1_1.jpg",
+            "st_name": "BarPaint Store",
+            "st_brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ",
+            "st_address": "938 Owagner Lane, Seattle, Washington, USA",
+            "st_hotline": "Hotline: 206-338-6651",
+            "st_email": "Email: info@gmail.com",
+            "st_open": "Mon-Fri: 8PM-20PM",
+            "st_closed": "Sat-Sun: Closed",
+            "st_texturl": "See Inventory",
+            "st_url": "shopify://pages/contact-1"
+          }
+        },
+        "5f2a6e63-3cec-4f2a-962b-01f9c1b292b5": {
+          "type": "store",
+          "settings": {
+            "st_image": "shopify://shop_images/st-3_1_1.jpg",
+            "st_name": "BarPaint Store",
+            "st_brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ",
+            "st_address": "938 Owagner Lane, Seattle, Washington, USA",
+            "st_hotline": "Hotline: 206-338-6651",
+            "st_email": "Email: info@gmail.com",
+            "st_open": "Mon-Fri: 8PM-20PM",
+            "st_closed": "Sat-Sun: Closed",
+            "st_texturl": "See Inventory",
+            "st_url": "shopify://pages/contact-1"
+          }
+        },
+        "3502e2c2-e228-4b22-a2e5-e72314c894b3": {
+          "type": "store",
+          "settings": {
+            "st_image": "shopify://shop_images/st-4_1_1.jpg",
+            "st_name": "BarPaint Store",
+            "st_brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ",
+            "st_address": "938 Owagner Lane, Seattle, Washington, USA",
+            "st_hotline": "Hotline: 206-338-6651",
+            "st_email": "Email: info@gmail.com",
+            "st_open": "Mon-Fri: 8PM-20PM",
+            "st_closed": "Sat-Sun: Closed",
+            "st_texturl": "See Inventory",
+            "st_url": "shopify://pages/contact-1"
+          }
+        }
+      },
+      "block_order": [
+        "d1f25fa6-7800-4124-8cde-1d7d52c61faa",
+        "b0c13408-5967-48a2-be4e-91c7e8da6402",
+        "5f2a6e63-3cec-4f2a-962b-01f9c1b292b5",
+        "3502e2c2-e228-4b22-a2e5-e72314c894b3"
+      ],
+      "settings": {
+        "st_type": "st-type1",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "166182796302a6a63b",
+    "5a978f69-ced4-41c4-843b-91c52eea763e",
+    "main",
+    "e0b66ac5-39ec-4fbf-93a0-163d9b925343"
+  ]
+}

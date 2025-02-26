@@ -1,0 +1,511 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "f665098c-ebdc-4d83-9947-cd927895a833": {
+      "type": "menu-onepage",
+      "blocks": {
+        "762040d3-0546-4343-bb6e-94eba9dde01b": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Home",
+            "href_item": "custom-link",
+            "custom_link": ""
+          }
+        },
+        "bfd82ff6-67b3-4bd7-8d63-94149e183db8": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Features",
+            "href_item": "feaured-product",
+            "custom_link": ""
+          }
+        },
+        "98563bcc-eced-431f-bcc3-5e01dd4a24c2": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Testimonials",
+            "href_item": "testimonial",
+            "custom_link": ""
+          }
+        },
+        "14c04b15-6c39-4e58-83ae-05410db56102": {
+          "type": "menu_item",
+          "settings": {
+            "heading": "Faqs",
+            "href_item": "testimonial",
+            "custom_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "762040d3-0546-4343-bb6e-94eba9dde01b",
+        "bfd82ff6-67b3-4bd7-8d63-94149e183db8",
+        "98563bcc-eced-431f-bcc3-5e01dd4a24c2",
+        "14c04b15-6c39-4e58-83ae-05410db56102"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/storepify_black_1.png",
+        "container_config": "container"
+      }
+    },
+    "6c31b0d4-0238-43a6-94f3-858d8f2fa07e": {
+      "type": "slide",
+      "blocks": {
+        "c5e40e49-92d7-4ce6-bb80-14b621c55933": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Bg_1_1.png",
+            "position_content": "center-content",
+            "sub_title": "New In: Face & Body",
+            "title": "<p>Love Beauty And Planet</p><p>Radical Refresher</p>",
+            "description_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p><p>do eiusmod tempor incididunt ut lab</p>",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#000000",
+            "color_title": "#000000",
+            "color_description": "#000000",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "c5e40e49-92d7-4ce6-bb80-14b621c55933"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": false,
+        "loop": false,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "center_bottom",
+        "pag_bg": "#000000",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "main": {
+      "type": "featured-product",
+      "disabled": true,
+      "settings": {
+        "product": "love-beauty-and-planet-smooth-and-serene-dry-hair",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "999fd723-b228-4aec-8adb-f5ef99acf52a": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "AS SEEN ON:",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 24,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "2724b028-bd05-43ce-ba6a-96f8b760910b": {
+      "type": "tp-partner",
+      "blocks": {
+        "d3b1cb6f-a8a3-43bf-ad36-f394a421bbdf": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/image_85.png",
+            "item_link": ""
+          }
+        },
+        "a5057c70-ca25-43f6-8907-b79f0038e85a": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/image_86.png",
+            "item_link": ""
+          }
+        },
+        "0485b445-bc5f-4fa4-9f93-5806d0cbe06c": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/image_91.png",
+            "item_link": ""
+          }
+        },
+        "5a6da572-6503-4f93-8b2b-3970b0a1edcb": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/image_89.png",
+            "item_link": ""
+          }
+        },
+        "18926c2f-b666-4930-a968-71794d9afa1b": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/image_90.png",
+            "item_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "d3b1cb6f-a8a3-43bf-ad36-f394a421bbdf",
+        "a5057c70-ca25-43f6-8907-b79f0038e85a",
+        "0485b445-bc5f-4fa4-9f93-5806d0cbe06c",
+        "5a6da572-6503-4f93-8b2b-3970b0a1edcb",
+        "18926c2f-b666-4930-a968-71794d9afa1b"
+      ],
+      "settings": {
+        "partner_config": "grid_partner",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "0c877fd1-a7d1-495c-a4b3-08818c011dff": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Introducing Beauty & Planet",
+        "sub_title": "<p> 5-in-1 Multi Benefit Nourishing Shampoo</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "e279a2bb-be9d-4cac-bd15-d5ceeb0d5200": {
+      "type": "nature",
+      "blocks": {
+        "780ca658-d9cd-4d3c-b391-2c8b9f85390b": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Group_854_1.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "Product Description",
+            "nature_brief": "<p>OUR HAIR CARE PROMISE: infused with vegan biotin and citrusy, fresh Moodscentz fragrance of sun-kissed mandarin that uplifts your mood and evokes happy feelings to bring positive energy to your day 5-in-1 MULTI-BENEFIT SHAMPOO: this sulfate-free shampoo offers five rejuvenating benefits: deeply cleanses, provides hydration, strengthens, creates visible fullness, and leaves hair soft and shiny YES Safe for Colored hair, YES Sulfate-free Shampoo, YES Vegan Shampoo, YES with Plant-Based Cleansers, YES Ethically-Sourced Mandarin, YES Vegan Biotin Shampoo</p>",
+            "nature_btn": "Get it now",
+            "nature_link": ""
+          }
+        },
+        "7ff6af41-bb30-45cc-9730-1b2c7e7eb9a3": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Group_855_dd3ad08c-0948-47ce-94ce-f4da5a378202.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "Product Description",
+            "nature_brief": "<p>OUR HAIR CARE PROMISE: infused with vegan biotin and citrusy, fresh Moodscentz fragrance of sun-kissed mandarin that uplifts your mood and evokes happy feelings to bring positive energy to your day 5-in-1 MULTI-BENEFIT SHAMPOO: this sulfate-free shampoo offers five rejuvenating benefits: deeply cleanses, provides hydration, strengthens, creates visible fullness, and leaves hair soft and shiny YES Safe for Colored hair, YES Sulfate-free Shampoo, YES Vegan Shampoo, YES with Plant-Based Cleansers, YES Ethically-Sourced Mandarin, YES Vegan Biotin Shampoo</p>",
+            "nature_btn": "Get it now",
+            "nature_link": ""
+          }
+        },
+        "eaba508d-dbd5-461f-8477-b256a9f03180": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Group_857.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "Product Description",
+            "nature_brief": "<p>OUR HAIR CARE PROMISE: infused with vegan biotin and citrusy, fresh Moodscentz fragrance of sun-kissed mandarin that uplifts your mood and evokes happy feelings to bring positive energy to your day 5-in-1 MULTI-BENEFIT SHAMPOO: this sulfate-free shampoo offers five rejuvenating benefits: deeply cleanses, provides hydration, strengthens, creates visible fullness, and leaves hair soft and shiny YES Safe for Colored hair, YES Sulfate-free Shampoo, YES Vegan Shampoo, YES with Plant-Based Cleansers, YES Ethically-Sourced Mandarin, YES Vegan Biotin Shampoo</p>",
+            "nature_btn": "Get it now",
+            "nature_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "780ca658-d9cd-4d3c-b391-2c8b9f85390b",
+        "7ff6af41-bb30-45cc-9730-1b2c7e7eb9a3",
+        "eaba508d-dbd5-461f-8477-b256a9f03180"
+      ],
+      "settings": {
+        "nature_ctn": "container",
+        "nature_id": "nature",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "557e586f-827a-40cd-a61e-1b015b4c2da1": {
+      "type": "background-text",
+      "settings": {
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "ccd7e139-fa18-4035-8704-3a4db1348ef3": {
+      "type": "list-collection",
+      "disabled": true,
+      "settings": {
+        "width_section": "fullwidth",
+        "heading": "Products of the same Brand",
+        "display_type_collection": "slide"
+      }
+    },
+    "5fa64304-1aaa-41c8-bb4c-1e920cb1edd6": {
+      "type": "single-product-featured",
+      "blocks": {
+        "9993ff31-b67e-4401-9e00-1d3c616fa415": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Group_858_64dfb15c-bba7-43dd-b247-ef28e7eb065d.png",
+            "name": "Murumuru Butter & Rose",
+            "url": "#"
+          }
+        },
+        "220ee55d-394f-4709-9715-62d7405f10e8": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Group_857_ee4e453d-ff45-4839-b502-a12fd6b19a26.png",
+            "name": "Lavender Paraben",
+            "url": "#"
+          }
+        },
+        "f548204d-edbf-40a9-8af8-7224e89e33f6": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Group_856_4a7610f5-c89a-47c9-a030-1c562ce21d06.png",
+            "name": "Shampoo Cleansed Hair Care",
+            "url": "#"
+          }
+        },
+        "ea810c6e-4fbd-4078-9936-ed2dd32aadc9": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Group_854_1_e1690463-a4ae-4647-aa6f-42dac4f7e26c.png",
+            "name": "Black Tea Kombucha",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "9993ff31-b67e-4401-9e00-1d3c616fa415",
+        "220ee55d-394f-4709-9715-62d7405f10e8",
+        "f548204d-edbf-40a9-8af8-7224e89e33f6",
+        "ea810c6e-4fbd-4078-9936-ed2dd32aadc9"
+      ],
+      "settings": {
+        "heading": "Products of the same Brand"
+      }
+    },
+    "8451b183-898b-4c3b-86f7-05bea8869430": {
+      "type": "nature",
+      "blocks": {
+        "748bcb30-2e08-45a9-b686-de0af1a477f8": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Rectangle_1206.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "We Start with One Goal",
+            "nature_brief": "<p>BlendJet 2 makes smoothie-bar-quality beverages, silky-smooth protein shakes, top-shelf mixed drinks and creamy frozen lattes, plus milkshakes, slushies, baby food, dips, dressings, sauces, and so much more. We’ll send a new recipe video straight to your inbox each week to inspire creativity and ensure you get the most out of your BlendJet 2.</p>",
+            "nature_btn": "Get your now",
+            "nature_link": ""
+          }
+        },
+        "bda29a51-634f-4da8-a1ec-e37ced55b3db": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Rectangle_1207.png",
+            "nature_content": "nature-content-right",
+            "nature_title": "In On Bottle",
+            "nature_brief": "<p>BlendJet 2 makes smoothie-bar-quality beverages, silky-smooth protein shakes, top-shelf mixed drinks and creamy frozen lattes, plus milkshakes, slushies, baby food, dips, dressings, sauces, and so much more. We’ll send a new recipe video straight to your inbox each week to inspire creativity and ensure you get the most out of your BlendJet 2.</p>",
+            "nature_btn": "Get your now",
+            "nature_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "748bcb30-2e08-45a9-b686-de0af1a477f8",
+        "bda29a51-634f-4da8-a1ec-e37ced55b3db"
+      ],
+      "settings": {
+        "nature_ctn": "container-small",
+        "nature_id": "nature",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "689e75f5-f4b1-4352-821d-ab0b709b321f": {
+      "type": "featured-product",
+      "settings": {
+        "product": "love-beauty-and-planet-smooth-and-serene-dry-hair",
+        "background": "shopify://shop_images/Group_858_1.png",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "9caa1717-a266-4484-afb6-cd07e7bef7d4": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "The future of smile care",
+        "sub_title": "<p>What others have to say</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "0792250a-5303-4be1-90d6-65f76ab2f8b7": {
+      "type": "our-testimonial",
+      "blocks": {
+        "cd90e366-6fa5-4e23-85f6-7d38a494b050": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_91_3442e9b0-81c1-46cb-a857-5c88a77c79e1.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "\"\"I loved the original, but this new, improved BlendJet 2 is AMAZING! So powerful and blends so smoothly for my on-the-go lifestyle!\"\"",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "21752be5-daba-4e4c-8593-ebd01357b4e6": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_92_2.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "\"\"This thing is so amazing. Powerful and really fun to use. Highly recommend it!\"\"",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "7324dfcd-42ef-4986-ba94-2c657a19e7c6": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_92_c8f899ec-624a-42fb-990c-ceec40611e21.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "\"\"This thing is amazing! The BlendJet One was great but this little beast takes it to the next level! Keep it coming BlendJet, can not wait to see what you come up with next!\"\"",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "cd90e366-6fa5-4e23-85f6-7d38a494b050",
+        "21752be5-daba-4e4c-8593-ebd01357b4e6",
+        "7324dfcd-42ef-4986-ba94-2c657a19e7c6"
+      ],
+      "settings": {
+        "heading": "",
+        "background_testimonial": "#ffffff",
+        "display_type": "layout_4",
+        "padding_top_bottom": 0,
+        "show_pagination": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "88da613f-d5e2-4c5f-a283-e49259982adb": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type2",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "d4493e65-ef51-4b8f-b458-04d37a94ce73": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "On a Mission to Improve Lives",
+        "sub_title": "<p>Our mission is to make the healthy choice the most</p><p>convenient choice for all.</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "df519576-17d5-41f5-b38c-cb529e9cf113": {
+      "type": "banner-image-card",
+      "blocks": {
+        "fbe7b3c9-8472-42e9-b5d2-c66728108321": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Group_858.png",
+            "title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "fbe7b3c9-8472-42e9-b5d2-c66728108321"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "layout": "layout_1",
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "f665098c-ebdc-4d83-9947-cd927895a833",
+    "6c31b0d4-0238-43a6-94f3-858d8f2fa07e",
+    "main",
+    "999fd723-b228-4aec-8adb-f5ef99acf52a",
+    "2724b028-bd05-43ce-ba6a-96f8b760910b",
+    "0c877fd1-a7d1-495c-a4b3-08818c011dff",
+    "e279a2bb-be9d-4cac-bd15-d5ceeb0d5200",
+    "557e586f-827a-40cd-a61e-1b015b4c2da1",
+    "ccd7e139-fa18-4035-8704-3a4db1348ef3",
+    "5fa64304-1aaa-41c8-bb4c-1e920cb1edd6",
+    "8451b183-898b-4c3b-86f7-05bea8869430",
+    "689e75f5-f4b1-4352-821d-ab0b709b321f",
+    "9caa1717-a266-4484-afb6-cd07e7bef7d4",
+    "0792250a-5303-4be1-90d6-65f76ab2f8b7",
+    "88da613f-d5e2-4c5f-a283-e49259982adb",
+    "d4493e65-ef51-4b8f-b458-04d37a94ce73",
+    "df519576-17d5-41f5-b38c-cb529e9cf113"
+  ]
+}

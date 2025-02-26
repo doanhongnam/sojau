@@ -1,0 +1,38 @@
+{% comment %}
+    Renders mobile bottom navbar, only show when device <= 767px
+    Usage:
+    {% render 'mobile-bottom-navbar' %}
+{% endcomment %}
+
+<div class="bottom-navbar fixed bottom-0 left-0 right-0 bg-black active">
+    <ul class="flex items-center flex-row">
+        <li class="home bottom-navbar__item home w-1/4 flex flex-row items-center justify-center pb-5 pt-5">
+            <a href="{{ routes.root_url }}" title="Home">
+                {% render "icon", icon_name: "mobile-home" %}
+            </a>
+        </li>
+        <li class="shop bottom-navbar__item home w-1/4 flex flex-row items-center justify-center pb-5 pt-5">
+            <a href="/collections/all" title="collections">
+                {% render "icon", icon_name: "mobile-collections" %}
+            </a>
+        </li>
+        <li class="cart bottom-navbar__item home w-1/4 flex flex-row items-center justify-center pb-5 pt-5">
+            <a class="p-relative" href="/cart" title="cart">
+                {% comment %}<span class="bottom-navbar__count p-absolute">0</span>{% endcomment %}
+                {% render "icon", icon_name: "mobile-cart" %}
+            </a>
+        </li>
+        <li class="bottom-navbar__search bottom-navbar__item home w-1/4 flex flex-row items-center justify-center pb-5 pt-5">
+            {% render 'icon', icon_name: 'mobile-search', class: "w-modal" %}
+        </li>
+    </ul>
+</div>
+<div class="mobile-search overscroll-contain fixed z-[100] overflow-x-hidden h-full overflow-y-scroll inset-0 transition-opacity duration-300 opacity-0 bg-white opacity-100 hidden">
+    <div class="mobile-search__header flex flex-row items-center justify-between">
+        <h6>{{ 'sections.header.search_our_store' | t }}</h6>
+        <button class="mobile-search__close">
+            {% render 'icon', icon_name: 'icon-close' %}
+        </button>
+    </div>
+    {% render 'search-modal-content' %}
+</div>

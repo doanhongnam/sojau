@@ -1,0 +1,72 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "02b2650a-1ee5-4b15-9fbe-90fdebd79f61": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "8f4fa730-ffd7-4a3d-b8b3-48a6221e498c": {
+      "type": "default-page-title",
+      "settings": {
+        "g_title": "",
+        "g_sub": "",
+        "horizontal_alignment": "left",
+        "margin_bottom_desktop": 30,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "f564dd31-1480-4d06-89b7-170d3c0befde": {
+      "type": "contact",
+      "blocks": {
+        "template--15607432380622__f564dd31-1480-4d06-89b7-170d3c0befde-16672016259dd79af0-0": {
+          "type": "contact-info",
+          "settings": {
+            "title_info": "Get in touch with us",
+            "number_phone": "<p>+48 541 44 27</p>",
+            "address": "<p>66-764 City, Street 23</p>",
+            "email": "<p>storepify@company.com</p>",
+            "show_social": true,
+            "image_contact": "shopify://shop_images/store2.png"
+          }
+        },
+        "template--15607432380622__f564dd31-1480-4d06-89b7-170d3c0befde-16672016259dd79af0-1": {
+          "type": "contact-map",
+          "settings": {
+            "title_form": "Send us a message",
+            "iframe_address": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79418.85559980253!2d-0.15684184155382053!3d51.53450840009873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cddc57baf7%3A0x9f64466de05d81f1!2sSaatchi%20Gallery!5e0!3m2!1sen!2sus!4v1634176329492!5m2!1sen!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15607432380622__f564dd31-1480-4d06-89b7-170d3c0befde-16672016259dd79af0-0",
+        "template--15607432380622__f564dd31-1480-4d06-89b7-170d3c0befde-16672016259dd79af0-1"
+      ],
+      "settings": {
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "02b2650a-1ee5-4b15-9fbe-90fdebd79f61",
+    "8f4fa730-ffd7-4a3d-b8b3-48a6221e498c",
+    "f564dd31-1480-4d06-89b7-170d3c0befde"
+  ]
+}

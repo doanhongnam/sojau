@@ -1,0 +1,469 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "f27622fb-4753-40da-96e5-d6c2558e70cd": {
+      "type": "banner-lookbook",
+      "blocks": {
+        "6c5a4fa1-936d-4a26-afc6-0435f67b5c59": {
+          "type": "one-image",
+          "settings": {
+            "background_pin": "#ff0000",
+            "product": "halo-glow-liquid-filter",
+            "position_top": 22,
+            "position_left": 55,
+            "position_product": "top-center"
+          }
+        },
+        "facf1162-5c84-40ba-a5af-d7b522a87e99": {
+          "type": "one-image",
+          "settings": {
+            "background_pin": "#1878b9",
+            "product": "hydrating-core-lip-shine",
+            "position_top": 70,
+            "position_left": 46,
+            "position_product": "bottom-center"
+          }
+        },
+        "79812846-67b5-49c3-9b52-f9919ba0e6d1": {
+          "type": "one-image",
+          "settings": {
+            "background_pin": "#1aaa61",
+            "product": "instant-lift-brow-pencil",
+            "position_top": 79,
+            "position_left": 61,
+            "position_product": "bottom-center"
+          }
+        }
+      },
+      "block_order": [
+        "6c5a4fa1-936d-4a26-afc6-0435f67b5c59",
+        "facf1162-5c84-40ba-a5af-d7b522a87e99",
+        "79812846-67b5-49c3-9b52-f9919ba0e6d1"
+      ],
+      "settings": {
+        "width_layout": "full-width",
+        "type_lookbook": "one_image",
+        "image_backgroud": "shopify://shop_images/lookbook_32d0ceb4-39b4-4d15-9a12-d1f3aa4b0d34.png",
+        "margin_bottom_desktop": 30,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "ca70ed6f-6e15-4173-9be2-85440b7245fb": {
+      "type": "banner-image-card",
+      "blocks": {
+        "template--15913573318850__ca70ed6f-6e15-4173-9be2-85440b7245fb-1667636786f9e25317-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/Rectangle_1426.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Lipstick",
+            "link": ""
+          }
+        },
+        "template--15913573318850__ca70ed6f-6e15-4173-9be2-85440b7245fb-1667636786f9e25317-1": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/Rectangle_1427.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Lotion",
+            "link": ""
+          }
+        },
+        "template--15913573318850__ca70ed6f-6e15-4173-9be2-85440b7245fb-1667636786f9e25317-2": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/Rectangle_1428.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Accessories",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15913573318850__ca70ed6f-6e15-4173-9be2-85440b7245fb-1667636786f9e25317-0",
+        "template--15913573318850__ca70ed6f-6e15-4173-9be2-85440b7245fb-1667636786f9e25317-1",
+        "template--15913573318850__ca70ed6f-6e15-4173-9be2-85440b7245fb-1667636786f9e25317-2"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_2",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660788096a941f44c": {
+      "type": "service",
+      "blocks": {
+        "8444acdc-7abc-46ef-9206-362dc4a4f0af": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/icon-service-3.png",
+            "title_service": "Free Shipping Worldwide",
+            "description_service": "Free international shipping",
+            "padding_top_bottom": 30,
+            "background_item_service": "#f4f7ff",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "04abcea8-338f-4146-b257-77d3d8a5a390": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/icon-service-2.png",
+            "title_service": "30 Day Return",
+            "description_service": "On all ours products",
+            "padding_top_bottom": 30,
+            "background_item_service": "#eefffe",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "55b12fb9-e87e-4a12-b99d-c9e91dbf0589": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/image-service.png",
+            "title_service": "24/7 Customer Support",
+            "description_service": "Provide 24/7 support",
+            "padding_top_bottom": 30,
+            "background_item_service": "#fffbf4",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "8444acdc-7abc-46ef-9206-362dc4a4f0af",
+        "04abcea8-338f-4146-b257-77d3d8a5a390",
+        "55b12fb9-e87e-4a12-b99d-c9e91dbf0589"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "gap_item": 30,
+        "layout_service": "layout-service-1",
+        "service_bg": "rgba(0,0,0,0)",
+        "show_border_right": false,
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660904654f6076da9": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Popular Items",
+        "sub_title": "",
+        "show_icon": true,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "background_title": "",
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1660893483de1de3e8": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "",
+        "description": "<p>Top highlights this season</p>",
+        "display_type": "slide",
+        "collection": "cosmetics",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "product_item_layout": "use_global",
+        "type_button": "load_more",
+        "text_button": "Shop now",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660881382c5a232eb": {
+      "type": "banner",
+      "blocks": {
+        "4a232be4-d0b8-4363-9525-58a4a4010a5c": {
+          "type": "banner_menu",
+          "settings": {
+            "image_banner": "shopify://shop_images/thumb2.png",
+            "menu_banner": "information",
+            "title_menu": "Nail & Wax",
+            "text_button": "View all collection",
+            "link_button_banner": "shopify://collections/cosmetics",
+            "position_menu": "right"
+          }
+        },
+        "06fd51d9-5851-43a3-a8f4-075bb3b1e8e3": {
+          "type": "banner_menu",
+          "settings": {
+            "image_banner": "shopify://shop_images/thumb1.png",
+            "menu_banner": "legal",
+            "title_menu": "Nail & Wax",
+            "text_button": "View all collection",
+            "link_button_banner": "shopify://collections/cosmetics",
+            "position_menu": "left"
+          }
+        }
+      },
+      "block_order": [
+        "4a232be4-d0b8-4363-9525-58a4a4010a5c",
+        "06fd51d9-5851-43a3-a8f4-075bb3b1e8e3"
+      ],
+      "settings": {
+        "width_layout_banner": "container",
+        "background_banner": "rgba(0,0,0,0)",
+        "title": "",
+        "description": "",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16607973118da5765a": {
+      "type": "tp-partner",
+      "blocks": {
+        "ce2a0bab-1afd-47a4-af91-5678bbd5b31e": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/partner-4.png",
+            "item_link": ""
+          }
+        },
+        "bcb3ea43-5a0b-4fee-81fa-7650f23091f1": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/partner-1.png",
+            "item_link": ""
+          }
+        },
+        "57e674a5-4b41-4578-a203-4211d69dfa17": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/partner-5.png",
+            "item_link": ""
+          }
+        },
+        "c5d93d3c-4491-483c-94e1-4a9bc418fe64": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/partner-2.png",
+            "item_link": ""
+          }
+        },
+        "1e1c7ca0-c39b-4973-beb9-90ada83799f9": {
+          "type": "item",
+          "settings": {
+            "text": "Item",
+            "item_image": "shopify://shop_images/partner-3.png",
+            "item_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "ce2a0bab-1afd-47a4-af91-5678bbd5b31e",
+        "bcb3ea43-5a0b-4fee-81fa-7650f23091f1",
+        "57e674a5-4b41-4578-a203-4211d69dfa17",
+        "c5d93d3c-4491-483c-94e1-4a9bc418fe64",
+        "1e1c7ca0-c39b-4973-beb9-90ada83799f9"
+      ],
+      "settings": {
+        "partner_config": "slide_partner",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16608116276e6ea19c": {
+      "type": "our-testimonial",
+      "blocks": {
+        "5f13045c-7923-4220-89d3-30428703b525": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Thumb_2.png",
+            "title_testimonial": "Very best for choice",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach Newt Zealand smelt salmon false moray pelican eel stoneroller minnow.",
+            "name_testimonial": "Zenipher Lopez",
+            "background_testimonial_item": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "5f13045c-7923-4220-89d3-30428703b525"
+      ],
+      "settings": {
+        "heading": "",
+        "background_testimonial": "#ffffff",
+        "display_type": "layout_3",
+        "padding_top_bottom": 0,
+        "show_pagination": false,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660805664e1c77174": {
+      "type": "lastest-news",
+      "disabled": true,
+      "settings": {
+        "blog": "shopify-blog",
+        "width_blog": "container",
+        "position_content": "left",
+        "post_limit": 3,
+        "gap_item_blog": 30,
+        "show_date": true,
+        "show_button_discover": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16623503594f0e56ac": {
+      "type": "border",
+      "disabled": true,
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#eeeeee",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "e94b4eb8-c483-423b-9427-1dbb4a4e01a8": {
+      "type": "banner",
+      "blocks": {
+        "1f4bda24-1e03-4875-8fb7-3270ce5a5c0e": {
+          "type": "banner_normal",
+          "settings": {
+            "layout_banner": "layout-normal_1",
+            "image_banner": "shopify://shop_images/blog_banner.png",
+            "title_banner": "Tiered broderie mini sundress in white",
+            "description_banner": "Wre talking swirly scrunchies, bow headbands and more super-cute, 90s-inspired bits. And to wrap up things up, check out Pieces for womens hat and scarf sets thatll make cold-weather dressing a breeze.",
+            "color-title": "#000000",
+            "color-description": "#5e5e5e",
+            "button_type": "underline-button",
+            "text_button": "Shop collection",
+            "link_button_banner": ""
+          }
+        }
+      },
+      "block_order": [
+        "1f4bda24-1e03-4875-8fb7-3270ce5a5c0e"
+      ],
+      "settings": {
+        "width_layout_banner": "container",
+        "background_banner": "rgba(0,0,0,0)",
+        "title": "",
+        "description": "",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "f27622fb-4753-40da-96e5-d6c2558e70cd",
+    "ca70ed6f-6e15-4173-9be2-85440b7245fb",
+    "1660788096a941f44c",
+    "1660904654f6076da9",
+    "1660893483de1de3e8",
+    "1660881382c5a232eb",
+    "16607973118da5765a",
+    "16608116276e6ea19c",
+    "1660805664e1c77174",
+    "16623503594f0e56ac",
+    "e94b4eb8-c483-423b-9427-1dbb4a4e01a8"
+  ]
+}

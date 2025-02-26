@@ -1,0 +1,71 @@
+{% comment %}
+  Renders an article card for a given blog with settings to either show the image or not.
+
+            Accepts:
+            - blog: {Object} Blog object
+            - article: {Object} Article object
+            - show_image: {String} The setting either show the article image or not. If it's not included it will show the image by default
+            - show_date: {String} The setting either show the article date or not. If it's not included it will not show the image by default
+            - show_author: {String} The setting either show the article author or not. If it's not included it will not show the author by default
+
+            Usage:
+            {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
+{% endcomment %}
+
+<article
+  aria-labelledby="Article-{{ article.id }}"
+  class="article-card{% if article.image == blank or show_image == false %} article-card--no-image{% endif %}"
+>
+  {% if article.image %}
+    <div class="article-card__image-wrapper">
+      <a href="{{ article.url }}" title="{{ article.title }}">
+        <div class="article-card__image ">
+          <img
+                  srcset="{{ article.image.src | image_url: width: article.image.width, height: article.image.height }}"
+                  src="{{ article.image.src | image_url: width: article.image.width, height: article.image.height }}"
+                  alt="{{ article.image.src.alt | escape }}"
+                  width="{{ article.image.width }}"
+                  height="{{ article.image.height }}"
+                  loading="lazy"
+                  class="motion-reduce"
+          >
+        </div>
+      </a>
+    </div>
+  {% endif %}
+  <div class="article-card-content">
+    <div class="article-card__info">
+      <header class="article-card__header">
+        {%- if show_date -%}
+          <span class="circle-divider">
+            <!-- {{- article.published_at | time_tag: format: 'month_year' -}} -->
+            {{ article.published_at | date: ' %b %d, %Y' }}
+          </span>
+        {%- endif -%}
+        <h2 class="card__heading" id="Article-{{ article.id }}">
+          <a class="article-card__title" href="{{ article.url }}" title="{{ article.title }}">
+            {{ article.title | strip_html | truncatewords: 10 }}
+          </a>
+        </h2>
+      </header>
+      {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
+        <p class="article-card__excerpt rte-width">
+          {%- if article.excerpt.size > 0 -%}
+            {{ article.excerpt | strip_html | truncate: 115 }}
+          {%- else -%}
+            {{ article.content | strip_html | truncate: 115 }}
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+    {% if show_button_discover %}
+      <div class="discover">
+        <a href="{{ article.url }}" title="discover">
+          <span class="tp-btn tp-btn__underline">
+            {{- 'blogs.article.discover' | t }}
+          </span>
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</article>

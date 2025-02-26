@@ -1,0 +1,242 @@
+<div class="tp-contact container flex justify-start items-start">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'contact-info' %}
+        <div class="tp-contact__info">
+          {% if block.settings.title_info %}
+            <h1 class="title">{{ block.settings.title_info }}</h1>
+          {% endif %}
+          {% if block.settings.info_description != blank %}
+            <div class="tp-contact__description">
+              {{ block.settings.info_description }}
+            </div>
+          {% endif %}
+          <div class="tp-contact__info__content">
+            {% if block.settings.number_phone != blank %}
+              <div class="content-item">
+                {% render 'icon', icon_name: 'icon-phone-2', width: 30, height: 30 %}
+                <div class="content-item__wrapper flex justify-start items-center">
+                  <span class="content-label">{{ block.settings.label_phone }}</span>
+                  <div class="content-value">
+                    {{ block.settings.number_phone }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if block.settings.address != blank %}
+              <div class="content-item">
+                {% render 'icon', icon_name: 'icon-address', width: 30, height: 30 %}
+                <div class="content-item__wrapper flex justify-start items-center">
+                  <span class="content-label">{{ block.settings.label_address }}</span>
+                  <div class="content-value">
+                    {{ block.settings.address }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if block.settings.address_email != blank %}
+              <div class="content-item">
+                {% render 'icon', icon_name: 'icon-email-2', width: 30, height: 30 %}
+                <div class="content-item__wrapper content-item__email flex justify-start items-center">
+                  <span class="content-label">{{ block.settings.label_email }}</span>
+                  <div class="content-value">
+                    {{ block.settings.address_email }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% when 'form' %}
+        <div class="tp-contact__form">
+          {%- if block.settings.heading != blank -%}
+            <h1 class="title">{{ block.settings.heading | escape }}</h1>
+          {%- else -%}
+            <h1 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h1>
+          {%- endif -%}
+          {% if block.settings.description != blank %}
+            <div class="tp-contact__description mb-5">
+              {{ block.settings.description }}
+            </div>
+          {%- endif -%}
+          {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
+            {%- if form.posted_successfully? -%}
+              <div autofocus class="form-status form-status-list form__message" tabindex="-1">
+                {% render 'icon', icon_name: 'icon-success' %}
+                {{ 'templates.contact.form.post_success' | t }}
+              </div>
+            {%- elsif form.errors -%}
+              <div class="form__message">
+                <ul class="form-status-list caption-large" role="list">
+                  <li>
+                    <a class="link" href="#ContactForm-email" style="color: tomato;">
+                      {{ form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            {%- endif -%}
+            <div class="contact__fields">
+              <div class="field">
+                <input
+                  class="field__input"
+                  autocomplete="name"
+                  type="text"
+                  id="ContactForm-name"
+                  name="contact[{{ 'templates.contact.form.name' | t }}]"
+                  value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                  placeholder="{{ 'templates.contact.form.name' | t }}"
+                >
+              </div>
+              <div class="field field--with-error">
+                <input
+                  autocomplete="email"
+                  type="email"
+                  id="ContactForm-email"
+                  class="field__input"
+                  name="contact[email]"
+                  spellcheck="false"
+                  autocapitalize="off"
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  aria-required="true"
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true" aria-describedby="ContactForm-email-error"
+                  {% endif %}
+                  placeholder="{{ 'templates.contact.form.email' | t }}"
+                >
+              </div>
+            </div>
+            <div class="field">
+              <input
+                type="tel"
+                id="ContactForm-phone"
+                class="field__input"
+                autocomplete="tel"
+                name="contact[{{ 'templates.contact.form.phone' | t }}]"
+                pattern="[0-9\-]*"
+                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                placeholder="{{ 'templates.contact.form.phone' | t }}"
+              >
+            </div>
+            <div class="field">
+              <textarea
+                rows="6"
+                id="ContactForm-body"
+                class="text-area field__input"
+                name="contact[{{ 'templates.contact.form.comment' | t }}]"
+                placeholder="{{ 'templates.contact.form.comment' | t }}"
+              >
+                {{- form.body -}}
+              </textarea>
+            </div>
+            <div class="contact__button">
+              <button class="tp-btn tp-btn__primary" type="submit">
+                {{ 'templates.contact.form.send' | t }}
+              </button>
+            </div>
+          {%- endform -%}
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "contact-info",
+      "name": "Contact info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_info",
+          "label": "Title info",
+          "default": "Get in touch"
+        },
+        {
+          "type": "richtext",
+          "id": "info_description",
+          "label": "Info description",
+          "default": "<p>Send us a note anytime — we welcome feedback and requests.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Phone"
+        },
+        {
+          "type": "text",
+          "id": "label_phone",
+          "label": "Phone",
+          "default": "PHONE"
+        },
+        {
+          "type": "richtext",
+          "id": "number_phone",
+          "label": "Number phone",
+          "default": "<p>212-371-8505 212-371-8505</p>"
+        },
+        {
+          "type": "header",
+          "content": "Address"
+        },
+        {
+          "type": "text",
+          "id": "label_address",
+          "label": "Address",
+          "default": "ADDRESS"
+        },
+        {
+          "type": "richtext",
+          "id": "address",
+          "label": "Address",
+          "default": "<p>9 East 40th Street, 3rd Floor, New York City</p>"
+        },
+        {
+          "type": "header",
+          "content": "Email"
+        },
+        {
+          "type": "text",
+          "id": "label_email",
+          "label": "Email",
+          "default": "EMAIL"
+        },
+        {
+          "type": "richtext",
+          "id": "address_email",
+          "label": "Address email",
+          "default": "<p>newyork@storepify.com</p>"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "name": "Form",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Drop us a line",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description Form",
+          "default": "<p>We are here to help. Please complete the short form below and we`ll respond as soon as possible</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.contact-form.presets.name"
+    }
+  ]
+}
+{% endschema %}

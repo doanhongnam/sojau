@@ -1,0 +1,6 @@
+{%- if product.handle != blank -%}
+  <button button-quick-view type="button" aria-label="Add to quick view" class="button-quick-view" data-product-handle="{{ product.handle }}">
+    {% render 'icon', icon_name: 'icon-quickview' %}
+    {% render 'icon', icon_name: 'icon-loading', class: 'loading-icon hidden', width: 20, height: 20, color: settings.color_accent %}
+  </button> 
+{%- endif -%}

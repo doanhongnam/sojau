@@ -1,0 +1,56 @@
+{% comment %}
+    Renders header logo for header mobile
+
+    Usage:
+    {% render 'header-mobile' %}
+{% endcomment %}
+<header class="header-mobile">
+    <div class="flex flex-row justify-between items-center px-3.5 py-4">
+        <div class="icon-header-mobile">
+            {% render 'icon', icon_name: 'icon-open-menu-mobile' %}
+        </div>
+
+        <div class="header__logo">
+            {% liquid
+                assign settings = section.settings
+                assign logo_val = settings.logo
+            %}
+        {%- if request.page_type == 'index' -%}
+            <div class="header__heading">
+                {%- endif -%}
+                <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+                    {%- if logo_val != blank -%}
+                        {%- assign image_size_2x = settings.logo_width_custom_px | times: 2 | at_most: 5760 -%}
+                        <img srcset="{{ logo_val | image_url: width: settings.logo_width_custom_px }} 1x, {{ logo_val | image_url: width: image_size_2x }} 2x"
+                             src="{{ logo_val | image_url: width: settings.logo_width_custom_px }}"
+                             loading="lazy"
+                             class="header__heading-logo"
+                             width="{{ settings.logo.width }}"
+                             height="{{ settings.logo.height }}"
+                             alt="{{ settings.logo.alt | default: shop.name | escape }}"
+                        >
+                    {%- else -%}
+                        <span class="h2">{{ shop.name }}</span>
+                    {%- endif -%}
+                </a>
+                {%- if request.page_type == 'index' -%}
+            </div>
+            {%- endif -%}
+        </div>
+        <div class="header-wrap-ic flex items-center">
+            {% render 'header-account' %}
+            <button class="px-1.25 header__icon header__icon--cart link link--text focus-inset ml-3.75" title="Cart count">
+               {% render 'icon', icon_name: 'icon-cart-header' %}
+            </button>
+        </div>
+        <nav class="panel-menu-mobile">
+            <div class="close-parent flex items-center font-normal">
+                {% render 'icon', icon_name: 'icon-close', class: 'mr-3.75', width: 10, height: 10 %}
+                Close
+            </div>
+            <div class="main-header-mobile">
+                {% render 'header-menu', call: 'mobile' %}
+            </div>
+        </nav>
+    </div>
+</header>

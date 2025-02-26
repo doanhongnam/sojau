@@ -1,0 +1,559 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "e37f5afa-1a28-4636-9a47-a7ca7b9ae5ec": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#ffffff",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "7bf45554-4875-4d60-9a97-72e2c6f925d0": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "12344312-22cc-4b75-b179-bb910583c9d6": {
+      "type": "deomo-page",
+      "blocks": {
+        "d9c5f28c-d31d-4bcc-979d-b26984eda835": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/home-default.png",
+            "demo_url": "https://storepify.thimpress.com/",
+            "heading": "Home Default",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "Hot",
+            "color_status": "#e22120"
+          }
+        },
+        "2068f101-714b-4b41-9e7d-4fe14e2096ff": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-pet.png",
+            "demo_url": "https://storepify-pet.myshopify.com/",
+            "heading": "Home Pet",
+            "title_item": 16,
+            "topic": "new",
+            "status_demo": "New",
+            "color_status": "#40d8cf"
+          }
+        },
+        "86ffd078-0a07-4f37-acc4-75149b2f01e4": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-gift.png",
+            "demo_url": "https://storepify-gift.myshopify.com/",
+            "heading": "Home Gift",
+            "title_item": 16,
+            "topic": "new",
+            "status_demo": "New",
+            "color_status": "#40d8cf"
+          }
+        },
+        "f9e9b27d-cde2-4f72-b0ff-d3471384ce33": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-craft.png",
+            "demo_url": "https://storepify-craft.myshopify.com/",
+            "heading": "Home Craft",
+            "title_item": 16,
+            "topic": "new, miscellaneous",
+            "status_demo": "New",
+            "color_status": "#40d8cf"
+          }
+        },
+        "8d89b4c1-8019-45c9-92b4-6e640128a15f": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-socks.png",
+            "demo_url": "https://storepify-socks.myshopify.com/",
+            "heading": "Home Socks",
+            "title_item": 16,
+            "topic": "fashion, new",
+            "status_demo": "New",
+            "color_status": "#40d8cf"
+          }
+        },
+        "fc725494-6ca0-4b81-a9bb-58352a9973fb": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/Untitled-4.png",
+            "demo_url": "https://storepify-clogs.myshopify.com/",
+            "heading": "Home Clogs",
+            "title_item": 16,
+            "topic": "fashion, new",
+            "status_demo": "New",
+            "color_status": "#40d8cf"
+          }
+        },
+        "1b67f14f-9013-4349-a76d-86a5e3af4267": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-rlt.png",
+            "demo_url": "https://storepify.thimpress.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=131861151938",
+            "heading": "Home RTL",
+            "title_item": 16,
+            "topic": "fashion, new",
+            "status_demo": "RTL",
+            "color_status": "#fce300"
+          }
+        },
+        "c755f3e2-0c94-485d-beb0-f55456f400c3": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/Untitled-2.png",
+            "demo_url": "shopify://pages/home-fashion-8",
+            "heading": "Home Fashion v8",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "1d9c717a-a00c-41ab-b7e3-d65b28ac2290": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-9.png",
+            "demo_url": "shopify://pages/home-fashion-9",
+            "heading": "Home Fashion v9",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "da63b8b3-5fe2-4a07-b1d1-1f63ec885572": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-7.png",
+            "demo_url": "/pages/home-fashion-7",
+            "heading": "Home Fashion v7",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "1b299f68-ae44-4e8b-b378-b2067bfe74d3": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-1.png",
+            "demo_url": "shopify://pages/home-fashion",
+            "heading": "Home Fashion",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "8d853621-06d7-4eb3-bab7-3a423ce60d15": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-lookbook.png",
+            "demo_url": "shopify://pages/home-lookbook",
+            "heading": "Home Lookbook",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "2b703cce-4a03-4f4d-8727-7075d5f552d2": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-lookbook-2.png",
+            "demo_url": "shopify://pages/home-lookbook-2",
+            "heading": "Home Lookbook v2",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "de344364-ecfa-44d4-954b-eb1b68338f84": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-bags.png",
+            "demo_url": "shopify://pages/home-bags",
+            "heading": "Home Bags",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "284b7a72-bd13-447c-ad9f-b5ea41f15433": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-shoes.png",
+            "demo_url": "shopify://pages/home-shoes",
+            "heading": "Home Shoes",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "c1ca6c9e-da9b-489a-b2e7-e6df462cf264": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-hats.png",
+            "demo_url": "shopify://pages/home-hats",
+            "heading": "Home Hats",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "a85fb669-bb91-45f7-b4b9-1ed1cae84849": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-camping.png",
+            "demo_url": "https://camping-storepify.myshopify.com/",
+            "heading": "Home Camping",
+            "title_item": 16,
+            "topic": "childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "16c9ec89-6bb4-401b-8a03-63a6483792bb": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-electro-v1.png",
+            "demo_url": "https://storepify-electro.myshopify.com/",
+            "heading": "Home Electronic",
+            "title_item": 16,
+            "topic": "electronic, childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "48ce03cb-6999-40cf-b692-f56a09b6a9e8": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-jewelry.png",
+            "demo_url": "https://jewelry-storepify.myshopify.com/",
+            "heading": "Home Jewelry",
+            "title_item": 16,
+            "topic": "beauty, childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "4458fbc6-2f51-4096-a8f1-00820d6cc0c3": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-organic.png",
+            "demo_url": "https://organic-storepify.myshopify.com/",
+            "heading": "Home Organic",
+            "title_item": 16,
+            "topic": "food, childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "12534aa9-c03a-4bba-8d53-3068570bc459": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-2.png",
+            "demo_url": "shopify://pages/home-fashion-2",
+            "heading": "Home Fashion v2",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "0fe94898-4dca-4f0d-8ce7-2f0ee5be8e4c": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-3.png",
+            "demo_url": "shopify://pages/home-fashion-3",
+            "heading": "Home Fashion v3",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "134baf64-7b86-4e4a-93a3-46987e057bed": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-4.png",
+            "demo_url": "shopify://pages/home-fashion-4",
+            "heading": "Home Fashion v4",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "980df59f-d8aa-49fe-8184-9ff4283282f7": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-5.png",
+            "demo_url": "shopify://pages/home-fashion-5",
+            "heading": "Home Fashion v5",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "d0cd8265-4ab7-434c-b8e4-9097c719d4c5": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-fashion-6.png",
+            "demo_url": "shopify://pages/home-fashion-6",
+            "heading": "Home Fashion v6",
+            "title_item": 16,
+            "topic": "fashion",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "15d8299f-54db-41b9-ad4b-8215774a4fa4": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-access-1.png",
+            "demo_url": "shopify://pages/home-accessories",
+            "heading": "Home Accessories",
+            "title_item": 16,
+            "topic": "beauty",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "369304c7-b589-4125-9d04-735960a4aab9": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-access-2.png",
+            "demo_url": "shopify://pages/home-accessories-2",
+            "heading": "Home Accessories v2",
+            "title_item": 16,
+            "topic": "beauty",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "16a9f89f-0ec1-4df2-8d94-6515936525e4": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-cosmetic-1.png",
+            "demo_url": "shopify://pages/home-cosmetic",
+            "heading": "Home Cosmetic",
+            "title_item": 16,
+            "topic": "beauty",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "e57332c5-62f9-49f5-9017-6824ef2e16cc": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-cosmetic-2.png",
+            "demo_url": "shopify://pages/home-cosmetic-2",
+            "heading": "Home Cosmetic v2",
+            "title_item": 16,
+            "topic": "beauty",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "28825a18-c3eb-46b1-a830-dd8b6bf50768": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-cosmetic-3.png",
+            "demo_url": "shopify://pages/home-cosmetic-3",
+            "heading": "Home Cosmetic v3",
+            "title_item": 16,
+            "topic": "beauty",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "a42e8198-f0c5-4215-96c8-53a56feb3b65": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-electro-v2.png",
+            "demo_url": "https://storepify-electro.myshopify.com/pages/home-2",
+            "heading": "Home Electro v2",
+            "title_item": 16,
+            "topic": "electronic, childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "631ccca4-8e7f-467f-ba17-14875fba51a2": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-electro-v3.png",
+            "demo_url": "https://storepify-electro.myshopify.com/pages/home-3",
+            "heading": "Home Electro v3",
+            "title_item": 16,
+            "topic": "electronic, childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "5fa8c60e-3a04-4375-9236-c1ca5dd5c579": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-organic-2.png",
+            "demo_url": "https://organic-storepify.myshopify.com/pages/home-organic-1",
+            "heading": "Home Organic v2",
+            "title_item": 16,
+            "topic": "food, childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "5bd4be5d-89dd-42ec-9fe4-56455d7f8425": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/home-organic-3.png",
+            "demo_url": "https://organic-storepify.myshopify.com/pages/home-organic-2",
+            "heading": "Home Organic v3",
+            "title_item": 16,
+            "topic": "food, childthemes",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "32ea8927-7d9f-478d-a7c8-f4baa394631a": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-single.png",
+            "demo_url": "shopify://pages/single-product",
+            "heading": "Home Single Product",
+            "title_item": 16,
+            "topic": "miscellaneous",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        },
+        "fda79632-572d-4076-bc8d-ceb0c44fc0eb": {
+          "type": "demo_item",
+          "settings": {
+            "image_demo": "shopify://shop_images/h-single-2.png",
+            "demo_url": "https://storepify.thimpress.com/pages/multi-product",
+            "heading": "Home Single Product 2",
+            "title_item": 16,
+            "topic": "miscellaneous",
+            "status_demo": "",
+            "color_status": "#40d8cf"
+          }
+        }
+      },
+      "block_order": [
+        "d9c5f28c-d31d-4bcc-979d-b26984eda835",
+        "2068f101-714b-4b41-9e7d-4fe14e2096ff",
+        "86ffd078-0a07-4f37-acc4-75149b2f01e4",
+        "f9e9b27d-cde2-4f72-b0ff-d3471384ce33",
+        "8d89b4c1-8019-45c9-92b4-6e640128a15f",
+        "fc725494-6ca0-4b81-a9bb-58352a9973fb",
+        "1b67f14f-9013-4349-a76d-86a5e3af4267",
+        "c755f3e2-0c94-485d-beb0-f55456f400c3",
+        "1d9c717a-a00c-41ab-b7e3-d65b28ac2290",
+        "da63b8b3-5fe2-4a07-b1d1-1f63ec885572",
+        "1b299f68-ae44-4e8b-b378-b2067bfe74d3",
+        "8d853621-06d7-4eb3-bab7-3a423ce60d15",
+        "2b703cce-4a03-4f4d-8727-7075d5f552d2",
+        "de344364-ecfa-44d4-954b-eb1b68338f84",
+        "284b7a72-bd13-447c-ad9f-b5ea41f15433",
+        "c1ca6c9e-da9b-489a-b2e7-e6df462cf264",
+        "a85fb669-bb91-45f7-b4b9-1ed1cae84849",
+        "16c9ec89-6bb4-401b-8a03-63a6483792bb",
+        "48ce03cb-6999-40cf-b692-f56a09b6a9e8",
+        "4458fbc6-2f51-4096-a8f1-00820d6cc0c3",
+        "12534aa9-c03a-4bba-8d53-3068570bc459",
+        "0fe94898-4dca-4f0d-8ce7-2f0ee5be8e4c",
+        "134baf64-7b86-4e4a-93a3-46987e057bed",
+        "980df59f-d8aa-49fe-8184-9ff4283282f7",
+        "d0cd8265-4ab7-434c-b8e4-9097c719d4c5",
+        "15d8299f-54db-41b9-ad4b-8215774a4fa4",
+        "369304c7-b589-4125-9d04-735960a4aab9",
+        "16a9f89f-0ec1-4df2-8d94-6515936525e4",
+        "e57332c5-62f9-49f5-9017-6824ef2e16cc",
+        "28825a18-c3eb-46b1-a830-dd8b6bf50768",
+        "a42e8198-f0c5-4215-96c8-53a56feb3b65",
+        "631ccca4-8e7f-467f-ba17-14875fba51a2",
+        "5fa8c60e-3a04-4375-9236-c1ca5dd5c579",
+        "5bd4be5d-89dd-42ec-9fe4-56455d7f8425",
+        "32ea8927-7d9f-478d-a7c8-f4baa394631a",
+        "fda79632-572d-4076-bc8d-ceb0c44fc0eb"
+      ],
+      "settings": {
+        "title_status": "visible",
+        "title": "Ultimate Demos",
+        "number": "40+",
+        "size_title": 36,
+        "sub_title": "Storepify comes with 40+ pre-made dummy templates which are completely compatible with Drag & Drop Builder.",
+        "title_btn_1": "All Industries",
+        "data_name_1": "all",
+        "title_btn_2": "New",
+        "data_name_2": "new",
+        "title_btn_3": "Clothing & Fashion",
+        "data_name_3": "fashion",
+        "title_btn_4": "Health & Beauty",
+        "data_name_4": "beauty",
+        "title_btn_5": "Technology",
+        "data_name_5": "electronic",
+        "title_btn_6": "Food & Beverage",
+        "data_name_6": "food",
+        "title_btn_7": "Child Themes",
+        "data_name_7": "childthemes",
+        "title_btn_8": "Miscellaneous",
+        "data_name_8": "miscellaneous",
+        "title_btn_9": "",
+        "data_name_9": "all",
+        "title_btn_10": "",
+        "data_name_10": "all",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 20,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "44a7c1c1-c6e1-4c34-9ceb-dc27d948fc89": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "e37f5afa-1a28-4636-9a47-a7ca7b9ae5ec",
+    "7bf45554-4875-4d60-9a97-72e2c6f925d0",
+    "12344312-22cc-4b75-b179-bb910583c9d6",
+    "44a7c1c1-c6e1-4c34-9ceb-dc27d948fc89"
+  ]
+}

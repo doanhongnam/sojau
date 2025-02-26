@@ -1,0 +1,53 @@
+{% if section.settings.iframe_address != blank %}
+  <div class="iframe-maps">
+    <div class="iframe-maps__main">{{ section.settings.iframe_address }}</div>
+  </div>
+{% endif %}
+{% render 'margin-bottom' %}
+{% schema %}
+
+{
+    "name":"Iframe embed",
+    "tag":"section",
+    "class":"non-spaced-section",
+    "settings":[
+       {
+          "type":"textarea",
+          "id":"iframe_address",
+          "label":"Iframe content"
+       },
+      {
+        "type": "header",
+        "content": "t:sections.margin_bottom.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "Unit: pixel"
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom_desktop",
+        "label": "t:sections.margin_bottom.desktop.label",
+        "default": 80
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom_table",
+        "label": "t:sections.margin_bottom.tablet.label",
+        "default": 60
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom_mobile",
+        "label": "t:sections.margin_bottom.mobile.label",
+        "default": 40
+      }
+    ],
+    "presets": [
+    {
+        "name": "Iframe embed"
+    }
+ ]
+ }
+
+{% endschema %}

@@ -1,0 +1,314 @@
+{%- liquid
+    assign st = section.settings
+    assign nature_ctn = st.nature_ctn
+-%}
+
+<div class="nature" id="{{ section.settings.nature_id }}">
+    <div class="nature__wrap {{ nature_ctn }}">
+        {%- for block in section.blocks -%}
+            {% case block.type %}
+                {% when 'nature_element' %}
+                    {%- liquid
+                        assign frame_width = block.settings.frame_width
+                        assign content_position = block.settings.content_position
+                    -%}
+                    <div class="nature__element nature__element-{{ section.id }}-{{ forloop.index }} lg:flex items-center justify-center {{ frame_width }} {% if content_position == 'left-content' %}flex-row-reverse{% endif %}">
+                        <div class="nature__left lg:w-1/2 {{ frame_width }}">
+                            {% assign ImageNature = block.settings.nature_image %}
+                            {% if ImageNature != blank %}
+                            <img class="nature__left__img nature__left__img-{{ section.id }}-{{ forloop.index }}"
+                                src="{{ ImageNature | image_url: width: ImageNature.width , height: ImageNature.height }}"
+                                alt="" width="{{ ImageNature.width }}" height="{{ ImageNature.height }}"
+                                loading="lazy">
+                            {% else %}
+                                {% render 'no-image', text_size: '400x400', width: 400, height: 400 %}
+                            {% endif %}
+                        </div>
+                        <style>
+                            .nature__element-{{ section.id }}-{{ forloop.index }} {
+                                background-color: {{ block.settings.content_background }};
+                            }
+                            .nature__left__img-{{ section.id }}-{{ forloop.index }} {
+                                background-size: cover !important;
+                                background-repeat: no-repeat;
+                                background: url('{{ block.settings.nature_image | image_url : width: block.settings.nature_image.width, height : block.settings.nature_image.height }}');
+                            }
+                            .nature__right.text-black .nature__brief p {
+                                color: #000000;
+                            }
+                            .nature__right.text-white .nature__brief p {
+                                color: #ffffff;
+                            }
+                            @media(min-width: 1024px) {
+                                .nature__element-{{ section.id }}-{{ forloop.index }} {
+                                    margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+                                }
+                            }
+                        
+                            @media (min-width: 768px) and (max-width: 1023px) {
+                                .nature__element-{{ section.id }}-{{ forloop.index }} {
+                                    margin-bottom: {{ section.settings.margin_bottom_table }}px;
+                                }
+                            }
+                        
+                            @media(max-width: 767px) {
+                                .nature__element-{{ section.id }}-{{ forloop.index }} {
+                                    margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+                                }
+                            }
+                        </style>
+                        {% if block.settings.nature_title != blank or block.settings.nature_brief != blank or block.settings.nature_btn != blank %}
+                            <div class="nature__right lg:w-1/2 px-10 py-10 {{ block.settings.nature_content }} {{ block.settings.text_color }}">
+                                {% if block.settings.nature_title != blank %}
+                                <h4 class="nature__title text-3xl font-medium nature__title-{{ forloop.index }} mb-5">{{ block.settings.nature_title }}</h4>
+                                {% endif %}
+
+                                {% if block.settings.nature_brief != blank %}
+                                <div class="nature__brief mb-5">{{ block.settings.nature_brief }}</div>
+                                {% endif %}
+
+                                {% if block.settings.nature_btn != blank %}
+                                    <a href="{% if block.settings.nature_link != blank %}{{ block.settings.nature_link }}{% else %}#{% endif %}" class="tp-btn {{ block.settings.button_type }}">{{ block.settings.nature_btn }}</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        </a>
+                    </div>
+                {% else %}      
+            {% endcase %}
+        {%- endfor -%}
+    </div>
+</div>
+
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+    "name":"Nature",
+    "tag":"section",
+    "class":"nature",
+    "settings":[
+        {
+        "type":"select",
+        "id":"nature_ctn",
+        "options":[
+            {
+                "value":"container",
+                "label":"Container"
+             },
+             {
+                "value":"container-fluid",
+                "label":"Fluid container"
+             }
+        ],
+            "label":"Layout",
+            "default":"container"
+        },
+        {
+          "type": "select",
+          "id": "nature_id",
+          "label": "Choose",
+          "options":[
+              {
+                  "value":"nature",
+                  "label":"Nature"
+              },
+              {
+                  "value":"nature_2",
+                  "label":"Nature 2"
+              }
+          ],
+          "default":"nature"
+        },
+        {
+         "type": "header",
+         "content": "Margin"
+        },
+        {
+            "type":"number",
+            "id":"margin_bottom_desktop",
+            "label":"t:sections.margin_bottom.desktop.label",
+            "default":80
+        },
+        {
+            "type":"number",
+            "id":"margin_bottom_table",
+            "label":"t:sections.margin_bottom.tablet.label",
+            "default":60
+        },
+        {
+            "type":"number",
+            "id":"margin_bottom_mobile",
+            "label":"t:sections.margin_bottom.mobile.label",
+            "default":40
+        }
+    ],
+
+    "blocks":[
+        {
+        "name":"Nature element",
+        "type":"nature_element",
+            "settings":[
+                {
+                    "type":"image_picker",
+                    "id":"nature_image",
+                    "label":"Image",
+                    "info": "1200 x 650px recommended"
+                },
+                {
+                    "type": "select",
+                    "id": "frame_width",
+                    "label": "Frame width",
+                    "options": [
+                      {
+                        "value": "frame_width_50",
+                        "label": "50%"
+                      },
+                      {
+                        "value": "frame_width_55",
+                        "label": "55%"
+                      },
+                      {
+                        "value": "frame_width_60",
+                        "label": "60%"
+                      },
+                      {
+                        "value": "frame_width_65",
+                        "label": "65%"
+                      }
+                    ],
+                    "default": "frame_width_50"
+                },
+                {
+                    "type":"select",
+                    "id":"content_position",
+                    "label":"Content position",
+                    "options":[
+                       {
+                          "value":"left-content",
+                          "label":"Left"
+                       },
+                       {
+                          "value":"right-content",
+                          "label":"Right"
+                       }
+                    ],
+                    "default":"right-content"
+                },
+                {
+                "type":"select",
+                "id":"nature_content",
+                "options":[
+                    {
+                        "value":"text-left",
+                        "label":"Left"
+                    },
+                    {
+                        "value":"text-right",
+                        "label":"Right"
+                    }
+                ],
+                    "label":"Content alignment",
+                    "default":"text-left"
+                },
+                {
+                    "type": "text",
+                    "id": "nature_title",
+                    "label":"Title",
+                    "default":"Lorem ipsum dolor sit amet"
+                },
+                {
+                    "type": "richtext",
+                    "id": "nature_brief",
+                    "label":"Nature brief",
+                    "default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+                },
+                {
+                    "type":"select",
+                    "id":"text_color",
+                    "label":"Text color",
+                    "options":[
+                       {
+                          "value":"text-white",
+                          "label":"Text white"
+                       },
+                       {
+                          "value":"text-black",
+                          "label":"Text black"
+                       }
+                    ],
+                    "default":"text-black"
+                },
+                {
+                    "type": "color",
+                    "id": "content_background",
+                    "label": "Background color"
+                },
+                {
+                    "type": "select",
+                    "id": "button_type",
+                    "options": [
+                      {
+                        "value": "tp-btn__primary",
+                        "label": "Button primary"
+                      },
+                      {
+                        "value": "tp-btn__secondary",
+                        "label": "Button secondary"
+                      },
+                      {
+                        "value": "tp-btn__alternate",
+                        "label": "Button alternate"
+                      },
+                      {
+                        "value": "tp-btn__underline",
+                        "label": "Button underline"
+                      }
+                    ],
+                    "label": "Button type",
+                    "default": "tp-btn__primary"
+                },
+                {
+                    "type":"text",
+                    "id": "nature_btn",
+                    "label":"Button title",
+                    "default": "Get it now"
+                },
+                {
+                    "type":"url",
+                    "id":"nature_link",
+                    "label":"Button link"
+                },
+                {
+                    "type": "header",
+                    "content": "Margin"
+                },
+                {
+                    "type":"number",
+                    "id":"margin_bottom_desktop",
+                    "label":"t:sections.margin_bottom.desktop.label",
+                    "default":80
+                },
+                {
+                    "type":"number",
+                    "id":"margin_bottom_table",
+                    "label":"t:sections.margin_bottom.tablet.label",
+                    "default":60
+                },
+                {
+                    "type":"number",
+                    "id":"margin_bottom_mobile",
+                    "label":"t:sections.margin_bottom.mobile.label",
+                    "default":40
+                }
+            ]
+        }
+    ],
+
+    "presets":[
+        {
+            "name":"Nature"
+        }
+    ]
+}
+{% endschema %}

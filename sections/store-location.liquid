@@ -1,0 +1,221 @@
+{% if section.settings.st_type == 'st-type1' %}
+  <div class="container st-type1">
+    <div class="st-location__wp flex flex-wrap gap-10">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'store' %}
+          <div class="st-location__block">
+            {% assign stImage = block.settings.st_image %}
+            {% if stImage != blank %}
+              <figure>
+                <img
+                  class="st-location__block__img mb-5"
+                  src="{{ stImage | image_url: width: stImage.width , height: stImage.height }}"
+                  alt="{{ block.settings.st_name }}"
+                  width="{{ stImage.width }}"
+                  height="{{ stImage.height }}"
+                  loading="lazy">
+              </figure>
+            {% else %}
+              {% render 'no-image', text_size: '650x650', width: 600, height: 600 %}
+            {% endif %}
+
+            {% if block.settings.st_name %}
+              <h4 class="st-location__block__name mb-4">{{ block.settings.st_name }}</h4>
+            {% endif %}
+
+            {% if block.settings.st_brief %}
+              <p class="st-location__block__brief mb-4">{{ block.settings.st_brief }}</p>
+            {% endif %}
+
+            {% if block.settings.st_address %}
+              <p class="st-location__block__address mb-2">{{ block.settings.st_address }}</p>
+            {% endif %}
+
+            {% if block.settings.st_hotline %}
+              <p class="st-location__block__hotline mb-2">{{ block.settings.st_hotline }}</p>
+            {% endif %}
+
+            {% if block.settings.st_email %}
+              <p class="st-location__block__email mb-2">{{ block.settings.st_email }}</p>
+            {% endif %}
+
+            {% if block.settings.st_open %}
+              <p class="st-location__block__times mb-4">{{ block.settings.st_open }}
+                {% if block.settings.st_closed != blank %}
+                  -
+                {% endif %}
+                {{ block.settings.st_closed }}</p>
+            {% endif %}
+
+            {% if block.settings.st_texturl != blank %}
+              <a href="{{ block.settings.st_url }}" class="st-location__block__url">{{ block.settings.st_texturl }}</a>
+            {% endif %}
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+{% else %}
+  <div class="container st-type2">
+    <div class="st-location__wp">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'store' %}
+          <div class="st-location__block flex items-center gap-10 mb-10 pb-10">
+            <div class="st-location__block__half">
+              {% assign stImage = block.settings.st_image %}
+              {% if stImage != blank %}
+                <figure>
+                  <img
+                    class="st-location__block__img"
+                    src="{{ stImage | image_url: width: stImage.width , height: stImage.height }}"
+                    alt="{{ block.settings.st_name }}"
+                    width="{{ stImage.width }}"
+                    height="{{ stImage.height }}"
+                    loading="lazy">
+                </figure>
+              {% else %}
+                {% render 'no-image', text_size: '650x650', width: 600, height: 600 %}
+              {% endif %}
+            </div>
+
+            <div class="st-location__block__halfother">
+              {% if block.settings.st_name %}
+                <h4 class="st-location__block__name mb-4">{{ block.settings.st_name }}</h4>
+              {% endif %}
+
+              {% if block.settings.st_brief %}
+                <p class="st-location__block__brief mb-4">{{ block.settings.st_brief }}</p>
+              {% endif %}
+
+              {% if block.settings.st_address %}
+                <p class="st-location__block__address mb-2">{{ block.settings.st_address }}</p>
+              {% endif %}
+
+              {% if block.settings.st_hotline %}
+                <p class="st-location__block__hotline mb-2">{{ block.settings.st_hotline }}</p>
+              {% endif %}
+
+              {% if block.settings.st_email %}
+                <p class="st-location__block__email mb-2">{{ block.settings.st_email }}</p>
+              {% endif %}
+
+              {% if block.settings.st_open %}
+                <p class="st-location__block__times mb-4">{{ block.settings.st_open }}
+                  {% if block.settings.st_closed != blank %}
+                    -
+                  {% endif %}
+                  {{ block.settings.st_closed }}</p>
+              {% endif %}
+
+              {% if block.settings.st_texturl != blank %}
+                <a href="{{ block.settings.st_url }}" class="st-location__block__url">{{ block.settings.st_texturl }}</a>
+              {% endif %}
+            </div>
+
+          </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+
+{% render 'margin-bottom' %}
+{% schema %}
+  {
+    "name": "Store location",
+    "tag": "section",
+    "class": "st-location",
+    "settings": [
+      {
+        "type": "select",
+        "id": "st_type",
+        "label": "Type",
+        "options": [
+          {
+            "value": "st-type1",
+            "label": "Type 1"
+          }, {
+            "value": "st-type2",
+            "label": "Type 2"
+          }
+        ],
+        "default": "st-type1"
+      }, {
+        "type": "number",
+        "id": "margin_bottom_desktop",
+        "label": "Margin bottom desktop",
+        "default": 80
+      }, {
+        "type": "number",
+        "id": "margin_bottom_table",
+        "label": "Margin bottom tablet",
+        "default": 60
+      }, {
+        "type": "number",
+        "id": "margin_bottom_mobile",
+        "label": "Margin bottom mobile",
+        "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Store",
+        "type": "store",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "st_image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "st_name",
+            "label": "Store Name"
+          },
+          {
+            "type": "text",
+            "id": "st_brief",
+            "label": "Store Brief"
+          },
+          {
+            "type": "text",
+            "id": "st_address",
+            "label": "Store Address"
+          }, {
+            "type": "text",
+            "id": "st_hotline",
+            "label": "Store Hotline"
+          }, {
+            "type": "text",
+            "id": "st_email",
+            "label": "Store Email"
+          }, {
+            "type": "text",
+            "id": "st_open",
+            "label": "Store Open"
+          }, {
+            "type": "text",
+            "id": "st_closed",
+            "label": "Store Closed"
+          }, {
+            "type": "text",
+            "id": "st_texturl",
+            "label": "Store Title Url"
+          }, {
+            "type": "url",
+            "id": "st_url",
+            "label": "Store Url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Store Location"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,233 @@
+<div class="featured-info container">
+  <div class="featured-info__wrapper flex items-start">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'blog_post' %}
+          {% render 'f-info-featured-post', block: block %}
+        {% when 'top_recommend' %}
+          {% render 'f-info-top-recommend', block: block, %}
+        {% when 'best_review' %}
+          {% render 'f-info-best-review', block: block, %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Featured information",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog_post",
+      "name": "Featured post",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Title",
+          "default": "Featured post"
+        },
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blog"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_date",
+          "default": true,
+          "label": "t:sections.main-blog.settings.show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_button_discover",
+          "default": true,
+          "label": "Show button discover"
+        }
+      ]
+    },
+    {
+      "type": "top_recommend",
+      "name": "Top recommend",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Title",
+          "default": "Top recommend"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    },
+    {
+      "type": "best_review",
+      "name": "Best review",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Title",
+          "default": "Best reviewer"
+        },
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "richtext",
+          "id": "content_review",
+          "label": "Content review",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>"
+        },
+        {
+          "type": "range",
+          "id": "number_star",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Number star"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Mr. Kenedy"
+        },
+        {
+          "type": "text",
+          "id": "job",
+          "label": "Job",
+          "default": "IT Techno"
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "richtext",
+          "id": "content_review_2",
+          "label": "Content review",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>"
+        },
+        {
+          "type": "range",
+          "id": "number_star_2",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Number star"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "name_2",
+          "label": "Name",
+          "default": "Mr. Kenedy"
+        },
+        {
+          "type": "text",
+          "id": "job_2",
+          "label": "Job",
+          "default": "IT Techno"
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "richtext",
+          "id": "content_review_3",
+          "label": "Content review",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>"
+        },
+        {
+          "type": "range",
+          "id": "number_star_3",
+          "min": 2,
+          "max": 5,
+          "step": 1,
+          "default": 5,
+          "label": "Number star"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Avatar"
+        },
+        {
+          "type": "text",
+          "id": "name_3",
+          "label": "Name",
+          "default": "Mr. Kenedy"
+        },
+        {
+          "type": "text",
+          "id": "job_3",
+          "label": "Job",
+          "default": "IT Techno"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured information",
+      "blocks": [
+        {
+          "type": "blog_post"
+        },
+        {
+          "type": "top_recommend"
+        },
+        {
+          "type": "best_review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

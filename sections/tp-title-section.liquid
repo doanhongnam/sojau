@@ -1,0 +1,313 @@
+{% liquid
+  assign positonTitle = section.settings.position_title
+  assign displayType = section.settings.display_type
+%}
+
+<div class="tp-title-section {{ positonTitle }} container">
+  <div class="tp-title-section__{{ displayType }}">
+    <div>
+      {% if section.settings.heading != blank %}
+        <h2 class="tp-section__title text-4xl font-medium mb-3.75 tp-title-section__title-{{ section.id }}">
+          {{ section.settings.heading }}
+          {% if section.settings.show_icon %}
+            <span class="block leading-[0px]">
+              <svg
+                class="inline-block"
+                fill="none"
+                height="5"
+                viewbox="0 0 40 5"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3.88508 4.94981C2.95821 4.94981 2.11961 4.67338 1.36928 4.07446C1.01618 3.75196 0.66309 3.42946 0.309995 3.0609C-0.0872365 2.64626 -0.0872365 2.04733 0.221721 1.67877C0.574816 1.26413 1.1486 1.26413 1.58996 1.6327C1.85478 1.90912 2.11961 2.18555 2.38443 2.4159C3.26716 3.19911 4.28231 3.19911 5.16505 2.46197C5.56228 2.13948 5.95951 1.77091 6.35674 1.40234C7.06293 0.757346 7.81326 0.204494 8.74013 0.066281C9.35805 -0.0719319 9.97597 0.0662812 10.5497 0.342707C11.1235 0.619133 11.5649 1.03377 12.0504 1.44841C12.3594 1.77091 12.7125 2.04733 13.0214 2.36983C13.9041 3.24518 15.0958 3.19911 15.9786 2.36983C16.2434 2.13948 16.5082 1.86305 16.773 1.58662C17.2585 1.17199 17.7441 0.711275 18.3178 0.434849C19.4654 -0.164074 20.6129 -0.164074 21.7605 0.619133C22.3343 1.03377 22.8198 1.54055 23.3494 2.04733C23.7025 2.36983 24.0556 2.7384 24.5411 2.92268C25.2473 3.15304 25.8652 3.01482 26.4831 2.55411C26.9245 2.23162 27.2776 1.86305 27.6748 1.44841C28.2045 0.895559 28.8224 0.48092 29.5286 0.204494C30.4113 -0.118003 31.2941 -0.0719319 32.1327 0.434849C32.6623 0.711275 33.1037 1.07984 33.545 1.54055C33.8099 1.81698 34.0747 2.09341 34.3395 2.32376C35.2664 3.19911 36.3698 3.24518 37.3408 2.4159C37.6939 2.0934 38.047 1.77091 38.356 1.44841C38.7973 1.03377 39.4152 0.987701 39.7683 1.44841C40.1214 1.90912 40.0773 2.50804 39.5918 2.92268C39.2387 3.24518 38.8856 3.56768 38.5325 3.89017C36.9877 5.31837 34.6926 5.2723 33.2802 3.93624C32.883 3.56768 32.5299 3.24518 32.1768 2.87661C31.912 2.60019 31.603 2.36983 31.2941 2.18555C30.7644 1.86305 30.2789 1.95519 29.7934 2.27769C29.5286 2.46197 29.2638 2.64626 29.0431 2.87661C28.6459 3.29125 28.2045 3.65982 27.7631 4.02839C26.5273 5.04195 25.159 5.2723 23.7025 4.67338C23.2612 4.4891 22.8639 4.21267 22.555 3.89017C22.1136 3.47553 21.7164 3.0609 21.275 2.64626C21.0102 2.4159 20.7012 2.18555 20.3481 2.04733C19.9509 1.90912 19.5978 2.00126 19.2447 2.18555C18.8033 2.4159 18.4502 2.7384 18.0971 3.10697C17.6116 3.65982 17.0379 4.12053 16.4199 4.4891C15.14 5.18016 13.9041 5.13409 12.6242 4.44303C12.0945 4.1666 11.6973 3.75196 11.2559 3.29125C10.9028 2.92268 10.5056 2.60019 10.1084 2.27769C9.57873 1.86305 9.04909 1.86305 8.47531 2.18555C8.03394 2.46197 7.68085 2.83054 7.32775 3.15304C7.06293 3.38339 6.79811 3.70589 6.48915 3.93624C5.69469 4.58124 4.85609 4.99588 3.88508 4.94981Z" fill="#F9BD62"/>
+              </svg>
+            </span>
+          {% endif %}
+        </h2>
+      {% endif %}
+      
+      {% if section.settings.sub_title != blank %}
+        <div class="tp-title-section__sub tp-title-section__sub-{{ section.id }}">
+          {{ section.settings.sub_title }}
+        </div>
+      {% endif %}
+
+      {% assign imgHighlight = section.settings.image_highlight %}
+      {% if imgHighlight != blank %}
+        <div class="title-image_highlight mt-5">
+          <img
+            class="w-24 m-auto object-cover"
+            src="{{ imgHighlight | image_url: width: imgHighlight.width , height: imgHighlight.height }}"
+            width="{{ imgHighlight.width }}"
+            height="{{ imgHighlight.height }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+    </div>
+    {% if section.settings.show_button %}
+      <div class="tp-title__btn tp-title__btn-{{ section.id }}">
+        <a href="{{ section.settings.link | default: "#" }}" class="flex items-center gap-2">
+          {{ section.settings.button_label }}
+          {% render 'icon', icon_name: 'icon-next-type2' %}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}{
+    background:{{ section.settings.background_title }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px
+  }
+   .tp-title-section__title-{{ section.id }}{
+     color: {{ section.settings.color_title }};
+     font-size: {{ section.settings.font-size_title }}px;
+     font-weight: {{ section.settings.font-weight_title }};
+
+   }
+
+   .tp-title-section__sub-{{ section.id }} p {
+     color: {{ section.settings.color_sub_title }};
+     font-size: {{ section.settings.font-size_sub_title }}px
+   }
+   .tp-title__btn-{{ section.id }} a, .tp-title__btn-{{ section.id }} path{
+     color: {{ section.settings.color_button }};
+    fill: {{ section.settings.color_button }};
+  }
+  .text-center .tp-title__btn-{{ section.id }} a{
+    justify-content:center;
+  }
+  .text-right .tp-title__btn-{{ section.id }} a{
+    justify-content: flex-end;
+  }
+
+   @media (max-width: 767px) {
+    .tp-title-section__title-{{ section.id }}{
+       font-size: {{ section.settings.font_size_title_mobile }}px;
+     }
+
+  }
+</style>
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Title section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title section",
+      "default": "Title section"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_title",
+      "label": "Sub title",
+      "default": "<p>It's soft girl storepify</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_highlight",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show icon",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Config settings"
+    },
+    {
+      "type": "select",
+      "id": "display_type",
+      "label": "Display type",
+      "options": [
+        {
+          "value": "layout_1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout_2",
+          "label": "Layout 2"
+        },
+        {
+          "value": "layout_3",
+          "label": "Layout 3"
+        }
+      ],
+      "default": "layout_1"
+    },
+    {
+      "type": "select",
+      "id": "position_title",
+      "label": "Position title",
+      "options": [
+        {
+          "value": "text-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-left",
+          "label": "Left"
+        },
+        {
+          "value": "text-right",
+          "label": "Right"
+        }
+      ],
+      "default": "text-center"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Pading top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Pading bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Font size"
+    },
+    {
+      "id": "font-size_title",
+      "type": "range",
+      "label": "Font size title",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "id": "font_size_title_mobile",
+      "type": "range",
+      "label": "Font size title mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "id": "font-weight_title",
+      "type": "range",
+      "label": "Font weight title",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default": 500
+    },
+    {
+      "id": "font-size_sub_title",
+      "type": "range",
+      "label": "Font size sub title",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color",
+      "id": "background_title",
+      "label": "Background title"
+    },
+    {
+      "id": "color_title",
+      "type": "color",
+      "label": "Color title",
+      "default": "#000"
+    },
+    {
+      "id": "color_sub_title",
+      "type": "color",
+      "label": "Color sub title",
+      "default": "#909090"
+    },
+    {
+      "id": "color_button",
+      "type": "color",
+      "label": "Color button",
+      "default": "#000"
+    },
+
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 50
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title section"
+    }
+  ]
+}
+{% endschema %}

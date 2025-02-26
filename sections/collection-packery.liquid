@@ -1,0 +1,285 @@
+<div class="tp-cl-packery" style="margin-bottom: 80px;">
+  <div class="container">
+    <div class="tp-cl-packery__tab swiper">
+      <div class="swiper-wrapper items-end">
+        {% for block in section.blocks %}
+          {% liquid
+            assign ImageTab = block.settings.image_tab
+            assign TitleTab = block.settings.title_tab
+          %}
+          <div class="swiper-slide tab-item tab-item-{{ block.id }} px-7.5 cursor-pointer">
+            <div class="tab-item__img mb-5">
+              {% if ImageTab != blank %}
+                <img
+                  srcset=" {%- if ImageTab.width >= 165 -%} {{ ImageTab | image_url: width: 165 }} 165w,{%- endif -%} {%- if ImageTab.width >= 330 -%} {{ ImageTab | image_url: width: 330 }} 330w,{%- endif -%} {%- if ImageTab.width >= 535 -%} {{ ImageTab | image_url: width: 535 }} 535w,{%- endif -%} {%- if ImageTab.width >= 750 -%} {{ ImageTab | image_url: width: 750 }} 750w,{%- endif -%} {%- if ImageTab.width >= 1000 -%} {{ ImageTab | image_url: width: 1000 }} 1000w,{%- endif -%} {%- if ImageTab.width >= 1500 -%} {{ ImageTab | image_url: width: 1500 }} 1500w,{%- endif -%} {%- if ImageTab.width >= 3000 -%} {{ ImageTab | image_url: width: 3000 }} 3000w,{%- endif -%} {{ ImageTab | image_url }} {{ ImageTab.width }}w "
+                  src="{{ ImageTab | image_url: width: 1500 }}"
+                  sizes="(min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                  alt="{{ ImageTab.title }}"
+                  height="{{ ImageTab.height }}"
+                  width="{{ ImageTab.width }}"
+                  loading="lazy"
+                  class="motion-reduce"
+                >
+              {% else %}
+                {% render 'no-image', text_size: '630x540', width: 630, height: 150 %}
+              {% endif %}
+            </div>
+            {% if TitleTab != blank %}
+              <h6 class="tab-item__title text-center">
+                {{ TitleTab }}
+              </h6>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="tab-button-prev navigation-tab">
+        {% render 'icon', icon_name: 'icon-prev-type1' %}
+      </div>
+      <div class="tab-button-next navigation-tab">
+        {% render 'icon', icon_name: 'icon-next-type1' %}
+      </div>
+    </div>
+    <div class="tp-cl-packery__detail swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% liquid
+            assign ImageCollection = block.settings.image_collection
+            assign collection = block.settings.collection
+            assign description = block.settings.description
+          %}
+          <div class="swiper-slide item-detail item-detail-{{ block.id }} cursor-pointer">
+            <div class="item-detail__wrapper flex items-center">
+              <div class="detail-content w-1/2">
+                <h3 class="detail-title detail-title-{{ block.id }}">
+                  <a href="{{ collection.url }}">
+                    {{- collection.title | default: 'Title collection' -}}
+                  </a>
+                </h3>
+                <div class="detail-desc detail-desc-{{ block.id }}">
+                  {{ description }}
+                </div>
+                {% if block.settings.button_label != blank %}
+                  <a
+                    href="{{ collection.url }}"
+                    class="tp-btn {{ block.settings.button_type }}"
+                  >
+                    <div class="button-label">
+                      {{ block.settings.button_label }}
+                    </div>
+                  </a>
+                {% endif %}
+              </div>
+              <div class="tab-item__img w-1/2">
+                {% if ImageCollection != blank %}
+                  <img
+                    srcset=" {%- if ImageCollection.width >= 165 -%} {{ ImageCollection | image_url: width: 165 }} 165w,{%- endif -%} {%- if ImageCollection.width >= 330 -%} {{ ImageCollection | image_url: width: 330 }} 330w,{%- endif -%} {%- if ImageCollection.width >= 535 -%} {{ ImageCollection | image_url: width: 535 }} 535w,{%- endif -%} {%- if ImageCollection.width >= 750 -%} {{ ImageCollection | image_url: width: 750 }} 750w,{%- endif -%} {%- if ImageCollection.width >= 1000 -%} {{ ImageCollection | image_url: width: 1000 }} 1000w,{%- endif -%} {%- if ImageCollection.width >= 1500 -%} {{ ImageCollection | image_url: width: 1500 }} 1500w,{%- endif -%} {%- if ImageCollection.width >= 3000 -%} {{ ImageCollection | image_url: width: 3000 }} 3000w,{%- endif -%} {{ ImageCollection | image_url }} {{ ImageCollection.width }}w "
+                    src="{{ ImageCollection | image_url: width: 1920 }}"
+                    sizes="(min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                    alt="{{ ImageCollection.title }}"
+                    height="{{ ImageCollection.height }}"
+                    width="{{ ImageCollection.width }}"
+                    loading="lazy"
+                    class="motion-reduce"
+                  >
+                {% else %}
+                  {% render 'no-image', text_size: '630x540', width: 630, height: 450 %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% style %}
+  #shopify-section-{{ section.id }}{
+    background: {{ section.settings.background_banner }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  @media(max-width: 767px) {
+    #shopify-section-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+    }
+  }
+  {% for block in section.blocks %}
+
+    .item-detail-{{ block.id }}{
+      background: {{ block.settings.background_color }};
+    }
+    .tab-item-{{ block.id }}.swiper-slide-thumb-active::before {
+      border-bottom: 10px solid{{ block.settings.background_color }};
+    }
+    .detail-title-{{ block.id }} a, .detail-desc-{{ block.id }} p {
+      color: {{ block.settings.color_content_collection }};
+    }
+
+
+  {% endfor %}
+{% endstyle %}
+{% schema %}
+{
+  "name": "Collection packery",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_section",
+      "label": "Width section",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "fullwidth",
+          "label": "Full width"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Collection heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_item",
+      "name": "Collection item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_tab",
+          "label": "Image tab"
+        },
+        {
+          "type": "text",
+          "id": "title_tab",
+          "label": "Title tab",
+          "default": "Title tab"
+        },
+        {
+          "type": "header",
+          "content": "Collection detail"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_collection",
+          "label": "Image collection"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#96e1ec"
+        },
+        {
+          "type": "color",
+          "id": "color_content_collection",
+          "label": "Color content collection",
+          "default": "#fff"
+        },
+        {
+          "type": "header",
+          "content": "Button settings"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "options": [
+            {
+              "value": "tp-btn__primary",
+              "label": "Button primary"
+            },
+            {
+              "value": "tp-btn__secondary",
+              "label": "Button secondary"
+            },
+            {
+              "value": "tp-btn__alternate",
+              "label": "Button alternate"
+            },
+            {
+              "value": "tp-btn__underline",
+              "label": "Button underline"
+            }
+          ],
+          "label": "Button type",
+          "default": "tp-btn__primary"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop now"
+        },
+        {
+          "type": "range",
+          "id": "font_size_button",
+          "min": 12,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size button",
+          "default": 16
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection packery",
+      "category": "Custom content"
+    }
+  ]
+}
+{% endschema %}

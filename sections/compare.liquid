@@ -1,0 +1,28 @@
+{%liquid
+  assign isPageCompare = false 
+  if template == 'page.compare'
+    assign isPageCompare = true
+  endif
+  %}
+<div class="compare container" id="compare" data-page-compare="{{ isPageCompare }}">
+  <p class="text-center icon-loading-compare">Loading...</p>
+  <div class="grid row" grid-compare id="CollectionProductGrid">
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Compare",
+    "class": "compare-product",
+    "tag": "section",
+    "settings": [
+
+    ],
+    "presets": [
+    {
+        "name": "Compare",
+        "category": "compare-product"
+    }
+]
+}
+{% endschema %}

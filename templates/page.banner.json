@@ -1,0 +1,1165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16639162021ce5e24e": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "main": {
+      "type": "banner-image-card",
+      "blocks": {
+        "6d09a93c-c199-45c6-876b-49c81d802f1d": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/image-banner-bags-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>End of Summer Sale</p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "6d09a93c-c199-45c6-876b-49c81d802f1d"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "Banner layout 1",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_1",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16639182406242e3fc": {
+      "type": "banner-image-card",
+      "blocks": {
+        "4b0a47ef-ab16-47e8-ad75-51892aa93bb9": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Already up to 80% off",
+            "link": ""
+          }
+        },
+        "5a67725e-c460-4d8e-93cd-5835a7efba6b": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Get 15% off everything",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "4b0a47ef-ab16-47e8-ad75-51892aa93bb9",
+        "5a67725e-c460-4d8e-93cd-5835a7efba6b"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "Banner layout 1",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_1",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1663917085977e3fc5": {
+      "type": "banner-image-card",
+      "blocks": {
+        "d7e158f3-3a13-4c02-8009-2d8474a33bf7": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-shoes-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Alfie Chunky </p><p>Boots</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "32e05f24-6c3d-410f-bc96-cc35ea9220ce": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-shoes-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>New Balance </p><p>Trainers</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "9272d4e6-daa2-4564-b890-6b998b836eb6": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-shoes-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Converse </p><p>Chuck Taylor</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "d7e158f3-3a13-4c02-8009-2d8474a33bf7",
+        "32e05f24-6c3d-410f-bc96-cc35ea9220ce",
+        "9272d4e6-daa2-4564-b890-6b998b836eb6"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "Banner Layout 2",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_2",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16639174796d9ce768": {
+      "type": "banner-image-card",
+      "blocks": {
+        "509ac739-a609-4bb4-8c80-ef83ddd44623": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/image-banner-bags-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Crafted For The </p><p>Chic In You</p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#ffffff",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "Yellow patch in natural straw",
+            "link": ""
+          }
+        },
+        "19e62854-6403-4ae1-9742-5fe95755025b": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center-right",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/image-banner-bags-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>You Are Reflecting</p><p>Your Style </p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#ffffff",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "Crossbody strap in mustard",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "509ac739-a609-4bb4-8c80-ef83ddd44623",
+        "19e62854-6403-4ae1-9742-5fe95755025b"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "Banner layout 2",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_2",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1663918018acc6a8ad": {
+      "type": "banner-image-card",
+      "blocks": {
+        "8cd800d4-68b1-4008-b942-bdc915953bfb": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-accessories-1_2fc273a6-dc98-48a4-9ee1-347314ed4e1a.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#ffffff",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "4239c4a5-abbf-4535-8380-7ea6fc70f5aa": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-right",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-accessories-2_fc973fc4-01ee-4bbd-b9ff-4ebc9c6e67a2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "1826ac8c-6573-4807-8115-f13b77a951fb": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-right",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-accessories-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8cd800d4-68b1-4008-b942-bdc915953bfb",
+        "4239c4a5-abbf-4535-8380-7ea6fc70f5aa",
+        "1826ac8c-6573-4807-8115-f13b77a951fb"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "Banner layout 2",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_2",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16639186813a67a5d9": {
+      "type": "banner-image-card",
+      "blocks": {
+        "e69c55e8-7143-4c15-b514-527307af660e": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banenr-3-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "868ae33e-ab4c-445c-a798-05ad8745d57a": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banenr-3-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>End of Summer Sale</p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "2c2ef786-8eaf-4543-b1e4-0253d06aa94f": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banenr-3-4.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "cb9cd49b-7aea-4fa5-ac58-dde2a642baa7": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banenr-3-5.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "20437393-e3f2-4c3a-9c4c-0179b9a0736f": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banenr-3-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "e69c55e8-7143-4c15-b514-527307af660e",
+        "868ae33e-ab4c-445c-a798-05ad8745d57a",
+        "2c2ef786-8eaf-4543-b1e4-0253d06aa94f",
+        "cb9cd49b-7aea-4fa5-ac58-dde2a642baa7",
+        "20437393-e3f2-4c3a-9c4c-0179b9a0736f"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "Banner layout 3",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_3",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1663919877e9b6b39c": {
+      "type": "banner-image-card",
+      "blocks": {
+        "e2d94867-87ca-4bcf-bc45-0dd37db35287": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-hats.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Storepify Theme</p>",
+            "sub_title": "",
+            "font_size_title": 50,
+            "color_title": "#ffffff",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Multipurpose",
+            "link": ""
+          }
+        },
+        "782e364d-f50f-4ab3-92c5-0764c9128d47": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/home-hat-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "W",
+            "link": ""
+          }
+        },
+        "02f2c587-213c-4ed2-92a3-6fecceb0da33": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/home-hat-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "M",
+            "link": ""
+          }
+        },
+        "8ed6dcf6-cc43-4dc3-ae6d-1766c1791f41": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/home-hat-4.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "A",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "e2d94867-87ca-4bcf-bc45-0dd37db35287",
+        "782e364d-f50f-4ab3-92c5-0764c9128d47",
+        "02f2c587-213c-4ed2-92a3-6fecceb0da33",
+        "8ed6dcf6-cc43-4dc3-ae6d-1766c1791f41"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "Banner layout 4",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_4",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16639211609e01c36f": {
+      "type": "banner-image-card",
+      "blocks": {
+        "efa161a2-4933-4a35-9371-ce16926c22b8": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-5-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Oakley</p><p>redux visor</p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "317da6be-2b78-4e3f-b09a-5628ca00d91c": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-5-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "7dca2664-854a-4bf9-a952-9f9d93de9ecd": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-5-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "bf985c64-f5d4-4d63-8244-0ff52d139e13": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-5-4.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "efa161a2-4933-4a35-9371-ce16926c22b8",
+        "317da6be-2b78-4e3f-b09a-5628ca00d91c",
+        "7dca2664-854a-4bf9-a952-9f9d93de9ecd",
+        "bf985c64-f5d4-4d63-8244-0ff52d139e13"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "Banner layout 5",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_5",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166392162427f85df5": {
+      "type": "banner-image-card",
+      "blocks": {
+        "c68bbb6b-e7ad-4ea2-8cec-9d0fb804aec1": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banenr-hats-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "87b6f047-d2a8-4cea-a931-fb773132c0b3": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/3_ce91e07f-9169-4632-9d12-ee8cc0b78411.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>End of Summer Sale</p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "f0ed7454-ed45-421d-a812-ce567c47a24a": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/001-free-1_150761b0-4f98-4fc0-b9a0-f11e4dc6fc66.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "f82db530-ffda-4747-8c2b-9cd3b3c54f39": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/4_ac3196dc-697b-4aa8-9959-19eb293ae014.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "9420ce85-8e21-435b-a49d-d091b0b1c1e4": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/6_8e53f1e0-3da0-4d67-86d9-cae1d3fabae3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "c68bbb6b-e7ad-4ea2-8cec-9d0fb804aec1",
+        "87b6f047-d2a8-4cea-a931-fb773132c0b3",
+        "f0ed7454-ed45-421d-a812-ce567c47a24a",
+        "f82db530-ffda-4747-8c2b-9cd3b3c54f39",
+        "9420ce85-8e21-435b-a49d-d091b0b1c1e4"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "Banner layout 6",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_6",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166392238964cbbf0a": {
+      "type": "banner-image-card",
+      "blocks": {
+        "73242533-5eb2-4adf-af39-1c432a884c27": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-7-4.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Oakley redux visor </p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "cf57ffde-6c2d-493d-8d60-838e48d4f35f": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-7-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "7fe082e7-0c8c-4d16-be25-f82fbd915380": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-7-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "a6f16df4-dcca-4da7-aeeb-8d7a50cfce73": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-7-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Weave straw pu mix</p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "73242533-5eb2-4adf-af39-1c432a884c27",
+        "cf57ffde-6c2d-493d-8d60-838e48d4f35f",
+        "7fe082e7-0c8c-4d16-be25-f82fbd915380",
+        "a6f16df4-dcca-4da7-aeeb-8d7a50cfce73"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "Banner layout 7",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "layout": "layout_7",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1663922981c91c0908": {
+      "type": "banner",
+      "blocks": {
+        "7c669c43-dc5c-4d77-b9bd-37ec01432e7c": {
+          "type": "banner_menu",
+          "settings": {
+            "image_banner": "shopify://shop_images/thumb2.png",
+            "menu_banner": "information",
+            "title_menu": "Nail & Wax",
+            "text_button": "Shop collection",
+            "link_button_banner": "",
+            "position_menu": "left"
+          }
+        },
+        "77d5d91b-6ffb-4ae0-afc4-6c1be05d11c5": {
+          "type": "banner_menu",
+          "settings": {
+            "image_banner": "shopify://shop_images/thumb1.png",
+            "menu_banner": "legal",
+            "title_menu": "Nail & Wax",
+            "text_button": "Shop collection",
+            "link_button_banner": "",
+            "position_menu": "right"
+          }
+        }
+      },
+      "block_order": [
+        "7c669c43-dc5c-4d77-b9bd-37ec01432e7c",
+        "77d5d91b-6ffb-4ae0-afc4-6c1be05d11c5"
+      ],
+      "settings": {
+        "width_layout_banner": "container",
+        "background_banner": "rgba(0,0,0,0)",
+        "title": "Banner menu",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1663923222ea42b485": {
+      "type": "banner",
+      "blocks": {
+        "ca0f0fc9-f531-41c8-a2cf-65541a2246f2": {
+          "type": "banner_normal",
+          "settings": {
+            "layout_banner": "layout-normal_1",
+            "image_banner": "shopify://shop_images/blog_banner.png",
+            "title_banner": "Tiered broderie mini sundress in white",
+            "description_banner": "Wre talking swirly scrunchies, bow headbands and more super-cute, 90s-inspired bits. And to wrap up things up, check out Pieces for womens hat and scarf sets thatll make cold-weather dressing a breeze.",
+            "color-title": "#000000",
+            "color-description": "#5e5e5e",
+            "button_type": "underline-button",
+            "text_button": "Shop collection",
+            "link_button_banner": ""
+          }
+        }
+      },
+      "block_order": [
+        "ca0f0fc9-f531-41c8-a2cf-65541a2246f2"
+      ],
+      "settings": {
+        "width_layout_banner": "container",
+        "background_banner": "rgba(0,0,0,0)",
+        "title": "Banner image & text",
+        "description": "<p>There are many variations of passages of Lorem Ipsum available,</p><p>but the majority have suffered alteration in some form, by</p>",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "16639162021ce5e24e",
+    "main",
+    "16639182406242e3fc",
+    "1663917085977e3fc5",
+    "16639174796d9ce768",
+    "1663918018acc6a8ad",
+    "16639186813a67a5d9",
+    "1663919877e9b6b39c",
+    "16639211609e01c36f",
+    "166392162427f85df5",
+    "166392238964cbbf0a",
+    "1663922981c91c0908",
+    "1663923222ea42b485"
+  ]
+}

@@ -1,0 +1,13 @@
+<div class="add-tp-product">
+  {%- for media in product.media -%}
+    <div class="tp-img-product">
+      <span class="tp-number">{{ forloop.index }}</span>
+      <svg fill="none" height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 24L8.5 16.5L1 24ZM24 10C24 11.1819 23.7672 12.3522 23.3149 13.4442C22.8626 14.5361 22.1997 15.5282 21.364 16.364C20.5282 17.1997 19.5361 17.8626 18.4442 18.3149C17.3522 18.7672 16.1819 19 15 19C13.8181 19 12.6478 18.7672 11.5558 18.3149C10.4639 17.8626 9.47177 17.1997 8.63604 16.364C7.80031 15.5282 7.13738 14.5361 6.68508 13.4442C6.23279 12.3522 6 11.1819 6 10C6 7.61305 6.94821 5.32387 8.63604 3.63604C10.3239 1.94821 12.6131 1 15 1C17.3869 1 19.6761 1.94821 21.364 3.63604C23.0518 5.32387 24 7.61305 24 10V10Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="white"></path>
+      </svg>
+      <img class="image-main" data-index="{{ forloop.index0 }}" src="{{ media | image_url: width: media.width , height: media.height }}" loading="lazy" width="{{ media.width }}" height="{{ media.height }}" alt="{{ media.preview_image.alt | escape }}">
+
+      {% render 'box-icon-media-type', media: media %}
+    </div>
+  {% endfor %}
+</div>

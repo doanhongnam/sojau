@@ -1,0 +1,101 @@
+{%- liquid
+
+  assign st = section.settings
+  assign bg_404 = st.bg_404
+  assign pdt_404 = st.pdt_404
+  assign pdb_404 = st.pdt_404
+
+-%}
+
+<style type="text/css">
+  .template-404 .title+* {
+    margin-top: 1rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .template-404 .title+* {
+      margin-top: 2rem;
+    }
+  }
+  .page404 {
+    background-color: {{ bg_404 }};
+    padding-top: {{ pdt_404 }}px;
+    padding-bottom: {{ pdb_404 }}px;
+  }
+</style>
+
+<div class="template-404 page-width page-margin center">
+  <div class="page404">
+    <div class="container">
+      <div class="page404__content">
+        <div class="page404__img">
+          {% assign Image404 = section.settings.image_404 %}
+          {% if Image404 != blank %}
+          <img class="full-img" src="{{ Image404 | image_url: width: Image404.width , height: Image404.height }}"
+            alt="background image 404" width="{{ Image404.width }}" height="{{ Image404.height }}" loading="lazy">
+          {% else %}
+            {% render 'no-image', text_size: '607 x 499 px', width: 607, height: 499 %}
+          {% endif %}
+        </div>
+
+        <h1 class="page404__title title">
+          {{ 'templates.404.title' | t }}
+        </h1>
+
+        <div class="page404__wrap">
+          <p class="page404__subtext">
+            {{ 'templates.404.subtext' | t }}
+          </p>
+          <a href="{{ routes.all_products_collection_url }}" class="page404__btn tp-btn tp-btn__secondary">
+            {{ 'general.continue_shopping' | t }}
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name":"main 404",
+  "tag":"section",
+  "settings":[
+    {
+      "type": "image_picker",
+      "id": "image_404",
+      "label": "Image 404"
+    },
+    {
+      "type": "color",
+      "id": "bg_404",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type":"header",
+      "content":"Padding"
+    },
+    {
+      "type": "range",
+      "id": "pdt_404",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "pdb_404",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    }
+  ]
+}
+{% endschema %}

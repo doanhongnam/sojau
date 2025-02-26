@@ -1,0 +1,35 @@
+{% if product.description != blank %}
+    {% if block.settings.use_spacing %}
+        {% render 'block-margin-bottom', className: "tp-product-brief", block: block %}
+        {% assign classDefault = "" %}
+    {% else %}
+        {% assign classDefault = " mb-3.75" %}
+    {% endif %}
+    <div class="tp-product-brief{{ classDefault }}">
+        {% assign desc_display_as = block.settings.desc_display_as %}
+        <div class="item-header flex items-center justify-content-between mb-5{% if desc_display_as == 'show' %} activeItemHeader{% endif %}">
+            <div class="item-wrap tp-title-description flex items-center justify-between{% if desc_display_as == 'show' %} showContent{% endif %}">
+                {{ 'products.product.product_description' | t }}
+                {% render 'icon',
+                        icon_name: 'icon-plus',
+                        color: block.settings.p_desc_iconcolor,
+                        width: 14,
+                        height: 14
+                %}
+                {% render 'icon',
+                        icon_name: 'icon-close',
+                        width: 14,
+                        height: 14,
+                        color: block.settings.p_desc_iconcolor
+                %}
+            </div>
+        </div>
+
+        <div
+                class="item-body-content"
+                style="{% if desc_display_as == 'show' %}max-height: none{% endif %}"
+        >
+            {{ product.description }}
+        </div>
+    </div>
+{% endif %}

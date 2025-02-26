@@ -1,0 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "165770078818653e11": {
+      "type": "breadcrumb",
+      "settings": {
+        "width_layout": "container",
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "show_image_collection": false,
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "width_layout": "lg-container",
+        "collection_list": [
+          "arm-sleeves",
+          "custom-matching-underwear-for-couples",
+          "matching-pajamas-for-couples",
+          "matching-underwear-for-couples",
+          "bikini-bra-set"
+        ],
+        "products_per_page": 50,
+        "fsize_scale": 150,
+        "show_description": false,
+        "is_collapse_description": true,
+        "display_position": "top",
+        "description_max_height": 100,
+        "description_viewmore": "View More",
+        "description_viewless": "View Less",
+        "product_item_layout": "layout_1",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "price_type": "slider",
+        "price_range_config": "10-30,30-50,50-100,100-200,200-300,300-400,400-500",
+        "enable_apply_button": false,
+        "pagination_type": "pagination",
+        "type_load_more": "scroll",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "165770078818653e11",
+    "product-grid"
+  ]
+}

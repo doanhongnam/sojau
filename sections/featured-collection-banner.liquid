@@ -1,0 +1,368 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout
+  assign displayType = section.settings.display_type
+  assign layoutSlider = section.settings.layout_slider
+  assign typeButton = section.settings.type_button
+  assign styleButton = section.settings.button_type
+  assign styleButtonTabActive = section.settings.style_button_tab
+  assign position_b_c = section.settings.position_collection
+  assign columnNumber = section.settings.column_number
+  assign classColumnNumber = 'col-4'
+  if columnNumber == '2'
+    assign classColumnNumber = 'col-2'
+  elsif columnNumber == '3'
+    assign classColumnNumber = 'col-3'
+  elsif columnNumber == '5'
+    assign classColumnNumber = 'col-5'
+  endif
+
+  assign pws_show = section.settings.pws_show
+  assign pws_title = section.settings.pws_title
+  assign pws_title = blank
+  assign pws_desc = section.settings.pws_desc
+  assign pws_button_name = section.settings.pws_button_name
+  assign pws_button_link = section.settings.pws_button_link
+  assign pws_random_number = 'now' | date: '%N' | modulo: 1000 | plus: 0
+%}
+
+<style>
+  .tp-fcl__top.text-left {
+    text-align: left !important;
+  }
+  .tp-fcl__top.text-center {
+    text-align: center !important;
+  }
+  .tp-fcl__top.text-right {
+    text-align: right !important;
+  }
+</style>
+
+<div class="tp-featured-collection tp-featured-collection-{{ section.id }} {{ WidthLayout }}">
+  <div class="tp-fcl__main tp-fcl__main-{{ section.id }} tp-fcl__main-banner">
+    {% if section.settings.title != blank or section.settings.description != blank %}
+      <div class="tp-fcl__top mb-12.5">
+        {% if section.settings.title != blank %}
+          <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <p class="mb-5">{{ section.settings.description }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="tp-fcl__wrapper flex {% if position_b_c == 'position_right' %}flex-row-reverse{% endif %}">
+      <div class="tp-fcl__banner">
+        {% if section.settings.title_banner != blank %}
+          <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title_banner }}</h2>
+        {% endif %}
+        {% if section.settings.description_banner != blank %}
+          <div class="mb-5">{{ section.settings.description_banner }}</div>
+        {% endif %}
+        {% if section.settings.text_button != blank %}
+          <div class="text-left ">
+            <a href="{{ collection.url | default: '#' }}" class="tp-btn {{ styleButton }}">
+              {{ section.settings.text_button }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      {% assign collection = collections[section.settings.collection] %}
+      {% if collection != blank %}
+        {%- paginate collection.products by section.settings.products_to_show -%}
+          <div class="parent-item tp-fcl__collection {% if position_b_c == 'position_right' %}pr-5{% else %}pl-5{% endif %}">
+            <ul class="tp-fcl__content mobile-{{ section.settings.mobile_columns }}">
+              {% assign collectionProducts = collection.products | sort: 'published_at' | reverse %}
+              {%- for product in collectionProducts -%}
+                {% liquid
+                  assign lazy_load = false
+                  if forloop.index > 2
+                    assign lazy_load = true
+                  endif
+                -%}
+                <li class="tp-fcl__item grid__item {{ classColumnNumber }}">
+                  {% render 'card-product',
+                    card_product: product,
+                    section: section,
+                    layoutProductItem: section.settings.product_item_layout,
+                    lazy_load: lazy_load
+                  %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {% endpaginate %}
+      {% else %}
+        <div class="tp-fcl__collection parent-item-default parent-item">
+          <ul class="tp-fcl__content mobile-{{ section.settings.mobile_columns }}">
+            {% liquid
+              assign lazy_load = false
+              if forloop.index > 2
+                assign lazy_load = true
+              endif
+              assign numbers = '1,2,3,4,5,6' | split: ','
+            -%}
+            {% for item in numbers -%}
+              <li class="tp-fcl__item grid__item">
+                {% render 'card-product-no-data' %}
+              </li>
+            {% endfor %}
+          </ul>
+          {% if section.settings.text_button != blank %}
+            <div class="fcl-load-more">
+              <a
+                href="#"
+                class="tp-btn {{ styleButton }}"
+              >
+                {{ section.settings.text_button }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  {% if section.settings.background_image != blank or section.settings.background_color != blank %}
+  .tp-featured-collection-{{ section.id }} {
+  {% if section.settings.background_image != blank %} background: url('{{ section.settings.background_image | image_url: width: section.settings.background_image.width, height: section.settings.background_image.height }}');
+      background-repeat: round;
+  {% elsif section.settings.background_color != blank %} background: {{ section.settings.background_color }};
+  {% endif %}
+  }
+
+  {% endif %}
+  .tp-fcl__main-{{ section.id }} {
+      padding: {{ section.settings.padding_top_bottom }}px 0;
+  }
+
+  .tp-fcl__main-{{ section.id }} .tp-fcl__banner {
+      background-position: center;
+      background-size: cover !important;
+  {% if section.settings.background_banner != blank %} background: url('{{ section.settings.background_banner | image_url: width: section.settings.background_banner.width, height: section.settings.background_banner.height }}');
+  {% else %} background: #f8f8f8;
+  {% endif %}
+
+  }
+
+  @media (max-width: 767px) {
+      .tp-fcl__main-{{ section.id }} .tp-fcl__banner {
+          background-size: unset !important;
+      }
+
+  {% if section.settings.item_direction == 'item_row' %}
+      .tp-fcl__item {
+          width: 100% !important;
+      }
+
+  {% endif %}
+
+  }
+</style>
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Product Banner",
+  "tag": "section",
+  "class": "section relative",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Product by",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Not used for tab type"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Pading top and bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 8,
+      "label": "t:sections.featured-collection.settings.products_to_show.label"
+    },
+    {
+      "type": "select",
+      "id": "column_number",
+      "label": "Column number product",
+      "options": [
+        {
+          "value": "2",
+          "label": "2 column"
+        },
+        {
+          "value": "3",
+          "label": "3 column"
+        },
+        {
+          "value": "4",
+          "label": "4 column"
+        },
+        {
+          "value": "5",
+          "label": "5 column"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2",
+      "info": "Number of columns displayed on mobile"
+    },
+    {
+      "type": "text",
+      "id": "title_banner",
+      "default": "Shop Pet Portraits",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description_banner",
+      "default": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_banner",
+      "label": "Background banner"
+    },
+    {
+      "type": "select",
+      "id": "position_collection",
+      "label": "Position collection",
+      "options": [
+        {
+          "value": "position_left",
+          "label": "Position left"
+        },
+        {
+          "value": "position_right",
+          "label": "Position right"
+        }
+      ],
+      "default": "position_left"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "product_item_layout",
+      "label": "Product item layout",
+      "options": [
+        {
+          "value": "use_global",
+          "label": "Use global"
+        },
+        {
+          "value": "layout_1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout_2",
+          "label": "Layout 2"
+        }
+      ],
+      "default": "use_global"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Product banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16637523715d81f737": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "c6c724b3-9dd4-41e5-bce4-d8182ebb9d88": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Header Layouts",
+        "sub_title": "<p>STOREPIFY Theme offers users a wide variety of customizing possibilities that you can manage directly on the website without any coding requirement.<br/>You can apply these Header Layouts on many pages like HomePage, Product Listing Page, or Product Detail Page.<br/>Below is the available pre-built Product Item Layouts for you:</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 62,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "4ebd4ee9-8bdd-4c30-be95-b2a554ed8ad7": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166374371540ab4298": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Header Type 1",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "main": {
+      "type": "header",
+      "settings": {
+        "menu_bg": "#ffffff",
+        "logo": "shopify://shop_images/logo.png",
+        "logo_position": "middle-left",
+        "container_config": "full-container",
+        "menu": "main-menu",
+        "menu_mobile": "",
+        "show_line_separator": true,
+        "show_account": true,
+        "enable_sticky_header": false,
+        "hover_type": "hover_type_1",
+        "check_label1": false,
+        "name_label1": "Hot",
+        "list_label1": "",
+        "bgcolor_label1": "#ff0000",
+        "textcolor_label1": "#ffffff",
+        "check_label2": false,
+        "name_label2": "New",
+        "list_label2": "",
+        "bgcolor_label2": "#6461ff",
+        "textcolor_label2": "#ffffff",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166374498722d171b7": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Header Type 2",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1663744521cb0d1055": {
+      "type": "header",
+      "blocks": {
+        "6bd20813-cbc1-4d8a-b328-1dd94dab3f11": {
+          "type": "megamenu",
+          "settings": {
+            "block_foritem": "",
+            "block_menu1": "",
+            "block_menu2": "",
+            "block_menu3": "",
+            "list_product_title": "Specials offers",
+            "block_product_list": [],
+            "url_logo_image1": "",
+            "url_logo_image2": "",
+            "check_label1": false,
+            "name_label1": "Hot",
+            "list_label1": "",
+            "bgcolor_label1": "#ff0000",
+            "textcolor_label1": "#ffffff",
+            "check_label2": false,
+            "name_label2": "New",
+            "list_label2": "",
+            "bgcolor_label2": "#6461ff",
+            "textcolor_label2": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "6bd20813-cbc1-4d8a-b328-1dd94dab3f11"
+      ],
+      "settings": {
+        "menu_bg": "#ffffff",
+        "logo": "shopify://shop_images/logo.png",
+        "logo_position": "top-center",
+        "container_config": "container",
+        "menu": "main-menu",
+        "menu_mobile": "",
+        "show_line_separator": true,
+        "show_account": true,
+        "enable_sticky_header": false,
+        "hover_type": "hover_type_1",
+        "check_label1": false,
+        "name_label1": "Hot",
+        "list_label1": "",
+        "bgcolor_label1": "#ff0000",
+        "textcolor_label1": "#ffffff",
+        "check_label2": false,
+        "name_label2": "New",
+        "list_label2": "",
+        "bgcolor_label2": "#6461ff",
+        "textcolor_label2": "#ffffff",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1663744979f5d1b7be": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Header Type 3",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "166374452817c1a3c7": {
+      "type": "header",
+      "blocks": {
+        "3a1e10e7-bd84-4624-b2b5-913efe29293a": {
+          "type": "megamenu",
+          "settings": {
+            "block_foritem": "",
+            "block_menu1": "",
+            "block_menu2": "",
+            "block_menu3": "",
+            "list_product_title": "Specials offers",
+            "block_product_list": [],
+            "url_logo_image1": "",
+            "url_logo_image2": "",
+            "check_label1": false,
+            "name_label1": "Hot",
+            "list_label1": "",
+            "bgcolor_label1": "#ff0000",
+            "textcolor_label1": "#ffffff",
+            "check_label2": false,
+            "name_label2": "New",
+            "list_label2": "",
+            "bgcolor_label2": "#6461ff",
+            "textcolor_label2": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "3a1e10e7-bd84-4624-b2b5-913efe29293a"
+      ],
+      "settings": {
+        "menu_bg": "#ffffff",
+        "logo": "shopify://shop_images/logo.png",
+        "logo_position": "top-left",
+        "container_config": "container",
+        "menu": "main-menu",
+        "menu_mobile": "",
+        "show_line_separator": true,
+        "show_account": true,
+        "enable_sticky_header": false,
+        "hover_type": "hover_type_1",
+        "check_label1": false,
+        "name_label1": "Hot",
+        "list_label1": "",
+        "bgcolor_label1": "#ff0000",
+        "textcolor_label1": "#ffffff",
+        "check_label2": false,
+        "name_label2": "New",
+        "list_label2": "",
+        "bgcolor_label2": "#6461ff",
+        "textcolor_label2": "#ffffff",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "16637523715d81f737",
+    "c6c724b3-9dd4-41e5-bce4-d8182ebb9d88",
+    "4ebd4ee9-8bdd-4c30-be95-b2a554ed8ad7",
+    "166374371540ab4298",
+    "main",
+    "166374498722d171b7",
+    "1663744521cb0d1055",
+    "1663744979f5d1b7be",
+    "166374452817c1a3c7"
+  ]
+}

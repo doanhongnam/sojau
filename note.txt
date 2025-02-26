@@ -1,0 +1,53 @@
+npm install -g @shopify/cli@latest
+
+shopify version
+
+có thể bỏ qua bc này
+shopify login
+
+shopify theme pull --store 7pfk0h-si.myshopify.com
+luc nay login cung dc
+
+Chỉnh sửa trong VS Code, sau đó xem trực tiếp bằng Live Preview:
+shopify theme serve
+
+
+Đẩy theme lên Shopify:
+shopify theme push
+
+===========================
+
+lay link github
+git remote -v
+origin  https://github.com/doanhongnam/HapiTrack.git (fetch)
+origin  https://github.com/doanhongnam/HapiTrack.git (push)
+
+clone về máy mới
+git clone https://github.com/doanhongnam/HapiTrack.git
+
+
+Kiểm tra thay đổi trong repo cục bộ:
+git status
+
+Thêm các thay đổi vào staging:
+git add .
+
+Commit code mới:
+git commit -m "Cập nhật code mới: [Mô tả ngắn gọn]"
+
+
+Kéo code từ repo từ xa (để tránh xung đột):
+git pull origin main --rebase
+
+Đẩy code mới lên repo từ xa:
+git push origin main
+
+//Bo het va keo ve
+git reset --hard
+git pull origin main --rebase
+
+git init
+
+shopify theme serve    # Chạy theme locally
+shopify theme push    # Đẩy thay đổi lên store
+shopify theme pull    # Kéo phiên bản mới nhất về

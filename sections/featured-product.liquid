@@ -1,0 +1,322 @@
+{% liquid
+  assign product = section.settings.product
+%}
+
+<div class="bg-feaured-product">
+  {% assign BgFeaured = section.settings.background %}
+  {% if BgFeaured != blank %}
+    <img
+      class="background-feaured"
+      src="{{ BgFeaured | image_url: width: BgFeaured.width, height: BgFeaured.height }}"
+      alt=""
+      width="{{ BgFeaured.width }}"
+      height="{{ BgFeaured.height }}"
+      loading="lazy"
+    >
+  {% endif %}
+
+  <style>
+    {%- comment -%} .background-feaured {
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        background: url('{{ section.settings.background | image_url : width: section.settings.background.width, height : section.settings.background.height }}');
+    } {%- endcomment -%}
+
+    {% if section.settings.background == blank %}
+        .bg-feaured-product{
+            background: {{ section.settings.background_color }};
+        }
+        .bg-feaured-product .wrapper-feaured-product{
+            position: relative;
+            top: unset;
+            right: unset;
+            left: unset;
+            transform: unset;
+            padding: 80px 0;
+        }
+    {% endif %}
+
+    {% if section.settings.background_color == 'rgba(0,0,0,0)' or section.settings.background_color == '#ffffff' %}
+        .bg-feaured-product .wrapper-feaured-product{
+            padding: 0;
+        }
+    {% endif %}
+
+    {% if template == 'page.single-product' %}
+        .featured-product__left .products-vertical__thumb--ft .swiper-slide.swiper-slide-thumb-active::after {
+            border-radius: 10px;
+        }
+    {% endif %}
+  </style>
+  <div class="container wrapper-feaured-product" id="feaured-product">
+    <div class="featured-product__left">
+      <div class="swiper products-vertical__thumb--ft ml-0" thumbsslider="">
+        <div class="swiper-wrapper tp-img-thumb">
+          {% for media in product.media %}
+            <div
+              class="swiper-slide"
+              data-index="{{ media.position }}"
+              data-media-id="{{ section.id }}-{{ media.position }}"
+            >
+              <img
+                data-index="{{ media.position }}"
+                src="{{ media | image_url: width: media.width, height: media.height }}"
+                loading="lazy"
+                width="auto"
+                height="auto"
+                alt="image"
+                {% if template == 'page.single-product' %}
+                  style="border-radius: 10px;"
+                {% endif %}
+              >
+              {% render 'icon', icon_name: 'icon-search', width: 25, height: 25 %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="swiper products-vertical__main--ft">
+        <div class="swiper-wrapper">
+          {%- for media in product.media -%}
+            <div
+              class="swiper-slide wp-img-thumb"
+              data-index="{{ media.position }}"
+              data-media-id="{{ section.id }}-{{ media.position }}"
+            >
+              {% case media.media_type %}
+                {% when 'image' %}
+                  <img
+                    data-index="{{ media.position }}"
+                    src="{{ media | image_url: width: media.width, height: media.height }}"
+                    loading="lazy"
+                    width="{{ media.width }}"
+                    height="{{ media.height }}"
+                    alt="{{ media.preview_image.alt | escape }}"
+                    {% if template == 'page.single-product' %}
+                      style="border-radius: 10px;"
+                    {% endif %}
+                  >
+                {% when 'model' %}
+                  {% liquid
+                    echo media | media_tag: image_size: '2048x', toggleable: true
+                  %}
+
+                {% when 'external_video' %}
+                  {% liquid
+                    assign video_class = 'type-video js-' | append: media.host
+                    if media.host == 'youtube'
+                      echo media | external_video_url: autoplay: false, loop: false, playlist: media.external_id | external_video_tag: class: video_class, loading: 'lazy'
+                    else
+                      echo media | external_video_url: autoplay: false, loop: false | external_video_tag: class: video_class, loading: 'lazy'
+                    endif
+                  %}
+                {% when 'video' %}
+                  <div class="tf-video-product">
+                    {{
+                      media
+                      | media_tag: image_size: '2048x', autoplay: false, loop: false, controls: true, preload: 'none'
+                    }}
+                  </div>
+                {% else %}
+
+              {% endcase %}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-product__right">
+      {% if product != blank %}
+        <h1 class="featured-product__right--title mb-3.75">
+          {{ product.title | escape }}
+        </h1>
+        <div class="featured-product__right-price" id="price-{{ section.id }}">
+          {%- render 'price',
+            product: product,
+            use_variant: true,
+            show_badges: false,
+            price_class: 'price--large price-product-detail-big'
+          -%}
+        </div>
+        <div class="featured-product__right--desc">
+          {{ product.description | truncatewords: 60 | strip_html }}
+        </div>
+        {%- unless product.has_only_default_variant -%}
+          <variant-featured-product
+            class="no-js-hidden"
+            data-target-product-form="product-form-section-id-{{ section.id }}"
+            data-section="{{ section.id }}"
+            data-url="{{ product.url }}"
+            data-option="{{ option.position }}"
+            data-forloop-index="{{ forloop.index0 }} "
+            {{ block.shopify_attributes }}
+          >
+            {%- for option in product.options_with_values -%}
+              <div class="variant-name-active">
+                <span class="variant-name-active__title">{{ option.name }}:</span
+                ><span class="variant-name-active__value">{{ option.values[0] }}</span>
+              </div>
+            {%- endfor -%}
+
+            {% if product.selected_or_first_available_variant.featured_media != null %}
+              <div class="featured-product__right--list-thumb-variants">
+                {%- for variant in product.variants -%}
+                  {% if variant.featured_media != null %}
+                    <a
+                      data-variant-id="{{ variant.id }}"
+                      class="thumb {% if product.selected_or_first_available_variant.id == variant.id %} active {% endif %}"
+                      data-index="{{ forloop.index }}"
+                      data-media-id="{{ section.id }}-{{ variant.featured_media.id }}"
+                    >
+                      <img
+                        data-index="{{ forloop.index }}"
+                        src="{{ variant | image_url: width: variant.width, height: variant.height }}"
+                        loading="lazy"
+                        width="{{ variant.width }}"
+                        height="{{ variant.height }}"
+                        alt="{{ variant.preview_image.alt | escape }}"
+                      >
+                    </a>
+                  {% endif %}
+                {%- endfor -%}
+              </div>
+            {% endif %}
+
+            <script type="application/json">
+              {{ product.variants | json }}
+            </script>
+          </variant-featured-product>
+        {%- endunless -%}
+
+        <div
+          class="featured-product__right--qty flex items-center"
+          id="quantity-section-id-{{ section.id }}"
+          data-section="{{ section.id }}"
+        >
+          <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
+            {% comment %} <label class="form__label" for="Quantity-{{ section.id }}"> Qty: </label> {% endcomment %}
+            <quantity-input class="tp-item__quantity border rounded" data-section="{{ section.id }}">
+              <button class="tp-item__qty_btn no-js-hidden" name="minus" type="button">-</button>
+              <input
+                class="tp-item__qty_input quantity-{{ section.id }}"
+                form="product-form-{{ section.id }}"
+                min="1"
+                name="quantity"
+                type="number"
+                value="1"
+              >
+              <button class="tp-item__qty_btn no-js-hidden" name="plus" type="button">+</button>
+            </quantity-input>
+            <span class="error-message hidden" style="color: tomato;"></span>
+          </div>
+
+          <div class="featured-product__right--product-form tp-box-btn button--full-width">
+            <product-form class="product-form" id="product-form-section-id-{{ section.id }}">
+              {%- form 'product',
+                product,
+                id: product_form_id,
+                class: 'form',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+              -%}
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                <input name="quantity" type="hidden" value="1">
+                <div class="product-form__buttons">
+                  <button
+                    type="submit"
+                    name="add"
+                    class="tp-btn tp-btn__secondary product-form__submit button button--full-width"
+                    {% if product.selected_or_first_available_variant.available == false %}
+                      disabled
+                    {% endif %}
+                  >
+                    {% render 'icon', icon_name: 'icon-cart' %}
+                    <span>
+                      {%- if product.selected_or_first_available_variant.available -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
+                    </span>
+                    <span class="loading-overlay__spinner hidden">
+                      {% render 'icon', icon_name: 'icon-loadding' %}
+                    </span>
+                  </button>
+                </div>
+              {%- endform -%}
+            </product-form>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% render 'margin-bottom' %}
+
+{% schema %}
+{
+  "name": "Featured product",
+  "class": "section-featured-product",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ecf9ff"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 50
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured product",
+      "category": "Featured product"
+    }
+  ]
+}
+{% endschema %}
+{% if product %}
+<script class="gpo-featured-product">
+  window.GPOConfigs = window.GPOConfigs || {}
+  window.GPOConfigs.featuredProduct = {{ product | json }} || null
+  window.GPOConfigs.featuredProduct.collections = {{ product.collections | map: 'id' | json }}
+</script>
+{% endif %}
+
+<!-- GPO installed -->

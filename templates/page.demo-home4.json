@@ -1,0 +1,176 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "slide",
+      "blocks": {
+        "4d0cf344-b6e9-4416-a40c-9534fbb83ba5": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Bg.png",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop Scoop Back Knitted</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "a4b37e22-e8aa-41ce-91b1-3a3786c13f88": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Bg_2.png",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop Scoop Back Knitted</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "3293e121-cfc5-4828-9688-eb434a6a99b5": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Bg_1.png",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop Scoop Back Knitted</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "4d0cf344-b6e9-4416-a40c-9534fbb83ba5",
+        "a4b37e22-e8aa-41ce-91b1-3a3786c13f88",
+        "3293e121-cfc5-4828-9688-eb434a6a99b5"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "center",
+        "pag_bg": "#000000",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "165882182061621bbc": {
+      "type": "service",
+      "blocks": {
+        "d0894ad0-d082-437f-b65e-d77d75790100": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/Shipping.png",
+            "title_service": "Return Shipping",
+            "description_service": "On order over $150",
+            "background_item_service": "#ffffff",
+            "link_service": ""
+          }
+        },
+        "e027307e-9e58-4486-8285-9898a7f823f2": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/27-7_CS.png",
+            "title_service": "24/7 Customer services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "background_item_service": "#ffffff",
+            "link_service": ""
+          }
+        },
+        "538c6ff0-55a5-408d-b36e-50c09ad99668": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/Fast_Access.png",
+            "title_service": "Fast Access",
+            "description_service": "The internet Tend To Repeat",
+            "background_item_service": "#ffffff",
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "d0894ad0-d082-437f-b65e-d77d75790100",
+        "e027307e-9e58-4486-8285-9898a7f823f2",
+        "538c6ff0-55a5-408d-b36e-50c09ad99668"
+      ],
+      "settings": {
+        "gap_item": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "165882188328e624f6": {
+      "type": "border",
+      "settings": {
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1656294042c395f3eb": {
+      "type": "list-collection",
+      "settings": {
+        "heading": "Featured Collections",
+        "display_type_collection": "slide"
+      }
+    },
+    "1656643329671e3f39": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Trending Products",
+        "description": "<p>Sed ut perspiciatis unde omnis iste natus error</p>",
+        "display_type": "normal",
+        "collection": "",
+        "products_to_show": 8,
+        "collection_list": [
+          "new-arrivals"
+        ],
+        "type_button": "load_more",
+        "text_button": "Shop now",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165882182061621bbc",
+    "165882188328e624f6",
+    "1656294042c395f3eb",
+    "1656643329671e3f39"
+  ]
+}

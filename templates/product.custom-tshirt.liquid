@@ -1,0 +1,124 @@
+{% comment %}
+This is a custom product template that allows customers to upload an image, generate a pattern, and add the customized product to the cart. It also displays product images and variants.
+{% endcomment %}
+
+<!-- Product Information -->
+<div class="product-template">
+  <h1>{{ product.title }}</h1>
+  <p>{{ product.description }}</p>
+
+  <!-- Product Images Section -->
+  <div class="product-images">
+    <h2>Product Images</h2>
+    <div class="image-carousel">
+      {% for image in product.images %}
+        <img src="{{ image | img_url: 'large' }}" alt="{{ product.title }}" style="max-width: 200px; margin: 10px;">
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Product Variants Section -->
+  {% if product.variants.size > 1 %}
+    <div class="product-variants">
+      <h2>Select a Variant</h2>
+      <select id="variant-selector">
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}">
+            {{ variant.title }} - {{ variant.price | money }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  <!-- Add Clipart/Upload Image Section -->
+  <div>
+    <h2>Customize your product</h2>
+    <p>Upload your own image to create a custom pattern!</p>
+
+    <!-- Image Upload Form -->
+    <form id="upload-form">
+      <input type="file" id="image-input" name="image" accept="image/*" required />
+      <button type="button" onclick="uploadAndGeneratePattern()">Generate Pattern</button>
+    </form>
+
+    <!-- Canvas to Display the Generated Pattern -->
+    <div id="canvas-container">
+      <canvas id="pattern-canvas" width="400" height="400"></canvas>
+    </div>
+
+    <!-- Confirm Button -->
+    <button id="confirm-btn" style="display:none;" onclick="addProductToCart()">Confirm and Add to Cart</button>
+  </div>
+
+  <!-- JavaScript for Image Upload, Variant Selection, and Pattern Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+
+  <script>
+    let canvas = new fabric.Canvas('pattern-canvas');
+    let uploadedImage;
+    let selectedVariantId = {{ product.variants.first.id }}; // Default to the first variant
+
+    // Handle variant selection
+    document.getElementById('variant-selector')?.addEventListener('change', function(event) {
+      selectedVariantId = event.target.value;
+    });
+
+    // Function to handle image upload and generate pattern
+    function uploadAndGeneratePattern() {
+      const input = document.getElementById('image-input');
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          fabric.Image.fromURL(e.target.result, function(img) {
+            uploadedImage = img;
+
+            const pattern = new fabric.Pattern({
+              source: img.getElement(),
+              repeat: 'repeat'
+            });
+
+            const rect = new fabric.Rect({
+              width: 400,
+              height: 400,
+              fill: pattern
+            });
+            canvas.clear();
+            canvas.add(rect);
+            document.getElementById('confirm-btn').style.display = 'block'; // Show confirm button
+          });
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    // Function to add the customized product to the cart with the pattern and selected variant
+    function addProductToCart() {
+      if (uploadedImage) {
+        const patternUrl = canvas.toDataURL();
+
+        // Make a POST request to add the product to the cart with custom properties
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: selectedVariantId, // Use the selected variant ID
+            quantity: 1,
+            properties: {
+              '_Custom Pattern': patternUrl
+            }
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          window.location.href = '/cart'; // Redirect to the cart after adding the product
+        })
+        .catch(error => {
+          console.error('Error adding product to cart:', error);
+        });
+      }
+    }
+  </script>
+</div>

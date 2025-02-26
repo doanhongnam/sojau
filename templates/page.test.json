@@ -1,0 +1,163 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "626b1676-54f4-4b6a-b298-af09fae11c48": {
+      "type": "announcement-bar",
+      "blocks": {
+        "1f2a2410-49d1-4589-a762-2436633b9708": {
+          "type": "style3",
+          "settings": {
+            "style3_textleft": "Free shipping on all orders",
+            "style3_textleft_color": "#ffffff",
+            "style3_textright": "REGISTER AND GET 10$",
+            "style3_textright_color": "#ffffff",
+            "style3_textright_content": "Join Clocs Club and get $10 voucher for your first purchase",
+            "style3_textright_button": "Register",
+            "style3_textright_link": "/account/register",
+            "style3_account_title": "Account",
+            "style3_account_icon": true,
+            "style3_account": "#ffffff",
+            "style3_menu": "menu-account"
+          }
+        }
+      },
+      "block_order": [
+        "1f2a2410-49d1-4589-a762-2436633b9708"
+      ],
+      "settings": {
+        "background_color": "#000000",
+        "text_color": "#ffffff",
+        "container_check": true
+      }
+    },
+    "d403480e-03c6-458e-a733-00bc0d521429": {
+      "type": "header",
+      "settings": {
+        "menu_bg": "#ffffff",
+        "logo": "shopify://shop_images/logo-crocs_d079c9c8-7555-415a-aeed-0e143a8a85de.png",
+        "logo_position": "middle-left",
+        "container_config": "container",
+        "menu": "main-menu",
+        "menu_mobile": "",
+        "show_line_separator": true,
+        "enable_sticky_header": false,
+        "hover_type": "hover_type_1",
+        "check_label1": false,
+        "name_label1": "Hot",
+        "list_label1": "",
+        "bgcolor_label1": "#ff0000",
+        "textcolor_label1": "#ffffff",
+        "check_label2": false,
+        "name_label2": "New",
+        "list_label2": "",
+        "bgcolor_label2": "#6461ff",
+        "textcolor_label2": "#ffffff",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "1662975519e51fd765": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1663035763149ab691": {
+      "type": "default-page-title",
+      "settings": {
+        "g_title": "Frequently Asked Questions",
+        "g_sub": "Need Help? We've got you covered!",
+        "horizontal_alignment": "center",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "7548efe1-cc30-45fc-89de-0aed00b12566": {
+      "type": "footer",
+      "blocks": {
+        "bfea5826-4b50-49d0-a219-faaac44267f8": {
+          "type": "contact",
+          "settings": {
+            "item_width": 40,
+            "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "phone": "(+400) 2523 465 376",
+            "color_phone": "#909090",
+            "font-size-phone": 16,
+            "email": "storepify@company.com",
+            "color_email": "#909090",
+            "font-size-email": 16
+          }
+        },
+        "b16a4d1d-26bb-4c2b-966e-9729c956f399": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 20,
+            "heading": "QUICK LINKS",
+            "menu": "main-menu"
+          }
+        },
+        "5dcef197-8563-4ede-9f34-f8ec8fa943c9": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 20,
+            "heading": "INFORMATION",
+            "menu": "main-menu"
+          }
+        },
+        "9d709161-2ec0-4e85-a6b5-ab1979cff64f": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 20,
+            "heading": "LEGAL",
+            "menu": "legal"
+          }
+        }
+      },
+      "block_order": [
+        "bfea5826-4b50-49d0-a219-faaac44267f8",
+        "b16a4d1d-26bb-4c2b-966e-9729c956f399",
+        "5dcef197-8563-4ede-9f34-f8ec8fa943c9",
+        "9d709161-2ec0-4e85-a6b5-ab1979cff64f"
+      ],
+      "settings": {
+        "image_logo": "shopify://shop_images/logo-crocs-white.png",
+        "color_background": "#000000",
+        "heading_color": "#ffffff",
+        "subtext_color": "#ffffff",
+        "color_social": "#ffffff",
+        "show_social": true,
+        "payment_enable": true,
+        "content_copyright": "Copyright by Storepify",
+        "color_content_copyright": "#909090",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0,
+        "padding_top_desktop": 50,
+        "padding_top_table": 50,
+        "padding_top_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "626b1676-54f4-4b6a-b298-af09fae11c48",
+    "d403480e-03c6-458e-a733-00bc0d521429",
+    "1662975519e51fd765",
+    "1663035763149ab691",
+    "7548efe1-cc30-45fc-89de-0aed00b12566"
+  ]
+}

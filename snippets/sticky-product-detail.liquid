@@ -1,0 +1,208 @@
+<sticky-product-detail class="sticky-product-detail">
+  <div class="container flex justify-between items-center">
+    <div class="sticky__info">
+      {% if product.selected_or_first_available_variant.featured_media != null %}
+        {%- for variant in product.variants -%}
+          {% if variant.featured_media != null %}
+            <a
+              class="sticky__info--thumb"
+              data-index="{{ forloop.index }}"
+              data-media-id="{{ section.id }}-{{ variant.featured_media.id }}"
+            >
+              <img
+                data-index="{{ forloop.index }}"
+                src="{{ variant | image_url: width: variant.width , height: variant.height }}"
+                loading="lazy"
+                width="{{ variant.width }}"
+                height="{{ variant.height }}"
+                alt="{{ variant.preview_image.alt | escape }}"
+              >
+            </a>
+            {% break %}
+          {% endif %}
+        {%- endfor -%}
+      {% else %}
+        <a class="sticky__info--thumb" href="{{ product.url }}">
+          <img
+            src="{{ product.featured_media | image_url: width: product.featured_media.width }}"
+            alt="{{ product.featured_media.alt | escape }}"
+            class="motion-reduce"
+            {% unless lazy_load == false %}
+              loading="lazy"
+            {% endunless %}
+            width="{{ product.featured_media.width }}"
+            height="{{ product.featured_media.height }}"
+          >
+        </a>
+      {% endif %}
+
+      <div class="stick__info--title-price">
+        <a href="{{ product.url }}" class="product-title">
+          <h3>{{ product.title }}</h3>
+        </a>
+        {% assign priceId = 'price-' | append: section.id | append: '-' | append: product.id %}
+        {% render 'price', product: product, price_class: 'product-item-storepify sticky-price-product' %}
+      </div>
+    </div>
+
+    <div class="sticky__actions">
+      <span class="error-message hidden"></span>
+      {%- unless product.has_only_default_variant -%}
+        <div class="sticky__actions--variants">
+          <variant-select-sticky
+            class="no-js-hidden"
+            data-section="{{ section.id }}"
+            data-url="{{ product.url }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="select">
+              <select
+                id=""
+                class="select__select cursor-pointer"
+                name="options[{{ option.name | escape }}]"
+                form="product-form-{{ section.id }}"
+              >
+                {%- for variant in product.variants -%}
+                  <option value="{{ variant.title }}" data-variant-id="{{ variant.id }}">
+                    {{ variant.title }}
+                  </option>
+                {%- endfor -%}
+              </select>
+
+              {% render 'icon', icon_name: 'menu-down' %}
+            </div>
+
+            <script type="application/json">
+              {{ product.variants | json }}
+            </script>
+          </variant-select-sticky>
+        </div>
+      {%- endunless -%}
+
+      <div class="sticky__actions--qty">
+        <quantity-input class="tp-item__quantity" data-section="{{ section.id }}">
+          <button class="tp-item__qty_btn no-js-hidden" name="minus" type="button">-</button>
+          <input
+            class="tp-item__qty_input quantity-{{ section.id }}"
+            form="product-form-{{ section.id }}"
+            min="1"
+            name="quantity"
+            type="number"
+            value="1"
+          >
+          <button class="tp-item__qty_btn no-js-hidden" name="plus" type="button">+</button>
+        </quantity-input>
+      </div>
+      <div class="sticky__actions--atc" {{ block.shopify_attributes }}>
+        {% if settings.atc_buy_it_now == 'add_to_cart' %}
+          <product-form class="product-form">
+            {%- form 'product',
+              product,
+              id: product_form_id,
+              class: 'form',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form'
+            -%}
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+              <input type="hidden" id="hidden_name_2" name = "properties[Personalization]" value="">
+              <input type="hidden" name="quantity" value="" class="input-sticky-quantity">
+              <div class="product-form__buttons">
+                <button
+                  type="submit"
+                  name="add"
+              id = 'abc_2'
+                  class="product-form__submit tp-btn tp-btn__primary button--full-width"
+                  {% if product.selected_or_first_available_variant.available == false %}
+                    disabled
+                  {% endif %}
+                >
+                  {% render 'icon', icon_name: 'icon-cart' %}
+                  <span class="add-to-cart-text">
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </span>
+                  <svg
+                    class="add-to-cart-loading m-auto hidden"
+                    height="26"
+                    preserveAspectRatio="xMidYMid"
+                    style="shape-rendering: auto;"
+                    viewBox="0 0 100 100"
+                    width="79"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="50" cy="50" fill="none" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" stroke-width="10" stroke="#d9ad76">
+                      <animateTransform attributeName="transform" dur="1s" keyTimes="0;1" repeatCount="indefinite" type="rotate" values="0 50 50;360 50 50"></animateTransform>
+                    </circle>
+                  </svg>
+                </button>
+              </div>
+            {%- endform -%}
+          </product-form>
+        {% else %}
+          <div {{ block.shopify_attributes }} class="btn-buy-it-now {{ classDefault }}">
+            <product-form class="product-form">
+              {%- form 'product',
+                product,
+                id: product_form_id,
+                class: 'form',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+              -%}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product.selected_or_first_available_variant.id }}"
+                >
+
+                <input type="hidden" name="quantity" value="1" class="input-sticky-quantity">
+
+                <div class="product-form__buttons relative">
+                  {{ form | payment_button }}
+                  <svg
+                    class="buy-it-now-loading m-auto hidden absolute top-0 left-0 bottom-0 right-0"
+                    height="26"
+                    preserveAspectRatio="xMidYMid"
+                    style="shape-rendering: auto;"
+                    viewBox="0 0 100 100"
+                    width="79"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="50" cy="50" fill="none" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" stroke-width="10" stroke="#d9ad76">
+                      <animateTransform attributeName="transform" dur="1s" keyTimes="0;1" repeatCount="indefinite" type="rotate" values="0 50 50;360 50 50"></animateTransform>
+                    </circle>
+                  </svg>
+                </div>
+              {%- endform -%}
+            </product-form>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</sticky-product-detail>
+<script>
+  const button2 = document.getElementById('abc_2');
+  const hiddenInput2 = document.getElementById('hidden_name_2');
+
+  const textarea = document.getElementById('personalization-name');
+
+  // Add an event listener to the textarea
+  textarea.addEventListener('input', function() {
+    // Update the value of the hidden input with the value from the textarea
+    hiddenInput.value = textarea.value;
+    hiddenInput2.value = textarea.value;
+  });
+
+  button2.addEventListener('click', function(event) {
+    if (hiddenInput2.value.trim() === '') {
+      event.preventDefault(); // Prevent form submission
+      overlay.style.display = 'block'; // Show the overlay
+    }
+  });
+
+</script>

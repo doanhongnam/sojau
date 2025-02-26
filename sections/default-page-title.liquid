@@ -1,0 +1,100 @@
+<div class="general-page-title">
+    <div class="container">
+        {% liquid
+            assign alignment = section.settings.horizontal_alignment
+            assign alignmentClass = "justify-start align-items-start"
+            if alignment == "center"
+                assign alignmentClass="justify-center align-items-center"
+            elsif alignment == "right"
+                assign alignmentClass="justify-end align-items-end"
+            endif
+
+            assign opt_title = section.settings.g_title
+            if opt_title == blank
+                assign opt_title = page.title
+            endif
+        %}
+        <div class="wrapper flex flex-col {{ alignmentClass }}">
+
+            {% if opt_title %}
+                <h1 class="gpage-title">{{ opt_title }}</h1>
+            {% endif %}
+
+            {% if section.settings.g_sub %}
+                <p class="sub-title">{{ section.settings.g_sub }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% render 'margin-bottom' %}
+{% schema %}
+{
+    "name": "General title page",
+    "class": "section-default-title",
+    "settings": [
+        {
+            "type": "text",
+            "id": "g_title",
+            "label": "Heading",
+            "info": "If you leave this field blank, the default page title will be retrieved"
+        },
+        {
+            "type": "text",
+            "id": "g_sub",
+            "label": "Sub heading"
+        },
+        {
+            "type": "select",
+            "id": "horizontal_alignment",
+            "label": "Horizontal alignment",
+            "options": [
+                {
+                "value": "left",
+                "label": "Left"
+                },
+                {
+                "value": "center",
+                "label": "Center"
+                },
+                {
+                "value": "right",
+                "label": "Right"
+                }
+            ],
+            "default": "left"
+        },
+        {
+            "type":"header",
+            "content":"t:sections.margin_bottom.content"
+        },
+        {
+         "type": "paragraph",
+         "content": "Unit: pixel"
+        },
+        {
+            "type":"number",
+            "id":"margin_bottom_desktop",
+            "label":"t:sections.margin_bottom.desktop.label",
+            "default":50
+        },
+        {
+            "type":"number",
+            "id":"margin_bottom_table",
+            "label":"t:sections.margin_bottom.tablet.label",
+            "default":40
+        },
+        {
+            "type":"number",
+            "id":"margin_bottom_mobile",
+            "label":"t:sections.margin_bottom.mobile.label",
+            "default":30
+        }
+    ],
+    "presets":[
+        {
+            "name":"General title page",
+            "category":"Custom content"
+        }
+    ]
+}
+{% endschema %}

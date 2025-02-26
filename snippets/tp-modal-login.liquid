@@ -1,0 +1,336 @@
+<div id="tp_modal_login" class="tp-modal tp-modal-login shadow-xl">
+  <div class="tp-drawer__header">
+      {% unless customer %}
+          <span class="is--login" aria-hidden="false">{{ 'customer.login_page.title' | t }}</span>
+      {% else %}
+          <span class="is--login" aria-hidden="false">{{ 'customer.welcome_notice' | t }}, <b>{% if customer.name %}{{ customer.name }}{% else %}{{ 'customer.my_friend' | t }}{% endif %}</b></span>
+      {% endunless %}
+
+    <span class="is--recover hidden" aria-hidden="true">{{ 'customer.recover_password.title' | t }}</span>
+    <span class="is--create hidden" aria-hidden="true">{{ 'customer.register.title' | t }}</span>
+    <button class="close-tp-modal">
+      {% render 'icon', icon_name: 'icon-close' %}
+    </button>
+  </div>
+  <div class="tp-drawer__content">
+    <div class="tp-drawer__main">
+      <div data-tp-scroll-me="" class="tp-drawer__scroll tp-current-scrollbar">
+          {% unless customer %}
+              <div id="form_recover_popup" class="box-content hidden">
+                  <p class="login__subtext">
+                      {{ 'customer.recover_password.subtext' | t }}
+                  </p>
+
+                  {%- form 'recover_customer_password' -%}
+                      {% assign recover_success = form.posted_successfully? %}
+                      <div class="login__field field">
+                          <input
+                                  type="email"
+                                  value=""
+                                  name="email"
+                                  id="RecoverEmail"
+                                  autocorrect="off"
+                                  autocapitalize="off"
+                                  autocomplete="email"
+                                  {% if form.errors %}
+                                      aria-invalid="true"
+                                      aria-describedby="RecoverEmail-email-error"
+                                      autofocus
+                                  {% endif %}
+                                  placeholder="{{ 'customer.login_page.email' | t }}"
+                          >
+                      </div>
+                      {%- if form.errors -%}
+                          <small id="RecoverEmail-email-error" class="form__message">
+                              <svg
+                                      aria-hidden="true"
+                                      focusable="false"
+                                      role="presentation"
+                                      viewBox="0 0 13 13"
+                              >
+                                  <circle
+                                          cx="6.5"
+                                          cy="6.50049"
+                                          r="5.5"
+                                          stroke="white"
+                                          stroke-width="2" />
+                                  <circle
+                                          cx="6.5"
+                                          cy="6.5"
+                                          r="5.5"
+                                          fill="#EB001B"
+                                          stroke="#EB001B"
+                                          stroke-width="0.7" />
+                                  <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white" />
+                                  <path
+                                          d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z"
+                                          fill="white"
+                                          stroke="#EB001B"
+                                          stroke-width="0.7">
+                              </svg>
+                              {{ form.errors.messages.form }}
+                          </small>
+                      {%- endif -%}
+
+                      <button class="tp-btn tp-btn__primary">
+                          {{ 'customer.login_page.submit' | t }}
+                      </button>
+                      <a href="#" class="login__cancel login__cancel--popup !inline-flex tp-btn tp-btn__secondary">
+                          {{ 'customer.login_page.cancel' | t }}
+                      </a>
+                  {%- endform -%}
+              </div>
+              <div id="form_login_popup" class="box-content">
+                  {%- if recover_success == true -%}
+                      <h3
+                              class="form__message"
+                              tabindex="-1"
+                              autofocus
+                      >
+                          <svg
+                                  aria-hidden="true"
+                                  focusable="false"
+                                  role="presentation"
+                                  viewBox="0 0 13 13"
+                          >
+                              <path
+                                      d="M6.5 12.35C9.73087 12.35 12.35 9.73086 12.35 6.5C12.35 3.26913 9.73087 0.65 6.5 0.65C3.26913 0.65 0.65 3.26913 0.65 6.5C0.65 9.73086 3.26913 12.35 6.5 12.35Z"
+                                      fill="#428445"
+                                      stroke="white"
+                                      stroke-width="0.7" />
+                              <path d="M5.53271 8.66357L9.25213 4.68197" stroke="white" />
+                              <path d="M4.10645 6.7688L6.13766 8.62553" stroke="white">
+                          </svg>
+                          {{ 'customer.recover_password.success' | t }}
+                      </h3>
+                  {%- endif -%}
+                  {%- form 'customer_login', novalidate: 'novalidate' -%}
+                      {%- if form.errors -%}
+                          {{ form.errors | default_errors }}
+                      {%- endif -%}
+
+                      <div class="login__field field">
+                          <input
+                                  type="email"
+                                  name="customer[email]"
+                                  id="CustomerEmail"
+                                  autocomplete="email"
+                                  autocorrect="off"
+                                  autocapitalize="off"
+                                  {% if form.errors contains 'form' %}
+                                      aria-invalid="true"
+                                  {% endif %}
+                                  placeholder="{{ 'customer.login_page.email' | t }}"
+                          >
+                      </div>
+
+                      {%- if form.password_needed -%}
+                          <div class="login__field field">
+                              <input
+                                      type="password"
+                                      value=""
+                                      name="customer[password]"
+                                      id="CustomerPassword"
+                                      autocomplete="current-password"
+                                      {% if form.errors contains 'form' %}
+                                          aria-invalid="true"
+                                      {% endif %}
+                                      placeholder="{{ 'customer.login_page.password' | t }}"
+                              >
+                          </div>
+
+                          <a class="login__forgot login__forgot--popup" href="#">
+                              {{ 'customer.login_page.forgot_password' | t }}
+                          </a>
+                      {%- endif -%}
+
+                      <button class="tp-btn tp-btn__primary">
+                          {{ 'customer.login_page.sign_in' | t }}
+                      </button>
+
+                      <button class="tp-btn tp-btn__secondary create-account-popup" type="button">
+                          {{ 'customer.login_page.create_account' | t }}
+                      </button>
+                  {%- endform -%}
+              </div>
+              <div id="form_register_popup" class="box-content hidden">
+                  {%- form 'create_customer', novalidate: 'novalidate' -%}
+                  {%- if form.errors -%}
+                      <ul class="messages__ul">
+                          {%- for field in form.errors -%}
+                              <li
+                                      {% if form.errors.messages[field] contains 'This email address is already' %}
+                                          style="flex-direction: column;"
+                                      {% endif %}
+                              >
+                                  <svg
+                                          aria-hidden="true"
+                                          focusable="false"
+                                          role="presentation"
+                                  >
+                                      <use href="#icon-error" />
+                                  </svg>
+                                  {{ form.errors.translated_fields[field] | capitalize }}
+                                  {{ form.errors.messages[field] }}
+                              </li>
+                          {%- endfor -%}
+                      </ul>
+
+                      <style>
+                          .product-count {
+                              margin-bottom: 20px !important;
+                          }
+                      </style>
+                  {%- endif -%}
+
+                      <div class="register__field field">
+                          <input
+                                  type="text"
+                                  name="customer[first_name]"
+                                  id="RegisterForm-FirstName"
+                                  {% if form.first_name %}
+                                      value="{{ form.first_name }}"
+                                  {% endif %}
+                                  autocomplete="given-name"
+                                  placeholder="{{ 'customer.register.first_name' | t }}"
+                          >
+                      </div>
+                      <div class="register__field field">
+                          <input
+                                  type="text"
+                                  name="customer[last_name]"
+                                  id="RegisterForm-LastName"
+                                  {% if form.last_name %}
+                                      value="{{ form.last_name }}"
+                                  {% endif %}
+                                  autocomplete="family-name"
+                                  placeholder="{{ 'customer.register.last_name' | t }}"
+                          >
+                      </div>
+                      <div class="register__field field">
+                          <input
+                                  type="email"
+                                  name="customer[email]"
+                                  id="RegisterForm-email"
+                                  {% if form.email %}
+                                      value="{{ form.email }}"
+                                  {% endif %}
+                                  spellcheck="false"
+                                  autocapitalize="off"
+                                  autocomplete="email"
+                                  aria-required="true"
+                                  {% if form.errors contains 'email' %}
+                                      aria-invalid="true"
+                                      aria-describedby="RegisterForm-email-error"
+                                      style="border: 1px solid tomato;"
+                                  {% endif %}
+                                  placeholder="{{ 'customer.register.email' | t }}"
+                          >
+
+                          {% if form.errors contains 'email' %}
+                              <style>
+                                  #RegisterForm-email::placeholder {
+                                      /* Chrome, Firefox, Opera, Safari 10.1+ */
+                                      color: tomato;
+                                      opacity: 1; /* Firefox */
+                                  }
+
+                                  #RegisterForm-email:-ms-input-placeholder {
+                                      /* Internet Explorer 10-11 */
+                                      color: tomato;
+                                  }
+
+                                  #RegisterForm-email::-ms-input-placeholder {
+                                      /* Microsoft Edge */
+                                      color: tomato;
+                                  }
+                              </style>
+                          {% endif %}
+                      </div>
+
+                      <div class="register__field field">
+                          <input
+                                  type="password"
+                                  name="customer[password]"
+                                  id="RegisterForm-password"
+                                  aria-required="true"
+                                  {% if form.errors contains 'password' %}
+                                      aria-invalid="true"
+                                      aria-describedby="RegisterForm-password-error"
+                                      style="border: 1px solid tomato;"
+                                  {% endif %}
+                                  placeholder="{{ 'customer.register.password' | t }}"
+                          >
+
+                          {% if form.errors contains 'password' %}
+                              <style>
+                                  #RegisterForm-password::placeholder {
+                                      /* Chrome, Firefox, Opera, Safari 10.1+ */
+                                      color: tomato;
+                                      opacity: 1; /* Firefox */
+                                  }
+
+                                  #RegisterForm-password:-ms-input-placeholder {
+                                      /* Internet Explorer 10-11 */
+                                      color: tomato;
+                                  }
+
+                                  #RegisterForm-password::-ms-input-placeholder {
+                                      /* Microsoft Edge */
+                                      color: tomato;
+                                  }
+                              </style>
+                          {% endif %}
+                      </div>
+
+                      <p class="register__brief">
+                          {{ 'customer.register.brief' | t }}
+                      </p>
+                      <button class="tp-btn tp-btn__primary">
+                          {{ 'customer.register.submit' | t }}
+                      </button>
+
+                      <a href="#" class="login__cancel login__cancel--popup !inline-flex tp-btn tp-btn__secondary">
+                          {{ 'customer.login_page.cancel' | t }}
+                      </a>
+
+                  {%- if form.errors -%}
+                  {% if form.errors contains 'email' %}
+                      <script>
+                          const inputEmail = document.querySelector('#RegisterForm-email');
+                          if (inputEmail) {
+                              inputEmail.focus();
+                          }
+                      </script>
+                  {%- endif -%}
+
+                  {% if form.errors contains 'password' %}
+                  {% unless form.errors contains 'email' %}
+                      <script>
+                          const inputPass = document.querySelector('#RegisterForm-password');
+                          if (inputPass) {
+                              inputPass.focus();
+                          }
+                      </script>
+                  {% endunless %}
+                  {%- endif -%}
+                  {%- endif -%}
+                  {%- endform -%}
+              </div>
+          {% else %}
+                <div class="flex flex-row justify-center items-center">
+                    <a class="tp-btn__primary tp-btn mr-2" href="/account">
+                        {{ 'customer.dash_board' | t }}
+                    </a>
+
+                    <a href="{{ routes.account_logout_url }}" class="inline-flex">
+                        <div class="tp-btn__secondary tp-btn">
+                            {{ 'customer.log_out' | t }}
+                        </div>
+                    </a>
+                </div>
+          {% endunless %}
+      </div>
+    </div>
+  </div>
+</div>

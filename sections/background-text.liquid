@@ -1,0 +1,159 @@
+
+<div class="background_text" id="background-text">
+  {%- for block in section.blocks -%}
+    {% case block.type %}
+      {% when 'bgText' %}
+        {%- liquid
+          assign Bgtext = block.settings.background 
+          assign font_size_title = block.settings.font_size_title
+          assign font_size_brief = block.settings.font_size_brief
+        %}
+        {% if Bgtext != blank %}
+          <img class="background_text__img" src="{{ Bgtext | image_url: width: Bgtext.width , height: Bgtext.height }}" alt="" width="{{ Bgtext.width }}" height="{{ Bgtext.height }}" loading="lazy">
+        {% else %}
+          {% render 'no-image', text_size:'1920x600', width: 1920, height: 600 %}
+        {% endif %}
+        <style>
+          .background_text__img {
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background: url('{{ block.settings.background | image_url : width: block.settings.background.width, height : block.settings.background.height }}');
+          }
+        </style>
+        <div class="container background_text__ctn">
+          <div class="background_text__wrap">
+            {% if block.settings.bgText_title != blank %}     
+              <a href="{% if block.settings.bgText_link != blank %}{{ block.settings.bgText_link }}{% else %}#{% endif %}" class="background_text__title mb-5">{{ block.settings.bgText_title }}</a>
+            {% endif %}
+
+            {% if block.settings.bgText_brief != blank %}
+              <p class="background_text__brief">{{ block.settings.bgText_brief }}</p>
+            {% endif %}
+
+            <style>
+              .background_text__title {
+                font-size: {{ font_size_title }}px;
+              }
+              .background_text__brief {
+                font-size: {{ font_size_brief }}px;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+
+    {% when 'bgText_single' %}
+      <div class="background_text_type2">
+        {% assign Bgtext = block.settings.background %}
+        {% if Bgtext != blank %}
+          <img class="background_text__img" src="{{ Bgtext | image_url: width: Bgtext.width , height: Bgtext.height }}" alt="" width="{{ Bgtext.width }}" height="{{ Bgtext.height }}" loading="lazy">
+        {% else %}
+          {% render 'no-image', text_size:'1920x600', width:1920, height:600 %}
+        {% endif %}
+        <style>
+          .background_text__img {
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background: url('{{ block.settings.background | image_url : width: block.settings.background.width, height : block.settings.background.height }}');
+          }
+        </style>
+      </div>
+
+    {% endcase %}
+  {%- endfor -%}
+
+  {% render 'margin-bottom' %}
+  {% schema %}
+    {
+      "name": "Background text",
+      "tag": "section",
+      "class": "background_text",
+      "settings": [
+        {
+         "type": "paragraph",
+         "content": "Unit: pixel"
+        },
+        {
+          "type": "number",
+          "id": "margin_bottom_desktop",
+          "label": "t:sections.margin_bottom.desktop.label",
+          "default": 80
+        }, {
+          "type": "number",
+          "id": "margin_bottom_table",
+          "label": "t:sections.margin_bottom.tablet.label",
+          "default": 60
+        }, {
+          "type": "number",
+          "id": "margin_bottom_mobile",
+          "label": "t:sections.margin_bottom.mobile.label",
+          "default": 40
+        }
+      ],
+
+      "blocks": [
+        {
+          "type": "bgText",
+          "name": "Background text",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "background",
+              "label": "Background"
+            },
+            {
+              "type": "text",
+              "id": "bgText_title",
+              "label": "Title",
+              "default": "All this love"
+            },
+            {
+              "type": "range",
+              "id": "font_size_title",
+              "label": "Font size title",
+              "min": 10,
+              "max": 70,
+              "step": 1,
+              "unit": "px",
+              "default": 50
+            },
+            {
+              "type": "text",
+              "id": "bgText_brief",
+              "label": "Brief",
+              "default": "This formula is blended with coconut water (yes it’s making a splash everywhere!), often called “dew from heavens” by native Hawaiians"
+            }, {
+              "type": "range",
+              "id": "font_size_brief",
+              "label": "Font size brief",
+              "min": 10,
+              "max": 50,
+              "step": 1,
+              "unit": "px",
+              "default": 50
+            }, {
+              "type": "url",
+              "id": "bgText_link",
+              "label": "Button url"
+            }
+          ]
+        }, {
+          "type": "bgText_single",
+          "name": "Single background",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "background",
+              "label": "Background"
+            }
+          ]
+        }
+      ],
+
+      "presets": [
+        {
+          "name": "Background text"
+        }
+      ]
+    }
+  {% endschema %}

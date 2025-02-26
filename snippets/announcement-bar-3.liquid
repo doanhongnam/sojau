@@ -1,0 +1,80 @@
+<div class="announcement-bar announcement-bar--style3 w-full" role="region" {{ block.shopify_attributes }}>
+  <div class="{% if section.bst.container_check %}container{% else %}w-full{% endif %} flex flex-row items-center justify-start h-full">
+    <div class="announcement-bar__left w-11/12 flex flex-row items-center justify-between h-full">
+      {% if bst.style3_textleft %}
+        <span>{{ bst.style3_textleft }}</span>
+      {% endif %}
+      {% if bst.style3_textright %}
+        <div class="announcement-bar__register cursor-pointer h-full flex flex-row items-center justify-center">
+          {{ bst.style3_textright }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="announcement-bar__right w-1/12 h-full relative">
+      <div class="announcement-bar__account ab-account flex flex-row items-center justify-center h-full cursor-pointer">
+        {% if bst.style3_account_title %}
+          {{ bst.style3_account_title }}
+        {% endif %}
+        {% if bst.style3_account_icon == true %}
+          {% render 'icon', icon_name: 'icon-account', class: 'announcement-bar__account-icon' %}
+        {% endif %}
+        <div class="ab-account__menu">
+          <ul class="menu">
+            {% for link in bst.style3_menu.links %}
+              <li class="menu-link">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+
+                {% if link.links.size > 0 %}
+                  <ul class="menu dropdown-child">
+                    {% for child_link in link.links %}
+                      {% if child_link.links.size <= 0 %}
+                        <li class="menu-link">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="announcement-bar__popup relative">
+  <span class="ab-popup--close close">
+    {% render 'icon', icon_name: 'icon-close' %}
+  </span>
+  <div class="container">
+    <div class="header-email-signup-inner p-15 text-center">
+      {% if bst.style3_textright_content %}
+        <div
+          id="header-email-signup-desc"
+          class="cx-heading text-black-lg text-center-md mb-7.5"
+        >
+          {{ bst.style3_textright_content }}
+        </div>
+      {% endif %}
+      {% if bst.style3_textright_link != blank %}
+        <a class="tp-btn tp-btn__secondary" target="_blank" href="{{ bst.style3_textright_link }}">
+          {{ bst.style3_textright_button }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .announcement-bar--style3 .announcement-bar__left span{
+   color: {{ bst.style3_textleft_color }}
+  }
+  .announcement-bar--style3 .announcement-bar__register{
+   color: {{ bst.style3_textright_color }}
+  }
+  .announcement-bar--style3 .announcement-bar__account, .announcement-bar--style3 svg path {
+   color: {{ bst.style3_account }};
+   stroke: {{ bst.style3_account }}
+  }
+</style>

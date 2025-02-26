@@ -1,0 +1,144 @@
+{% assign show_cookie_bar = settings.show_cookie_bar %}
+{% if show_cookie_bar %}
+    <div class="cookies-wrapper">
+        {% liquid
+            assign cookie_show_on_country = settings.cookie_show_on_country
+            if cookie_show_on_country == 'all_countries'
+                assign alwayshowbanner = true
+            else
+                assign alwayshowbanner = false
+            endif
+        %}
+        <div id="cookie-bar" class="cookies bg-white box-shadow w100" data-alwayshowbanner={{ alwayshowbanner }}>
+            <div class="content">
+                <div class="prel fix-height">
+                    <div class="cookies-accept dflex prel zi5">
+                        <div class="cookies-accept-content prel">
+                            {% liquid
+                                assign cookie_message = settings.cookie_message
+                                assign cookie_privacy_url = settings.cookie_privacy_url
+                            %}
+                            {% if cookie_message != blank or cookie_privacy_url != blank %}
+                                <p class="cookies-accept-text">
+
+                                    {{ cookie_message }}
+
+                                    {% if cookie_privacy_url != blank %}
+                                        <a href="{{ cookie_privacy_url }}">{{ cookie_privacy_link_text }}</a>
+                                    {% endif %}
+
+                                </p>
+                            {% endif %}
+                        </div>
+                        {% if settings.cookie_deny_button_text != blank or settings.cookie_agree_button_text != blank %}
+                            <div class="cookies-accept-buttons dflex">
+                                {% if settings.cookie_deny_button_text != blank %}
+                                    <div class="cb-button cb-button-manage tp-btn">
+                                        {{ settings.cookie_deny_button_text }}
+                                    </div>
+                                {% endif %}
+
+                                {% if settings.cookie_agree_button_text != blank %}
+                                    <div class="cb-button cb-button-accept tp-btn" data-accept="all">
+                                        {{ settings.cookie_agree_button_text }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .cookies-wrapper .cookies-accept-text{ color:{{ settings.cookie_message_color }} }
+        .cookies-wrapper .cookies-accept-buttons .cb-button-accept{ background: {{ settings.agree_button_background_color }}; color:{{ settings.agree_button_text_color }}; border: 1px solid transparent; transition: all .3s ease;  }
+        .cookies-wrapper .cookies-accept-buttons .cb-button-accept:hover{ background: {{ settings.agree_button_text_color }}; color:{{ settings.agree_button_background_color }}; border: 1px solid {{ settings.agree_button_background_color }}; transition: all .3s ease;  }
+        .cookies-wrapper .cookies-accept-buttons .cb-button-manage { color: {{ settings.decline_button_text_color }}; border: 1px solid {{ settings.decline_button_text_color }}; transition: all .3s ease;  }
+    </style>
+    <script>
+        class CookieBar {
+            constructor() {
+                this.cookiesBar = document.getElementById('cookie-bar');
+            }
+            init() {
+                const shouldShowGDPRBanner = window.Shopify.customerPrivacy.shouldShowGDPRBanner()
+                const alwayShowGDPRBanner = this.cookiesBar.getAttribute('data-alwayshowbanner')
+                if (shouldShowGDPRBanner && alwayShowGDPRBanner === "false" ) {
+                    document.addEventListener('trackingConsentAccepted', () => {
+                        this.startTracking()
+                    });
+                    this.showBanner();
+                }
+
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const paramsBanner = urlParams.get('preview_privacy_banner');
+
+                if (alwayShowGDPRBanner === "true") {
+                    if(localStorage.getItem('cookie-opened') !== 'yes' ||  paramsBanner === "1" ){
+                        document.addEventListener('trackingConsentAccepted', () => {
+                            this.startTracking()
+                        });
+                        this.showBanner();
+                    }
+                }
+
+                if (window.Shopify.customerPrivacy.userCanBeTracked()) {
+                    this.startTracking();
+                }
+                for (const button of document.querySelectorAll('.open-cookie-banner')) {
+                    button.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        this.showBanner();
+                    });
+                }
+            }
+            showBanner() {
+                if (!this.cookiesBar) {
+                    return;
+                }
+                this.acceptCookies = this.cookiesBar.querySelector('.cookies-accept');
+                this.manageCookies = this.cookiesBar.querySelector('.cookies-manage');
+                this.cookiesBar.classList.add('show')
+                for (const button of this.cookiesBar.querySelectorAll('.cb-button-accept')) {
+                    button.addEventListener('click', (event) => this.allowCookies(event));
+                }
+                this.cookiesBar.querySelector('.cb-button-manage').addEventListener('click', () => this.showManage());
+            }
+            showManage() {
+                this.acceptCookies.style.display = 'none';
+            }
+            startTracking() {
+                // Shopify manages Facebook and Google themselves
+                // Manage your outher cookie users here
+            }
+            allowCookies(event) {
+                const accept = event.target.dataset.accept;
+                let trackingAllowed = true;
+                if (accept === 'selected') {
+                    trackingAllowed = this.cookiesBar.querySelector('#c_analytical').checked;
+                }
+                window.Shopify.customerPrivacy.setTrackingConsent(trackingAllowed, () => { });
+                localStorage.setItem('cookie-opened', 'yes');
+                this.cookiesBar.classList.add('hidden');
+            }
+        }
+        window.Shopify.loadFeatures(
+            [
+                {
+                    name: 'consent-tracking-api',
+                    version: '0.1',
+                },
+            ],
+            error => {
+                if (error) {
+                    throw error; // if you want to raise
+                }
+                const cookieBar = new CookieBar();
+                cookieBar.init();
+            },
+        );
+    </script>
+{% endif %}

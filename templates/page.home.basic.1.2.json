@@ -1,0 +1,209 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1655948009a339c3f2": {
+      "type": "slide",
+      "blocks": {
+        "c383978d-3476-41fa-958b-8e8ce1618e10": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/home2-slider1.jpg",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop Scoop Back Knitted</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "24950721-6c16-4195-aa13-eb12e6d88bd1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/home2-slider2.jpg",
+            "sub_title": "Poolside daze",
+            "title": "<p>South Beach wide hat</p><p>with cutwork</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "#",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "d698169d-5adb-4920-9dba-67fe47c438d1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/home2-slider3.jpg",
+            "sub_title": "Poolside daze",
+            "title": "<p>Elongated <br/>shoulder bag</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "#",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "c383978d-3476-41fa-958b-8e8ce1618e10",
+        "24950721-6c16-4195-aa13-eb12e6d88bd1",
+        "d698169d-5adb-4920-9dba-67fe47c438d1"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": false,
+        "autoplay_time": 10,
+        "position_pagination": "center_bottom",
+        "pag_bg": "#bebebe",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1655950070f62edda6": {
+      "type": "service",
+      "blocks": {
+        "be550fc1-84cf-4355-ab45-16aa58c2dc5b": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/Shipping.png",
+            "title_service": "Free US Delivery",
+            "description_service": "Free delivery for US",
+            "background_item_service": "#ffffff",
+            "link_service": ""
+          }
+        },
+        "e7de4b66-f779-40d6-87cb-ab71263f7216": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/27-7_CS.png",
+            "title_service": "24/7 Customer services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "background_item_service": "#ffffff",
+            "link_service": ""
+          }
+        },
+        "03fbe556-3cd1-49c8-9315-286f74cdc07e": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/Fast_Access.png",
+            "title_service": "12-Month Warranty",
+            "description_service": "On all ours products",
+            "background_item_service": "#ffffff",
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "be550fc1-84cf-4355-ab45-16aa58c2dc5b",
+        "e7de4b66-f779-40d6-87cb-ab71263f7216",
+        "03fbe556-3cd1-49c8-9315-286f74cdc07e"
+      ],
+      "settings": {
+        "gap_item": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16613957269fea88b3": {
+      "type": "banner-image-card",
+      "blocks": {
+        "8ddb4e78-811f-4522-8f54-7aa8c3c2cbbc": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-left",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/home1_banner_1.png",
+            "title": "",
+            "button_label": "Shop Now",
+            "link": ""
+          }
+        },
+        "59e8abd4-3f41-4612-bb63-4b01b235f031": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-left",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/2.jpg",
+            "title": "",
+            "button_label": "Shop Now",
+            "link": ""
+          }
+        },
+        "3d3ac4fa-a31e-4862-93df-1742f2bf0cc4": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-left",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/3.jpg",
+            "title": "",
+            "button_label": "Shop Now",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "8ddb4e78-811f-4522-8f54-7aa8c3c2cbbc",
+        "59e8abd4-3f41-4612-bb63-4b01b235f031",
+        "3d3ac4fa-a31e-4862-93df-1742f2bf0cc4"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "layout": "layout_2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1655959832de4a9fc7": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best Sellers",
+        "description": "<p>What are people searching for online?</p>",
+        "display_type": "normal",
+        "collection": "",
+        "products_to_show": 8,
+        "collection_list": [
+          "women",
+          "men",
+          "new-arrivals"
+        ],
+        "type_button": "load_more",
+        "text_button": "View More",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "1655948009a339c3f2",
+    "1655950070f62edda6",
+    "16613957269fea88b3",
+    "1655959832de4a9fc7"
+  ]
+}

@@ -1,0 +1,448 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1655948009a339c3f2": {
+      "type": "slide",
+      "blocks": {
+        "24950721-6c16-4195-aa13-eb12e6d88bd1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/shoes1.png",
+            "overlay_slide": 0,
+            "position_content": "center-content",
+            "sub_title": "Poolside daze",
+            "title": "<p>Bring power</p><p> to your steps.</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "shopify://collections/shoes",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#fcde41",
+            "color_description": "#ffae47",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        },
+        "d698169d-5adb-4920-9dba-67fe47c438d1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/shoes2.png",
+            "overlay_slide": 0,
+            "position_content": "center-content",
+            "sub_title": "Shoes, Boots & Trainer",
+            "title": "<p>Footwear to</p><p>last you a lifetime.</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "shopify://collections/shoes",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#78ff62",
+            "color_description": "#ffae47",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        },
+        "c383978d-3476-41fa-958b-8e8ce1618e10": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/shoes3.png",
+            "overlay_slide": 0,
+            "position_content": "center-content",
+            "sub_title": "Top Accessories",
+            "title": "<p>Your feet will never feel</p><p>the same again.</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "shopify://collections/shoes",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#1efff1",
+            "color_description": "#ffae47",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "24950721-6c16-4195-aa13-eb12e6d88bd1",
+        "d698169d-5adb-4920-9dba-67fe47c438d1",
+        "c383978d-3476-41fa-958b-8e8ce1618e10"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 10,
+        "position_pagination": "center_bottom",
+        "pag_bg": "#ffffff",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1662453447a9318552": {
+      "type": "banner-image-card",
+      "blocks": {
+        "5a44ae20-32b2-4c69-865f-d4c345e6595b": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/collection1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Leap To Comfort</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": "shopify://collections/shoes"
+          }
+        },
+        "273bd8b6-4344-4caf-9ada-0e88a9fe37de": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/collection2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": "shopify://collections/shoes"
+          }
+        },
+        "b313d241-c63c-414d-94d9-78b72442d833": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/collection3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": "shopify://collections/shoes"
+          }
+        },
+        "8e36fe1f-117b-4638-aced-ff963bd4b132": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/collection4.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Every Shoe Has a Story</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": "shopify://collections/shoes"
+          }
+        }
+      },
+      "block_order": [
+        "5a44ae20-32b2-4c69-865f-d4c345e6595b",
+        "273bd8b6-4344-4caf-9ada-0e88a9fe37de",
+        "b313d241-c63c-414d-94d9-78b72442d833",
+        "8e36fe1f-117b-4638-aced-ff963bd4b132"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_7",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1655959832de4a9fc7": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "Best Sellers",
+        "description": "<p>What are people searching for online?</p>",
+        "display_type": "normal",
+        "collection": "shoes",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "product_item_layout": "use_global",
+        "type_button": "load_more",
+        "text_button": "View More",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 60
+      }
+    },
+    "16613957269fea88b3": {
+      "type": "banner-image-card",
+      "blocks": {
+        "3d3ac4fa-a31e-4862-93df-1742f2bf0cc4": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-shoes-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Alfie Chunky </p><p>Boots</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/shoes"
+          }
+        },
+        "59e8abd4-3f41-4612-bb63-4b01b235f031": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-shoes-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>New Balance </p><p>Trainers</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/shoes"
+          }
+        },
+        "8ddb4e78-811f-4522-8f54-7aa8c3c2cbbc": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-shoes-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Converse </p><p>Chuck Taylor</p>",
+            "sub_title": "",
+            "font_size_title": 28,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/shoes"
+          }
+        }
+      },
+      "block_order": [
+        "3d3ac4fa-a31e-4862-93df-1742f2bf0cc4",
+        "59e8abd4-3f41-4612-bb63-4b01b235f031",
+        "8ddb4e78-811f-4522-8f54-7aa8c3c2cbbc"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_2",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1655950070f62edda6": {
+      "type": "service",
+      "blocks": {
+        "be550fc1-84cf-4355-ab45-16aa58c2dc5b": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-home-2-4.png",
+            "title_service": "Free Shipping",
+            "description_service": "On order over $150",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "e7de4b66-f779-40d6-87cb-ab71263f7216": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-home-2-3.png",
+            "title_service": "24/7 Customer services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "03fbe556-3cd1-49c8-9315-286f74cdc07e": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-home-2-2.png",
+            "title_service": "12 - Month Warranty",
+            "description_service": "On all ours products",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "5236ae7f-d40d-4442-9bbb-8302ecf6c59a": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-home-2-1.png",
+            "title_service": "Support",
+            "description_service": "We stand behind our products",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "be550fc1-84cf-4355-ab45-16aa58c2dc5b",
+        "e7de4b66-f779-40d6-87cb-ab71263f7216",
+        "03fbe556-3cd1-49c8-9315-286f74cdc07e",
+        "5236ae7f-d40d-4442-9bbb-8302ecf6c59a"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "gap_item": 0,
+        "layout_service": "layout-service-1",
+        "service_bg": "#f0f8ff",
+        "show_border_right": false,
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "16624552255876f354": {
+      "type": "border",
+      "disabled": true,
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "1655948009a339c3f2",
+    "1662453447a9318552",
+    "1655959832de4a9fc7",
+    "16613957269fea88b3",
+    "1655950070f62edda6",
+    "16624552255876f354"
+  ]
+}

@@ -1,0 +1,212 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout
+  assign display_layout = section.settings.display_layout
+%}
+
+<div class="tp-review {{ WidthLayout }}">
+  {% if section.settings.title != blank or section.settings.description != blank %}
+    <div class="tp-fcl__top mb-12.5">
+      {% if section.settings.title != blank %}
+        <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <div class="mb-5">{{ section.settings.description }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="tp-review__wrapper">
+    <div class="tp-review__main tp-review__main-{{ display_layout }} swiper" data-type="{{ display_layout }}">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% liquid
+            assign title_rv = block.settings.title_review
+            assign customer_rv = block.settings.customer_review
+            assign date_rv = block.settings.date_review
+          %}
+          <div class="tp-review__item swiper-slide">
+            <div class="tp-review__item-wrapper">
+              {% assign imageReview = block.settings.image_review %}
+              {% if imageReview != blank %}
+                <img
+                  class="tp-review__img {% if title_rv != blank or customer_rv != blank or date_rv != blank %}mb-7.5{% endif %}"
+                  src="{{ imageReview | image_url: width: imageReview.width , height: imageReview.height }}"
+                  alt="image collection"
+                  width="{{ imageReview.width }}"
+                  height="{{ imageReview.height }}"
+                  loading="lazy"
+                >
+              {% else %}
+                {% render 'no-image', text_size: '', width: 130, height: 300 %}
+              {% endif %}
+              {% if title_rv != blank or customer_rv != blank or date_rv != blank %}
+                <div class="tp-review__content text-center">
+                  <div class="tp-content__star mb-2.5">
+                    {% liquid
+                      render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                      render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                      render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                      render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                      render 'icon', icon_name: 'icon-star', width: '14', height: '14'
+                    %}
+                  </div>
+                  <div class="tp-content__wrapper">
+                    {% if title_rv != blank %}
+                      <h2 class="tp-content__title mb-2.5">{{ title_rv }}</h2>
+                    {% endif %}
+                    {% if customer_rv != blank %}
+                      <p class="tp-content__description mb-1.25">{{ customer_rv }}</p>
+                    {% endif %}
+                    {% if date_rv != blank %}
+                      <span class="tp-content__date">{{ date_rv }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="nav-review-prev nav-review__item">
+      {% render 'icon', icon_name: 'icon-prev-type1', width: 15, height: 15 %}
+    </div>
+    <div class="nav-review-next nav-review__item">
+      {% render 'icon', icon_name: 'icon-next-type1', width: 15, height: 15 %}
+    </div>
+  </div>
+</div>
+<style>
+  {% if section.settings.review_bg != 'rgba(0,0,0,0)' %}
+    #shopify-section-{{ section.id }}{
+      background: {{ section.settings.review_bg }};
+      padding: 60px 0;
+    }
+    {% endif %}
+</style>
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Review",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "lg-container"
+    },
+    {
+      "type": "select",
+      "id": "display_layout",
+      "label": "Display layout",
+      "options": [
+        {
+          "value": "layout_1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout_2",
+          "label": "Layout 2"
+        }
+      ],
+      "default": "layout_1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+
+    {
+      "type": "color",
+      "id": "review_bg",
+      "label": "Background review",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_item",
+      "name": "Item review ",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_review",
+          "label": "Image review"
+        },
+        {
+          "type": "text",
+          "id": "title_review",
+          "label": "Title review",
+          "default": "Rufus looks awesome in his Sherpa Vest and it fits really nicely!"
+        },
+        {
+          "type": "text",
+          "id": "customer_review",
+          "label": "Customer",
+          "default": "Becky P."
+        },
+        {
+          "type": "text",
+          "id": "date_review",
+          "label": "Date review",
+          "default": "01/01/2022"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Review",
+      "category": "Custom content"
+    }
+  ]
+}
+{% endschema %}

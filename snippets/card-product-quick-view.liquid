@@ -1,0 +1,242 @@
+<div class="tp-quick-view">
+  <div class="tp-quick-view__wrapper card">
+    <div class="tp-quick-view__left">
+      <div class="swiper productQuickView mb-7.5">
+        <div class="swiper-wrapper">
+          {%- for media in product.media -%}
+            <div
+              class="swiper-slide tp-img-product__item cursor-pointer wp-img-thumb"
+              data-index="{{ media.position }}"
+              data-media-id="{{ section.id }}-{{ media.position }}"
+            >
+              <img
+                data-index="{{ media.position }}"
+                src="{{ media | image_url: width: media.width , height: media.height }}"
+                loading="lazy"
+                width="{{ media.width}}"
+                height="{{ media.height }}"
+                alt="{{ media.preview_image.alt | escape }}"
+              >
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      <div class="swiper productQuickView__thumb" thumbsslider="">
+        <div class="swiper-wrapper">
+          {%- for media in product.media -%}
+            <div
+              class="swiper-slide tp-img-product__item cursor-pointer wp-img-thumb"
+              data-index="{{ media.position }}"
+              data-media-id="{{ section.id }}-{{ media.position }}"
+            >
+              <img
+                data-index="{{ media.position }}"
+                data-media-id="{{ section.id }}-{{ media.position }}"
+                src="{{ media | image_url: width: media.width , height: media.height }}"
+                loading="lazy"
+                width="{{ media.width }}"
+                height="{{ media.height }}"
+                alt="{{ media.preview_image.alt | escape }}"
+              >
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+    <div class="tp-quick-view__right">
+      <div class="card__content">
+        <div class="card__information">
+          <h3
+            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+            {% if card_product.featured_media or settings.card_style == 'card' %}
+              id="title-{{ section_id }}-{{ card_product.id }}"
+            {% endif %}
+          >
+            <a href="{{ card_product.url }}" class="full-unstyled-link">
+              {{ card_product.title | escape }}
+            </a>
+          </h3>
+          <div class="card-information">
+            {%- if show_vendor -%}
+              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+              <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+            {%- endif -%}
+            {% assign priceId = 'price-' | append: card_product.id %}
+            {% render 'price', product: card_product, price_class: 'product-item-storepify', id: priceId %}
+            {% if card_product.description != blank %}
+              <div class="description">
+                {{ card_product.description | truncatewords: 20 | strip_html }}
+              </div>
+            {% endif %}
+            {%- unless product.has_only_default_variant -%}
+              {%- if block.settings.picker_type != 'button' -%}
+                <variant-radios-quick-view
+                  class="no-js-hidden mb-6.5"
+                  data-product-id="{{ card_product.id }}"
+                  data-url="{{ product.url }}"
+                  data-option="{{ option.position }}"
+                  data-forloop-index="{{ forloop.index0 }}"
+                  data-change-thumb="quick-view"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- for option in product.options_with_values -%}
+                    <fieldset flow="up" tooltip="{{ value }}"
+                      class="js product-form__input mb-5 {% if option.name == 'color' or option.name == 'Color' %} list-variant-color {% else %} list-variant{% endif %}"
+                      data-forloop-index="{{ forloop.index0 }}"
+                    >
+                      <p class="form__label mr-3.75">{{ option.name }}</p>
+                      {%- for value in option.values -%}
+                        <input
+                          style="display: none;"
+                          type="radio"
+                          id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                          name="{{ option.name }}"
+                          value="{{ value | escape }}"
+                          {% if option.selected_value == value %}
+                            checked
+                          {% endif %}
+                        >
+                        <label
+                          for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" flow="up" tooltip="{{ value }}"
+                          {% if option.name == 'color' or option.name == 'Color' %}
+                            class="variant-color{% if option.selected_value == value %} active{% endif %}"
+                            style="
+                              background-color: {{ value }};
+                              {% if value == 'White' or value == 'white' %}
+                              border: 1px solid #d3c3c3;
+                              {% endif %}
+                            "
+                          {% else %}
+                            class="list-variant {% if option.selected_value == value %} active{% endif %}"
+                          {% endif %}
+                        >
+                          {% if option.name != 'color' and option.name != 'Color' %}
+                            {{ value }}
+                          {% endif %}
+                        </label>
+                      {%- endfor -%}
+                    </fieldset>
+                  {%- endfor -%}
+                  <script type="application/json">
+                    {{ product.variants | json }}
+                  </script>
+                </variant-radios-quick-view>
+              {%- else -%}
+                <variant-selects
+                  class="no-js-hidden"
+                  data-section="{{ section.id }}"
+                  data-url="{{ product.url }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- for option in product.options_with_values -%}
+                    <div class="product-form__input product-form__input--dropdown">
+                      <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                        {{ option.name }}
+                      </label>
+                      <div class="select">
+                        <select
+                          id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                          class="select__select"
+                          name="options[{{ option.name | escape }}]"
+                          form="{{ product_form_id }}"
+                        >
+                          {%- for value in option.values -%}
+                            <option
+                              value="{{ value | escape }}"
+                              {% if option.selected_value == value %}
+                                selected="selected"
+                              {% endif %}
+                            >
+                              {{ value }}
+                            </option>
+                          {%- endfor -%}
+                        </select>
+                      </div>
+                    </div>
+                  {%- endfor -%}
+
+                  <script type="application/json">
+                    {{ product.variants | json }}
+                  </script>
+                </variant-selects>
+              {%- endif -%}
+            {%- endunless -%}
+
+            <div class="tp-qty-wrapper flex items-center  mb-7.5">
+              <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
+                <quantity-input-storepify
+                  class="tp-item__quantity quick-view-quantity"
+                  data-product-id="{{ card_product.id }}"
+                >
+                  <button class="tp-item__qty_btn no-js-hidden" name="minus" type="button">-</button>
+                  <input
+                    class="tp-item__qty_input"
+                    form="product-form-{{ section.id }}"
+                    id="Quantity-{{ section.id }}"
+                    min="1"
+                    name="quantity"
+                    type="number"
+                    value="1"
+                  >
+                  <button class="tp-item__qty_btn no-js-hidden" name="plus" type="button">+</button>
+                </quantity-input-storepify>
+              </div>
+              <div class="add-to-cart-quick-view">
+                <product-form>
+                  {%- form 'product',
+                    card_product,
+                    class: product_form_id,
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form'
+                  -%}
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ card_product.selected_or_first_available_variant.id }}"
+                      disabled
+                    >
+                    <input name="quantity" type="hidden" value="1">
+                    <button
+                      type="submit"
+                      name="add"
+                      class="quick-add__submit quick-add__submit-{{ card_product.id }} tp-btn tp-btn__primary tp-btn__cart btn-border-radius custom-shadow-inner"
+                      aria-haspopup="dialog"
+                      aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+                      aria-live="polite"
+                      data-sold-out-message="true"
+                      {% if card_product.selected_or_first_available_variant.available == false %}
+                        disabled
+                      {% endif %}
+                    >
+                      <span class="add-to-cart-text">
+                        {%- if card_product.selected_or_first_available_variant.available -%}
+                          {{ 'products.product.add_to_cart' | t }}
+                        {%- else -%}
+                          {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
+                      </span>
+                      <span class="sold-out-message hidden">
+                        {{ 'products.product.sold_out' | t }}
+                      </span>
+                      {% render 'icon',
+                        icon_name: 'icon-loading',
+                        class: 'add-to-cart-loading m-auto hidden',
+                        width: 26,
+                        height: 26
+                      %}
+                    </button>
+                  {%- endform -%}
+                </product-form>
+              </div>
+            </div>
+
+            <span class="error-message hidden" style="color: tomato;"> </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="close-tp-modal">
+    {% render 'icon', icon_name: 'icon-close' %}
+  </button>
+</div>

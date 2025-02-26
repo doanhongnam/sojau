@@ -1,0 +1,256 @@
+{%- liquid
+    assign sts = section.settings
+    assign layout = sts.layout
+    assign tt_alignment = sts.tt_alignment
+    assign tt_title = sts.tt_title
+    assign tt_desc = sts.tt_desc
+    assign tt_type = sts.tt_type
+    assign tt_column = sts.tt_column
+    assign twind_cl = ''
+    if tt_column == 1
+      assign twind_cl = 'twind-x1'
+    elsif tt_column == 2
+      assign twind_cl = 'twind-x2'
+    elsif tt_column == 3
+      assign twind_cl = 'twind-x3'
+    elsif tt_column == 4
+      assign twind_cl = 'twind-x4'
+    endif
+    assign tt_bg_color = sts.tt_bg_color
+    assign tt_text_color = sts.tt_text_color
+    assign tt_pd_top = sts.tt_pd_top
+    assign tt_pd_bottom = sts.tt_pd_bottom
+    assign blocks = section.blocks
+    assign tt_name = sts.tt_name
+    assign tt_link = sts.tt_link
+-%}
+
+{%- style -%}
+    .tiktok-example {
+        padding-top: {{ tt_pd_top }}px;
+        padding-bottom: {{ tt_pd_bottom }}px;
+        background-color: {{ tt_bg_color }};
+    }
+    .tiktok-example__link a {
+        color: {{ tt_text_color }};
+    }
+{%- endstyle -%}
+
+<div class="tiktok-example">
+    <div class="tiktok-example__layout {{ layout }}">
+        <div class="tiktok-example__header {{ tt_alignment }}">
+            <h2 class="tiktok-example__title text-4xl font-medium mb-3.75">{{ tt_title }}</h2>
+            <div class="tiktok-example__desc text-sm font-medium mb-12.5">
+                <p class="tiktok-example__p">{{ tt_desc }}</p>
+            </div>
+        </div>
+        <div class="tiktok-example__sorting twind-cls-{{ tt_column }} flex flex-wrap justify-center">
+            {%- for block in blocks -%}
+                <div class="tiktok-example__row mb-5 {% if twind_cl == 'twind-x4' %}w-3/12{% endif %}{% if twind_cl == 'twind-x3' %}w-4/12{% endif %}{% if twind_cl == 'twind-x2' %}w-6/12{% endif %}{% if twind_cl == 'twind-x1' %}w-full{% endif %}">
+                    <div class="bls__section_tiktok-image bls_img-ratio">
+                        {%- if block.settings.tiktok_embed_url != blank -%}
+                            {{ block.settings.tiktok_embed_url }}
+                        {%- else -%}
+                        <div class="flex items-center justify-center bg-gray-300 h-96">No Data</div>
+                        {%- endif -%}
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+        <div class="tiktok-example__link">
+            {% if sts.tt_name != blank %}
+                <div class="{{ tt_alignment }}">
+                    <a class="ease-in duration-500 hover:underline" href="{{ tt_link }}" target="_blank">{{ tt_name }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+    "name":"Tiktok",
+    "settings":[
+        {
+            "type":"header",
+            "content":"Header settings"
+        },
+        {
+            "type":"text",
+            "id":"tt_title",
+            "label":"Title",
+            "default":"TikTok"
+        },
+        {
+            "type":"richtext",
+            "id":"tt_desc",
+            "label":"Description",
+            "default":"<p>TikTok my shop</p>"
+        },
+        {
+            "type":"select",
+            "id":"tt_alignment",
+            "label":"Text Alignment",
+            "options":[
+                {
+                "value":"text-left",
+                "label":"Left"
+                },
+                {
+                "value":"text-center",
+                "label":"Center"
+                },
+                {
+                "value":"text-right",
+                "label":"Right"
+                }
+            ],
+            "default":"text-center"
+        },
+        {
+            "type":"header",
+            "content":"General settings"
+        },
+        {
+            "type":"select",
+            "id":"layout",
+            "label":"Layout",
+            "options":[
+                {
+                "value":"container",
+                "label":"Container"
+                },
+                {
+                "value":"container-fluid",
+                "label":"Fluid container"
+                }
+            ],
+            "default":"container"
+        },
+        {
+            "type":"select",
+            "id":"tt_type",
+            "label":"Section type",
+            "options":[
+                {
+                "value":"tt_grid",
+                "label":"Grid"
+                }
+            ],
+            "default":"tt_grid"
+        },
+        {
+            "type": "color",
+            "id": "tt_bg_color",
+            "label": "Background color"
+        },
+        {
+            "type": "color",
+            "id": "tt_text_color",
+            "label": "Text Color"
+        },
+        {
+            "type":"header",
+            "content":"Padding"
+        },
+        {
+            "type": "range",
+            "id": "tt_pd_top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "tt_pd_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "tt_column",
+            "label": "Columns per row",
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "default": 4
+        },
+        {
+            "type": "text",
+            "id": "tt_name",
+            "label": "Tiktok text",
+            "default": "Follow us on Tiktok."
+        },
+        {
+            "type": "text",
+            "id": "tt_link",
+            "label": "Tiktok",
+            "default": "https://www.tiktok.com/@shopify",
+            "info": "Example: https://www.tiktok.com/@shopify"
+        },
+        {
+            "type":"header",
+            "content":"Margin"
+        },
+        {
+            "type": "number",
+            "id": "margin_bottom_desktop",
+            "label": "t:sections.margin_bottom.desktop.label",
+            "default": 80
+        },
+        {
+            "type": "number",
+            "id": "margin_bottom_table",
+            "label": "t:sections.margin_bottom.tablet.label",
+            "default": 60
+        },
+        {
+            "type": "number",
+            "id": "margin_bottom_mobile",
+            "label": "t:sections.margin_bottom.mobile.label",
+            "default": 40
+        }
+    ],
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "type": "video",
+        "name": "Video",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "tiktok_embed_url",
+            "label": "Video embed url"
+          }
+        ]
+      }
+    ],
+    "presets":[
+        {
+            "name": "Tiktok",
+            "blocks": [
+                {
+                    "type": "video"
+                },
+                {
+                    "type": "video"
+                },
+                {
+                    "type": "video"
+                },
+                {
+                    "type": "video"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

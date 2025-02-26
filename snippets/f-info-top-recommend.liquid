@@ -1,0 +1,60 @@
+<div class="top-recommend featured-info__item">
+  <div class="featured-info__item__top flex items-center justify-between">
+    <h3 class="featured-info-title">{{ block.settings.heading }}</h3>
+    <div class="featured-info-navigation flex items-center">
+      <div class="top-recommend-prev mr-2.5 featured-info-naviga-prev">
+        {% render 'icon', icon_name: 'icon-prev-type1' %}
+      </div>
+      <div class="top-recommend-next featured-info-naviga-next">
+        {% render 'icon', icon_name: 'icon-next-type1' %}
+      </div>
+    </div>
+  </div>
+  <div class="swiper top-recommend__list">
+    <div class="swiper-wrapper">
+     {% if block.settings.collection.products != blank %}
+      {%- for product in block.settings.collection.products -%}
+        <div class="swiper-slide">
+          {% render 'card-product-information',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_rating: false,
+            lazy_load: "lazy_load",
+            section_id: section.id  
+        %}
+        </div>
+      {% endfor %}
+     {% else %}
+     {%- assign range = (1..4) -%}
+     {% for star in range %}
+        <div class="swiper-slide">
+           {% render 'card-product-no-data' %}
+           <div class="btn-no-data flex items-center justify-start mt-4">
+              <button type="submit" class="quick-add__no-data hvr-bounce-to-right">
+                 <span>Add to cart</span>
+               </button>
+               <ul class="featured-actions flex  items-center justify-start">
+                 <li>
+                 <button button-wishlist="" type="button" aria-label="Add to wishlist" class="button-wishlist" data-product-handle="beats-solo-pro-wireless-noise-cancelling-on-ear-headphones">
+                       <svg aria-hidden="true" class="icon icon-accordion color-foreground-text" focusable="false" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M10 5.2393L8.5149 3.77392C6.79996 2.08174 4.01945 2.08174 2.30451 3.77392C0.589562 5.4661 0.589563 8.2097 2.30451 9.90188L10 17.4952L17.6955 9.90188C19.4104 8.2097 19.4104 5.4661 17.6955 3.77392C15.9805 2.08174 13.2 2.08174 11.4851 3.77392L10 5.2393ZM10.765 3.06343C12.8777 0.978857 16.3029 0.978856 18.4155 3.06343C20.5282 5.148 20.5282 8.52779 18.4155 10.6124L10.72 18.2057C10.3224 18.5981 9.67763 18.5981 9.27996 18.2057L1.58446 10.6124C-0.528154 8.52779 -0.528154 5.14801 1.58446 3.06343C3.69708 0.978859 7.12233 0.978858 9.23495 3.06343L10 3.81832L10.765 3.06343Z" fill-rule="evenodd"></path>
+                       </svg>
+                    </button>
+                 </li>
+                 <li>
+                 <a href="#" class="button-quick-view">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5.87279C0 5.69975 0.05719 5.5338 0.158989 5.41145C0.260788 5.28909 0.398857 5.22036 0.542822 5.22036H13.3458L9.92931 1.11524C9.82738 0.992733 9.77012 0.826574 9.77012 0.653319C9.77012 0.480064 9.82738 0.313905 9.92931 0.191396C10.0312 0.0688861 10.1695 6.10392e-05 10.3136 6.10352e-05C10.4578 6.10311e-05 10.596 0.0688861 10.6979 0.191396L15.0405 5.41087C15.0911 5.47147 15.1312 5.54347 15.1585 5.62273C15.1859 5.702 15.2 5.78697 15.2 5.87279C15.2 5.95861 15.1859 6.04358 15.1585 6.12284C15.1312 6.20211 15.0911 6.27411 15.0405 6.33471L10.6979 11.5542C10.596 11.6767 10.4578 11.7455 10.3136 11.7455C10.1695 11.7455 10.0312 11.6767 9.92931 11.5542C9.82738 11.4317 9.77012 11.2655 9.77012 11.0923C9.77012 10.919 9.82738 10.7528 9.92931 10.6303L13.3458 6.52522H0.542822C0.398857 6.52522 0.260788 6.45648 0.158989 6.33413C0.05719 6.21177 0 6.04583 0 5.87279Z" fill="black"></path>
+                    </svg>
+                    </a>
+                 </li>
+               </ul>
+           </div>
+           </div>
+     {% endfor %}
+     {% endif %}
+
+    </div>
+  </div>
+</div>

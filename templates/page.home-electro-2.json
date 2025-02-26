@@ -1,0 +1,604 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ea31e7c8-131d-446c-b8f4-0919916ec80e": {
+      "type": "slide",
+      "blocks": {
+        "e8558718-cbeb-47f3-a904-ac59dc08fde8": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Slider1.png",
+            "overlay_slide": 0,
+            "position_content": "center-content",
+            "text_align_content": "text_left",
+            "sub_title": "NEW IN: HEADPHONE & AUDIOPHILE",
+            "title": "<p>Best Wireless Headphones 2022</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 16,
+            "font_size_title": 36,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#000000",
+            "color_description_2": "#000000",
+            "button_type": "block-button"
+          }
+        },
+        "fb0e201c-bb85-4397-8937-ba285ab333d3": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Slider3_585ffa91-42ab-4302-bc34.png",
+            "overlay_slide": 0,
+            "position_content": "center-content",
+            "text_align_content": "text_center",
+            "sub_title": "NEW IN: BAGS & PURSES",
+            "title": "<p>Appliance Cooking Ranges</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 16,
+            "font_size_title": 36,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#000000",
+            "color_description_2": "#000000",
+            "button_type": "block-button"
+          }
+        },
+        "e4e47c3a-be75-4e16-bf08-09ec1965d301": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Slider2_945891d2-879e-4b2f-8f6d.png",
+            "overlay_slide": 0,
+            "position_content": "center-content",
+            "text_align_content": "text_left",
+            "sub_title": "NEW IN: BAGS & PURSES",
+            "title": "<p>Washing Machines Electrolux </p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "",
+            "font_size_subtitle": 16,
+            "font_size_title": 36,
+            "font_size_description": 16,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#000000",
+            "color_description_2": "#000000",
+            "button_type": "block-button"
+          }
+        }
+      },
+      "block_order": [
+        "e8558718-cbeb-47f3-a904-ac59dc08fde8",
+        "fb0e201c-bb85-4397-8937-ba285ab333d3",
+        "e4e47c3a-be75-4e16-bf08-09ec1965d301"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": false,
+        "autoplay": false,
+        "autoplay_time": 5,
+        "fix_height_img": "height_image",
+        "position_pagination": "center_bottom",
+        "pag_bg": "#f6f6f6",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "99d6ad25-5245-4a91-90a8-16dc25b8c211": {
+      "type": "service",
+      "blocks": {
+        "1bff39c0-20ef-4c96-87d0-c434c6a2b1af": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-electro-1_1.png",
+            "title_service": "Return Shipping",
+            "description_service": "Free shipping on all US order or order above $200",
+            "padding_top_bottom": 35,
+            "background_item_service": "#f8f8f8",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "4ddb583b-1e40-46a2-b8e9-234dc0da8142": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-electro-2_1.png",
+            "title_service": "24/7 Customer services",
+            "description_service": "We ensure secure payment with Pev for you.",
+            "padding_top_bottom": 35,
+            "background_item_service": "#f8f8f8",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "26a97769-bbc3-42f9-a047-29e85cb110d0": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/servie-elec-1_1.png",
+            "title_service": "12 - Month Warranty",
+            "description_service": "Free shipping on all US order or order above $200",
+            "padding_top_bottom": 35,
+            "background_item_service": "#f8f8f8",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "1bff39c0-20ef-4c96-87d0-c434c6a2b1af",
+        "4ddb583b-1e40-46a2-b8e9-234dc0da8142",
+        "26a97769-bbc3-42f9-a047-29e85cb110d0"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "title": "",
+        "description": "",
+        "gap_item": 30,
+        "layout_service": "layout-service-1",
+        "max_width_image": "80px",
+        "service_bg": "rgba(0,0,0,0)",
+        "show_border_right": false,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "62de83be-b96a-4f4e-ae89-9422f9f962a0": {
+      "type": "banner-image-card",
+      "blocks": {
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-left",
+            "content_alignment": "left",
+            "hover_item": "none",
+            "background_content": "rgba(0,0,0,0)",
+            "image": "shopify://shop_images/banner-1.1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop collection",
+            "link": ""
+          }
+        },
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-1": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "none",
+            "background_content": "rgba(0,0,0,0)",
+            "image": "shopify://shop_images/Banner_3_2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 18,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 16,
+            "color_sub_title": "#909090",
+            "color_background_sub_title": "rgba(0,0,0,0)",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-2": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "rgba(0,0,0,0)",
+            "image": "shopify://shop_images/Banner_2_8.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "<p>Concept Design</p>",
+            "font_size_title": 18,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 16,
+            "color_sub_title": "#909090",
+            "color_background_sub_title": "rgba(0,0,0,0)",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-3": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-top-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "rgba(0,0,0,0)",
+            "image": "shopify://shop_images/Banner_1_8.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 18,
+            "color_title": "#000000",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 16,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "rgba(0,0,0,0)",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-0",
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-1",
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-2",
+        "template--15348165378254__62de83be-b96a-4f4e-ae89-9422f9f962a0-1673487888937cad4c-3"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_4",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "3480e884-ba73-4c85-9aba-9edf7cdde792": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "Deal of the day",
+        "description": "<p>Professionally designed based on your pet photos. </p>",
+        "display_type": "slide",
+        "collection": "electro",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "title_banner": "Shop Pet Portraits",
+        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
+        "position_collection": "position_left",
+        "product_item_layout": "layout_2",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "66a06013-8d03-48b4-9174-05e5d2f0fcbc": {
+      "type": "banner-image-card",
+      "blocks": {
+        "template--15348165378254__66a06013-8d03-48b4-9174-05e5d2f0fcbc-1673494143062c7c73-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/Banner_3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15348165378254__66a06013-8d03-48b4-9174-05e5d2f0fcbc-1673494143062c7c73-0"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_1",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "d2f52d80-99a5-4d57-b1e0-fc7b66fa76d7": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "",
+        "description": "",
+        "display_type": "banner",
+        "collection": "best-seller",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 6,
+        "column_number": "3",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "title_banner": "Shop Pet Portraits",
+        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
+        "background_banner": "shopify://shop_images/image-collection-7_1.png",
+        "position_collection": "position_left",
+        "product_item_layout": "layout_1",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "3ad53063-7d06-4bce-a25b-fef4510d6d6c": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "",
+        "description": "",
+        "display_type": "banner",
+        "collection": "trending",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 6,
+        "column_number": "3",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "title_banner": "Shop Pet Portraits",
+        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
+        "background_banner": "shopify://shop_images/circuit-network-abstract-shape-d.png",
+        "position_collection": "position_right",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "24d213ba-22ba-478f-bc6a-1393ba1efbad": {
+      "type": "banner-image-card",
+      "blocks": {
+        "template--15348165378254__24d213ba-22ba-478f-bc6a-1393ba1efbad-16735100228f380655-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/Banner_1_5.png",
+            "overlay_banner": 0,
+            "fix_height_image": true,
+            "height_image_mobile": 40,
+            "title": "<p>Canon EOS </p><p>1500D</p>",
+            "sub_title": "",
+            "font_size_title": 24,
+            "color_title": "#ffffff",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "template--15348165378254__24d213ba-22ba-478f-bc6a-1393ba1efbad-16735100228f380655-1": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center-left",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/Banner_2_5.png",
+            "overlay_banner": 0,
+            "fix_height_image": true,
+            "height_image_mobile": 40,
+            "title": "<p>Camera Deals </p><p>50% Off</p>",
+            "sub_title": "",
+            "font_size_title": 24,
+            "color_title": "#ffffff",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15348165378254__24d213ba-22ba-478f-bc6a-1393ba1efbad-16735100228f380655-0",
+        "template--15348165378254__24d213ba-22ba-478f-bc6a-1393ba1efbad-16735100228f380655-1"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_2",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "061048be-9fca-48f2-a5b6-48b442d2276e": {
+      "type": "featured-information",
+      "blocks": {
+        "template--17539117580590__061048be-9fca-48f2-a5b6-48b442d2276e-16735941775a19e449-0": {
+          "type": "blog_post",
+          "settings": {
+            "heading": "Featured post",
+            "blog": "electro",
+            "show_date": true,
+            "show_button_discover": true
+          }
+        },
+        "template--17539117580590__061048be-9fca-48f2-a5b6-48b442d2276e-16735941775a19e449-1": {
+          "type": "top_recommend",
+          "settings": {
+            "heading": "Top recommend",
+            "collection": "trending"
+          }
+        },
+        "template--17539117580590__061048be-9fca-48f2-a5b6-48b442d2276e-16735941775a19e449-2": {
+          "type": "best_review",
+          "settings": {
+            "heading": "Best reviewer",
+            "content_review": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>",
+            "number_star": 5,
+            "image": "shopify://shop_images/Avatar_1.png",
+            "name": "Mr. Kenedy",
+            "job": "IT Techno",
+            "content_review_2": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>",
+            "number_star_2": 5,
+            "image_2": "shopify://shop_images/Avatar_-1.png",
+            "name_2": "Mr. Kenedy",
+            "job_2": "IT Techno",
+            "content_review_3": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>",
+            "number_star_3": 5,
+            "image_3": "shopify://shop_images/banenr-hats-1_1.png",
+            "name_3": "Mr. Kenedy",
+            "job_3": "IT Techno"
+          }
+        }
+      },
+      "block_order": [
+        "template--17539117580590__061048be-9fca-48f2-a5b6-48b442d2276e-16735941775a19e449-0",
+        "template--17539117580590__061048be-9fca-48f2-a5b6-48b442d2276e-16735941775a19e449-1",
+        "template--17539117580590__061048be-9fca-48f2-a5b6-48b442d2276e-16735941775a19e449-2"
+      ],
+      "settings": {
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "b1915480-00d1-4cf6-b042-250d8488caa2": {
+      "type": "newsletter",
+      "blocks": {
+        "template--15348165378254__b1915480-00d1-4cf6-b042-250d8488caa2-1673513108d5fbc4ee-0": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "template--15348165378254__b1915480-00d1-4cf6-b042-250d8488caa2-1673513108d5fbc4ee-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--15348165378254__b1915480-00d1-4cf6-b042-250d8488caa2-1673513108d5fbc4ee-0",
+        "template--15348165378254__b1915480-00d1-4cf6-b042-250d8488caa2-1673513108d5fbc4ee-1"
+      ],
+      "settings": {
+        "display_layout": "newsletter-layout_2",
+        "newsletter_background": "#17548d",
+        "color_bg_button": "#ffd44d",
+        "color_text_button": "#000000",
+        "color_newsletter": "#000000",
+        "show_social": false,
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "margin_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "ea31e7c8-131d-446c-b8f4-0919916ec80e",
+    "99d6ad25-5245-4a91-90a8-16dc25b8c211",
+    "62de83be-b96a-4f4e-ae89-9422f9f962a0",
+    "3480e884-ba73-4c85-9aba-9edf7cdde792",
+    "66a06013-8d03-48b4-9174-05e5d2f0fcbc",
+    "d2f52d80-99a5-4d57-b1e0-fc7b66fa76d7",
+    "3ad53063-7d06-4bce-a25b-fef4510d6d6c",
+    "24d213ba-22ba-478f-bc6a-1393ba1efbad",
+    "061048be-9fca-48f2-a5b6-48b442d2276e",
+    "b1915480-00d1-4cf6-b042-250d8488caa2"
+  ]
+}

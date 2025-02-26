@@ -1,0 +1,183 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "166182796302a6a63b": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "b104f793-ce5e-4267-a552-48d1ba882736": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Feature List",
+        "sub_title": "<p>We bring outstanding features, easy to customize, customers will be impressed with your store</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "background_title": "",
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "02c9f9cf-aef8-461a-a125-f13833f833e8": {
+      "type": "feature_list",
+      "blocks": {
+        "6441824f-794a-47c2-a4a7-2a01feb857ea": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "939cfb0c-d54a-4dfe-9a0a-ad5249ce4b6a": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "12485377-6a8c-4e87-ac72-c8cce24c0551": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "e5521c5f-c19c-4ebd-92bf-a2df38555f4a": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "72dfb140-c398-4369-940e-8953123c7e30": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "6441824f-794a-47c2-a4a7-2a01feb857ea",
+        "939cfb0c-d54a-4dfe-9a0a-ad5249ce4b6a",
+        "12485377-6a8c-4e87-ac72-c8cce24c0551",
+        "e5521c5f-c19c-4ebd-92bf-a2df38555f4a",
+        "72dfb140-c398-4369-940e-8953123c7e30"
+      ],
+      "settings": {
+        "heading": "THEME SETTINGS",
+        "description": "The options use global, save you time, and have synchronization throughout your website",
+        "flex_direction": "flex-row",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "d338c912-dfce-472c-a324-227f8a63762e": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#E5E5E5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "8f3827de-5025-4cd7-82a8-e399e80213a6": {
+      "type": "feature_list",
+      "blocks": {
+        "2ec118f3-9680-408a-a42f-e06cefddb397": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "782b81f1-f3cb-4d5b-a910-b8ad4dcc90b0": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "c3cb8cff-9510-4490-a54c-af81c4f1249a": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "aa10de35-c4ae-441a-800e-ad4fbcb66ec2": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        },
+        "81d5eb11-f6b4-4147-a365-add3b19d4a8a": {
+          "type": "item_name",
+          "settings": {
+            "heading": "Lorem",
+            "description": "Manage students and instructor profiles directly from the admin panel.",
+            "image": "shopify://shop_images/26039_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "2ec118f3-9680-408a-a42f-e06cefddb397",
+        "782b81f1-f3cb-4d5b-a910-b8ad4dcc90b0",
+        "c3cb8cff-9510-4490-a54c-af81c4f1249a",
+        "aa10de35-c4ae-441a-800e-ad4fbcb66ec2",
+        "81d5eb11-f6b4-4147-a365-add3b19d4a8a"
+      ],
+      "settings": {
+        "heading": "Feature List Title",
+        "description": "Feature List Description",
+        "flex_direction": "flex-row-reverse",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "166182796302a6a63b",
+    "b104f793-ce5e-4267-a552-48d1ba882736",
+    "02c9f9cf-aef8-461a-a125-f13833f833e8",
+    "d338c912-dfce-472c-a324-227f8a63762e",
+    "8f3827de-5025-4cd7-82a8-e399e80213a6"
+  ]
+}

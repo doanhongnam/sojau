@@ -1,0 +1,174 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1658976384ad46e5e5": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "1663068834ed4e3fe2": {
+      "type": "default-page-title",
+      "settings": {
+        "g_title": "",
+        "g_sub": "",
+        "horizontal_alignment": "center",
+        "margin_bottom_desktop": 30,
+        "margin_bottom_table": 20,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "main": {
+      "type": "tp-portfolio",
+      "blocks": {
+        "02aacdd9-d871-494f-92ee-739ce92c31ac": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-4.png",
+            "title": "Tend",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "63d473ca-92c6-4624-b159-197bf2494a45": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-6.png",
+            "title": "Trust",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "2b2e5fd2-d9ec-4985-b43d-96a640779643": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-1.png",
+            "title": "Storepify",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "a630f322-7a17-4475-b429-a9fc25b3912d": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-3.png",
+            "title": "Master",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "8a6e85c9-3b0c-4bbf-9b69-c6af315ed945": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-5.png",
+            "title": "Woman",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "5c6d8b4f-2b3d-44fb-840b-9caedfac5c3a": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-2.png",
+            "title": "Woman",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "51299399-59c8-4fa0-9bc0-1567eb7b4810": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-11.png",
+            "title": "Man",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "bda921d1-0bdc-4de4-9837-79dfcacaaaaf": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-10.png",
+            "title": "Man",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "1be87d48-81d6-4f08-a6a3-1a4d06c6c340": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-7.png",
+            "title": "Man",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "3fc2302e-c7ef-4242-8e60-e5ba65d07294": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-8.png",
+            "title": "Man",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "98c5402e-48a6-4a71-878b-2c3f3b6e32df": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-12.png",
+            "title": "Man",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "3c62f0fd-8f12-4e05-868f-f4d3eba5d431": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-3-9.png",
+            "title": "Man",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        }
+      },
+      "block_order": [
+        "02aacdd9-d871-494f-92ee-739ce92c31ac",
+        "63d473ca-92c6-4624-b159-197bf2494a45",
+        "2b2e5fd2-d9ec-4985-b43d-96a640779643",
+        "a630f322-7a17-4475-b429-a9fc25b3912d",
+        "8a6e85c9-3b0c-4bbf-9b69-c6af315ed945",
+        "5c6d8b4f-2b3d-44fb-840b-9caedfac5c3a",
+        "51299399-59c8-4fa0-9bc0-1567eb7b4810",
+        "bda921d1-0bdc-4de4-9837-79dfcacaaaaf",
+        "1be87d48-81d6-4f08-a6a3-1a4d06c6c340",
+        "3fc2302e-c7ef-4242-8e60-e5ba65d07294",
+        "98c5402e-48a6-4a71-878b-2c3f3b6e32df",
+        "3c62f0fd-8f12-4e05-868f-f4d3eba5d431"
+      ],
+      "settings": {
+        "portfolio_width": "full_width",
+        "type": "3",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "1658976384ad46e5e5",
+    "1663068834ed4e3fe2",
+    "main"
+  ]
+}

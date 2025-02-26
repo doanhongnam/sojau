@@ -1,0 +1,105 @@
+<div id="tp-modal" class="tp-modal tp-modal-newletter"
+     data-timeout="{{ settings.np_popup_timeout }}"
+>
+    <div class="np bg-white drop-shadow-md">
+        <div class="np__content flex flex-col">
+            {% if settings.np_image != blank %}
+                <div class="np__left">
+                    {{ settings.np_image | image_url: width: settings.np_image.width | image_tag: class: '', loading: 'lazy' }}
+                </div>
+            {% endif %}
+
+            <div class="np__right">
+                <div class="content">
+                    {% if settings.np_heading %}
+                        <h3 class="np__title text-center">{{ settings.np_heading }}</h3>
+                    {% endif %}
+
+                    {% if settings.np_description %}
+                        <p class="np__sub-title text-center">{{ settings.np_description }}</p>
+                    {% endif %}
+
+                    <div class="newsletter__email mb-5" {{ block.shopify_attributes }}>
+                        {% form 'customer', class: 'newsletter-form np__form' %}
+                            <input name="contact[tags]" type="hidden" value="newsletter">
+                            <div class="newsletter-form__field-wrapper">
+                                <div class="field newsletter-form__input">
+                                    <input
+                                            id="NewsletterForm--{{ section.id }}"
+                                            type="email"
+                                            name="contact[email]"
+                                            class="field__input"
+                                            value="{{ form.email }}"
+                                            aria-required="true"
+                                            autocapitalize="off"
+                                            autocomplete="email"
+                                            {% if form.errors %}
+                                                autofocus aria-invalid="true" aria-describedby="Newsletter-error--{{ section.id }}"
+                                            {% elsif form.posted_successfully? %}
+                                                aria-describedby="Newsletter-success--{{ section.id }}"
+                                            {% endif %}
+                                            placeholder="{{ 'newsletter.label' | t }}"
+                                            required
+                                    >
+                                    <button
+                                            type="submit"
+                                            class="newsletter-form__button tp-btn tp-btn__primary"
+                                            name="commit"
+                                            id="Subscribe"
+                                            aria-label="{{ 'newsletter.button_label' | t }}"
+                                    >
+                                        {{ 'newsletter.button_label' | t }}
+                                    </button>
+                                </div>
+                                {%- if form.errors -%}
+                                    <script>
+                                        document.querySelector('.newsletter-form__input').classList.add('hidden');
+                                        window.setTimeout(function () {
+                                            document.getElementById('Newsletter-error--popup').style.color = 'red';
+                                        }, 100);
+
+                                    </script>
+                                    <small class="newsletter-form__message form__message" id="Newsletter-error--popup">
+                                        {%- render 'icon', icon_name: 'icon-error' -%}
+                                        {{- form.errors.translated_fields.email | capitalize }}
+                                        {{ form.errors.messages.email }}
+                                    </small>
+                                {%- endif -%}
+                                {%- if form.posted_successfully? -%}
+                                    <small
+                                            autofocus
+                                            class="newsletter-form__message newsletter-form__message--success form__message"
+                                            id="Newsletter-success--popup"
+                                            tabindex="-1"
+                                    >
+                                        {{- 'newsletter.success' | t -}}
+                                    </small>
+                                    <script>
+                                        document.querySelector('.newsletter-form__input').classList.add('hidden');
+                                        window.setTimeout(function () {
+                                            document.getElementById('Newsletter-success--popup').style.color = 'green';
+                                            localStorage.setItem("show_newletter", "displayed");
+                                        }, 100);
+
+                                    </script>
+                                {%- endif -%}
+                            </div>
+                        {% endform %}
+                    </div>
+                    <div class="np__checkbox flex flex-row items-center">
+                        <label for="confirmClosenewlleter mr-2.5"> {{ settings.np_confirm_text }}</label>
+                        <input type="checkbox" id="cfNewletter" name="confirmClosenewletter" value="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <button class="close-tp-modal">
+            <svg class="icon-close" width="15" height="15" viewBox="0 0 16 17" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.91788 8.47292L15.8102 1.51213C15.9318 1.38884 16 1.22196 15.9999 1.04803C15.9997 0.874104 15.9313 0.707312 15.8096 0.584187C15.5659 0.339537 15.1366 0.338301 14.8905 0.585423L8.00001 7.54622L1.10709 0.583569C0.862164 0.339537 0.432926 0.340772 0.189222 0.584805C0.128732 0.645593 0.0808472 0.717927 0.0483617 0.797588C0.0158762 0.877248 -0.000559128 0.962638 1.45145e-05 1.04878C1.45145e-05 1.22423 0.06737 1.38857 0.189222 1.51027L7.08152 8.4723L0.189834 15.435C0.0682183 15.5584 0.0001119 15.7255 0.000456277 15.8996C0.000800655 16.0737 0.0695678 16.2405 0.191672 16.3635C0.30985 16.4815 0.477014 16.5495 0.649688 16.5495H0.653362C0.82665 16.5489 0.993814 16.4803 1.10954 16.361L8.00001 9.40025L14.8929 16.3629C15.0148 16.4852 15.1777 16.5532 15.3503 16.5532C15.4357 16.5534 15.5203 16.5366 15.5992 16.5038C15.6782 16.4709 15.7499 16.4226 15.8103 16.3617C15.8706 16.3008 15.9185 16.2285 15.951 16.1488C15.9836 16.0692 16.0002 15.9838 16 15.8977C16 15.7228 15.9326 15.5579 15.8102 15.4362L8.91788 8.47292Z"
+                      fill="black"></path>
+            </svg>
+        </button>
+    </div>
+</div>

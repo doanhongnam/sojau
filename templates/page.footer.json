@@ -1,0 +1,294 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "166375198248c763f4": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "c6c724b3-9dd4-41e5-bce4-d8182ebb9d88": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Footer Layouts",
+        "sub_title": "<p>STOREPIFY Theme offers users a wide variety of customizing possibilities that you can manage directly on the website without any coding requirement.<br/>You can apply these Footer Layouts on many pages like HomePage, Product Listing Page, or Product Detail Page.<br/>Below is the available pre-built Product Item Layouts for you:</p>",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 62,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "4ebd4ee9-8bdd-4c30-be95-b2a554ed8ad7": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1663751619ab6b21fe": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Footer Type 1",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "main": {
+      "type": "footer",
+      "blocks": {
+        "56472d1d-acea-4570-b306-8ee7b973a959": {
+          "type": "contact",
+          "settings": {
+            "item_width": 50,
+            "position_content": "content-left",
+            "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "phone": "(+400) 2523 465 376",
+            "color_phone": "#909090",
+            "font-size-phone": 16,
+            "email": "storepify@company.com",
+            "color_email": "#909090",
+            "font-size-email": 16,
+            "show_social": false
+          }
+        },
+        "cf850473-320e-4cdd-b3cc-3a2b77c5d616": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 15,
+            "heading": "QUICK LINKS",
+            "menu": "quick-links"
+          }
+        },
+        "06964d3f-e340-42dc-a709-c54b4958f6fe": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 15,
+            "heading": "INFORMATION",
+            "menu": "information"
+          }
+        },
+        "d6f43607-2f67-4e26-bbee-0913ec7eefda": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 20,
+            "heading": "LEGAL",
+            "menu": "legal"
+          }
+        }
+      },
+      "block_order": [
+        "56472d1d-acea-4570-b306-8ee7b973a959",
+        "cf850473-320e-4cdd-b3cc-3a2b77c5d616",
+        "06964d3f-e340-42dc-a709-c54b4958f6fe",
+        "d6f43607-2f67-4e26-bbee-0913ec7eefda"
+      ],
+      "settings": {
+        "image_logo": "shopify://shop_images/logo.png",
+        "color_background": "#ffffff",
+        "heading_color": "#000000",
+        "subtext_color": "#909090",
+        "color_social": "#bebebe",
+        "color_hover_item_menu": "#000",
+        "show_social": true,
+        "payment_enable": true,
+        "content_copyright": "Copyright by Storepify",
+        "color_content_copyright": "#909090",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_top_table": 0,
+        "padding_top_mobile": 0
+      }
+    },
+    "1663752133d2e74131": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Footer Type 2",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1663752079399e1397": {
+      "type": "footer",
+      "blocks": {
+        "1f182ab5-23e3-4622-82b0-4d017ff43ba2": {
+          "type": "contact",
+          "settings": {
+            "item_width": 45,
+            "position_content": "content-left",
+            "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "phone": "(+400) 2523 465 376",
+            "color_phone": "#909090",
+            "font-size-phone": 16,
+            "email": "storepify@company.com",
+            "color_email": "#909090",
+            "font-size-email": 16,
+            "show_social": false
+          }
+        },
+        "1012e5b1-0b02-49c9-a332-bc035bb28066": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 15,
+            "heading": "Quick links",
+            "menu": "quick-links"
+          }
+        },
+        "10799bf4-1d62-43d3-9441-1a5461f5ad80": {
+          "type": "link_list",
+          "settings": {
+            "item_width": 15,
+            "heading": "Quick links",
+            "menu": "information"
+          }
+        },
+        "d256da3d-f7e0-481a-b610-7cf9fcdef8b0": {
+          "type": "newsletter_ft",
+          "settings": {
+            "item_width": 25,
+            "heading": "Newsletter",
+            "newsletter_brief": "<p>Sign up and get yourself a discount on a refurbished phone today!</p>",
+            "color_bg_button": "#2e2e2e",
+            "color_text_button": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "1f182ab5-23e3-4622-82b0-4d017ff43ba2",
+        "1012e5b1-0b02-49c9-a332-bc035bb28066",
+        "10799bf4-1d62-43d3-9441-1a5461f5ad80",
+        "d256da3d-f7e0-481a-b610-7cf9fcdef8b0"
+      ],
+      "settings": {
+        "image_logo": "shopify://shop_images/logo.png",
+        "color_background": "#ffffff",
+        "heading_color": "#000000",
+        "subtext_color": "#909090",
+        "color_social": "#bebebe",
+        "color_hover_item_menu": "#000",
+        "show_social": true,
+        "payment_enable": true,
+        "content_copyright": "Copyright by Storepify",
+        "color_content_copyright": "#909090",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_top_table": 0,
+        "padding_top_mobile": 0
+      }
+    },
+    "1663752133d2e74132": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Footer Type 3",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "db83adc3-a260-434e-b40f-29c4c98159f0": {
+      "type": "footer",
+      "blocks": {
+        "b2a69ebf-3d02-4098-9810-628d4a0eac9c": {
+          "type": "contact",
+          "settings": {
+            "item_width": 100,
+            "position_content": "content-center",
+            "subtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p><p>magna aliqua. Ut enim ad minim veniam.</p>",
+            "phone": "",
+            "color_phone": "#909090",
+            "font-size-phone": 16,
+            "email": "",
+            "color_email": "#909090",
+            "font-size-email": 16,
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "b2a69ebf-3d02-4098-9810-628d4a0eac9c"
+      ],
+      "settings": {
+        "image_logo": "shopify://shop_images/storepify.png",
+        "color_background": "#000000",
+        "heading_color": "#000000",
+        "subtext_color": "#909090",
+        "color_social": "#bebebe",
+        "color_hover_item_menu": "#000000",
+        "show_social": false,
+        "payment_enable": true,
+        "content_copyright": "Copyright by Storepify",
+        "color_content_copyright": "#909090",
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0,
+        "padding_top_desktop": 80,
+        "padding_top_table": 60,
+        "padding_top_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "166375198248c763f4",
+    "c6c724b3-9dd4-41e5-bce4-d8182ebb9d88",
+    "4ebd4ee9-8bdd-4c30-be95-b2a554ed8ad7",
+    "1663751619ab6b21fe",
+    "main",
+    "1663752133d2e74131",
+    "1663752079399e1397",
+    "1663752133d2e74132",
+    "db83adc3-a260-434e-b40f-29c4c98159f0"
+  ]
+}

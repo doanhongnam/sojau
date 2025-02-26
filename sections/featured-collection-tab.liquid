@@ -1,0 +1,421 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout
+  assign styleButton = section.settings.button_type
+  assign styleButtonTabActive = section.settings.style_button_tab
+  assign columnNumber = section.settings.column_number
+  assign classColumnNumber = 'col-4'
+  if columnNumber == '2'
+    assign classColumnNumber = 'col-2'
+  elsif columnNumber == '3'
+    assign classColumnNumber = 'col-3'
+  elsif columnNumber == '5'
+    assign classColumnNumber = 'col-5'
+  endif
+%}
+
+<style>
+  .tp-fcl__top.text-left {
+    text-align: left !important;
+  }
+  .tp-fcl__top.text-center {
+    text-align: center !important;
+  }
+  .tp-fcl__top.text-right {
+    text-align: right !important;
+  }
+</style>
+
+<div class="tp-featured-collection tp-featured-collection-{{ section.id }} {{ WidthLayout }}">
+  <div class="tp-fcl__main tp-fcl__main-{{ section.id }} tp-fcl__tabs">
+    <div class="tp-fcl__top">
+      {% if section.settings.title != blank %}
+        <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <div class="tp-fcl__brief mb-5">{{ section.settings.description }}</div>
+      {% endif %}
+      <div class="tp-box-button {{ styleButtonTabActive }}">
+        {%- for collection in section.settings.collection_list -%}
+          <button
+            class="collection_tablinks {% if forloop.first %} active{% endif %}"
+            data-tab-index="{{ forloop.index }}"
+          >
+            {{ collection.title }}
+          </button>
+        {%- endfor -%}
+      </div>
+
+      <div class="tp-box-select">
+        <select name="tpbox-select" id="tpbox-select">
+          {%- for collection in section.settings.collection_list -%}
+            <option
+              class="collection_tablinks"
+              {% if forloop.first %}
+                active
+              {% endif -%}
+              value="{{ forloop.index }}"
+            >
+              {{ collection.title }}
+            </option>
+          {%- endfor -%}
+        </select>
+      </div>
+    </div>
+    {% if section.settings.collection_list != blank %}
+      {%- for collection in section.settings.collection_list -%}
+        {% assign collection = collections[collection] %}
+        {%- paginate collection.products by section.settings.products_to_show -%}
+          <div class="relative">
+            <div class="parent-item-{{ forloop.index }} parent-item  {% if forloop.first %}active{% endif %}">
+              <ul class="tp-fcl__content mobile-{{ section.settings.mobile_columns }}">
+                {%- for product in collection.products -%}
+                  {% assign lazy_load = false %}
+                  {%- if forloop.index > 2 -%}
+                    {%- assign lazy_load = true -%}
+                  {%- endif -%}
+                  <li class="tp-fcl__item grid__item {{ classColumnNumber }}">
+                    {% render 'card-product',
+                      card_product: product,
+                      section: section,
+                      layoutProductItem: section.settings.product_item_layout,
+                      lazy_load: lazy_load
+                    %}
+                  </li>
+                {%- endfor -%}
+              </ul>
+              {% if section.settings.text_button != blank %}
+                <div class="fcl-load-more">
+                  <a
+                    href="{{ collection.url | default: '#' }}"
+                    class="tp-btn {{ styleButton }}"
+                  >
+                    {{ section.settings.text_button }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endpaginate %}
+      {% endfor %}
+    {% else %}
+      <div class="parent-item-default parent-item">
+        <ul class="tp-fcl__content mobile-{{ section.settings.mobile_columns }}">
+          {% liquid
+            assign lazy_load = false
+            if forloop.index > 2
+              assign lazy_load = true
+            endif
+            assign numbers = '1,2,3,4,5,6,7,8,9,10' | split: ','
+          %}
+
+          {%- for item in numbers -%}
+            <li class="tp-fcl__item grid__item w-1/5">
+              {%- render 'card-product-no-data' -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+        {% if section.settings.text_button != blank %}
+          <div class="fcl-load-more">
+            <a
+              href="javascript:void(0)"
+              class="tp-btn {{ styleButton }}"
+            >
+              {{ section.settings.text_button }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  {% if section.settings.background_image != blank or section.settings.background_color != blank %}
+  .tp-featured-collection-{{ section.id }} {
+  {% if section.settings.background_image != blank %} background: url('{{ section.settings.background_image | image_url: width: section.settings.background_image.width, height: section.settings.background_image.height }}');
+      background-repeat: round;
+  {% elsif section.settings.background_color != blank %} background: {{ section.settings.background_color }};
+  {% endif %}
+  }
+
+  {% endif %}
+  .tp-fcl__main-{{ section.id }} {
+      padding: {{ section.settings.padding_top_bottom }}px 0;
+  }
+  .tp-featured-collection-{{ section.id }} .collection_tablinks {
+      font-size: {{ section.settings.font_size_button }}px !important;
+      font-weight: {{ section.settings.font_weight_button_tab }};
+  {% if section.settings.text_uppercase == true %} text-transform: uppercase;
+  {% endif %}
+  }
+
+  @media (max-width: 767px) {
+
+  {% if section.settings.item_direction == 'item_row' %}
+      .tp-fcl__item {
+          width: 100% !important;
+      }
+
+  {% endif %}
+
+  }
+</style>
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Featured Colection Tab",
+  "tag": "section",
+  "class": "section relative",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Product by",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Pading top and bottom",
+      "default": 0
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collections",
+      "limit": 8
+    },
+    {
+      "type": "select",
+      "id": "style_button_tab",
+      "label": "Style button tab",
+      "options": [
+        {
+          "value": "tp-box-button__style-1",
+          "label": "Style 1"
+        },
+        {
+          "value": "tp-box-button__style-2",
+          "label": "Style 2"
+        },
+        {
+          "value": "tp-box-button__style-3",
+          "label": "Style 3"
+        }
+      ],
+      "default": "tp-box-button__style-1"
+    },
+    {
+      "type": "range",
+      "id": "font_size_button",
+      "min": 12,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size button",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "font_weight_button_tab",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "label": "Font weight button",
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "text_uppercase",
+      "label": "Text uppercase",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 8,
+      "label": "t:sections.featured-collection.settings.products_to_show.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2",
+      "info": "Number of columns displayed on mobile"
+    },
+    {
+      "type": "select",
+      "id": "column_number",
+      "label": "Column number product",
+      "options": [
+        {
+          "value": "2",
+          "label": "2 column"
+        },
+        {
+          "value": "3",
+          "label": "3 column"
+        },
+        {
+          "value": "4",
+          "label": "4 column"
+        },
+        {
+          "value": "5",
+          "label": "5 column"
+        }
+      ],
+      "default": "4"
+    },
+
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "product_item_layout",
+      "label": "Product item layout",
+      "options": [
+        {
+          "value": "use_global",
+          "label": "Use global"
+        },
+        {
+          "value": "layout_1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout_2",
+          "label": "Layout 2"
+        },
+        {
+          "value": "layout_3",
+          "label": "Layout 3"
+        }
+      ],
+      "default": "use_global"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "text_button",
+      "label": "Text button",
+      "default": "Shop now",
+      "info": "To blank to hide the node"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "options": [
+        {
+          "value": "tp-btn__primary",
+          "label": "Button primary"
+        },
+        {
+          "value": "tp-btn__secondary",
+          "label": "Button secondary"
+        },
+        {
+          "value": "tp-btn__alternate",
+          "label": "Button alternate"
+        },
+        {
+          "value": "tp-btn__underline",
+          "label": "Button underline"
+        }
+      ],
+      "label": "Button type",
+      "default": "tp-btn__primary"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Featured Colection Tab"
+    }
+  ]
+}
+{% endschema %}

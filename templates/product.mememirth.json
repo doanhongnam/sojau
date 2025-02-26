@@ -1,0 +1,303 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16606322425b8cd0d3": {
+      "type": "breadcrumb",
+      "settings": {
+        "width_layout": "container",
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "show_image_collection": false,
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "main": {
+      "type": "mememirth-product",
+      "blocks": {
+        "90ff711d-1a5a-4aac-883f-ce9ff8b4f705": {
+          "type": "viewing",
+          "disabled": true,
+          "settings": {
+            "display_form": "display_column",
+            "change_text_view": "people are viewing right now",
+            "change_text_sold": "sold in last",
+            "show_viewing": true,
+            "show_sold": true,
+            "fv_min": 2,
+            "fv_max": 8,
+            "time_random": 30000,
+            "fv_sold": 6,
+            "fv_hour": 24,
+            "use_spacing": true,
+            "margin_bottom_block": 0
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "use_spacing": false,
+            "margin_bottom_block": 25
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "use_spacing": false,
+            "margin_bottom_block": 10,
+            "prev_change": "See Previous",
+            "next_change": "See Next"
+          }
+        },
+        "62b72ba7-b927-4440-9eda-42d6b2f15b4d": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "picker_type_active": "#57da74",
+            "picker_type_hover": "#57da74",
+            "width_variant_image": 40,
+            "use_spacing": false,
+            "margin_bottom_block": 25
+          }
+        },
+        "1f3b8053-3eec-4ea8-8951-4ae7fc0e045f": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<label for=\"personalization\">Your Name:</label>\n<input type=\"text\" id=\"personalization\" name=\"properties[Personalization]\" placeholder=\"Enter your name\" />"
+          }
+        },
+        "73a4d26a-4b6b-429f-afd0-2cbaa945f84a": {
+          "type": "box-btn",
+          "settings": {
+            "button_type": "tp-btn__primary",
+            "use_spacing": false,
+            "margin_bottom_block": 10
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "text_buy_it_now": "",
+            "text_agree_terms_conditions": "",
+            "color_global": false,
+            "color-button-text": "#000000",
+            "color-button-bg": "#ffffff",
+            "color-button-border": "#000000",
+            "color-button-text-hover": "#ffffff",
+            "color-button-bg-hover": "#000000",
+            "color-button-border-hover": "#000000",
+            "use_spacing": false,
+            "margin_bottom_block": 10
+          }
+        },
+        "c01f5146-b043-446a-8304-06ca501a8ed5": {
+          "type": "product_organization",
+          "disabled": true,
+          "settings": {
+            "show_vendor": false,
+            "show_sku": false,
+            "show_availability": false,
+            "show_categories": false,
+            "category_text": "Category:",
+            "category_type": "first",
+            "use_spacing": true,
+            "margin_bottom_block": 25
+          }
+        },
+        "5e49f17d-9fd7-4680-bf93-f884c553add2": {
+          "type": "estimated_delivery",
+          "settings": {
+            "ed_icon": false,
+            "ed_text": "✓ Arrives soon! Get it by",
+            "ed_in": 6,
+            "ed_delay": 3,
+            "ed_additional": "",
+            "ed_badges_text": "<p>Guarantee safe & secure checkout</p>",
+            "use_spacing": true,
+            "margin_bottom_block": 0
+          }
+        },
+        "126369a1-abb9-482b-a17d-126ff9e07cf0": {
+          "type": "shipping",
+          "disabled": true,
+          "settings": {
+            "shipping_label": "",
+            "use_spacing": false,
+            "margin_bottom_block": 10
+          }
+        },
+        "bcee6f30-94b8-4a9d-9e46-f2e9c73f3ef4": {
+          "type": "wishlist_compare",
+          "disabled": true,
+          "settings": {
+            "use_dt_wishlist": false,
+            "use_dt_compare": false,
+            "use_dt_share": true,
+            "use_spacing": true,
+            "margin_bottom_block": 25,
+            "show_separator_line": false,
+            "show_pinterest": true,
+            "show_instagram": true,
+            "show_facebook": true,
+            "show_twitter": true,
+            "show_copy": true
+          }
+        },
+        "a496ef59-2e78-4eac-8cde-ecb37683f821": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Printed & Shipped in USA",
+            "text_style": "body"
+          }
+        },
+        "text_yheK74": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "90ff711d-1a5a-4aac-883f-ce9ff8b4f705",
+        "price",
+        "title",
+        "62b72ba7-b927-4440-9eda-42d6b2f15b4d",
+        "1f3b8053-3eec-4ea8-8951-4ae7fc0e045f",
+        "73a4d26a-4b6b-429f-afd0-2cbaa945f84a",
+        "buy_buttons",
+        "c01f5146-b043-446a-8304-06ca501a8ed5",
+        "5e49f17d-9fd7-4680-bf93-f884c553add2",
+        "126369a1-abb9-482b-a17d-126ff9e07cf0",
+        "bcee6f30-94b8-4a9d-9e46-f2e9c73f3ef4",
+        "a496ef59-2e78-4eac-8cde-ecb37683f821",
+        "text_yheK74"
+      ],
+      "custom_css": [
+        ".tp-product-detail__right .shopify-payment-button__button {border: 0px solid #000000 !important; background-color: #ffffff !important; color: #000000 !important;}"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "image_display_type": "thumb_horizontal",
+        "inner_zoom_image": false,
+        "use_spacing_review": true,
+        "margin_bottom_review": 25,
+        "sticky_product_info": true
+      }
+    },
+    "border_ipmLMH": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#969696",
+        "height_border": 1,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "main-product-information": {
+      "type": "main-product-information",
+      "blocks": {
+        "ea076908-5598-4939-82d5-95640004e4b5": {
+          "type": "description",
+          "settings": {}
+        },
+        "d190fa40-78be-4c20-8e59-69799c7ac6a7": {
+          "type": "custom-description",
+          "disabled": true,
+          "settings": {
+            "title_description_custom": "Shipping Information",
+            "description_custom": "<p>WAHUP offers<strong> FREE SHIPPING </strong>on all oders over $199<strong> </strong>to customers in the following locations:</p><ul><li>All 50 U.S. states and U.S. territories, including P.O. Boxes</li><li>All U.S. military bases, APO/FPO</li><li>Puerto Rico, Guam, and the U.S. Virgin Islands.</li></ul><p></p>"
+          }
+        },
+        "9633974a-ca88-42d6-93bc-ac97f5098dab": {
+          "type": "custom-description",
+          "disabled": true,
+          "settings": {
+            "title_description_custom": "Return Policy",
+            "description_custom": "<p>WAHUP will accept returns of <strong>unworn clothing items</strong> that still have their original tags and are in their clear garment packaging with the SKU label intact. However, please note that <strong>we do not accept returns for t-shirts</strong>, and we do not accept exchanges under any circumstances.</p><h4>Processing time is 5 - 7 business days after we receive the return.</h4><p>To help expedite the processing of returns, please follow these instructions:</p><ol><li>Return auth number must be included with the return. (Contact us at contact@wahup.com for this number).</li><li>All items returned must be new, unworn, and in original clear garment bag with SKU sticker and tags.</li><li>Send return back within 7 business days of this submission to:</li></ol><p><strong>Returns Department</strong></p><p><strong>17300 Railroad Street, Unit D</strong></p><p><strong>City of Industry, CA 91748 </strong></p><p> </p><p>4. <em>Please note, the return may be subject to a 20% restocking fee or declined if the above criteria are not met.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "ea076908-5598-4939-82d5-95640004e4b5",
+        "d190fa40-78be-4c20-8e59-69799c7ac6a7",
+        "9633974a-ca88-42d6-93bc-ac97f5098dab"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "display_type_information": "normal",
+        "text_align": "justify",
+        "selling_products": false,
+        "selling_products_bgdesc": "#ffffff",
+        "selling_products_bgselling": "#ffffff",
+        "selling_title": "SELLING PRODUCTS",
+        "product_list": []
+      }
+    },
+    "1663925088067ce9b8": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "width_layout": "container",
+        "heading": "You may also like",
+        "products_to_show": 5,
+        "product_item_layout": "layout_2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "main-recently": {
+      "type": "main-recently",
+      "custom_css": [
+        ".card variant-radios-storepify {display: none;}"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "heading": "Recently viewed",
+        "products_to_show": "5",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1705818236dc481de7": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "16606322425b8cd0d3",
+    "main",
+    "border_ipmLMH",
+    "main-product-information",
+    "1663925088067ce9b8",
+    "product-recommendations",
+    "main-recently",
+    "1705818236dc481de7"
+  ]
+}

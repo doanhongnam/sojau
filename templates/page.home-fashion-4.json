@@ -1,0 +1,316 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "4bf91087-4013-4f90-80cd-7aa5f64f4cb7": {
+      "type": "banner-slide",
+      "blocks": {
+        "template--15913573449922__4bf91087-4013-4f90-80cd-7aa5f64f4cb7-1667624379a0db204f-0": {
+          "type": "bnslide_item",
+          "settings": {
+            "position_countdown": "right-countdown",
+            "image": "shopify://shop_images/Bg_17.png",
+            "title": "Save off",
+            "percent": "40%",
+            "sub_title": "New Offer Products",
+            "cd_year": 2023,
+            "cd_month": "12",
+            "cd_days": "30",
+            "color_text_count_down": "#ffffff",
+            "color_bg_count_down": "#71af19",
+            "link_button": "",
+            "button_type": "round-button"
+          }
+        },
+        "template--15913573449922__4bf91087-4013-4f90-80cd-7aa5f64f4cb7-1667624379a0db204f-1": {
+          "type": "bnslide_item",
+          "settings": {
+            "position_countdown": "right-countdown",
+            "image": "shopify://shop_images/img-slider-1-2.png",
+            "title": "Save off",
+            "percent": "60",
+            "sub_title": "New Offer Products",
+            "cd_year": 2022,
+            "cd_month": "12",
+            "cd_days": "30",
+            "color_text_count_down": "#ffffff",
+            "color_bg_count_down": "#71af19",
+            "link_button": "",
+            "button_type": "round-button"
+          }
+        },
+        "template--15913573449922__4bf91087-4013-4f90-80cd-7aa5f64f4cb7-1667624379a0db204f-2": {
+          "type": "bnslide_item",
+          "settings": {
+            "position_countdown": "right-countdown",
+            "image": "shopify://shop_images/accessories1.png",
+            "title": "Save off",
+            "percent": "50",
+            "sub_title": "New Offer Products",
+            "cd_year": 2022,
+            "cd_month": "12",
+            "cd_days": "30",
+            "color_text_count_down": "#ffffff",
+            "color_bg_count_down": "#71af19",
+            "link_button": "",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "template--15913573449922__4bf91087-4013-4f90-80cd-7aa5f64f4cb7-1667624379a0db204f-0",
+        "template--15913573449922__4bf91087-4013-4f90-80cd-7aa5f64f4cb7-1667624379a0db204f-1",
+        "template--15913573449922__4bf91087-4013-4f90-80cd-7aa5f64f4cb7-1667624379a0db204f-2"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "show_navigation": true,
+        "show_pagination": true,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40,
+        "pagi_color": "#ffb12b"
+      }
+    },
+    "0dc72f3b-a5d6-4494-8e7e-f137e668d13e": {
+      "type": "service",
+      "blocks": {
+        "cab86640-bb97-4ff8-95f8-e8d6d861f35f": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-free_1.png",
+            "title_service": "Return Shipping",
+            "description_service": "On order over $150",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "6539b21f-604e-4e13-8db6-81328cabc208": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-online-chat_1.png",
+            "title_service": "24/7 Customer services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "c5e49fc9-fddc-4c07-9085-8a714371b306": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/Fast_Access_2.png",
+            "title_service": "Fast Access",
+            "description_service": "The internet Tend To Repeat",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "cab86640-bb97-4ff8-95f8-e8d6d861f35f",
+        "6539b21f-604e-4e13-8db6-81328cabc208",
+        "c5e49fc9-fddc-4c07-9085-8a714371b306"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "title": "",
+        "description": "",
+        "gap_item": 0,
+        "layout_service": "layout-service-1",
+        "max_width_image": "80px",
+        "service_bg": "#ffffff",
+        "show_border_right": true,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "96e626cf-88c2-44e6-8b0e-6ec8a902bb52": {
+      "type": "list-collection",
+      "settings": {
+        "width_section": "container",
+        "background_collection": "",
+        "heading": "Coats & Jackets",
+        "display_type_collection": "slide",
+        "color_title": "#000000",
+        "description": "",
+        "text_button": "Shop collection",
+        "link_button_banner": "",
+        "button_type": "underline-button",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "a271f5ef-4dcf-4be3-bb07-949447cb8c74": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "New & Featured",
+        "description": "<p>Top highlights this season</p>",
+        "display_type": "slide",
+        "collection": "women",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "title_banner": "Shop Pet Portraits",
+        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
+        "position_collection": "position_left",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "4b3c984d-877d-419c-b479-0b147402da4c": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Latest News",
+        "sub_title": "",
+        "show_icon": false,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "background_title": "",
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "3e044f16-af6c-4b40-ab9c-dcb3c635a625": {
+      "type": "lastest-news",
+      "settings": {
+        "blog": "shopify-blog",
+        "width_blog": "container",
+        "position_content": "left",
+        "post_limit": 3,
+        "gap_item_blog": 30,
+        "show_date": true,
+        "show_button_discover": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "ae8da2cc-f930-408b-b818-86c8a4d5df77": {
+      "type": "banner-image-card",
+      "blocks": {
+        "template--15913573449922__ae8da2cc-f930-408b-b818-86c8a4d5df77-1667630746dc3cc4e2-3": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 26,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Already up to 80% off",
+            "link": ""
+          }
+        },
+        "649e6caf-bc9a-47f6-acf3-2c1197aabaf3": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 18,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Get 15% off all most everything",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15913573449922__ae8da2cc-f930-408b-b818-86c8a4d5df77-1667630746dc3cc4e2-3",
+        "649e6caf-bc9a-47f6-acf3-2c1197aabaf3"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_1",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "4bf91087-4013-4f90-80cd-7aa5f64f4cb7",
+    "0dc72f3b-a5d6-4494-8e7e-f137e668d13e",
+    "96e626cf-88c2-44e6-8b0e-6ec8a902bb52",
+    "a271f5ef-4dcf-4be3-bb07-949447cb8c74",
+    "4b3c984d-877d-419c-b479-0b147402da4c",
+    "3e044f16-af6c-4b40-ab9c-dcb3c635a625",
+    "ae8da2cc-f930-408b-b818-86c8a4d5df77"
+  ]
+}

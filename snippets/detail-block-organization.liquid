@@ -1,0 +1,93 @@
+{% liquid 
+    if block.settings.use_spacing
+        render 'block-margin-bottom', className: "tp-info-wrap", block: block
+        assign classDefault = ""
+    else
+        assign classDefault = " mb-3.75"
+    endif
+    assign current_variant = product.selected_or_first_available_variant
+    assign show_vendor = block.settings.show_vendor
+    assign show_product_code = block.settings.show_sku
+    assign show_availability = block.settings.show_availability
+    assign show_categories = block.settings.show_categories
+    assign category_type = block.settings.category_type
+    assign category_text = block.settings.category_text
+%}
+<div class="tp-info-wrap flex flex-col justify-content-start items-start{{ classDefault }}">
+    {% if product.vendor != blank and show_vendor %}
+        <div class="flex items-center item-brand mr-10">
+            <div class="item-brand-title font-medium mr-2.5">{{ 'products.product.vendor' | t }}:</div>
+            <div class="item-brand-info font-normal">
+                {% if product.collections contains product.vendor %}
+                    <a href="{{ shop.url }}/collections/{{ product.vendor | handle }}">{{ product.vendor }}</a>
+                {% else %}
+                    {{ product.vendor | link_to_vendor }}
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    
+    {% if current_variant.sku != blank and show_product_code %}
+        <div class="flex items-center item-product-code mr-10">
+            <div class="item-product-code-title font-medium mr-2.5">{{ 'products.product.product_code' | t }}:</div>
+            <div class="item-product-code-info font-normal">{{ current_variant.sku }}</div>
+        </div>
+    {% endif %}
+    
+    {% if current_variant.inventory_quantity and show_availability %}
+        <div class="flex items-center item-availability">
+            <div class="item-availability-title mr-2.5 font-medium">{{ 'products.product.availability' | t }}:</div>
+              {% assign availableValue = current_variant.available %}
+            {% if availableValue == true %}
+                {% assign availableStatus = 'products.product.in_stock' | t %}
+                {% assign availableClass = " instock" %}
+            {% else %}
+                {% assign availableStatus = 'products.product.out_of_stock' | t %}
+                {% assign availableClass = " outstock" %}
+            {% endif %}
+
+            <div
+                    class="item-availability-info font-normal{{ availableClass }}"
+                    data-instock="{{ 'products.product.in_stock' | t }}"
+                    data-outstock="{{ 'products.product.out_of_stock' | t }}"
+            >
+                {{ availableStatus }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if show_categories %}
+
+            <div class="flex items-center item-product-code mr-10">
+                {% if category_text != blank %}
+                    <div class="item-product-code-title mr-2.5 font-medium">{{ category_text }}</div>
+                {% endif %}
+
+                <div class="item-product-code-info font-normal">
+                    {% for collection in product.collections %}
+                        {% if category_type == 'first' %}
+                            {% if forloop.first == true %}
+                                <a href="{{ collection.url }}" title="{{- collection.title | escape -}}">
+                                    {{- collection.title | escape -}}
+                                </a>
+                            {% endif %}
+                        {% elsif category_type == 'last' %}
+                            {% if forloop.last == true %}
+                                <a href="{{ collection.url }}" title="{{- collection.title | escape -}}">
+                                    {{- collection.title | escape -}}
+                                </a>
+                            {% endif %}
+                        {% else %}
+                            <a class="mr-3.75" href="{{ collection.url }}" title="{{- collection.title | escape -}}">
+                                {{- collection.title | escape -}}
+                            </a>
+                            {%- if forloop.last != true -%},
+                            {%- endif -%}
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+
+    {% endif %}
+</div>

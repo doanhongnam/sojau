@@ -1,0 +1,728 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout_banner
+%}
+<div class="tp-banner tp-banner-{{ section.id }}">
+  <div class="tp-banner__main {{ WidthLayout }}">
+    {% if section.settings.title != blank or section.settings.title != blank %}
+      <div class="tp-fcl__top mb-12.5">
+        {% if section.settings.title != blank %}
+          <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title }}</h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="mb-5">{{ section.settings.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% for block in section.blocks %}
+      {% liquid
+        assign positionMenu = block.settings.position_menu
+        assign positionBanner = block.settings.position_banner
+        assign classMargin = 'mr-7.5'
+        assign clasPositionMenu = ''
+        if positionMenu == 'right'
+          assign classMargin = 'ml-7.5'
+          assign clasPositionMenu = 'flex-row-reverse'
+        endif
+
+        assign clasPositionBanner = ''
+        assign classMarginBanner = 'ml-15'
+        if positionBanner == 'right'
+          assign classMarginBanner = 'mr-15'
+          assign clasPositionBanner = 'flex-row-reverse'
+        endif
+      %}
+      {% case block.type %}
+        {% when 'banner_normal' %}
+          <div class="tp-banner__normal {{ block.settings.layout_banner }} flex {{ clasPositionBanner }} items-center justify-start">
+            <div class="tp-banner__img">
+              {% assign ImageBanner = block.settings.image_banner %}
+              {% if ImageBanner != blank %}
+                {{
+                  ImageBanner
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    width: ImageBanner.width,
+                    height: ImageBanner.height,
+                    class: 'img-banner',
+                    sizes: '100vw',
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                }}
+              {% else %}
+                {% render 'no-image', text_size: '630x540', width: 630, height: 450 %}
+              {% endif %}
+            </div>
+            <div class="tp-banner__content tp-banner__content-{{ block.id }} {{ classMarginBanner }}">
+              <div class="tp-banner__content__wrapper {{ block.settings.text_align_content }}">
+                {% if block.settings.sub_title_banner != blank %}
+                  <div class="tp-content__sub-title mb-2.5">
+                    {{ block.settings.sub_title_banner }}
+                  </div>
+                {% endif %}
+                {% if block.settings.title_banner != blank %}
+                  <h2 class="tp-content__title mb-5">{{ block.settings.title_banner }}</h2>
+                {% endif %}
+                {% if block.settings.description_banner != blank %}
+                  <p class="tp-banner__description mb-7.5">{{ block.settings.description_banner }}</p>
+                {% endif %}
+
+                {% if block.settings.text_button != blank %}
+                  <a
+                    class="tp-btn {{ block.settings.button_type }}"
+                    href="{% if block.settings.link_button_banner != blank %}{{ block.settings.link_button_banner }}{% else %}#{% endif %}"
+                  >
+                    {{ block.settings.text_button }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+            <style>
+              {% if block.settings.max_width_image != blank %}
+                .tp-banner-{{ section.id }} .tp-banner__img{
+                  max-width: {{ block.settings.max_width_image }}px;
+                }
+              {% endif %}
+              {% if block.settings.max_width_content != blank %}
+                .tp-banner-{{ section.id }} .tp-banner__content{
+                  max-width: {{ block.settings.max_width_content }}px;
+                }
+              {% endif %}
+              .tp-banner__content-{{ block.id }} .tp-content__title{
+              color: {{ block.settings.color-title }}
+              }
+              .tp-banner__content-{{ block.id }} .tp-banner__description{
+                color: {{ block.settings.color-description }}
+                }
+            </style>
+          </div>
+        {% when 'banner_menu' %}
+          <div class="tp-banner__menu-main mb-7.5 flex {{ clasPositionMenu }} items-stretch justify-start">
+            <div class="tp-banner__menu {{ classMargin }}">
+              {% if block.settings.menu_banner.links != blank %}
+                <div class="tp-menu">
+                  {% if block.settings.title_menu != blank %}
+                    <h2 class="tp-menu__title mb-7.5">{{ block.settings.title_menu }}</h2>
+                  {% endif %}
+                  <div class="tp-menu__list flex flex-col">
+                    {%- for link in block.settings.menu_banner.links -%}
+                      <a
+                        href="{{ link.url }}"
+                        class="tp-menu__item mb-3.75"
+                        title="{{ link.title }}"
+                      >
+                        {{ link.title }}
+                      </a>
+                    {%- endfor -%}
+                  </div>
+                  <a
+                    class="tp-menu__btn hvr-bounce-to-right"
+                    href="{% if block.settings.link_button_banner != blank %}{{ block.settings.link_button_banner }}{% else %}#{% endif %}"
+                  >
+                    {{ block.settings.text_button }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+            <div class="tp-banner__menu-img">
+              {% assign ImageBanner = block.settings.image_banner %}
+              {% if ImageBanner != blank %}
+                {{
+                  ImageBanner
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    width: ImageBanner.width,
+                    height: ImageBanner.height,
+                    class: 'img-banner',
+                    sizes: '100vw',
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                }}
+              {% else %}
+                {% render 'no-image', text_size: '890x500', width: 890, height: 500 %}
+              {% endif %}
+            </div>
+          </div>
+
+        {% when 'banner_parallax' %}
+          {% liquid
+            assign prl = block.settings
+            assign parallax_bg = prl.parallax_bg
+            assign parallax_bg_attachment = prl.parallax_bg_attachment
+            assign parallax_title = prl.parallax_title
+            assign parallax_title_size = prl.parallax_title_size
+            assign parallax_sub_title = prl.parallax_sub_title
+            assign parallax_sub_title_size = prl.parallax_sub_title_size
+            assign text_shadow = prl.text_shadow
+            assign parallax_desc = prl.parallax_desc
+            assign parallax_btn = prl.parallax_btn
+            assign parallax_btn_link = prl.parallax_btn_link
+            assign text_color = prl.text_color
+            assign parallax_box = prl.parallax_box
+            assign parallax_alignment = prl.parallax_alignment
+            assign content_background = prl.content_background
+            assign parallax_bg_height = prl.parallax_bg_height
+            assign width_box = prl.width_box
+          %}
+
+          <style>
+            {% if prl.parallax_bg != blank %}
+              .banner-parallax-{{ section.id }} .banner-parallax__background {
+                background: url({{ block.settings.parallax_bg | image_url: width: block.settings.parallax_bg.width, height: block.settings.parallax_bg.height }});
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                height: {{ parallax_bg_height }}px;
+              }
+            {% else %}
+              .banner-parallax-{{ section.id }} .banner-parallax__background {
+                background: #c3cfe2;
+                width: 100%;
+                height: 600px;
+              }
+            {% endif %}
+            .banner-parallax__background.true {
+              background-attachment: fixed;
+            }
+            .banner-parallax-{{ section.id }} .banner-parallax__wrap {
+              background-color: {{ content_background }};
+            }
+            .banner-parallax-{{ section.id }} .banner-parallax__background__img {
+              height: {{ parallax_bg_height }}px;
+            }
+            .banner-parallax__title {
+              font-size: {{ parallax_title_size }}px;
+              line-height: inherit;
+            }
+            .banner-parallax__subtitle {
+              font-size: {{ parallax_sub_title_size }}px;
+              line-height: inherit;
+            }
+            .banner-parallax__title.true {
+              text-shadow: 3px 2px 1px #ffc123;
+            }
+            .banner-parallax__wct.text-white {
+              color: #ffffff;
+            }
+            .banner-parallax__wct.text-white p {
+              color: #ffffff;
+            }
+            .banner-parallax__wct.text-black p {
+              color: #000000;
+            }
+          </style>
+          <div class="banner-parallax banner-parallax-{{ section.id }} relative overflow-hidden">
+            <div class="banner-parallax__background {{ parallax_bg_attachment }}">
+            </div>
+            <div class="banner-parallax__content container absolute flex {{ parallax_box }} {% if parallax_box == 'parallax_left_center' %}items-center justify-start{% endif %} {% if parallax_box == 'parallax_center_center' %}items-center justify-center{% endif %} {% if parallax_box == 'parallax_right_center' %}items-center justify-end{% endif %}">
+              {% if parallax_title != blank or parallax_sub_title != blank or parallax_desc != blank or parallax_btn != blank %}
+              <div class="banner-parallax__wrap px-10 py-7.5 {{ parallax_alignment }}" style="width: {{ width_box }}px">
+                <div class="banner-parallax__wct {{ text_color }}">
+                  <h2 class="banner-parallax__title text-2xl font-semibold uppercase mb-4 {{ text_shadow }}">{{ parallax_title }}</h2>
+                  <h4 class="banner-parallax__subtitle text-lg font-medium uppercase mb-4">{{ parallax_sub_title }}</h4>
+                  <div class="banner-parallax__desc mb-4">
+                    <p class="banner-parallax__desc__p text-black">{{ parallax_desc }}</p>
+                  </div>
+                  <div class="banner-parallax__link">
+                    {% if prl.parallax_btn != blank %}
+                        <div class="banner-parallax__btn">
+                            <a class="tp-btn {{ block.settings.button_type }}" href="{{ parallax_btn_link }}" target="_blank">{{ parallax_btn }}</a>
+                        </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          {% when 'banner_columns' %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .tp-banner-{{ section.id }}{
+    background:{{ section.settings.background_banner }};
+    {% if section.settings.background_banner != 'rgba(0,0,0,0)' and section.settings.background_banner != blank %} 
+      padding: 100px 0
+    {% endif %}
+  }
+</style>
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout_banner",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "sm-container",
+          "label": "Small container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "color",
+      "id": "background_banner",
+      "label": "Background banner"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner_parallax",
+      "name": "Banner Parallax",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "parallax_bg",
+          "label": "Background image",
+          "info": "1920 x 600px recommended"
+        },
+        {
+          "type": "checkbox",
+          "id": "parallax_bg_attachment",
+          "label": "Background-attachment",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "parallax_bg_height",
+          "min": 300,
+          "max": 1000,
+          "step": 10,
+          "unit": "px",
+          "label": "Height",
+          "default": 600
+        },
+        {
+          "type": "header",
+          "content": "Box content"
+        },
+        {
+          "type": "text",
+          "id": "parallax_title",
+          "label": "Title",
+          "default": "@YourStore - The best choice for your online store"
+        },
+        {
+          "type": "range",
+          "id": "parallax_title_size",
+          "min": 24,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 24
+        },
+        {
+          "type": "text",
+          "id": "parallax_sub_title",
+          "label": "Sub title"
+        },
+        {
+          "type": "range",
+          "id": "parallax_sub_title_size",
+          "min": 18,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 18
+        },
+        {
+          "type": "checkbox",
+          "id": "text_shadow",
+          "label": "Text shadow",
+          "default": true
+        },
+        {
+          "type":"richtext",
+          "id":"parallax_desc",
+          "label":"Description",
+          "default":"<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "options": [
+            {
+              "value": "tp-btn__primary",
+              "label": "Button primary"
+            },
+            {
+              "value": "tp-btn__secondary",
+              "label": "Button secondary"
+            },
+            {
+              "value": "tp-btn__alternate",
+              "label": "Button alternate"
+            },
+            {
+              "value": "tp-btn__underline",
+              "label": "Button underline"
+            }
+          ],
+          "label": "Button type",
+          "default": "tp-btn__primary"
+        },
+        {
+          "type": "text",
+          "id": "parallax_btn",
+          "label": "Button",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "parallax_btn_link",
+          "label": "Button link"
+        },
+        {
+          "type":"select",
+          "id":"text_color",
+          "label":"Text color",
+          "options":[
+              {
+                  "value":"text-white",
+                  "label":"Text white"
+              },
+              {
+                  "value":"text-black",
+                  "label":"Text black"
+              }
+          ],
+          "default":"text-black"
+        },
+        {
+          "type": "select",
+          "id": "parallax_box",
+          "label": "Content position",
+          "options": [
+            {
+              "value": "parallax_left_center",
+              "label": "Left center"
+            },
+            {
+              "value": "parallax_center_center",
+              "label": "Center center"
+            },
+            {
+              "value": "parallax_right_center",
+              "label": "Right center"
+            }
+          ],
+          "default": "parallax_center_center"
+        },
+        {
+          "type":"select",
+          "id":"parallax_alignment",
+          "label":"Content alignment",
+          "options":[
+             {
+                "value":"text-left",
+                "label":"Left"
+             },
+             {
+                "value":"text-center",
+                "label":"Center"
+             },
+             {
+                "value":"text-right",
+                "label":"Right"
+             }
+          ],
+          "default":"text-center"
+       },
+       {
+        "type": "color",
+        "id": "content_background",
+        "label": "Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "width_box",
+        "min": 500,
+        "max": 1000,
+        "step": 10,
+        "unit": "px",
+        "label": "Width",
+        "default": 500
+      },
+       {
+            "type":"header",
+            "content":"Margin"
+        },
+        {
+            "type": "number",
+            "id": "margin_bottom_desktop",
+            "label": "t:sections.margin_bottom.desktop.label",
+            "default": 80
+        },
+        {
+            "type": "number",
+            "id": "margin_bottom_table",
+            "label": "t:sections.margin_bottom.tablet.label",
+            "default": 60
+        },
+        {
+            "type": "number",
+            "id": "margin_bottom_mobile",
+            "label": "t:sections.margin_bottom.mobile.label",
+            "default": 40
+        }
+      ]
+    },
+    {
+      "type": "banner_normal",
+      "name": "Banner normal",
+      "settings": [
+        {
+          "type": "select",
+          "id": "layout_banner",
+          "label": "Layout banner",
+          "options": [
+            {
+              "value": "layout-normal_1",
+              "label": "Layout 1"
+            },
+            {
+              "value": "layout-normal_2",
+              "label": "Layout 2"
+            }
+          ],
+          "default": "layout-normal_1"
+        },
+        {
+          "type": "radio",
+          "id": "position_banner",
+          "label": "Position banner",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "text_align_content",
+          "label": "Text align content",
+
+          "options": [
+            {
+              "value": "text_left",
+              "label": "Text left"
+            },
+            {
+              "value": "text_center",
+              "label": "Text center"
+            },
+            {
+              "value": "text_right",
+              "label": "Text right"
+            }
+          ]
+        },
+        {
+          "type": "number",
+          "id": "max_width_image",
+          "label": "Max width image"
+        },
+        {
+          "type": "number",
+          "id": "max_width_content",
+          "label": "Max width content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_banner",
+          "label": "Image banner"
+        },
+        {
+          "type": "text",
+          "id": "sub_title_banner",
+          "label": "Sub title banner"
+        },
+        {
+          "type": "text",
+          "id": "title_banner",
+          "label": "Title banner",
+          "default": "Tiered broderie mini sundress in white"
+        },
+        {
+          "type": "textarea",
+          "id": "description_banner",
+          "label": "Description banner",
+          "default": "Wre talking swirly scrunchies, bow headbands and more super-cute, 90s-inspired bits. And to wrap up things up, check out Pieces for womens hat and scarf sets thatll make cold-weather dressing a breeze."
+        },
+        {
+          "type": "color",
+          "id": "color-title",
+          "label": "Color title",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "color-description",
+          "label": "Color description",
+          "default": "#5e5e5e"
+        },
+        {
+          "type": "header",
+          "content": "Button settings"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "options": [
+            {
+              "value": "tp-btn__primary",
+              "label": "Button primary"
+            },
+            {
+              "value": "tp-btn__secondary",
+              "label": "Button secondary"
+            },
+            {
+              "value": "tp-btn__alternate",
+              "label": "Button alternate"
+            },
+            {
+              "value": "tp-btn__underline",
+              "label": "Button underline"
+            }
+          ],
+          "label": "Button type",
+          "default": "tp-btn__primary"
+        },
+        {
+          "type": "text",
+          "id": "text_button",
+          "label": "Text button",
+          "default": "Shop collection"
+        },
+        {
+          "type": "url",
+          "id": "link_button_banner",
+          "label": "Link button banner"
+        }
+      ]
+    },
+    {
+      "type": "banner_menu",
+      "name": "Banner menu",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_banner",
+          "label": "Image banner"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_banner",
+          "label": "Menu banner"
+        },
+        {
+          "type": "text",
+          "id": "title_menu",
+          "label": "Title menu",
+          "default": "Nail & Wax"
+        },
+        {
+          "type": "text",
+          "id": "text_button",
+          "label": "Text button",
+          "default": "Shop collection"
+        },
+        {
+          "type": "url",
+          "id": "link_button_banner",
+          "label": "Link button banner"
+        },
+        {
+          "type": "radio",
+          "id": "position_menu",
+          "label": "Position menu",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner",
+      "category": "Custom content"
+    }
+  ]
+}
+{% endschema %}

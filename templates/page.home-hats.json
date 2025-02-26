@@ -1,0 +1,466 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16624559093e12301c": {
+      "type": "banner-image-card",
+      "blocks": {
+        "0e4ccaed-d47d-427e-a9e9-8a67f568e758": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banner-hats_3.png",
+            "overlay_banner": 1,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Hats With Lady </p>",
+            "sub_title": "",
+            "font_size_title": 70,
+            "color_title": "#fafafa",
+            "color_background_title": "rgba(0,0,0,0)",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "Multipurpose",
+            "link": "shopify://collections/hats"
+          }
+        },
+        "c3236854-9849-42a5-b02f-676b836efc06": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/home-hat-2.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#ffffff",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "W",
+            "link": "shopify://collections/hats"
+          }
+        },
+        "70d08d90-a213-4155-929b-62b0785865f0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/home-hat-3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 50,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "M",
+            "link": "shopify://collections/hats"
+          }
+        },
+        "e721edae-c6d8-44b6-ab15-67af9581333a": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/home-hat-4.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "normal-button",
+            "button_label": "A",
+            "link": "shopify://collections/hats"
+          }
+        }
+      },
+      "block_order": [
+        "0e4ccaed-d47d-427e-a9e9-8a67f568e758",
+        "c3236854-9849-42a5-b02f-676b836efc06",
+        "70d08d90-a213-4155-929b-62b0785865f0",
+        "e721edae-c6d8-44b6-ab15-67af9581333a"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_4",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 30,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "165664422642c82cdf": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "New & Featured",
+        "description": "<p>Top highlights this season<br/></p>",
+        "display_type": "slide",
+        "collection": "hats",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 5,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "View More",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1662456429ee6e54ba": {
+      "type": "banner-image-card",
+      "blocks": {
+        "59cd9b91-ea46-4090-9bae-70ed52fe56e5": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/001-free-1_150761b0-4f98-4fc0-b9a0-f11e4dc6fc66.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": "shopify://collections/hats"
+          }
+        },
+        "ade31add-3a7d-47cb-9cb6-09ab3c79abe0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/3_ce91e07f-9169-4632-9d12-ee8cc0b78411.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Hot hats for you </p>",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": "shopify://collections/hats"
+          }
+        },
+        "c8d5e451-0422-44fe-8ab9-65b498ab4524": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/banenr-hats-1.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": "shopify://collections/hats"
+          }
+        },
+        "264cf170-2508-4176-8854-f9880bb45d01": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/6_8e53f1e0-3da0-4d67-86d9-cae1d3fabae3.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": "shopify://collections/hats"
+          }
+        },
+        "e0329298-fd28-4a60-98c8-a9d56bd06525": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "hover_item": "zoom_image",
+            "background_content": "",
+            "image": "shopify://shop_images/4_ac3196dc-697b-4aa8-9959-19eb293ae014.png",
+            "overlay_banner": 0,
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "",
+            "sub_title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "font_size_sub_title": 24,
+            "color_sub_title": "#000",
+            "color_background_sub_title": "",
+            "button_type": "block-button",
+            "button_label": "",
+            "link": "shopify://collections/hats"
+          }
+        }
+      },
+      "block_order": [
+        "59cd9b91-ea46-4090-9bae-70ed52fe56e5",
+        "ade31add-3a7d-47cb-9cb6-09ab3c79abe0",
+        "c8d5e451-0422-44fe-8ab9-65b498ab4524",
+        "264cf170-2508-4176-8854-f9880bb45d01",
+        "e0329298-fd28-4a60-98c8-a9d56bd06525"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "background_banner": "",
+        "title": "",
+        "description": "",
+        "layout": "layout_6",
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 20,
+        "margin_bottom_mobile": 10
+      }
+    },
+    "1658306199eb15debe": {
+      "type": "service",
+      "blocks": {
+        "38029aed-a2fc-4340-bd05-b4be5bb51e91": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-1.png",
+            "title_service": "Free US Delivery",
+            "description_service": "On order over $150",
+            "padding_top_bottom": 20,
+            "background_item_service": "#ffffff",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "1461f3df-be27-4fce-932e-39c7e0f7cab6": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-2.png",
+            "title_service": "24/7 Customer Services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "padding_top_bottom": 20,
+            "background_item_service": "#ffffff",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "d4e2ce0b-f9d5-4b66-a00b-20dd6a61036b": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-3.png",
+            "title_service": "12 - Month Warranty",
+            "description_service": "On all ours products",
+            "padding_top_bottom": 20,
+            "background_item_service": "#ffffff",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "38029aed-a2fc-4340-bd05-b4be5bb51e91",
+        "1461f3df-be27-4fce-932e-39c7e0f7cab6",
+        "d4e2ce0b-f9d5-4b66-a00b-20dd6a61036b"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "gap_item": 0,
+        "layout_service": "layout-service-1",
+        "service_bg": "#ffffff",
+        "show_border_right": true,
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "16615033287d2fb8bd": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1656314908fb3199a7": {
+      "type": "banner",
+      "blocks": {
+        "e12fda31-665c-4d4e-a88b-25c360b4c2ff": {
+          "type": "banner_normal",
+          "settings": {
+            "layout_banner": "layout-normal_1",
+            "image_banner": "shopify://shop_images/blog_banner.png",
+            "title_banner": "Tiered broderie mini sundress in white",
+            "description_banner": "Wre talking swirly scrunchies, bow headbands and more super-cute, 90s-inspired bits. And to wrap up things up, check out Pieces for womens hat and scarf sets thatll make cold-weather dressing a breeze.",
+            "color-title": "#000000",
+            "color-description": "#5e5e5e",
+            "button_type": "underline-button",
+            "text_button": "Shop collection",
+            "link_button_banner": "shopify://collections/hats"
+          }
+        }
+      },
+      "block_order": [
+        "e12fda31-665c-4d4e-a88b-25c360b4c2ff"
+      ],
+      "settings": {
+        "width_layout_banner": "container",
+        "background_banner": "rgba(0,0,0,0)",
+        "title": "",
+        "description": "",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1656644345ad89ad4d": {
+      "type": "our-testimonial",
+      "blocks": {
+        "1abb1b4f-3b1c-424a-8bac-d6a07c530522": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Avatar1.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "a15a21c3-077c-41c6-911e-b540d21ba238": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Avatar2.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Ozawa",
+            "background_testimonial_item": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1abb1b4f-3b1c-424a-8bac-d6a07c530522",
+        "a15a21c3-077c-41c6-911e-b540d21ba238"
+      ],
+      "settings": {
+        "heading": "Our Testimonials",
+        "background_testimonial": "#f9f9f9",
+        "display_type": "layout_1",
+        "padding_top_bottom": 80,
+        "show_pagination": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "16624559093e12301c",
+    "165664422642c82cdf",
+    "1662456429ee6e54ba",
+    "1658306199eb15debe",
+    "16615033287d2fb8bd",
+    "1656314908fb3199a7",
+    "1656644345ad89ad4d"
+  ]
+}

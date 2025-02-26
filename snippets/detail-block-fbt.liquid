@@ -1,0 +1,87 @@
+
+{%- liquid
+    assign products_bought_together = product.metafields.fbt.bought_together
+-%}
+{% if products_bought_together != blank %}
+    {{ 'bought-together.css' | asset_url | stylesheet_tag: preload: true }}
+    <script src="{{ 'bought-together.js' | asset_url }}" defer="defer"></script>
+    <div class="system">
+        {% if block.settings.fbt_heading %}
+            <span class="product-variant__name featured-product-title">{{ block.settings.fbt_heading }}</span>
+        {% endif %}
+
+        {% assign meta_products_string = products_bought_together | remove: 'gid://shopify/Product/' | remove: "[" | remove: "]" | remove: '"' %}
+
+        {% assign meta_product_ids = meta_products_string | split: ',' %}
+
+        <ul class="product-variant-grp">
+            <div class="frequently-bought-images mb-5">
+                {% for meta_product_id in meta_product_ids %}
+
+                    {%- liquid
+                        assign product_id = meta_product_id | times: 1
+                        assign products_obj = collections.all.products | where: 'id', product_id
+                        assign meta_product = products_obj[0]
+                    -%}
+                    <div class="frequentyly-img-text product-checkbox-{{ forloop.index }}">
+                        <div class="frequentyly-img">
+                            <img src="{{ meta_product.featured_image | product_img_url: '100x100'}}">
+                        </div>
+                    </div>
+                    {% if forloop.last %}
+                    {% else %}
+                        <div class="plus_icon">+</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% comment %}<div class="add-to-cart-total-price">{% endcomment %}
+                {% comment %}<button class="custom-add-to-cart">Add to Cart</button>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+            {% comment %}<input type="hidden" class="hide_v" value="">{% endcomment %}
+            <div class="frequently-bought-texts">
+                <form method="post" action="/cart/add" id="fbtsubmit" accept-charset="UTF-8"
+                      enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form">
+                    <input type="hidden" name="form_type" value="product">
+                    <input type="hidden" name="utf8" value="✓">
+                    {% for meta_product_id in meta_product_ids %}
+                        {%- liquid
+                            assign product_id = meta_product_id | times: 1
+                            assign products_obj = collections.all.products | where: 'id', product_id
+                            assign meta_product = products_obj[0]
+                        -%}
+                        <div class="frequentyly-img-text-price">
+                            <div class="frequentyly-text-price">
+                                <div class="frequently-checkbox">
+                                    <input type="checkbox" data-dval="product-checkbox-{{ forloop.index }}"
+                                           class="product-checkbox-{{ forloop.index }} fbtcheckbox" id="h" name="h" value="Bike"
+                                           checked>
+                                </div>
+                                <div sel-val=""
+                                     class="frequently-price-title frequently-product-add {{ forloop.index }}  {% if product.handle == meta_product.handle %}active-product{% endif %}">
+                                    <a href="{{ meta_product.url }}"
+                                       class="product-link">{% if product.handle == meta_product.handle %}This item:{% endif %}{{ meta_product.title }}</a>
+                                    <select id="product-select" name="id" class="selector-for-featured-product added">
+                                        {% for variant in meta_product.variants %}
+                                            <option {% if variant.inventory_quantity == 0 and variant.inventory_policy != "continue" %}disabled="disabled"
+                                                    {% elsif variant.inventory_quantity == 0 and variant.inventory_policy == "continue" %}
+                                                        class="availability-time"
+                                                    {% endif %} value="{{ variant.id }}"
+                                                    data-quantity="{{ variant.inventory_quantity }}"
+                                                    {% if forloop.first and variant.inventory_quantity > 0 %}  selected="selected" {% endif %}
+                                                    {% comment %} {% if variant == meta_product.selected_or_first_available_variant %}selected="selected"{% endif %} {%endcomment %}
+                                            >
+                                                {% if variant.title contains 'Default Title' %}  {{ variant.price | money }} {% else %} {{ variant.title }} - {{ variant.price | money }} {% endif %}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </form>
+            </div>
+
+            <button class="tp-btn__primary tp-btn product-form__submit button button--primary" type="submit" id="fptsubmit">{{ block.settings.fbt_button }}</button>
+        </ul>
+    </div>
+{% endif %}

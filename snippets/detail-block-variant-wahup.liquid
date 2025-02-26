@@ -1,0 +1,300 @@
+{% assign finalTaglist = '' | split: ',' %}
+{% for i in (1..10) %}
+  {% capture text %}cvc_text_{{ i }}{% endcapture %}
+  {% capture color %}cvc_color_{{ i }}{% endcapture %}
+  {% assign newTagList = newTagList | append: ',' | append: settings[text] %}
+{% endfor %}
+{% assign newTagList = newTagList | remove_first: ',' | split: ',' %}
+{% assign joinedTagLists = finalTaglist | concat: newTagList %}
+
+{% if block.settings.use_spacing %}
+  {% render 'block-margin-bottom', className: 'variant-bottom', block: block %}
+  {% assign classDefault = '' %}
+{% else %}
+  {% assign classDefault = ' mb-3.75' %}
+{% endif %}
+
+{%- unless product.has_only_default_variant -%}
+  {%- if block.settings.picker_type == 'button' -%}
+    <variant-radios
+      class="no-js-hidden variant-bottom{{ classDefault }}"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      data-option="{{ option.position }}"
+      data-forloop-index="{{ forloop.index0 }} "
+      data-change-thumb="{{ dataImageChange }}"
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <fieldset class="js product-form__input {% unless forloop.last %}mb-5{% endunless %}">
+          <p class="form__label">{{ option.name }}</p>
+          {%- for value in option.values -%}
+            <input
+              style="display: none;"
+              type="radio"
+              id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              name="{{ option.name }}"
+              value="{{ value | escape }}"
+              {% if option.selected_value == value %}
+                checked
+              {% endif %}
+            >
+
+            <label
+              for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              {% if option.name == 'color' or option.name == 'Color' %}
+                {% if joinedTagLists contains value %}
+                  {% for cvc_list_text in joinedTagLists %}
+                    {% assign cvc_list_text = cvc_list_text | downcase %}
+                    {% assign value = value | downcase %}
+                    {% if cvc_list_text == value %}
+                      {% assign inDex = forloop.index %}
+                      {% assign variableTextColor = 'cvc_color_' | append: inDex %}
+                      {% assign variableColor = settings[variableTextColor] %}
+                      {% if variableColor != blank %}
+                        {% assign variableFullColor = variableColor %}
+                      {% else %}
+                        {% assign variableFullColor = 'none' %}
+                      {% endif %}
+                      class="variant-color{% if option.selected_value == value %} active{% endif %}"
+                        flow="up" tooltip="{{ variableFullColor }}"
+                      style="
+                                background-color: {{ variableFullColor }};
+                        {% if value == 'White' or value == 'white' %}
+                                border: 1px solid #d3c3c3;
+                        {% endif %}
+                      "
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                  class="variant-color{% if option.selected_value == value %} active{% endif %}"
+                  style="
+                            background-color: {{ value }};
+                    {% if value == 'White' or value == 'white' %}
+                            border: 1px solid #d3c3c3;
+                    {% endif %}
+                  "
+                {% endif %}
+
+              {% else %}
+                class="item-variant-size {% if option.selected_value == value %} active{% endif %}"
+              {% endif %}
+              flow="up" tooltip="{{ value }}"
+            >
+              {% if option.name != 'color' and option.name != 'Color' %}
+                {{ value }}
+              {% endif %}
+            </label>
+          {%- endfor -%}
+        </fieldset>
+      {%- endfor -%}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-radios>
+  {%- elsif block.settings.picker_type == 'dropdown' -%}
+    <variant-selects
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      data-option="{{ option.position }}"
+      data-forloop-index="{{ forloop.index0 }} "
+      data-change-thumb="{{ dataImageChange }}"
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <div class="product-form__input product-form__input--dropdown mb-3.75">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <div class="select">
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {%- for value in option.values -%}
+                <option
+                  value="{{ value | escape }}"
+                  {% if option.selected_value == value %}
+                    selected="selected"
+                  {% endif %}
+                >
+                  {{ value }}
+                </option>
+              {%- endfor -%}
+            </select>
+            {% comment %} {% render 'icon-caret' %} {% endcomment %}
+          </div>
+        </div>
+      {%- endfor -%}
+
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+  {% else %}
+    <variant-image-product
+      data-section="{{ section.id }}"
+      data-product-id="{{ product.id }}"
+      data-change-thumb="{{ dataImageChange }}"
+      class="image-variant-wrapper flex items-center justify-start gap-2.5 mb-5"
+    >
+      {%- for variant in product.variants -%}
+        {% if variant.featured_image != blank %}
+          <div
+            class="image-variant-item cursor-pointer {% if forloop.first %}active{% endif %}{% if variant.available == false %}variant-outstock{% endif %}"
+            data-id-position="{{ variant.featured_media.position }}"
+            data-price="{{ variant.price }}"
+            data-price-compare="{{ variant.compare_at_price }}"
+          >
+              <img
+                      data-index="{{ forloop.index }}"
+                      src="{{ variant | image_url: width: variant.width , height: variant.height }}"
+                      loading="lazy"
+                      width="{{ variant.featured_image.width }}"
+                      height="{{ variant.featured_image.height }}"
+                      alt="{{ variant.featured_image.alt | escape }}"
+              >
+          </div>
+        {% endif %}
+        <style>
+          .image-variant-item img{
+                max-width: {{ block.settings.width_variant_image | default: '40' }}px;
+            }
+          .image-variant-item.active {
+                box-shadow: 0 0 0 1px {{ block.settings.picker_type_active }};
+            }
+          .image-variant-item:hover {
+              box-shadow: 0 0 0 1px {{ block.settings.picker_type_hover }};
+            }
+        </style>
+      {%- endfor -%}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-image-product>
+  {%- endif -%}
+{%- endunless -%}
+{% if product.tags contains 'PS' or product.tags contains 'custom_text' %}
+  <p>
+    Personalization<span style="color: red;">*</span>:
+  </p>
+  {% assign personalizationMessage = product.metafields.custom.personalization_message  | replace: '<br>', '\n' | newline_to_br %}
+  <p class="line-item-property__field">
+    <label for="enter-your-personalized-message">{{ personalizationMessage }}</label>
+  </p>
+  <p style="margin-top: 0px; margin-bottom: 20px;">
+    <textarea placeholder="{{ product.metafields.custom.personalization_placeholder }}" required class="required" id="personalization-name" name="properties[Name]" rows = "3" style="width: 100%; border: 1px solid rgb(229, 231, 235); border-radius: 5px;"></textarea>
+  </p>
+{% endif %}
+{% if product.metafields.custom.custom_photo_instruction != blank %}
+  <p style="margin-top: 0px; margin-bottom: 10px;">
+    {{ product.metafields.custom.custom_photo_instruction }}<span style="color: red;">*</span>:
+  </p>
+{% endif %}
+{% for custom_photo in product.tags %}
+    {% if custom_photo contains 'custom_photo_' %}
+            <form id="shopify-image-upload-form-{{ custom_photo }}" enctype="multipart/form-data" 
+                  style="display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; margin-bottom: 5px;">
+                <label for="image_upload_{{ custom_photo }}" style="margin-right: 5px; white-space: nowrap;">
+                    {{ product.metafields.custom[custom_photo] }}
+                </label>
+                <input type="file" id="image_upload_{{ custom_photo }}" name="image" accept="image/*" required 
+                       style="margin-right: 0; max-width: 200px; white-space: nowrap; font-weight:400;">
+            </form>
+        <p id="p_custom_image_{{ custom_photo }}" style="margin-top: 0px; margin-bottom: 20px;"></p>
+    {% endif %}
+{% endfor %}
+
+<style>
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+document.querySelectorAll('input[type="file"]').forEach(input => {
+    input.addEventListener('change', async function() {
+        const customPhotoId = this.id.replace('image_upload_', '');
+        const form = document.getElementById(`shopify-image-upload-form-${customPhotoId}`);
+        const originalFile = this.files[0];
+
+        if (!originalFile) return; // Ensure a file was selected
+
+        // Extract the original file extension
+        const originalFileExtension = originalFile.name.split('.').pop();
+        const newFileName = `p${customPhotoId.replace('custom_photo_', '')}.${originalFileExtension}`;
+        
+        // Create a new file with the same extension
+        const renamedFile = new File([originalFile], newFileName, {
+            type: originalFile.type,
+            lastModified: originalFile.lastModified,
+        });
+
+        const formData = new FormData();
+        formData.append('image', renamedFile);
+
+        // Add spinner next to the label
+        const label = this.previousElementSibling;
+        const spinnerHtml = `
+            <span id="spinner-${customPhotoId}" style="
+                margin-left: 10px;
+                border: 2px solid #fff;
+                border-top: 2px solid #bf3d86;
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                animation: spin 1s linear infinite;
+            "></span>`;
+        label.insertAdjacentHTML('afterend', spinnerHtml);
+        const spinner = document.getElementById(`spinner-${customPhotoId}`);
+
+        try {
+            // Send the file to your Django API
+            const response = await fetch('https://mememirth.com/api/upload/', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const imageUrl = data.image_url;
+
+                // Set the uploaded image URL in the hidden input field
+                document.getElementById(`uploaded_image_url_${customPhotoId}`).value = imageUrl;
+
+                // Display the uploaded image inside <p>
+                const imageHtml = `
+                    <a href="${imageUrl}" target="_blank">
+                        <img src="${imageUrl}" alt="Uploaded Image" style="max-width: 150px; max-height: 150px;">
+                    </a>
+                `;
+                document.getElementById(`p_custom_image_${customPhotoId}`).innerHTML = imageHtml;
+
+                // Ensure spinner is hidden after the image is displayed
+                if (spinner) {
+                    spinner.remove();
+                }
+            } else {
+                const errorData = await response.json();
+                alert('Error uploading image: ' + JSON.stringify(errorData));
+            }
+        } catch (error) {
+            console.error('Upload failed:', error);
+            alert('Upload failed. Please try again.');
+        } finally {
+            // Remove spinner
+            if (spinner) {
+                spinner.remove();
+            }
+        }
+    });
+});
+</script>
+
+
+
+

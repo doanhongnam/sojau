@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16596815204da811dc": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "16630686428dc988d9": {
+      "type": "default-page-title",
+      "settings": {
+        "g_title": "",
+        "g_sub": "",
+        "horizontal_alignment": "center",
+        "margin_bottom_desktop": 30,
+        "margin_bottom_table": 20,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "main": {
+      "type": "tp-portfolio",
+      "blocks": {
+        "a7f0c233-fedb-4ce6-aca6-3e8cbcc9dc34": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/c2.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V1"
+          }
+        },
+        "ffd3978d-939c-4c97-98db-522c3c28d558": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/c1.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V1"
+          }
+        },
+        "f986e6a0-92ce-4650-a118-d734c28dbe9e": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/c3.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V1"
+          }
+        },
+        "1ed2a4e4-2b01-46fc-a3e1-f6cd64b7025f": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/b5.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V1"
+          }
+        },
+        "1263c68d-d486-4522-8c11-0000a8b31d1a": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/b2.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V2"
+          }
+        },
+        "73fb6070-b874-492f-a5a8-92a1fdd844ed": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/b3.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V2"
+          }
+        },
+        "45435655-6273-410f-b704-ce397061c987": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/b4.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V2"
+          }
+        },
+        "f31f0895-c045-4be7-9da2-520e03b0f025": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/b9.png",
+            "title": "",
+            "link": "",
+            "filter_tag": "Gallery V2"
+          }
+        }
+      },
+      "block_order": [
+        "a7f0c233-fedb-4ce6-aca6-3e8cbcc9dc34",
+        "ffd3978d-939c-4c97-98db-522c3c28d558",
+        "f986e6a0-92ce-4650-a118-d734c28dbe9e",
+        "1ed2a4e4-2b01-46fc-a3e1-f6cd64b7025f",
+        "1263c68d-d486-4522-8c11-0000a8b31d1a",
+        "73fb6070-b874-492f-a5a8-92a1fdd844ed",
+        "45435655-6273-410f-b704-ce397061c987",
+        "f31f0895-c045-4be7-9da2-520e03b0f025"
+      ],
+      "settings": {
+        "portfolio_width": "container",
+        "type": "1",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 10
+      }
+    }
+  },
+  "order": [
+    "16596815204da811dc",
+    "16630686428dc988d9",
+    "main"
+  ]
+}

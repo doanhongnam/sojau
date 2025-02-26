@@ -1,0 +1,457 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout
+%}
+
+<div class="banner-slide {{ WidthLayout }}">
+  <div class="swiper banner-slide__main banner-slide">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'bnslide_item' %}
+            <div class="swiper-slide {% if block.settings.image == blank %} no_image_slide {% endif %} banner-slide__item lazy-background banner-slide__item-{{ forloop.index }}">
+              <div class="container banner-slide__height relative">
+                <div class="banner-slide__wrap">
+                  <div class="banner-slide__box {{ block.settings.position_countdown }}">
+                    {% if block.settings.title %}
+                      <p class="banner-slide__title">{{ block.settings.title }}</p>
+                    {% endif %}
+                    <div class="banner-slide__ps">
+                      <p class="banner-slide__percent">{{ block.settings.percent }}</p>
+                    </div>
+                    <p class="banner-slide__subtitle">{{ block.settings.sub_title }}</p>
+                    {% liquid
+                      assign year = block.settings.cd_year
+                      if year < 10
+                        assign year = '0' | append: block.settings.cd_year
+                      endif
+                      assign month = block.settings.cd_month
+                      assign days = block.settings.cd_days
+                    %}
+                    <div
+                      class="banner-slide__time banner-slide__time-{{ forloop.index }}"
+                      data-flash-year="{{ year }}"
+                      data-flash-month="{{ month }}"
+                      data-flash-day="{{ days }}"
+                    ></div>
+
+                    <div class="banner-slide__btn">
+                      <a
+                        class="tp-btn {{ block.settings.button_type }}"
+                        href="{% if block.settings.link_button != blank %}{{ block.settings.link_button }}{% else %}#{% endif %}"
+                      >
+                        {{ 'button.shop_now' | t }}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+        <style>
+          .banner-slide__time-{{ forloop.index }} .bnCountdown__bg{
+              background: {{ block.settings.color_bg_count_down }};
+              color: {{ block.settings.color_text_count_down }}
+          }
+
+          {% comment %} .banner-slide__item-{{ forloop.index }} .banner-slide__btn a{
+              border: 1px solid {{ block.settings.color_bg_count_down }};
+          }
+
+          .banner-slide__item-{{ forloop.index }} .banner-slide__btn a:after{
+              background: {{ block.settings.color_bg_count_down }};
+          } {% endcomment %}
+
+          .banner-slide__item-{{ forloop.index }}{
+            background: url({{ block.settings.image | image_url: width: block.settings.image.width, height: block.settings.image.height }});
+          }
+        </style>
+      {% endfor %}
+    </div>
+    {% if section.settings.show_navigation %}
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    {% endif %}
+    {% if section.settings.show_pagination %}
+      <div class="bsSlide-pagination"></div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .bsSlide-pagination .swiper-pagination-bullet {
+      opacity: 0.5;
+      background: {{ section.settings.pagi_color }};
+
+  }
+  .bsSlide-pagination .swiper-pagination-bullet-active {
+      opacity: 1;
+  }
+</style>
+
+{% render 'margin-bottom' %}
+
+{% schema %}
+{
+  "name": "Banner slide",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "width-full"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show navigation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show pagination",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "pagi_color",
+      "label": "Pagination color",
+      "default": "#FFB12B"
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "bnslide_item",
+      "name": "Slide item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "position_countdown",
+          "options": [
+            {
+              "value": "left-countdown",
+              "label": "Left"
+            },
+            {
+              "value": "center-countdown",
+              "label": "Center"
+            },
+            {
+              "value": "right-countdown",
+              "label": "Right"
+            }
+          ],
+          "label": "Position countdown",
+          "default": "right-countdown"
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Background Slide"
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title",
+          "default": "Save off"
+        },
+        {
+          "id": "percent",
+          "type": "text",
+          "label": "Percent number",
+          "default": "50%"
+        },
+        {
+          "id": "sub_title",
+          "type": "text",
+          "label": "Sub title",
+          "default": "New Offer Products"
+        },
+        {
+          "id": "cd_year",
+          "type": "number",
+          "label": "Year",
+          "default": 2023
+        },
+        {
+          "type": "select",
+          "id": "cd_month",
+          "label": "Month",
+          "options": [
+            {
+              "value": "01",
+              "label": "01"
+            },
+            {
+              "value": "02",
+              "label": "02"
+            },
+            {
+              "value": "03",
+              "label": "03"
+            },
+            {
+              "value": "04",
+              "label": "04"
+            },
+            {
+              "value": "05",
+              "label": "05"
+            },
+            {
+              "value": "06",
+              "label": "06"
+            },
+            {
+              "value": "07",
+              "label": "07"
+            },
+            {
+              "value": "09",
+              "label": "09"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            }
+          ],
+          "default": "12"
+        },
+        {
+          "type": "select",
+          "id": "cd_days",
+          "label": "Days",
+          "options": [
+            {
+              "value": "01",
+              "label": "01"
+            },
+            {
+              "value": "02",
+              "label": "02"
+            },
+            {
+              "value": "03",
+              "label": "03"
+            },
+            {
+              "value": "04",
+              "label": "04"
+            },
+            {
+              "value": "05",
+              "label": "05"
+            },
+            {
+              "value": "06",
+              "label": "06"
+            },
+            {
+              "value": "07",
+              "label": "07"
+            },
+            {
+              "value": "09",
+              "label": "09"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "15",
+              "label": "15"
+            },
+            {
+              "value": "16",
+              "label": "16"
+            },
+            {
+              "value": "17",
+              "label": "17"
+            },
+            {
+              "value": "18",
+              "label": "18"
+            },
+            {
+              "value": "19",
+              "label": "19"
+            },
+            {
+              "value": "20",
+              "label": "20"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            }
+          ],
+          "default": "28"
+        },
+        {
+          "type": "color",
+          "id": "color_text_count_down",
+          "label": "Color text count down",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "color_bg_count_down",
+          "label": "Color background count down",
+          "default": "#71af19"
+        },
+
+        {
+          "type": "url",
+          "id": "link_button",
+          "label": "Link button"
+        },
+        {
+          "type": "select",
+          "id": "button_type",
+          "options": [
+            {
+              "value": "tp-btn__primary",
+              "label": "Button primary"
+            },
+            {
+              "value": "tp-btn__secondary",
+              "label": "Button secondary"
+            },
+            {
+              "value": "tp-btn__alternate",
+              "label": "Button alternate"
+            },
+            {
+              "value": "tp-btn__underline",
+              "label": "Button underline"
+            }
+          ],
+          "label": "Button type",
+          "default": "tp-btn__secondary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Slide",
+      "category": "customer",
+      "blocks": [
+        {
+          "type": "bnslide_item"
+        },
+        {
+          "type": "bnslide_item"
+        },
+        {
+          "type": "bnslide_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

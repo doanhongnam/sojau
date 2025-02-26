@@ -1,0 +1,330 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "4e4f44f4-aaba-4651-ae81-314bd6c78281": {
+      "type": "banner-image-card",
+      "blocks": {
+        "template--15913573417154__4e4f44f4-aaba-4651-ae81-314bd6c78281-1667623267c3c9e37a-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Rectangle_163_1.png",
+            "fix_height_image": true,
+            "height_image_mobile": 50,
+            "title": "<p>For Men’s</p>",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "template--15913573417154__4e4f44f4-aaba-4651-ae81-314bd6c78281-1667623267c3c9e37a-3": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Rectangle_164_1.png",
+            "fix_height_image": true,
+            "height_image_mobile": 50,
+            "title": "<p>For Women’s</p>",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "button_type": "block-button",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15913573417154__4e4f44f4-aaba-4651-ae81-314bd6c78281-1667623267c3c9e37a-0",
+        "template--15913573417154__4e4f44f4-aaba-4651-ae81-314bd6c78281-1667623267c3c9e37a-3"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "layout": "layout_1",
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "efc7d25a-8c5f-4a69-a470-d6f2a89995e8": {
+      "type": "banner-image-card",
+      "blocks": {
+        "template--15913573417154__efc7d25a-8c5f-4a69-a470-d6f2a89995e8-16677859413bbad771-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center-left",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Banner_1_6.png",
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>South Beach </p><p>Mini Cross Body</p>",
+            "font_size_title": 36,
+            "color_title": "#ffffff",
+            "color_background_title": "rgba(0,0,0,0)",
+            "button_type": "normal-button",
+            "button_label": "Yellow patch in natural straw",
+            "link": ""
+          }
+        },
+        "template--15913573417154__efc7d25a-8c5f-4a69-a470-d6f2a89995e8-16677859413bbad771-1": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center-right",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/image-banner-bags-2.png",
+            "fix_height_image": false,
+            "height_image_mobile": 50,
+            "title": "<p>Croc Tote Bbag</p><p>with Top Handle</p>",
+            "font_size_title": 36,
+            "color_title": "#ffffff",
+            "color_background_title": "rgba(0,0,0,0)",
+            "button_type": "normal-button",
+            "button_label": "Crossbody strap in mustard",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15913573417154__efc7d25a-8c5f-4a69-a470-d6f2a89995e8-16677859413bbad771-0",
+        "template--15913573417154__efc7d25a-8c5f-4a69-a470-d6f2a89995e8-16677859413bbad771-1"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "layout": "layout_2",
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "c58c0277-13ab-457b-8f62-160cbacc1514": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Product by",
+        "description": "",
+        "display_type": "tab",
+        "collection": "",
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [
+          "best-seller",
+          "women",
+          "men"
+        ],
+        "style_button_tab": "tp-box-button__style-1",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "c0ff685b-9910-4fba-907e-d87fbe075a3b": {
+      "type": "nature",
+      "blocks": {
+        "3dc48238-84c8-409d-a145-1b03b7c3dc8e": {
+          "type": "nature_element",
+          "settings": {
+            "nature_image": "shopify://shop_images/Thumb_1.png",
+            "nature_content": "nature-content-left",
+            "nature_title": "Examples of Title Default in a sentence",
+            "nature_brief": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+            "nature_btn": "Get it now",
+            "nature_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "3dc48238-84c8-409d-a145-1b03b7c3dc8e"
+      ],
+      "settings": {
+        "nature_ctn": "container",
+        "nature_id": "nature",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "f1bf40d2-cc61-459d-99a8-916745512b0f": {
+      "type": "service",
+      "blocks": {
+        "f116ec01-61ca-46c5-ab61-c72b0c53d57e": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-home-2-4.png",
+            "title_service": "Return Shipping",
+            "description_service": "On order over $150",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "link_service": ""
+          }
+        },
+        "e334525d-dea7-4568-9615-3c7fc413247a": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-online-chat_1.png",
+            "title_service": "24/7 Customer services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "link_service": "#"
+          }
+        },
+        "e6e63c3e-c802-40f6-a5ef-ee16710a5e0d": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-home-2-3.png",
+            "title_service": "Fast Access",
+            "description_service": "The internet Tend To Repeat",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "link_service": "#"
+          }
+        }
+      },
+      "block_order": [
+        "f116ec01-61ca-46c5-ab61-c72b0c53d57e",
+        "e334525d-dea7-4568-9615-3c7fc413247a",
+        "e6e63c3e-c802-40f6-a5ef-ee16710a5e0d"
+      ],
+      "settings": {
+        "gap_item": 0,
+        "service_bg": "#ffffff",
+        "show_border_right": true,
+        "margin_bottom_desktop": 40,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "eed7adac-92c2-48f7-9491-435be2e5465b": {
+      "type": "tp-instagram",
+      "blocks": {
+        "81849b9d-063a-4596-8f7c-5914e42c4180": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig1.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUHFzPF9o/"
+          }
+        },
+        "8ee73743-5876-44f3-be04-227699191536": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig2.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUFAkvnHQ/"
+          }
+        },
+        "6bba2fdd-1540-4f22-b4e7-fbcd2540fd2e": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig3.png",
+            "link_instagram": "https://www.instagram.com/p/CjhHFe9PpQ5/"
+          }
+        },
+        "a7fd0570-eea7-415d-b002-5c90882f83ea": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig4.png",
+            "link_instagram": "https://www.instagram.com/p/CjXT9nvvV8K/"
+          }
+        },
+        "39e851a8-8264-4e84-9db8-12de8be28122": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig5.png",
+            "link_instagram": "https://www.instagram.com/p/CjXT7pHvNa0/"
+          }
+        },
+        "1bc1c1f9-0fc3-48fa-8ee6-a096fc488472": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig6.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUuJYPj4g/"
+          }
+        }
+      },
+      "block_order": [
+        "81849b9d-063a-4596-8f7c-5914e42c4180",
+        "8ee73743-5876-44f3-be04-227699191536",
+        "6bba2fdd-1540-4f22-b4e7-fbcd2540fd2e",
+        "a7fd0570-eea7-415d-b002-5c90882f83ea",
+        "39e851a8-8264-4e84-9db8-12de8be28122",
+        "1bc1c1f9-0fc3-48fa-8ee6-a096fc488472"
+      ],
+      "settings": {
+        "ins_ctn": "container-fluid",
+        "title_instagram": "@ FOLLOW US ON",
+        "sub_title_instagram": "INSTAGRAM",
+        "profile": "https://www.instagram.com/storepify/",
+        "data_instagram": "custom_data",
+        "gap_item": 0,
+        "instagram_to_show": 6,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "fe748bce-279c-4fa8-a374-7e37a3511621": {
+      "type": "newsletter",
+      "blocks": {
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-0": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be in touch with us:</p>"
+          }
+        },
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-0",
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-1"
+      ],
+      "settings": {
+        "newsletter_background": "#f3f3f3",
+        "color_bg_button": "#2e2e2e",
+        "color_text_button": "#ffffff",
+        "color_newsletter": "#000000",
+        "show_social": true,
+        "padding_top": 18,
+        "padding_bottom": 18,
+        "margin_bottom_desktop": 80
+      }
+    }
+  },
+  "order": [
+    "4e4f44f4-aaba-4651-ae81-314bd6c78281",
+    "efc7d25a-8c5f-4a69-a470-d6f2a89995e8",
+    "c58c0277-13ab-457b-8f62-160cbacc1514",
+    "c0ff685b-9910-4fba-907e-d87fbe075a3b",
+    "f1bf40d2-cc61-459d-99a8-916745512b0f",
+    "eed7adac-92c2-48f7-9491-435be2e5465b",
+    "fe748bce-279c-4fa8-a374-7e37a3511621"
+  ]
+}

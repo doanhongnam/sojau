@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16608760047dd91d7f": {
+      "type": "slide",
+      "blocks": {
+        "19a64168-eab2-4301-bab8-46c3c4102db1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slide-demo-home-5-2.png",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop Scoop Back Knitted</p>",
+            "slide_url": "shopify://collections",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "e8792f97-a884-4e77-80b4-b144a4ebd41b": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slide-demo-home-5-3.png",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop Scoop Back Knitted</p>",
+            "slide_url": "shopify://collections",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "cb788bdc-71d5-456b-88e5-0f8e100123a1": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slide-demo-home-5-1.png",
+            "sub_title": "Poolside daze",
+            "title": "<p>Oasis Scallop Scoop Back Knitted</p>",
+            "slide_url": "shopify://collections",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "19a64168-eab2-4301-bab8-46c3c4102db1",
+        "e8792f97-a884-4e77-80b4-b144a4ebd41b",
+        "cb788bdc-71d5-456b-88e5-0f8e100123a1"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "center_bottom",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16608760632140470f": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Product by",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a aliquet ex. Etiam sed malesuada elit</p>",
+        "display_type": "slide",
+        "collection": "",
+        "products_to_show": 10,
+        "collection_list": [],
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "16608760047dd91d7f",
+    "16608760632140470f"
+  ]
+}

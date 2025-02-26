@@ -1,0 +1,24 @@
+<div class="tp-qty-wrapper">
+  <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
+    <quantity-input class="tp-item__quantity border" data-section="{{ section.id }}">
+      <button class="tp-item__qty_btn no-js-hidden" name="minus" type="button">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 8H12" stroke="#828282" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <input
+        class="tp-item__qty_input quantity-{{ section.id }}"
+        form="product-form-{{ section.id }}"
+        min="1"
+        name="quantity"
+        type="number"
+        value="1"
+      >
+      <button class="tp-item__qty_btn no-js-hidden" name="plus" type="button">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 8H12M8 12V4" stroke="#828282" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </quantity-input>
+  </div>
+</div>

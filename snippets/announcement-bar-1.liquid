@@ -1,0 +1,68 @@
+{% assign info_right = bst.announ_bar_right %}
+<div class="announcement-bar announcement-bar--style1" role="region" {{ block.shopify_attributes }}>
+    <div class="{% if sst.container_check %}container{% else %}w-full{% endif %} flex flex-row items-center justify-between">
+        <div class="style1__left text-sm text-white">
+            {{ bst.text_content }}
+        </div>
+        <div class="style1__right {{ info_right }}">
+            {% if info_right == 'currency_language' %}
+                <div class="header__icon header-icon flex flex-row items-center text-sm">
+                    {% if bst.show_language %}
+                        {% render 'localization-language', device: 'desktop' %}
+                    {% endif %}
+                    {% if bst.show_currency %}
+                        {% render 'localization-country', device: 'desktop' %}
+                    {% endif %}
+                </div>
+            {% elsif info_right == 'social' %}
+                {% render 'social', color_social: color_social, w-h: 15 %}
+            {% elsif info_right == 'button' %}
+                <div class="announcement-bar__btn flex items-center gap-2.5">
+                    {% if bst.icon_button != blank %}
+                        {{ bst.icon_button }}
+                    {% endif %}
+                    <a href="{{ bst.link_button | default: '#' }}">
+                        {{ bst.text_button }}
+                    </a>
+                </div>
+                <style>
+                    .announcement-bar__btn a {
+                        color: {{ bst.color_btn }};
+                        font-weight: 500;
+                        text-decoration: underline;
+                        transition: all 0.5s ease;
+                    }
+
+                    .announcement-bar__btn path {
+                        fill: {{ bst.color_btn }};
+                    }
+
+                    .announcement-bar__btn:hover a {
+                        opacity: 0.5;
+                    }
+                </style>
+            {% elsif info_right == 'menu' %}
+                <ul class="style1__right-menu flex items-center">
+                    {% if bst.menu.links != blank %}
+                        {%- for link in bst.menu.links -%}
+                            <li class="menu-item">
+                                <a href="{{ link.url }}" class="uppercase">
+                                    {{ link.title }}
+                                </a>
+                            </li>
+                        {%- endfor -%}
+                    {% else %}
+                        {% liquid
+                            assign numbers = '1,2,3' | split: ','
+                        %}
+                        {%- for item in numbers -%}
+                            <li class="menu-item">
+                                <a href="#" class="uppercase"> Menu item </a>
+                            </li>
+                        {%- endfor -%}
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>

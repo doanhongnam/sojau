@@ -1,0 +1,71 @@
+<div class="announcement-bar__currency {{ device }}">
+    {% if localization.available_countries.size > 1 %}
+        <localization-form>
+            {% assign device_id = 'localization-country' | append: device %}
+            {% form 'localization', id: device_id %}
+                <div class="disclosure relative">
+                    <button type="button" class="disclosure__button flex flex-row items-center font-normal text-[14px]" data-taget="country">
+                        {% assign lciscode = localization.country.currency.iso_code %}
+                        <span class="mr-[5px]">
+                           {% comment %}Show flag{% endcomment %}
+                            {% for i in (1..5) %}
+                                {% capture currency_code %}custom_currency_code_{{ i }}{% endcapture %}
+                                {% if lciscode == settings[currency_code] %}
+                                    {% capture flag_image %}flag_image_{{ forloop.index }}{% endcapture %}
+                                    {{ settings[flag_image] }}
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+
+                        {{ lciscode }}
+
+                        <svg width="10" height="10" aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                        </svg>
+                    </button>
+
+                    <div id="CountryList" class="disclosure__list shadow">
+                        {% for country in localization.available_countries %}
+                            <div class="disclosure__item" tabindex="-1">
+                                <a class="flex flex-row items-center text-white text-[14px] font-normal" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                                    {% assign cdtype = settings.currency_display_type %}
+                                    {% assign flag = settings.flag_image_3 %}
+                                    {% assign countrycode = country.currency.iso_code %}
+                                    {% comment %}Get array flag list currency code{% endcomment %}
+
+                                    {% case cdtype %}
+                                        {% when "name__currency_code" %}
+                                            {{ country.name }} ({{ countrycode }})
+                                        {% when "currency_code__symbol" %}
+                                            {{ countrycode }} ({{ country.currency.symbol }})
+                                        {% when "flag__currency_code" %}
+                                        {% comment %}Show flag{% endcomment %}
+                                        {% for i in (1..5) %}
+                                            {% capture currency_code %}custom_currency_code_{{ i }}{% endcapture %}
+                                            {% if countrycode == settings[currency_code] %}
+                                                {% capture flag_image %}flag_image_{{ forloop.index }}{% endcapture %}
+                                                {{ settings[flag_image] }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        {{ countrycode }}
+                                        {% when "only_flag" %}
+                                        {% comment %}Show flag{% endcomment %}
+                                        {% for i in (1..5) %}
+                                            {% capture currency_code %}custom_currency_code_{{ i }}{% endcapture %}
+                                            {% if countrycode == settings[currency_code] %}
+                                                {% capture flag_image %}flag_image_{{ forloop.index }}{% endcapture %}
+                                                {{ settings[flag_image] }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endcase %}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+                </div>
+            {% endform %}
+        </localization-form>
+    {% endif %}
+</div>

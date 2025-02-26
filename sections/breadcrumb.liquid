@@ -1,0 +1,273 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout
+  assign Image = section.settings.background_image
+  assign ImageCollection = collection.featured_image
+  assign ImageCollectionMetafields = collection.metafields.custom.image_breadcrumb_collection
+  assign show_image_collection = section.settings.show_image_collection
+
+  if show_image_collection and template contains 'collection' and collection.handle
+    if ImageCollectionMetafields != blank
+      assign Image = ImageCollectionMetafields
+    elsif ImageCollection != blank
+      assign Image = ImageCollection
+    endif
+  endif
+
+  assign show = section.settings.pbs_collection
+  assign positionBreadCrumb = section.settings.position_bread_crumb
+  if positionBreadCrumb == 'left'
+    assign classPositionBreadCrumb = 'justify-start'
+  else
+    assign classPositionBreadCrumb = 'justify-center'
+  endif
+%}
+
+{%- unless template == 'index' -%}
+  <div class="tp-bread-crumb">
+    {% if Image != blank %}
+      <img
+        class="full-img"
+        src="{{ Image | image_url: width: Image.width , height: Image.height }}"
+        alt="slider background image"
+        width="{{ Image.width }}"
+        height="{{ Image.height }}"
+        loading="lazy"
+        style="max-height: 400px;"
+      >
+    {% endif %}
+    <div
+      class="tp-bread-crumb__wrapper"
+      style="{% if ImageBackgroundBreadcrumb != blank %}position:absolute {% else %}position:unset {% endif %}"
+    >
+      <div class="{{ WidthLayout }}">
+        <ul class="list-bread-type1 flex items-center {{ classPositionBreadCrumb }}">
+          <li class="flex items-center">
+            <a class="active hvr-line-left-to-right-1px mr-3.75" href="/">{{ 'breadcrumb.home.label' | t }}</a>
+            {% render 'icon', icon_name: 'icon-next-type1', width: 12, height: 10 %}
+          </li>
+          {%- if template contains 'product' -%}
+            {% if product.collections %}
+              {% if product.collections != blank %}
+                <li class="flex items-center ml-3.75">
+                  {% for collection in product.collections %}
+                    {% if show == 'first' %}
+                      {% if forloop.first == true %}
+                        <a
+                          class="active hvr-line-left-to-right-1px mr-3.75"
+                          href="{{ collection.url }}"
+                          class="bread-crumb__item"
+                          title="{{- collection.title | escape -}}"
+                        >
+                          {{- collection.title | escape -}}
+                        </a>
+                      {% endif %}
+                    {% elsif show == 'last' %}
+                      {% if forloop.last == true %}
+                        <a
+                          class="active hvr-line-left-to-right-1px mr-3.75"
+                          href="{{ collection.url }}"
+                          class="bread-crumb__item"
+                          title="{{- collection.title | escape -}}"
+                        >
+                          {{- collection.title | escape -}}
+                        </a>
+                      {% endif %}
+                    {% else %}
+                      <a
+                        class="active hvr-line-left-to-right-1px"
+                        href="{{ collection.url }}"
+                        class="bread-crumb__item"
+                        title="{{- collection.title | escape -}}"
+                      >
+                        {{- collection.title | escape -}}
+                      </a>
+                      {%- if forloop.last != true -%}
+                        ,
+                      {%- endif -%}
+                    {% endif %}
+                  {% endfor %}
+                  {% render 'icon', icon_name: 'icon-next-type1', width: 12, height: 10 %}
+                </li>
+              {% endif %}
+
+              {% if product.title %}
+                <li class="bread-crumb__item ml-3.75">
+                  {{ product.title }}
+                </li>
+              {% endif %}
+            {% else %}
+              <li class="flex items-center ml-3.75">
+                <a
+                  class="hvr-line-left-to-right-1px"
+                  href="{{ product.url }}"
+                  class="bread-crumb__item"
+                  title="{{- product.title | escape -}}"
+                >
+                  {{- product.title | escape -}}
+                </a>
+              </li>
+            {% endif %}
+          {%- elsif template contains 'collection' and collection.handle -%}
+            {%- if current_tags -%}
+              {%- capture url -%}/collections/{{ collection.handle }}
+              {%- endcapture -%}
+              <li class="bread-crumb__item ml-3.75">{{ collection.title | link_to: url }}</li>
+            {%- else -%}
+              <li class="bread-crumb__item ml-3.75">{{ collection.title | capitalize }}</li>
+            {%- endif -%}
+
+          {%- elsif template == 'article' -%}
+            <li class="bread-crumb__item ml-3.75 mr-3.75 flex items-center">
+              <a class="active hvr-line-left-to-right-1px mr-3.75" href="{{ blog.url }}">{{ blog.title }}</a>
+              {% render 'icon', icon_name: 'icon-next-type1', width: 12, height: 10 %}
+            </li>
+            <li class="bread-crumb__item">
+              {{ article.title | escape }}
+            </li>
+
+          {%- elsif template contains 'customers' and template != 'customers/account' -%}
+            {% comment %}<li class="bread-crumb__item ml-3.75">{{ account | capitalize | link_to: "/account" }}</li>{% endcomment %}
+            <li class="bread-crumb__item ml-3.75">{{ page_title }}</li>
+
+          {%- elsif template contains 'page' -%}
+            <li class="bread-crumb__item ml-3.75">{{ page.title }}</li>
+          {%- elsif template == 'search' -%}
+            <li class="bread-crumb__item ml-3.75">{{ 'general.search.search' | t }}</li>
+            {%- comment -%}{%- endcomment -%}
+          {%- else -%}
+            <li class="bread-crumb__item ml-3.75">{{ page_title }}</li>
+          {%- endif -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+{%- endunless -%}
+
+<style>
+  .tp-bread-crumb__wrapper {
+    background: {{ section.settings.color_background }};
+  }
+</style>
+
+{% render 'margin-bottom' %}
+
+{% schema %}
+{
+  "name": "Breadcrumb",
+  "tag": "section",
+  "class": "tp-breadcrumb",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "position_bread_crumb",
+      "label": "Position breadcrumb",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "id": "pbs_collection",
+      "type": "select",
+      "label": "Show collection of product",
+      "info": "Use only product detail",
+      "options": [
+        {
+          "label": "First",
+          "value": "first"
+        },
+        {
+          "label": "Last",
+          "value": "last"
+        },
+        {
+          "label": "All",
+          "value": "all"
+        }
+      ],
+      "default": "first"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Color background",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "header",
+      "content": "Config to page collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_collection",
+      "label": "Show collection image",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 50
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 30
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Breadcrumb"
+    }
+  ]
+}
+{% endschema %}

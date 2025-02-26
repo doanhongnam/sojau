@@ -1,0 +1,69 @@
+{% if block.settings.use_spacing %}
+  {% render 'block-margin-bottom', className: 'buy-button__bottom', block: block %}
+  {% assign classDefault = '' %}
+{% else %}
+  {% assign classDefault = ' mb-3.75' %}
+{% endif %}
+<div {{ block.shopify_attributes }} class="buy-button__bottom {{ classDefault }}">
+    {% assign text_agree_terms_conditions = block.settings.text_agree_terms_conditions %}
+    {% if text_agree_terms_conditions != blank %}
+        <div class="flex items-center mb-2.5 agreetc-class">
+            <input type="checkbox" class="agree_terms_conditions mr-2.5 cursor-pointer w-4 h-4">
+            <span class="checkmark"></span>
+            {{ block.settings.text_agree_terms_conditions }}
+        </div>
+    {% endif %}
+  <product-form class="product-form">
+    {%- form 'product',
+      product,
+      id: product_form_id,
+      class: 'form',
+      novalidate: 'novalidate',
+      data-type: 'add-to-cart-form'
+    -%}
+      <input
+        type="hidden"
+        name="id"
+        value="{{ product.selected_or_first_available_variant.id }}"
+      >
+      <input type="hidden" name="quantity" value="1" id="qty_buy-buttons-checkout">
+      {% if block.settings.text_buy_it_now == blank %}
+        <div class="product-form__buttons">
+          {%- if block.settings.show_dynamic_checkout -%}
+            {{ form | payment_button | class: 'shopify-payment-button__button', button_text: block.settings.text_buy_it_now }}
+          {%- endif -%}
+        </div>
+      {% else %}
+          <button
+                  type="button"
+                  class="shopify-payment-button__button shopify-payment-button__button--unbranded"
+                  onclick="document.querySelector('[data-testid]').click();"
+          >
+              {{ block.settings.text_buy_it_now }}
+          </button>
+          <div style="display:none;">
+              {{ form | payment_button }}
+          </div>
+      {% endif %}
+      <style>
+        {% if block.settings.color_global == false %}
+        .tp-product-detail__right .shopify-payment-button__button {
+            border: 1px solid {{ block.settings.color-button-border }}!important;
+            background-color: {{ block.settings.color-button-bg }} !important;
+            color: {{ block.settings.color-button-text }}!important
+        }
+        .tp-product-detail__right .shopify-payment-button__button.disabled{
+          border: 1px solid #00000040!important;
+            cursor: not-allowed;
+        }
+        .tp-product-detail__right .shopify-payment-button__button:hover{
+            background-color: {{ block.settings.color-button-bg-hover }}!important;
+            border: 1px solid {{ block.settings.color-button-border-hover }}!important;
+            color: {{ block.settings.color-button-text-hover }}!important
+        }
+        {%- endif -%}
+      </style>
+    {%- endform -%}
+  </product-form>
+</div>
+

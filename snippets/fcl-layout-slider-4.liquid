@@ -1,0 +1,81 @@
+{% liquid
+  if section.settings.collection != blank
+    assign collection = collections[section.settings.collection]
+  endif
+%}
+<div class="tp-fcl__top flex items-center justify-between mb-12.5">
+  {% if section.settings.title != blank %}
+    <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title }}</h2>
+  {% endif %}
+  {% if section.settings.description != blank %}
+    <div class="mb-0 select-none">{{ section.settings.description }}</div>
+  {% endif %}
+</div>
+<div class="swiper fcSwiper">
+  <div class="swiper-wrapper">
+    {% if collection != blank %}
+    {% assign collectionProducts = collection.products | sort: 'published_at' | reverse %}
+      {%- for product in collectionProducts -%}
+        {% assign lazy_load = false %}
+        {%- if forloop.index > 2 -%}
+          {%- assign lazy_load = true -%}
+        {%- endif -%}
+        <div class="grid__item swiper-slide">
+          {% render 'card-product',
+          card_product: product,
+          section: section,
+          layoutProductItem: section.settings.product_item_layout,
+          lazy_load: lazy_load
+        %}
+        </div>
+      {%- endfor -%}
+      {% else %} 
+        {% assign numbers = '1,2,3,4,5,6,7,8' | split: ',' %}
+        {% for item in numbers -%}
+        <div class="grid__item swiper-slide">
+            <div class="pr-no-data">
+              <div class="card">
+                <div class="card__inner">
+                  <div class="card__inner__img"></div>
+                </div>
+
+                <div class="card__content">
+                    <h3 class="card__heading h5">Title product</h3>
+                    <p class="price-item mb-2.5">$45</p>
+                    <div class="stars-new flex justify-center items-start">
+                      <span aria-label="Rating of this product is out of 5." class="stars not-have mr-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path d="M8.52571 1L10.8002 5.60778L15.8864 6.35121L12.206 9.93586L13.0746 15L8.52571 12.6078L3.97682 15L4.84538 9.93586L1.16504 6.35121L6.25126 5.60778L8.52571 1Z" stroke="#FFB352" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                      <span aria-label="Rating of this product is out of 5." class="stars not-have mr-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path d="M8.52571 1L10.8002 5.60778L15.8864 6.35121L12.206 9.93586L13.0746 15L8.52571 12.6078L3.97682 15L4.84538 9.93586L1.16504 6.35121L6.25126 5.60778L8.52571 1Z" stroke="#FFB352" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                      <span aria-label="Rating of this product is out of 5." class="stars not-have mr-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path d="M8.52571 1L10.8002 5.60778L15.8864 6.35121L12.206 9.93586L13.0746 15L8.52571 12.6078L3.97682 15L4.84538 9.93586L1.16504 6.35121L6.25126 5.60778L8.52571 1Z" stroke="#FFB352" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                      <span aria-label="Rating of this product is out of 5." class="stars not-have mr-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path d="M8.52571 1L10.8002 5.60778L15.8864 6.35121L12.206 9.93586L13.0746 15L8.52571 12.6078L3.97682 15L4.84538 9.93586L1.16504 6.35121L6.25126 5.60778L8.52571 1Z" stroke="#FFB352" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                      <span aria-label="Rating of this product is out of 5." class="stars not-have mr-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                        <path d="M8.52571 1L10.8002 5.60778L15.8864 6.35121L12.206 9.93586L13.0746 15L8.52571 12.6078L3.97682 15L4.84538 9.93586L1.16504 6.35121L6.25126 5.60778L8.52571 1Z" stroke="#FFB352" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+
+      {% endif %}
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

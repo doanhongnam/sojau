@@ -1,0 +1,267 @@
+{% assign sst = section.settings %}
+{%- for block in section.blocks -%}
+  {% liquid
+    assign bst = block.settings
+    assign color_social = bst.color_social
+    assign type = block.type
+  %}
+  {%- case type -%}
+    {%- when 'style1' -%}
+        {% render 'announcement-bar-1', bst: bst, sst: sst, color_social: color_social %}
+    {%- when 'style2' -%}
+        {% render 'announcement-bar-2', bst: bst, sst: sst %}
+      </div>
+    {%- when 'style3' -%}
+      {% render 'announcement-bar-3', bst: bst %}
+  {%- endcase -%}
+{%- endfor -%}
+
+{% comment %}Select color{% endcomment %}
+{% style %}
+  .announcement-bar .style1__left *, .announcement-bar .style2__left *, .style1__right-menu .menu-item a{
+  color:{{ sst.text_color }}
+  }
+  .announcement-bar .style2__left a:before{
+    background: {{ sst.text_color }}
+  }
+  .announcement-bar .style2__left path{
+    fill:{{ sst.text_color }};
+    stroke: {{ sst.text_color }}
+  }
+  .announcement-bar .tp-select__btn{
+    color:{{ sst.text_color }}
+  }
+  .announcement-bar{
+    background-color:{{ sst.background_color }}
+  }
+  .announcement-bar .announcement-bar__translate select {
+    color:{{ sst.text_color }}
+  }
+  .announcement-bar .announcement-bar__currency select {
+    color:{{ sst.text_color }}
+    }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 1,
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.announcement-bar.settings.bgcolor.label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.announcement-bar.settings.textcolor.label",
+      "default": "#fff"
+    },
+    {
+      "type": "checkbox",
+      "id": "container_check",
+      "label": "t:sections.announcement-bar.settings.container.label",
+      "info": "t:sections.announcement-bar.settings.container.info",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "style1",
+      "name": "t:sections.announcement-bar.blocks.style1.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_content",
+          "default": "<p>FREE RETURN: Free shipping on all U.S orders $50+</p>",
+          "label": "t:sections.announcement-bar.blocks.style1.settings.text_content.label"
+        },
+        {
+          "type": "select",
+          "id": "announ_bar_right",
+          "label": "Select right",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "currency_language",
+              "label": "Currency & language"
+            },
+            {
+              "value": "menu",
+              "label": "Menu"
+            },
+            {
+              "value": "social",
+              "label": "Social"
+            },
+            {
+              "value": "button",
+              "label": "Button"
+            }
+          ],
+          "default": "currency_language"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_language",
+          "label": "t:sections.announcement-bar.blocks.style1.settings.lang.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency",
+          "label": "Show currency selector",
+          "default": true
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        },
+        {
+          "type": "color",
+          "id": "color_social",
+          "label": "Color social",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Button settings"
+        },
+        {
+          "type": "html",
+          "id": "icon_button",
+          "label": "Icon button"
+        },
+
+        {
+          "type": "text",
+          "id": "text_button",
+          "label": "Text button",
+          "default": "Shipping"
+        },
+        {
+          "type": "url",
+          "id": "link_button",
+          "label": "Link button"
+        },
+        {
+          "type": "color",
+          "id": "color_btn",
+          "label": "Color button",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "style2",
+      "name": "t:sections.announcement-bar.blocks.style2.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_content",
+          "default": "<p>Mid-Season Sale Up to 70% Off</p>",
+          "label": "t:sections.announcement-bar.blocks.style2.settings.text_content.label"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    },
+    {
+      "type": "style3",
+      "name": "Style3",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Text left"
+        },
+        {
+          "type": "text",
+          "id": "style3_textleft",
+          "label": "Text left content",
+          "default": "Free shipping on all orders"
+        },
+        {
+          "type": "color",
+          "id": "style3_textleft_color",
+          "label": "Text left color",
+          "default": "#fff"
+        },
+        {
+          "type": "header",
+          "content": "Topbar Newsletter"
+        },
+        {
+          "type": "text",
+          "id": "style3_textright",
+          "label": "Title",
+          "default": "REGISTER AND GET 10$"
+        },
+        {
+          "type": "color",
+          "id": "style3_textright_color",
+          "label": "Text color",
+          "default": "#fff"
+        },
+        {
+          "type": "textarea",
+          "id": "style3_textright_content",
+          "label": "Content",
+          "default": "Join Clocs Club and get $10 voucher for your first purchase"
+        },
+        {
+          "type": "text",
+          "id": "style3_textright_button",
+          "label": "Button title",
+          "default": "Register"
+        },
+        {
+          "type": "url",
+          "id": "style3_textright_link",
+          "label": "Button link"
+        },
+        {
+          "type": "header",
+          "content": "Account"
+        },
+        {
+          "type": "text",
+          "id": "style3_account_title",
+          "label": "Title",
+          "default": "Account"
+        },
+        {
+          "type": "checkbox",
+          "id": "style3_account_icon",
+          "label": "Show icon",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "style3_account",
+          "label": "Ttile, icon",
+          "default": "#fff"
+        },
+        {
+          "type": "link_list",
+          "id": "style3_menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement-bar.name"
+    }
+  ]
+}
+{% endschema %}

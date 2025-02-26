@@ -1,0 +1,242 @@
+<div class="tp-product-detail__left_wrap{% if section.settings.sticky_product_info %} product__column-sticky{% endif %}">
+  <div class="flex {% if classImageDisplayType == "type-thumb-horizontal" %}flex-col-reverse{% endif %}">
+    <div
+      class="swiper products-vertical__thumb ml-0"
+      thumbsslider=""
+      data-thumb-type="{{ thumbType }}"
+      {% if displayThumb == 'false' %}
+        style="display: none;"
+      {% endif %}
+    > 
+      {% comment %} Hàng ảnh nhỏ {% endcomment %}
+      <div class="swiper-wrapper tp-img-thumb">
+        {% for media in product.media %}
+          <div
+            class="swiper-slide tp-img-product__item wp-img-thumb item-thumb rounded-lg overflow-hidden"
+            data-index="{{ media.position }}"
+            data-media-id="{{ section.id }}-{{ media.position }}"
+          >
+            <img
+              data-index="{{ media.position }}"
+              src="{{ media | image_url: width: media.width , height: media.height }}"
+              loading="lazy"
+              width="{{ media.width }}"
+              height="{{ media.height }}"
+              alt="image"
+            >
+            {% if media.preview_image.alt contains 'vimeo' or media.preview_image.alt contains 'youtube' %}
+              <div class="icon-video">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="23" fill="white" fill-opacity="0.9" stroke="currentColor" stroke-width="2"/>
+                  <path d="M32 24L20 31.4641L20 16.5359L32 24Z" fill="currentColor"/>
+                </svg>
+              </div>
+            {%- endif -%}
+            {% render 'box-icon-media-type', media: media %}
+          </div>
+          {% if forloop.first and product.metafields.custom.product_video.value != blank %}
+            <div 
+              class="swiper-slide tp-img-product__item wp-img-thumb item-thumb video-thumb"
+              data-index="video"
+            >
+              <div class="relative w-full h-full overflow-hidden">
+                <img
+                  class="w-full h-full object-cover"
+                  src="{{ product.metafields.custom.product_video_thumbnail.value }}"
+                  loading="lazy"
+                  width="100"
+                  height="100"
+                  alt="video thumbnail"
+                >
+                <div class="absolute inset-0 grid place-items-center">
+                  <img 
+                    class="w-12 h-12"
+                    src="https://cdn.shopify.com/s/files/1/0920/6877/4187/files/play_430x.png"
+                    alt="Play button"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="products-vertical-prev flex items-center justify-center">
+        <svg fill="none" height="18" viewbox="0 0 10 6" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L5 5L1 1" stroke-linecap="round" stroke-linejoin="round" stroke="black"></path>
+        </svg>
+      </div>
+      <div class="products-vertical-next flex items-center justify-center">
+        <svg fill="none" height="18" viewbox="0 0 10 6" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L5 5L1 1" stroke-linecap="round" stroke-linejoin="round" stroke="black"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="swiper swiperProType1">
+      <div class="swiper-wrapper tp-img-product">
+        {%- for media in product.media -%}
+          <div
+            class="swiper-slide tp-img-product__item wp-img-thumb image-main rounded-xl overflow-hidden {% if media.preview_image.alt contains 'vimeo' %}image-vimeo{% endif %}"
+            data-index="{{ media.position }}"
+            data-index-modal="{{ forloop.index0 }}"
+            data-media-id="{{ section.id }}-{{ media.position }}"
+          >
+            {% case media.media_type %}
+              {% when 'image' %}
+                {%- if innerZoom -%}
+                  <div
+                    class="zoom"
+                    onmousemove="innerZoom(event)"
+                    style="background-image: url({{ media | image_url: width: media.width , height: media.height }})"
+                  >
+                    <img
+                      data-index="{{ media.position }}"
+                      src="{{ media | image_url: width: media.width , height: media.height }}"
+                      loading="lazy"
+                      width="{{media.width}}"
+                      height="{{ media.height }}"
+                      alt="{{ media.preview_image.alt | escape }}"
+                    >
+                  </div>
+                {% else %}
+                  <img
+                    data-index="{{ media.position }}"
+                    src="{{ media | image_url: width: media.width , height: media.height }}"
+                    loading="lazy"
+                    width="{{media.width}}"
+                    height="{{ media.height }}"
+                    alt="{{ media.preview_image.alt | escape }}"
+                  >
+                {%- endif -%}
+                {% if media.preview_image.alt contains 'vimeo' or media.preview_image.alt contains 'youtube' %}
+                  <div class="label-video absolute top-5 right-5">{{ 'products.product.media.video' | t }}</div>
+                {%- endif -%}
+                
+              {% when 'model' %}
+                {% liquid
+                  echo media | media_tag: image_size: '2048x', toggleable: true
+                %}
+
+              {% when 'external_video' %}
+                {% liquid
+                  assign video_class = 'type-video js-' | append: media.host
+                  if media.host == 'youtube'
+                    echo media | external_video_url: autoplay: false, loop: false, playlist: media.external_id | external_video_tag: class: video_class, loading: 'lazy'
+                  else
+                    echo media | external_video_url: autoplay: false, loop: false | external_video_tag: class: video_class, loading: 'lazy'
+                  endif
+                %}
+              {% when 'video' %}
+                <div class="tf-video-product">
+                  {{
+                    media
+                    | media_tag: image_size: '2048x', autoplay: false, loop: false, controls: true, preload: 'none'
+                  }}
+                </div>
+              {% else %}
+
+            {% endcase %}
+            {% render 'box-icon-media-type', media: media %}
+          </div>
+          {% if forloop.first and product.metafields.custom.product_video.value != blank %}
+            <div 
+              class="swiper-slide tp-img-product__item wp-img-thumb image-main"
+              data-index="video"
+            >
+              <div class="tf-video-product">
+                <video 
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  width="100%"
+                  height="auto"
+                  preload="none"
+                >
+                  <source src="{{ product.metafields.custom.product_video.value }}" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          {% endif %}
+        {%- endfor -%}
+      </div>
+      <div class="products-vertical-prev flex items-center justify-center">
+        <svg fill="none" height="18" viewbox="0 0 10 6" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L5 5L1 1" stroke-linecap="round" stroke-linejoin="round" stroke="black"></path>
+        </svg>
+      </div>
+      <div class="products-vertical-next flex items-center justify-center">
+        <svg fill="none" height="18" viewbox="0 0 10 6" width="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L5 5L1 1" stroke-linecap="round" stroke-linejoin="round" stroke="black"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function innerZoom(e) {
+    var zoomer = e.currentTarget;
+    e.offsetX ? (offsetX = e.offsetX) : (offsetX = e.touches[0].pageX);
+    e.offsetY ? (offsetY = e.offsetY) : (offsetX = e.touches[0].pageX);
+    zoomer.style.backgroundPosition = x + '% ' + y + '%';
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const video_url = {{ product.metafields.custom.product_video.value | json }};
+    console.log("Metafield value:", video_url);
+  })
+</script>
+
+<style>
+.video-thumb {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-thumb img {
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-thumb .absolute {
+  display: grid;
+  place-items: center;
+}
+
+.video-thumb .absolute img {
+  width: 60px;
+  height: 60px;
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
+
+.video-thumb:hover .absolute img {
+  transform: scale(1);
+}
+
+.wp-img-thumb {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.wp-img-thumb.swiper-slide-thumb-active {
+  border-color: #000;
+}
+
+.item-thumb {
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+}
+</style>
+
+

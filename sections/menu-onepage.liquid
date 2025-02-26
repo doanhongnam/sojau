@@ -1,0 +1,194 @@
+{% liquid
+    assign containerConfig = section.settings.container_config
+%}
+
+<div class="header-onepage">
+    <header class="header-onepage__bar {{ containerConfig }}" >
+    <div class="header-onepage__wrap">
+        <nav class="header-onepage__nav flex items-center justify-between">
+            {% render 'header-logo', type: 'menu-left' %}
+            {%- comment -%}
+            {% render 'header-menu', type: 'menu-left', call: 'desktop', hasMegamenu: hasMegamenu  %}
+            {%- endcomment -%}
+            <div class="header-onepage__menu">
+              <div class="header-onepage__close">
+                <div class="wrap-close flex items-center">
+                  {% render 'icon', icon_name: 'icon-close', width: 10, height: 10 %}
+                <span>Close</span>
+                </div>
+              </div>
+              <ul class="header-onepage__ul flex items-center">
+                {% for block in section.blocks %}
+                  {%- case block.type -%}
+                    {%- when 'menu_item' -%}
+                      {% if block.settings.heading != blank %}
+                        <li class="header-onepage__li">
+
+                            {% if block.settings.custom-link != blank and block.settings.href_item == "custom-link" %}
+                                <a href="{{ block.settings.custom-link }}" class="">{{ block.settings.heading }}</a>
+                            {% else %}
+                                <a href="#{{ block.settings.href_item }}" class="">{{ block.settings.heading }}</a>
+                            {% endif %}
+
+                        </li>
+                      {% endif %}
+                    {%- else -%}   
+                  {%- endcase -%}
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="header-onepage__ic flex items-center">
+                {% render 'header-search', type: 'menu-left' %}
+                {% render 'header-icon', type: 'menu-left' %}
+                {% render 'header-account', type: 'menu-left' %}
+            </div>
+            <div class="header-onepage__mb">
+              {% render 'icon', icon_name: 'icon-open-menu-mobile' %}
+            </div>
+        </nav>
+    </div>
+    </header>
+    {% render 'header-mobile' %}
+    {% render 'mobile-bottom-navbar' %}
+</div>
+
+<script>
+    const resMobie = document.querySelector('.header-onepage__mb');
+    // console.log(resMobie);
+    const headerMenu = document.querySelector('.header-onepage__menu')
+    // console.log(headerMenu);
+    resMobie.addEventListener("click", function () {
+        resMobie.classList.toggle("active");
+        headerMenu.classList.toggle("active");
+    })
+
+    const closeMobile = document.querySelector('.wrap-close');
+      closeMobile.addEventListener("click", function () {
+        headerMenu.classList.remove("active");
+      })
+
+    const li = document.querySelectorAll(".header-onepage__li");
+    if (li.length > 0 ) {
+      li.forEach(function (item) {
+        item.addEventListener("click", function () {
+          item.closest(".header-onepage__menu").classList.remove("active");
+        })
+      })
+    }
+
+</script>
+
+<style>
+  .header-desktop{
+    display: none !important;
+  }
+  .announcement-bar {
+    display: none !important;
+  }
+  @media only screen and (max-width: 1024px) {
+    .header-mobile {
+      display: none;   
+    }
+  }
+</style>
+
+{% schema %}
+
+{
+  "name": "Header One Page",
+  "class": "onepage-header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:sections.header.settings.logo.label"
+    },
+    {
+      "type": "select",
+      "id": "container_config",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "full-container",
+          "label": "Full box"
+        }
+      ],
+      "default": "container",
+      "label": "Header Width"
+    }
+  ],
+  "blocks": [
+    {
+      "name":"Name",
+      "type":"menu_item",
+      "settings": [
+        {
+          "type":"text",
+          "id":"heading",
+          "label":"Name item",
+          "default":"Title name"
+        },
+        {
+          "type": "select",
+          "id": "href_item",
+          "label": "Choose",
+          "options":[
+              {
+                  "value":"custom-link",
+                  "label":"Custom link"
+              },
+              {
+                  "value":"nature",
+                  "label":"Nature"
+              },
+              {
+                  "value":"nature_2",
+                  "label":"Nature 2"
+              },
+              {
+                  "value":"partner",
+                  "label":"Partner"
+              },
+              {
+                  "value":"feaured-product",
+                  "label":"Feaured product"
+              },
+              {
+                  "value":"testimonial",
+                  "label":"Testimonial"
+              },
+              {
+                  "value":"faqs",
+                  "label":"Faqs"
+              },
+              {
+                  "value":"background-text",
+                  "label":"Background text"
+              },
+              {
+                  "value":"list-products",
+                  "label":"List products"
+              }
+          ],
+          "default":"custom-link"
+        },
+        {
+        "type": "url",
+        "id": "custom_link",
+        "label": "Custom Link (works with custom link option)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header onepage"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16588012130153d954": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "main": {
+      "type": "tp-about",
+      "blocks": {
+        "f1fffafe-df4f-4c1e-9daa-f1e36d2b778d": {
+          "type": "title",
+          "settings": {
+            "title_about": "Our History",
+            "sub_title_about": "<p>Your home should be a sanctuary where you return to unwind and relax any time of day or night. This however doesn’t come easy as you have to purposefully</p>"
+          }
+        },
+        "14ad217f-9734-4bbc-bae0-417cdeaafa4d": {
+          "type": "featured-about",
+          "settings": {
+            "type_hover": "hover_border",
+            "title_featured_about_1": "Communucation",
+            "desc_featured_about_1": "<p>By creating an Account on our service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send</p>",
+            "title_featured_about_2": "Purchase",
+            "desc_featured_about_2": "<p>By creating an Account on our service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send</p>",
+            "title_featured_about_3": "Fee Changes",
+            "desc_featured_about_3": "<p>By creating an Account on our service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send</p>"
+          }
+        },
+        "663bd76a-25e5-475d-ac68-47a0d78cd8c4": {
+          "type": "our_mission",
+          "settings": {
+            "id_display_type": "style_2",
+            "image_our_mission": "shopify://shop_images/about2-1.png",
+            "sub_title_our_mission": "Our Mission",
+            "title_our_mission": "Ut varius posuere elit, sagittis malesuada",
+            "desc_our_mission": "Et, dark a cup, cortado, siphon at arabica flavour macchiato. Cream, at, acerbic redeye iced americano coffee white. To go et, steamed a café au lait.",
+            "link_our_mission": "",
+            "intro_our_mission": "<p>Etiam ligula nisi, feugiat tempus magna id, ultrices efficitur sem. Nullam lectus turpis, maximus non pretium nec, rutrum at dui. Aliquam gravida ex a risus dapibus molestie.<br/></p>",
+            "name_our_mission": "<p>Storepify. <strong>MAGAZINE</strong></p>"
+          }
+        },
+        "892e302c-2384-4e27-ac20-33903ccacb35": {
+          "type": "image_about",
+          "settings": {
+            "id_display_type_image": "style_1",
+            "image_about_1": "shopify://shop_images/about1-1.png",
+            "image_about_2": "shopify://shop_images/about1-2.png",
+            "image_about_3": "shopify://shop_images/about1-3.png",
+            "desc_image_about": "<p>Sed rutrum nibh placerat magna facilisis, a efficitur massa tempor. Proin ut ultricies eros, non pulvinar tellus. Donec gravida id erat at pulvinar. Curabitur suscipit aliquet egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mi massa, volutpat vitae eros nec, pharetra tempor libero. Nullam nibh orci, tincidunt non diam ut, dictum lacinia lorem. Pellentesque mollis sollicitudin nisl, non interdum lacus vestibulum at. Pellentesque congue nibh non neque vestibulum, non volutpat neque hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1fffafe-df4f-4c1e-9daa-f1e36d2b778d",
+        "14ad217f-9734-4bbc-bae0-417cdeaafa4d",
+        "663bd76a-25e5-475d-ac68-47a0d78cd8c4",
+        "892e302c-2384-4e27-ac20-33903ccacb35"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "16588012130153d954",
+    "main"
+  ]
+}

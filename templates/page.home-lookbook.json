@@ -1,0 +1,304 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "3d8596f3-63e1-47e1-9de8-b686a8f6cfa7": {
+      "type": "banner-lookbook",
+      "blocks": {
+        "8f0ce7bf-485b-40b7-b4bb-8c95d5b23b98": {
+          "type": "one-image",
+          "settings": {
+            "background_pin": "#1aaa61",
+            "product": "grunge-plaid-bin",
+            "position_top": 3,
+            "position_left": 46,
+            "position_product": "top-center"
+          }
+        },
+        "9c978d34-e398-4059-9b5b-a23ddd6d84fa": {
+          "type": "one-image",
+          "settings": {
+            "background_pin": "#ffae47",
+            "product": "handle-bag",
+            "position_top": 65,
+            "position_left": 64,
+            "position_product": "bottom-center"
+          }
+        },
+        "4a266316-74ee-4512-ac1e-6e259e32fda2": {
+          "type": "one-image",
+          "settings": {
+            "background_pin": "#ff0000",
+            "product": "halo-glow-setting-powder",
+            "position_top": 69,
+            "position_left": 36,
+            "position_product": "bottom-center"
+          }
+        }
+      },
+      "block_order": [
+        "8f0ce7bf-485b-40b7-b4bb-8c95d5b23b98",
+        "9c978d34-e398-4059-9b5b-a23ddd6d84fa",
+        "4a266316-74ee-4512-ac1e-6e259e32fda2"
+      ],
+      "settings": {
+        "width_layout": "full-width",
+        "type_lookbook": "one_image",
+        "image_backgroud": "shopify://shop_images/lookbook_cbd434d0-3c8a-484f-b824-4537c5c05123.png",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "be5d015f-d9e6-48b3-8788-6ea2dd90169c": {
+      "type": "banner",
+      "blocks": {
+        "4f365c59-ad6f-4768-a13b-1006a30e9653": {
+          "type": "banner_normal",
+          "settings": {
+            "layout_banner": "layout-normal_1",
+            "image_banner": "shopify://shop_images/blog_banner.png",
+            "title_banner": "Tiered broderie mini sundress in white",
+            "description_banner": "Wre talking swirly scrunchies, bow headbands and more super-cute, 90s-inspired bits. And to wrap up things up, check out Pieces for womens hat and scarf sets thatll make cold-weather dressing a breeze.",
+            "color-title": "#000000",
+            "color-description": "#5e5e5e",
+            "button_type": "underline-button",
+            "text_button": "Shop collection",
+            "link_button_banner": ""
+          }
+        }
+      },
+      "block_order": [
+        "4f365c59-ad6f-4768-a13b-1006a30e9653"
+      ],
+      "settings": {
+        "width_layout_banner": "container",
+        "background_banner": "rgba(0,0,0,0)",
+        "title": "",
+        "description": "",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "7d1a65a0-ba17-41d0-a2d8-a734f80bb106": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "Best Sellers",
+        "description": "",
+        "display_type": "normal",
+        "collection": "cosmetics",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "cef4174a-d119-491d-a3ce-eccf1aef097a": {
+      "type": "lastest-news",
+      "settings": {
+        "blog": "shopify-blog",
+        "width_blog": "container",
+        "position_content": "left",
+        "post_limit": 3,
+        "gap_item_blog": 30,
+        "show_date": true,
+        "show_button_discover": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "3d1a4362-7d9e-4cbb-97c1-8fb31992f0e0": {
+      "type": "tp-instagram",
+      "blocks": {
+        "81849b9d-063a-4596-8f7c-5914e42c4180": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig1.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUHFzPF9o/"
+          }
+        },
+        "8ee73743-5876-44f3-be04-227699191536": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig2.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUFAkvnHQ/"
+          }
+        },
+        "6bba2fdd-1540-4f22-b4e7-fbcd2540fd2e": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig3.png",
+            "link_instagram": "https://www.instagram.com/p/CjhHFe9PpQ5/"
+          }
+        },
+        "a7fd0570-eea7-415d-b002-5c90882f83ea": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig4.png",
+            "link_instagram": "https://www.instagram.com/p/CjXT9nvvV8K/"
+          }
+        },
+        "39e851a8-8264-4e84-9db8-12de8be28122": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig5.png",
+            "link_instagram": "https://www.instagram.com/p/CjXT7pHvNa0/"
+          }
+        },
+        "1bc1c1f9-0fc3-48fa-8ee6-a096fc488472": {
+          "type": "item_instagram",
+          "settings": {
+            "image_instagram": "shopify://shop_images/ig6.png",
+            "link_instagram": "https://www.instagram.com/p/CjXUuJYPj4g/"
+          }
+        }
+      },
+      "block_order": [
+        "81849b9d-063a-4596-8f7c-5914e42c4180",
+        "8ee73743-5876-44f3-be04-227699191536",
+        "6bba2fdd-1540-4f22-b4e7-fbcd2540fd2e",
+        "a7fd0570-eea7-415d-b002-5c90882f83ea",
+        "39e851a8-8264-4e84-9db8-12de8be28122",
+        "1bc1c1f9-0fc3-48fa-8ee6-a096fc488472"
+      ],
+      "settings": {
+        "ins_ctn": "container-fluid",
+        "title_instagram": "@ FOLLOW US ON",
+        "sub_title_instagram": "INSTAGRAM",
+        "profile": "https://www.instagram.com/storepify/",
+        "data_instagram": "custom_data",
+        "gap_item": 0,
+        "instagram_to_show": 6,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "417ef6a5-beaa-4685-bf78-eb4d5ad833d4": {
+      "type": "service",
+      "blocks": {
+        "02e1c3a9-9406-499f-998e-d478053a709f": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-free-1.png",
+            "title_service": "Free Shipping Worldwide",
+            "description_service": "Free international shipping",
+            "padding_top_bottom": 30,
+            "background_item_service": "#eefffe",
+            "service_title": "#000000",
+            "service_brief": "#000000",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "426d10af-b294-4e54-a701-ba8bd5d1f5f0": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-safe1.png",
+            "title_service": "30 Day Return",
+            "description_service": "On all ours products",
+            "padding_top_bottom": 30,
+            "background_item_service": "#f4f7ff",
+            "service_title": "#000000",
+            "service_brief": "#000000",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        },
+        "ffba2049-3511-416b-aebd-488411608a60": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/001-online-chat-1.png",
+            "title_service": "24/7 Customer Support",
+            "description_service": "Provide 24/7 support",
+            "padding_top_bottom": 30,
+            "background_item_service": "#fffbf4",
+            "service_title": "#000000",
+            "service_brief": "#000000",
+            "font_size_title": 16,
+            "font_size_description": 16,
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "02e1c3a9-9406-499f-998e-d478053a709f",
+        "426d10af-b294-4e54-a701-ba8bd5d1f5f0",
+        "ffba2049-3511-416b-aebd-488411608a60"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "gap_item": 30,
+        "layout_service": "layout-service-1",
+        "service_bg": "rgba(0,0,0,0)",
+        "show_border_right": false,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "fe748bce-279c-4fa8-a374-7e37a3511621": {
+      "type": "newsletter",
+      "blocks": {
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-0": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-0",
+        "template--15898835091650__fe748bce-279c-4fa8-a374-7e37a3511621-1666422013a85bedf0-1"
+      ],
+      "settings": {
+        "display_layout": "newsletter-layout_1",
+        "newsletter_background": "#f3f3f3",
+        "color_bg_button": "#2e2e2e",
+        "color_text_button": "#ffffff",
+        "color_newsletter": "#000000",
+        "show_social": false,
+        "padding_top": 18,
+        "padding_bottom": 18,
+        "margin_bottom_desktop": 80
+      }
+    }
+  },
+  "order": [
+    "3d8596f3-63e1-47e1-9de8-b686a8f6cfa7",
+    "be5d015f-d9e6-48b3-8788-6ea2dd90169c",
+    "7d1a65a0-ba17-41d0-a2d8-a734f80bb106",
+    "cef4174a-d119-491d-a3ce-eccf1aef097a",
+    "3d1a4362-7d9e-4cbb-97c1-8fb31992f0e0",
+    "417ef6a5-beaa-4685-bf78-eb4d5ad833d4",
+    "fe748bce-279c-4fa8-a374-7e37a3511621"
+  ]
+}

@@ -1,0 +1,329 @@
+{%- style -%}
+  .tp-service {
+    background: {{ section.settings.service_bg }};
+    padding-top: {{ section.settings.sv_pd_top }}px;
+    padding-bottom: {{ section.settings.sv_pd_bottom }}px;
+  }
+  /* @media (max-width: 1024px) {
+    {% if section.settings.service_bg != 'rgba(0,0,0,0)' %} %}
+    .tp-service {
+   padding-top: 30px;
+   padding-bottom: 20px
+  }
+  {% endif %} */
+{%- endstyle -%}
+{% liquid
+  assign layout_service = section.settings.layout_service
+  assign WidthLayout = section.settings.width_layout
+  assign content_alignment = section.settings.content_alignment
+%}
+<div class="tp-service myService">
+  {% if section.settings.title != blank or section.settings.description != blank %}
+    <div class="tp-fcl__top {{ WidthLayout }} {{ content_alignment }}">
+      {% if section.settings.title != blank %}
+        <h2 class="tp-section__title text-4xl font-medium mb-3.75">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="mb-5">{{ section.settings.description }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="tp-service__main tp-service__main-{{ section.id }} {{ layout_service }} {{ WidthLayout }} flex items-center justify-center">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'service_item' %}
+          <a
+            class="tp-service__item  tp-service__item-{{ forloop.index }} tp-service__item-{{ block.id }} flex items-center {% if section.blocks.size < 4 %}justify-center{% else %} {% endif %}{% if section.settings.show_border_right %} item-border{% endif %}"
+            href="{% if block.settings.link_service != blank %}{{ block.settings.link_service }}{% else %}#{% endif %}"
+          >
+            {% assign ImageService = block.settings.image_service %}
+            {% if ImageService != blank %}
+              <img
+                class="tp-service__img mr-7.5"
+                src="{{ ImageService | image_url: width: ImageService.width , height: ImageService.height }}"
+                alt="slider background image"
+                width="{{ ImageService.width }}"
+                height="{{ ImageService.height }}"
+                loading="lazy"
+              >
+            {% else %}
+              {% render 'no-image', text_size: '80x80', width: 80, height: 80 %}
+            {% endif %}
+            <div class="tp-servoce__content">
+              {% if block.settings.title_service != blank %}
+                <h5 class="tp-content__title">{{ block.settings.title_service }}</h5>
+              {% endif %}
+              {% if block.settings.description_service != blank %}
+                <p class="tp-content__description">{{ block.settings.description_service }}</p>
+              {% endif %}
+            </div>
+            <style>
+
+              {% if section.settings.max_width_image == '80px' %}
+              .tp-service__main-{{ section.id }} .tp-service__item img{
+                max-width: 80px;
+                max-height:80px;
+              }
+              {% endif %}
+              .tp-service__item-{{ block.id }}{
+                background: {{ block.settings.background_item_service }};
+                padding: {{ block.settings.padding_top_bottom }}px;
+              }
+
+              .tp-service__item-{{ block.id }} .tp-content__title {
+                color: {{ block.settings.service_title }};
+                font-size: {{ block.settings.font_size_title }}px
+              }
+              .tp-service__item-{{ block.id }} .tp-content__description {
+                color: {{ block.settings.service_brief }};
+                font-size: {{ block.settings.font_size_description }}px
+              }
+
+            </style>
+          </a>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+  "name": "Service",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type":"select",
+      "id":"content_alignment",
+      "label":"Content alignment",
+      "options":[
+         {
+            "value":"text-left",
+            "label":"Left"
+         },
+         {
+            "value":"text-center",
+            "label":"Center"
+         },
+         {
+            "value":"text-right",
+            "label":"Right"
+         }
+      ],
+      "default":"text-center"
+    },
+    {
+      "type": "range",
+      "id": "gap_item",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap item",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "layout_service",
+      "label": "Layout service",
+      "options": [
+        {
+          "value": "layout-service-1",
+          "label": "Layout service 1"
+        },
+        {
+          "value": "layout-service-2",
+          "label": "Layout service 2"
+        }
+      ],
+      "default": "layout-service-1"
+    },
+    {
+      "type": "select",
+      "id": "max_width_image",
+      "label": "Max width image",
+      "options": [
+        {
+          "value": "80px",
+          "label": "80px"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "80px"
+    },
+    {
+      "type": "color",
+      "id": "service_bg",
+      "label": "Service background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "sv_pd_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "sv_pd_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border_right",
+      "label": "Show border right",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 60
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service_item",
+      "name": "Service item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_service",
+          "label": "Image service"
+        },
+        {
+          "type": "text",
+          "id": "title_service",
+          "label": "Title service",
+          "default": "Return Shipping"
+        },
+        {
+          "type": "text",
+          "id": "description_service",
+          "label": "Description service",
+          "default": "On order over $150"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Pading top and bottom",
+          "default": 0
+        },
+        {
+          "type": "color",
+          "id": "background_item_service",
+          "label": "Background item",
+          "default": "transparent"
+        },
+        {
+          "type": "color",
+          "id": "service_title",
+          "label": "Service title color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "service_brief",
+          "label": "Service brief color",
+          "default": "#909090"
+        },
+        {
+          "type": "range",
+          "id": "font_size_title",
+          "min": 12,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size title",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "font_size_description",
+          "min": 12,
+          "max": 36,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size description",
+          "default": 16
+        },
+        {
+          "type": "url",
+          "id": "link_service",
+          "label": "Link service"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Service",
+      "category": "Custom content"
+    }
+  ]
+}
+{% endschema %}

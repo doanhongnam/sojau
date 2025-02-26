@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "image_404": "shopify://shop_images/ads_landscape_valentine.png",
+        "bg_404": "#ffffff",
+        "pdt_404": 80,
+        "pdb_404": 80
+      }
+    },
+    "featured_collection_dDgyRU": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "width_layout": "container",
+        "title": "Discover other products",
+        "description": "",
+        "display_type": "normal",
+        "collection": "matching-underwear-for-couples",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 3,
+        "column_number": "3",
+        "collection_list": [
+          "matching-underwear-for-couples"
+        ],
+        "style_button_tab": "tp-box-button__style-1",
+        "margin_bottom_button": 30,
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "text_uppercase": false,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "show_pagigation": true,
+        "sliders_perview": "4",
+        "title_banner": "",
+        "description_banner": "",
+        "position_collection": "position_left",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "button_type": "tp-btn__primary",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_dDgyRU"
+  ]
+}

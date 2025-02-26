@@ -1,0 +1,12 @@
+{% if block.settings.use_spacing %}
+    {% render 'block-margin-bottom', className: "tp-shipping", block: block %}
+    {% assign classDefault = "" %}
+{% else %}
+    {% assign classDefault = " mb-3.75" %}
+{% endif %}
+<div class="tp-shipping flex items-center{{ classDefault }}">
+    {% render 'icon', icon_name: 'icon-shipping-free' %}
+    <p class="ml-3.75 font-normal"> Enjoy a 5% discount on your first purchase! Use promo code: WAHUP5 at checkout.
+         {{ block.settings.shipping_label }}
+    </p>
+</div>

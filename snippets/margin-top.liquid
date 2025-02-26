@@ -1,0 +1,19 @@
+<style>
+  @media(min-width: 1024px) {
+    #shopify-section-{{ section.id }}{
+      margin-top: {{ section.settings.margin_top_desktop }}px
+    }
+  }
+
+  @media(min-width: 768px) and (max-width: 1023px) {
+    #shopify-section-{{ section.id }}{
+      margin-top: {{ section.settings.margin_top_table }}px
+    }
+  }
+
+  @media(max-width: 767px) {
+    #shopify-section-{{ section.id }}{
+      margin-top: {{ section.settings.margin_top_mobile }}px
+    }
+  }
+</style>

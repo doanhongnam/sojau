@@ -1,0 +1,54 @@
+{% liquid 
+  assign boxShadowItem = settings.box_shadow
+  assign borderItem = settings.border_item
+  assign hoverTitle = settings.hover_title
+  assign fontWeightTitle = settings.font_weigh_title
+  assign fontWeightprice = settings.font_weight_price
+  assign fontWeightpriceCompare = settings.font_weight_price_compare
+
+%}
+
+{% style %}
+.prd-item-heading{
+  font-weight: {{ fontWeightTitle }}
+}
+{% if hoverTitle == 'change_color' %}
+  .prd-item-heading::after{
+    display: none;
+  }
+{% endif %}
+
+.price .price-item{
+  font-weight: {{ fontWeightprice }};
+}
+.price .price__sale .price-item.price-item--regular{
+  font-weight: {{ fontWeightpriceCompare }};
+}
+{% if settings.color_price != 'rgba(0,0,0,0)' or settings.color_price != '' %}
+  .card-wrapper .price-item{
+    color: {{ settings.color_price }};
+  }
+{% endif %}
+{% if boxShadowItem == true %}
+  .card-wrapper{
+    background-color: #fff;
+    box-shadow: 0 0 3px rgb(0 0 0 / 12%), 0 1px 3px rgb(0 0 0 / 24%);
+    border-radius: 2px;
+    padding: 0 0 20px 0;
+  }
+  .card-wrapper .card__content{
+    padding: 0 5px;
+  }
+{% endif %}
+
+{% if borderItem == true %}
+  .card-wrapper{
+    border: 1px solid #e7e7e7;
+    padding: 0 0 20px 0;
+  }
+  .card-wrapper .card__content{
+    padding: 0 5px;
+  }
+{% endif %}
+
+{% endstyle %}

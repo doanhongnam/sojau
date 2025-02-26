@@ -1,0 +1,99 @@
+<div class="best-review featured-info__item">
+  <div class="featured-info__item__top flex items-center justify-between">
+    <h3 class="featured-info-title">{{ block.settings.heading }}</h3>
+    <div class="featured-info-navigation flex items-center">
+      <div class="best-review-prev mr-2.5 featured-info-naviga-prev">
+        {% render 'icon', icon_name: 'icon-prev-type1' %}
+      </div>
+      <div class="best-review-next featured-info-naviga-next">
+        {% render 'icon', icon_name: 'icon-next-type1' %}
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper best-review__list">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide best-review__item">
+              <div class="reviewer-content">
+                  {{ block.settings.content_review }}
+                  <div class="br-rating  flex items-start">
+                      {%- assign num = block.settings.number_star -%}
+                      {%- assign range = (1..num) -%}
+                      {% for star in range %}
+                          {%- render 'icon', icon_name: 'icon-star' -%}
+                      {% endfor %}
+                  </div>
+              </div>
+              <div class="review-info">
+                  {% if block.settings.image != blank %}
+                      <img src="{{ block.settings.image | image_url: width: block.settings.image.width, height: block.settings.image.height }}"
+                           alt="{{ block.settings.image.alt }}" class="reviewer__image"
+                           width="{{ block.settings.image.width }}"
+                           height="{{ block.settings.image.height }}" loading="lazy">
+                  {% else %}
+                      {{ 'image' | placeholder_svg_tag: 'custom_placeholder_image' }}
+                  {% endif %}
+                  {% if block.settings.name != blank %}
+                  <div class="name-info">{{ block.settings.name }} /
+                    <span>{{ block.settings.job }}</span>
+                  </div>
+                  {% endif %}
+              </div>
+          </div>
+          <div class="swiper-slide best-review__item">
+            <div class="reviewer-content">
+                {{ block.settings.content_review_2 }}
+                <div class="br-rating flex items-start">
+                    {%- assign num = block.settings.number_star_2 -%}
+                    {%- assign range = (1..num) -%}
+                    {% for star in range %}
+                        {%- render 'icon', icon_name: 'icon-star' -%}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="review-info">
+                {% if block.settings.image_2 != blank %}
+                    <img src="{{ block.settings.image_2 | image_url: width: block.settings.image_2.width, height: block.settings.image_2.height }}"
+                         alt="{{ block.settings.image_2.alt }}" class="reviewer__image_2"
+                         width="{{ block.settings.image_2.width }}"
+                         height="{{ block.settings.image_2.height }}" loading="lazy">
+                {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'custom_placeholder_image' }}
+                {% endif %}
+                {% if block.settings.name_2 != blank %}
+                <div class="name-info">{{ block.settings.name_2 }} /
+                  <span>{{ block.settings.job_2 }}</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="swiper-slide best-review__item">
+          <div class="reviewer-content">
+              {{ block.settings.content_review_3 }}
+              <div class="br-rating  flex items-start">
+                  {%- assign num = block.settings.number_star_3 -%}
+                  {%- assign range = (1..num) -%}
+                  {% for star in range %}
+                      {%- render 'icon', icon_name: 'icon-star' -%}
+                  {% endfor %}
+              </div>
+          </div>
+          <div class="review-info">
+              {% if block.settings.image_3 != blank %}
+                  <img src="{{ block.settings.image_3 | image_url: width: block.settings.image_3.width, height: block.settings.image_3.height }}"
+                       alt="{{ block.settings.image_3.alt }}" class="reviewer__image_3"
+                       width="{{ block.settings.image_3.width }}"
+                       height="{{ block.settings.image_3.height }}" loading="lazy">
+              {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'custom_placeholder_image' }}
+              {% endif %}
+              {% if block.settings.name_3 != blank %}
+              <div class="name-info">{{ block.settings.name_3 }} /
+                <span>{{ block.settings.job_3 }}</span>
+              </div>
+              {% endif %}
+          </div>
+      </div>
+      </div>
+  </div>
+</div>

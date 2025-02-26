@@ -1,0 +1,208 @@
+{% liquid
+  assign partner_bg = section.settings.partner_bg
+  assign tt_pd_top = section.settings.tt_pd_top
+  assign tt_pd_bottom = section.settings.tt_pd_bottom
+%}
+
+<div class="partner-bg partner-bg-{{ section.id }}">
+  {% if section.settings.partner_config == 'slide_partner' %}
+    <div class="tp-partner container" id="partner">
+      <div class="swiper partnerSwiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'item' %}
+              <div class="swiper-slide">
+                <div class="tp-partner__item">
+                  {% assign url = block.settings.item_link | default: "#" %}
+                  <a href="{{ url }}" title="{{ url.title | default: "defaut title" }}">
+                    {% if block.settings.item_image != blank %}
+                      <img id="{{ forloop.index }}" src="{{ block.settings.item_image | image_url: width: block.settings.item_image.width, height: block.settings.item_image.height }}" width="{{ block.settings.item_image.width }}" height="{{ block.settings.item_image.height }}" alt="{{ block.settings.text }}" loading="lazy">
+                    {% else %}
+                      {{ 'collection-6' | placeholder_svg_tag: 'partner-img-default' }}
+                    {% endif %}
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="tp-partner container" id="partner">
+      <div class="grid_partner">
+        <div class="grid_partner__wrap">
+          {% for block in section.blocks %}
+            {% if block.type == 'item' %}
+              <div class="grid_partner__box">
+                <div class="tp-partner__item">
+                  {% assign url = block.settings.item_link | default: "#" %}
+                  <a href="{{ url }}" title="{{ url.title | default: "defaut title" }}">
+                    {% if block.settings.item_image != blank %}
+                      <img id="{{ forloop.index }}" src="{{ block.settings.item_image | image_url: width: block.settings.item_image.width, height: block.settings.item_image.height }}" width="{{ block.settings.item_image.width }}" height="{{ block.settings.item_image.height }}" alt="{{ block.settings.text }}" loading="lazy">
+                    {% else %}
+                      {{ 'collection-6' | placeholder_svg_tag: 'partner-img-default' }}
+                    {% endif %}
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% style %}
+  .partner-bg-{{ section.id }} {
+    background-color: {{ partner_bg }};
+    padding-top: {{ tt_pd_top }}px;
+    padding-bottom: {{ tt_pd_bottom }}px;
+  }
+  @media(min-width: 1024px) {
+    #shopify-section-{{ section.id }}{
+      margin-bottom: {{ section.settings.margin_bottom_desktop }}px
+    }
+  }
+
+  @media(min-width: 768px) and (max-width: 1023px) {
+    #shopify-section-{{ section.id }}{
+      margin-bottom: {{ section.settings.margin_bottom_table }}px
+    }
+  }
+
+  @media(max-width: 767px) {
+    #shopify-section-{{ section.id }}{
+      margin-bottom: {{ section.settings.margin_bottom_mobile }}px
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Partner",
+  "class": "home-partner",
+  "tag": "section",
+  "settings": [
+  {
+    "type": "select",
+    "id": "partner_config",
+    "options": [
+            {
+                "value": "slide_partner",
+                "label": "Slide partner"
+            }, {
+                "value": "grid_partner",
+                "label": "Grid partner"
+            }
+        ],
+      "default": "slide_partner",
+      "label": "Slide or Grid"
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "color",
+      "id": "partner_bg",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "tt_pd_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "tt_pd_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Margin bottom"
+    },
+    {
+         "type": "paragraph",
+         "content": "Unit: pixel"
+        },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "Margin bottom (desktop)",
+      "default": 80
+    }, {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "Margin bottom (tablet)",
+      "default": 60
+    }, {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "Margin bottom mobile",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "id": "text",
+          "type": "text",
+          "label": "Heading",
+          "default": "Item"
+        }, {
+          "id": "item_image",
+          "type": "image_picker",
+          "label": "Partner Image",
+          "info": "Upload logo for partner item"
+        }, {
+          "id": "item_link",
+          "type": "url",
+          "label": "Partner Url",
+          "info": "Enter the partner url"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Partner",
+      "category": "Custom content",
+      "blocks":[
+        {
+          "type":"item"
+        },
+        {
+          "type":"item"
+        },
+        {
+          "type":"item"
+        },
+        {
+          "type":"item"
+        },
+        {
+          "type":"item"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

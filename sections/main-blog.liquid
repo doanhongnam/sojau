@@ -1,0 +1,334 @@
+{% liquid
+  assign WidthLayout = section.settings.width_layout
+
+  case section.settings.view
+    when 'grid_3_column'
+      assign classColumn = 'grid-3-column'
+    when 'grid_2_column'
+      assign classColumn = 'grid-2-column'
+    when 'list'
+      assign classColumn = 'list'
+  endcase
+
+  case section.settings.layout
+    when 'left_column'
+      assign classLayout = 'slidebar-left'
+    when 'right_column'
+      assign classLayout = 'slidebar-right'
+  endcase
+%}
+<div class="{{ WidthLayout }}">
+  <div class="blog-pages {{ classLayout }}">
+    {% if section.settings.show_sidebar %}
+      <div class="blog-slidebar">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {% when 'categories' %}
+              {% if block.settings.menu.links != blank %}
+                <div class="slider-categories">
+                  {% if block.settings.title != blank %}
+                    <h3 class="slidebar-title">{{ block.settings.title }}</h3>
+                  {% endif %}
+                  {%- for link in block.settings.menu.links -%}
+                    <div class="list-categories__item">
+                      <a href="{{ link.url }}" class="categories__item" title="{{ link.title }}">
+                        {{ link.title }}
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                </div>
+              {% endif %}
+            {% when 'recent_post' %}
+              <div class="recent-post">
+                {% if block.settings.title != blank and blog.articles.size > 0 %}
+                  <h3 class="slidebar-title">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if blog.articles.size > 0 %}
+                  {%- paginate blog.articles by 3 -%}
+                    {%- for article in blog.articles -%}
+                      <div class="blog-item">
+                        {%- render 'article-card-slidebar',
+                          show_date: section.settings.show_date,
+                          show_button_discover: section.settings.show_button_discover,
+                          article: article
+                        -%}
+                      </div>
+                    {%- endfor -%}
+                  {%- endpaginate -%}
+                {% endif %}
+              </div>
+
+            {% when 'tags' %}
+              <div class="tags">
+                {% if block.settings.title != blank and blog.all_tags != blank %}
+                  <h3 class="slidebar-title">{{ block.settings.title }}</h3>
+                {% endif %}
+                <div class="tags-list">
+                  {%- for tag in blog.all_tags limit: block.settings.limit_tags -%}
+                    <div class="tags-item card__heading">{{ tag | link_to_tag: tag }}</div>
+                  {%- endfor -%}
+                </div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {% endif %}
+    <div
+      class="blog-main"
+      {% if section.settings.show_sidebar == false %}
+        style="padding-left:0"
+      {% endif %}
+    >
+      <h2 class="blog-count">
+        <span class="blog-count__title">
+          {{- blog.title }}
+          <small class="blog-count__value">{{ blog.articles_count }}</small>
+        </span>
+      </h2>
+      {% if blog.articles.size > 0 %}
+        {%- paginate blog.articles by section.settings.show_item_per_row -%}
+          <div class="blog-list {{ classColumn }}">
+            {%- for article in blog.articles -%}
+              <div class="blog-item">
+                {%- render 'article-card-slidebar',
+                  show_date: section.settings.show_date,
+                  show_button_discover: section.settings.show_button_discover,
+                  article: article,
+                  paginate_pages: paginate.current_page
+                -%}
+              </div>
+            {%- endfor -%}
+          </div>
+          {% if section.settings.show_loadmore_paginate == 'paginate' %}
+            {%- if paginate.pages > 1 -%}
+              {%- render 'pagination', paginate: paginate -%}
+            {%- endif -%}
+          {% elsif section.settings.show_loadmore_paginate == 'loadmore' %}
+            {% if paginate.next %}
+              <input type="hidden" value="{{ paginate.next.url }}" data-next-link id="next-link">
+              <input type="hidden" value="{{ paginate.pages }}" data-all-pages id="all-pages">
+              <input type="hidden" value="{{ paginate.current_page }}" data-this-page id="this-page">
+              <input type="hidden" value="{{ collection.url }}" data-coll-url id="coll-url">
+              <div class="load-more_wrap text-center">
+                <button class="btn js-load-more">
+                  <span class="load-more-text tp-btn tp-btn__secondary font-medium" load-more-text>
+                    {{- 'button.load_more' | t -}}
+                  </span>
+                  <span class="hide icon loading" loader>
+                    {% render 'icon', icon_name: 'icon-loading' %}
+                  </span>
+                </button>
+              </div>
+            {% endif %}
+          {% endif %}
+        {%- endpaginate -%}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog",
+  "tag": "section",
+  "class": "section-blog",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_discover",
+      "default": true,
+      "label": "Show button discover"
+    },
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sidebar",
+      "label": "Show sidebar",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Placement",
+      "default": "left_column",
+      "options": [
+        {
+          "value": "left_column",
+          "label": "Left column"
+        },
+        {
+          "value": "right_column",
+          "label": "Right column"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "layout"
+    },
+    {
+      "type": "select",
+      "id": "view",
+      "label": "Layout",
+      "default": "grid_3_column",
+      "options": [
+        {
+          "label": "Grid 2 column",
+          "value": "grid_2_column"
+        },
+        {
+          "label": "Grid 3 column",
+          "value": "grid_3_column"
+        },
+        {
+          "label": "List",
+          "value": "list"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "show_loadmore_paginate",
+      "label": "Type paginate",
+      "default": "paginate",
+      "options": [
+        {
+          "label": "Paginate",
+          "value": "paginate"
+        },
+        {
+          "label": "Show loadmore",
+          "value": "loadmore"
+        }
+      ]
+    },
+
+    {
+      "type": "range",
+      "id": "show_item_per_row",
+      "label": "Posts per row",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "blocks": [
+    {
+      "type": "categories",
+      "name": "Categories",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Categories"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Select categories menu"
+        }
+      ]
+    },
+    {
+      "type": "recent_post",
+      "name": "Recent Post",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Recent Post"
+        },
+        {
+          "type": "blog",
+          "id": "sidebar_recent_blog_name",
+          "label": "Blog Name"
+        }
+      ]
+    },
+    {
+      "type": "tags",
+      "name": "Tags",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tags"
+        },
+        {
+          "type": "select",
+          "id": "limit_tags",
+          "label": "Limit tags",
+          "options": [
+            {
+              "value": "5",
+              "label": "Show 5 tags"
+            },
+            {
+              "value": "10",
+              "label": "Show 10 tags"
+            },
+            {
+              "value": "15",
+              "label": "Show 15 tags"
+            },
+            {
+              "value": "20",
+              "label": "Show 20 tags"
+            },
+            {
+              "value": "25",
+              "label": "Show 25 tags"
+            }
+          ],
+          "default": "25"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog"
+    }
+  ]
+}
+{% endschema %}

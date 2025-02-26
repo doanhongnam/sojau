@@ -1,0 +1,654 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "show_navbar_mobile": true,
+    "rtl": false,
+    "wishlist_check": false,
+    "compare_check": false,
+    "color_primary": "#0b0b0b",
+    "color_secondary": "#0b0b0b",
+    "color_accent": "#a42e6b",
+    "color_header": "#ffffff",
+    "color_header_icon": "#ffffff",
+    "bg_btn_primary": "#e10180",
+    "color_text_btn_primary": "#ffffff",
+    "color_border_btn_primary": "#e10180",
+    "bg_btn_primary_hover": "#ea3e9a",
+    "color_border_hover_btn_primary": "#ea3e9a",
+    "color_text_btn_primary_hover": "#f6f6f6",
+    "border_btn_secondary": "#a42e6b",
+    "color_text_btn_secondary": "#a42e6b",
+    "bg_btn_secondary_hover": "#e10180",
+    "color_text_btn_alternate": "#f6f6f6",
+    "bg_btn_hover": "#f6f6f6",
+    "show_announcement_bar": true,
+    "header_design": "header_default",
+    "social_twitter_link": "",
+    "social_facebook_link": "https://facebook.com/wahupstore",
+    "social_pinterest_link": "https://www.pinterest.com/wahupstore/",
+    "social_instagram_link": "https://www.instagram.com/wahupstore/",
+    "social_tiktok_link": "https://tiktok.com/@wahupstore",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "shopify://shop_images/baby-body.png",
+    "default_sort_by": "best-selling",
+    "column_number": "2",
+    "product_item_layout": "layout_2",
+    "gpi_show_quickview": false,
+    "text_tool_tip_wishlist": "Wishlist",
+    "text_tool_tip_quick_view": "Quick view",
+    "text_tool_tip_compare": "Compare",
+    "show_secondary_image": true,
+    "show_rating": false,
+    "color_bg_variant": "#f6f6f6",
+    "instagram_token": "IGQVJYeHRiRUx1bjBvZAjF3NFQwQ3JfQzNlVVB4eVB4MjJHazV4RzZApQmlJR1JYYlpGbjVURGw3TWdablJTVmFjVzlpbW5zaUpYUEl1YnpYMDVQcnR4RTA2bVRhWGJMSkVUMnNteVVHZAU1YUEZALeGw5OQZDZD",
+    "cvc_text_1": "tobaco brown",
+    "cvc_color_1": "#6d5843",
+    "cvc_text_2": "tobaco red",
+    "cvc_color_2": "#e22120",
+    "cvc_text_3": "tobaco blue",
+    "cvc_color_3": "#1878b9",
+    "show_shipping": false,
+    "show_coupon": true,
+    "free_shipping_active": false,
+    "free_shipping_amount": "199",
+    "free_shipping_code": "D84VPB2ZZWYE",
+    "free_shipping_effective": true,
+    "currency_code_enabled": true,
+    "custom_css": ".tp-product-detail__right .shopify-payment-button__button {\n    border: 0px solid #000000!important;\n    background-color: #ffffff !important;\n    color: #000000!important;\n}\n.card variant-radios-storepify {\n    display: none;\n}\n.modal-overlay {\n    position: relative !important;\n}",
+    "qs_show": false,
+    "qs_listtext": "couples underwear, valentine boxer, etc.",
+    "predictive_search_enabled": true,
+    "show_sticky_atc": false,
+    "atc_buy_it_now": "add_to_cart",
+    "np_show": "hidden_popup",
+    "checkout_logo_image": "shopify://shop_images/wahup_log_wedding_07cb9af2-9ecd-4b8f-b4ca-b112b064ed91.png",
+    "checkout_logo_position": "right",
+    "checkout_logo_size": "large",
+    "checkout_sidebar_background_color": "#fdf8fb",
+    "checkout_accent_color": "#a42e6b",
+    "checkout_button_color": "#a42e6b",
+    "ld_status": "hidden",
+    "preloader_type": "preloader-3",
+    "upload_image_gif": "shopify://shop_images/loading.gif",
+    "gpi_show_wishlist": true,
+    "ld_bg": "#ffffff",
+    "ld_color": "#91d8e4",
+    "cvc_define_colors": "tobaco brown: #6D5843,Blood Red: #880808,Bright Red: #EE4B2B",
+    "type_body_font": "assistant_n4",
+    "type_header_font": "assistant_n4",
+    "heading_scale": 100,
+    "body_scale": 100,
+    "accent_icons": "text",
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#121212",
+    "gradient_accent_1": "",
+    "colors_accent_2": "#334fb4",
+    "gradient_accent_2": "",
+    "colors_text": "#121212",
+    "colors_outline_button_labels": "#121212",
+    "colors_background_1": "#ffffff",
+    "gradient_background_1": "",
+    "colors_background_2": "#f3f3f3",
+    "gradient_background_2": "",
+    "page_width": 1200,
+    "spacing_sections": 0,
+    "spacing_grid_horizontal": 8,
+    "spacing_grid_vertical": 8,
+    "buttons_border_thickness": 1,
+    "buttons_border_opacity": 100,
+    "buttons_radius": 0,
+    "buttons_shadow_opacity": 0,
+    "buttons_shadow_horizontal_offset": 0,
+    "buttons_shadow_vertical_offset": 4,
+    "buttons_shadow_blur": 5,
+    "variant_pills_border_thickness": 1,
+    "variant_pills_border_opacity": 55,
+    "variant_pills_radius": 40,
+    "variant_pills_shadow_opacity": 0,
+    "variant_pills_shadow_horizontal_offset": 0,
+    "variant_pills_shadow_vertical_offset": 4,
+    "variant_pills_shadow_blur": 5,
+    "inputs_border_thickness": 1,
+    "inputs_border_opacity": 55,
+    "inputs_radius": 0,
+    "inputs_shadow_opacity": 0,
+    "inputs_shadow_horizontal_offset": 0,
+    "inputs_shadow_vertical_offset": 4,
+    "inputs_shadow_blur": 5,
+    "card_style": "standard",
+    "card_image_padding": 0,
+    "card_text_alignment": "left",
+    "card_color_scheme": "background-2",
+    "card_border_thickness": 0,
+    "card_border_opacity": 10,
+    "card_corner_radius": 0,
+    "card_shadow_opacity": 0,
+    "card_shadow_horizontal_offset": 0,
+    "card_shadow_vertical_offset": 4,
+    "card_shadow_blur": 5,
+    "text_boxes_border_thickness": 0,
+    "text_boxes_border_opacity": 10,
+    "text_boxes_radius": 0,
+    "text_boxes_shadow_opacity": 0,
+    "text_boxes_shadow_horizontal_offset": 0,
+    "text_boxes_shadow_vertical_offset": 4,
+    "text_boxes_shadow_blur": 5,
+    "media_border_thickness": 1,
+    "media_border_opacity": 5,
+    "media_radius": 0,
+    "media_shadow_opacity": 0,
+    "media_shadow_horizontal_offset": 0,
+    "media_shadow_vertical_offset": 4,
+    "media_shadow_blur": 5,
+    "popup_border_thickness": 1,
+    "popup_border_opacity": 10,
+    "popup_corner_radius": 0,
+    "popup_shadow_opacity": 0,
+    "popup_shadow_horizontal_offset": 0,
+    "popup_shadow_vertical_offset": 4,
+    "popup_shadow_blur": 5,
+    "drawer_border_thickness": 1,
+    "drawer_border_opacity": 10,
+    "drawer_shadow_opacity": 0,
+    "drawer_shadow_horizontal_offset": 0,
+    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_blur": 5,
+    "badge_position": "bottom left",
+    "badge_corner_radius": 40,
+    "sale_badge_color_scheme": "accent-2",
+    "sold_out_badge_color_scheme": "inverse",
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "295333f7-5d6a-42b0-91df-bd88c5c11954": {
+            "type": "style2",
+            "disabled": true,
+            "settings": {
+              "text_content": "<p>FREE SHIPPING on all orders over $199</p>",
+              "collection": "wedding-guest-dresses"
+            }
+          }
+        },
+        "block_order": [
+          "295333f7-5d6a-42b0-91df-bd88c5c11954"
+        ],
+        "settings": {
+          "background_color": "#231f20",
+          "text_color": "#ffffff",
+          "container_check": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "megamenu_eWMCgg": {
+            "type": "megamenu",
+            "settings": {
+              "block_foritem": "",
+              "block_menu1": "",
+              "block_menu2": "",
+              "block_menu3": "",
+              "block_menu4": "",
+              "block_menu5": "",
+              "list_product_title": "Specials offers",
+              "block_product_list": [],
+              "url_logo_image1": "",
+              "url_logo_image2": "",
+              "check_label1": false,
+              "name_label1": "Hot",
+              "list_label1": "",
+              "bgcolor_label1": "#ff0000",
+              "textcolor_label1": "#ffffff",
+              "check_label2": false,
+              "name_label2": "New",
+              "list_label2": "",
+              "bgcolor_label2": "#6461ff",
+              "textcolor_label2": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "megamenu_eWMCgg"
+        ],
+        "settings": {
+          "menu_bg": "#000000",
+          "logo": "shopify://shop_images/magin.png",
+          "logo_position": "middle-left",
+          "logo_width": "custom",
+          "logo_width_custom_px": 250,
+          "home_welcome_messages": "",
+          "container_config": "container",
+          "menu": "main-menu",
+          "menu_mobile": "",
+          "show_line_separator": false,
+          "show_account": true,
+          "show_currency_language": false,
+          "enable_sticky_header": true,
+          "header_transparent": false,
+          "hover_type": "",
+          "hv_scaleX": true,
+          "check_label1": true,
+          "name_label1": "Hot",
+          "list_label1": "Shop",
+          "bgcolor_label1": "#ff0000",
+          "textcolor_label1": "#ffffff",
+          "check_label2": true,
+          "name_label2": "New",
+          "list_label2": "Features\nHeader Layouts\nProduct Item Layouts\nStore Location V1\nStore Location V2",
+          "bgcolor_label2": "#6461ff",
+          "textcolor_label2": "#ffffff",
+          "margin_bottom_desktop": 0,
+          "margin_bottom_table": 0,
+          "margin_bottom_mobile": 0
+        }
+      },
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-1": {
+            "type": "contact",
+            "settings": {
+              "item_width": 100,
+              "position_content": "content-center",
+              "subtext": "<p>Gift Little Joys, Share Big Smiles</p>",
+              "phone": "",
+              "color_phone": "#909090",
+              "font-size-phone": 16,
+              "email": "",
+              "color_email": "#909090",
+              "font-size-email": 16,
+              "show_social": false
+            }
+          },
+          "footer-0": {
+            "type": "link_list",
+            "disabled": true,
+            "settings": {
+              "item_width": 15,
+              "heading": "QUICK LINKS",
+              "menu": ""
+            }
+          },
+          "9c61a56d-0e15-48ff-9c53-1c976b6aceab": {
+            "type": "link_list",
+            "settings": {
+              "item_width": 15,
+              "heading": "INFORMATION",
+              "menu": "information"
+            }
+          },
+          "70eba986-52eb-4f5f-961f-9f4a3c7edb35": {
+            "type": "link_list",
+            "settings": {
+              "item_width": 20,
+              "heading": "LEGAL",
+              "menu": "legal"
+            }
+          },
+          "ad62c75c-7e08-4aed-9b41-6f1afc72a359": {
+            "type": "newsletter_ft",
+            "settings": {
+              "item_width": 25,
+              "heading": "Newsletter",
+              "newsletter_brief": "<p>Sign up and get yourself a discount on a special gift today!</p>",
+              "color_bg_button": "#2e2e2e",
+              "color_text_button": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "footer-1",
+          "footer-0",
+          "9c61a56d-0e15-48ff-9c53-1c976b6aceab",
+          "70eba986-52eb-4f5f-961f-9f4a3c7edb35",
+          "ad62c75c-7e08-4aed-9b41-6f1afc72a359"
+        ],
+        "settings": {
+          "width_layout_ft": "lg-container",
+          "image_logo": "shopify://shop_images/sojau.png",
+          "color_background": "#333333",
+          "heading_color": "#ffffff",
+          "subtext_color": "#ffffff",
+          "color_social": "#e9f2ed",
+          "color_hover_item_menu": "#000000",
+          "show_social": true,
+          "justify_content": "center",
+          "payment_enable": true,
+          "content_copyright": "2025 SoJau. Powered by Shopify.",
+          "color_content_copyright": "#ffffff",
+          "margin_bottom_desktop": 0,
+          "margin_bottom_table": 0,
+          "margin_bottom_mobile": 0,
+          "padding_top_desktop": 80,
+          "padding_top_table": 30,
+          "padding_top_mobile": 30
+        }
+      },
+      "someone-purchased": {
+        "type": "someone-purchased",
+        "blocks": {
+          "image_KMQMbg": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "",
+              "from_ago": "Blackburn, UK",
+              "time_ago": "20"
+            }
+          },
+          "image_9CrrML": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-halloween-pumpkin-spider-web-orange-character-underwear-set-boxer-and-thong",
+              "from_ago": "New York, USA",
+              "time_ago": "5"
+            }
+          },
+          "image_jPWmbm": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-cat-fuck-off-character-underwear-set-boxer-and-thong",
+              "from_ago": "Austin, USA",
+              "time_ago": "2"
+            }
+          },
+          "image_QLEEeD": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-boo-bats-halloween-nightmare-before-christmas-jack-sally-character-underwear-set-boxer-and-thong",
+              "from_ago": "Denver, USA",
+              "time_ago": "1"
+            }
+          },
+          "image_hzQnQk": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-batman-kitty-black-character-underwear-set-boxer-and-thong-classic",
+              "from_ago": "New York, USA",
+              "time_ago": "3"
+            }
+          },
+          "image_rJEKxV": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-halloween-kitty-red-character-underwear-set-boxer-and-thong",
+              "from_ago": "San Francisco, USA",
+              "time_ago": "20"
+            }
+          },
+          "image_r3etAz": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-kitty-strawberry-white-character-underwear-set-boxer-and-thong",
+              "from_ago": "Houston, USA",
+              "time_ago": "6"
+            }
+          },
+          "image_tYYtKU": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-lgbt-pride-skull-heart-halloween-underwear-set-boxer-and-thong",
+              "from_ago": "Chicago, USA",
+              "time_ago": "2"
+            }
+          },
+          "image_GBxnLa": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "couples-matching-pizza-character-underwear-set-boxer-and-thong",
+              "from_ago": "Boston, USA",
+              "time_ago": "5"
+            }
+          },
+          "image_DMrxnL": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "product": "comma-la-womens-thongs-childless-cat-lady-underwear",
+              "from_ago": "Los Angeles, USA",
+              "time_ago": "6"
+            }
+          }
+        },
+        "block_order": [
+          "image_KMQMbg",
+          "image_9CrrML",
+          "image_jPWmbm",
+          "image_QLEEeD",
+          "image_hzQnQk",
+          "image_rJEKxV",
+          "image_r3etAz",
+          "image_tYYtKU",
+          "image_GBxnLa",
+          "image_DMrxnL"
+        ],
+        "settings": {
+          "display_someone-purchased_mb": true,
+          "show_someone-purchased": "left",
+          "someone_speed": "60",
+          "text": "Someone recently bought a",
+          "time_location_text": "[time] minutes ago, from [location]"
+        }
+      },
+      "management-tools": {
+        "type": "management-tools",
+        "settings": {}
+      },
+      "header-design-1": {
+        "type": "header-design-1",
+        "settings": {
+          "menu_bg": "#ffffff",
+          "menu_bg_nav": "#0b88ee",
+          "menu_text_nav": "#ffffff",
+          "menu": "main-menu",
+          "show_line_separator": false,
+          "enable_sticky_header": false,
+          "check_label1": false,
+          "name_label1": "Hot",
+          "list_label1": "",
+          "bgcolor_label1": "#ff0000",
+          "textcolor_label1": "#ffffff",
+          "title_open_house": "Opening Hours:",
+          "time_open_house": "Mon - Sat: 9.30 to 16.00",
+          "margin_bottom_desktop": 0,
+          "margin_bottom_table": 0,
+          "margin_bottom_mobile": 0,
+          "text_menu_cate": "Browse Categories",
+          "menu_categories_bg": "#71af19",
+          "menu_categories_text_color": "#ffffff"
+        }
+      },
+      "header-design-2": {
+        "type": "header-design-2",
+        "settings": {
+          "menu_bg": "#ffffff",
+          "container_config": "container",
+          "menu_mobile": "",
+          "show_line_separator": true,
+          "show_account": true,
+          "enable_sticky_header": false,
+          "margin_bottom_desktop": 0,
+          "margin_bottom_table": 0,
+          "margin_bottom_mobile": 0
+        }
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {
+      "colors_solid_button_labels": "#ffffff",
+      "colors_accent_1": "#121212",
+      "gradient_accent_1": "",
+      "colors_accent_2": "#334fb4",
+      "gradient_accent_2": "",
+      "colors_text": "#121212",
+      "colors_outline_button_labels": "#121212",
+      "colors_background_1": "#ffffff",
+      "gradient_background_1": "",
+      "colors_background_2": "#f3f3f3",
+      "gradient_background_2": "",
+      "type_header_font": "assistant_n4",
+      "heading_scale": 100,
+      "type_body_font": "assistant_n4",
+      "body_scale": 100,
+      "page_width": 1200,
+      "spacing_sections": 0,
+      "spacing_grid_horizontal": 8,
+      "spacing_grid_vertical": 8,
+      "buttons_border_thickness": 1,
+      "buttons_border_opacity": 100,
+      "buttons_radius": 0,
+      "buttons_shadow_opacity": 0,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "buttons_shadow_blur": 5,
+      "variant_pills_border_thickness": 1,
+      "variant_pills_border_opacity": 55,
+      "variant_pills_radius": 40,
+      "variant_pills_shadow_opacity": 0,
+      "variant_pills_shadow_horizontal_offset": 0,
+      "variant_pills_shadow_vertical_offset": 4,
+      "variant_pills_shadow_blur": 5,
+      "inputs_border_thickness": 1,
+      "inputs_border_opacity": 55,
+      "inputs_radius": 0,
+      "inputs_shadow_opacity": 0,
+      "inputs_shadow_horizontal_offset": 0,
+      "inputs_shadow_vertical_offset": 4,
+      "inputs_shadow_blur": 5,
+      "card_style": "standard",
+      "card_image_padding": 0,
+      "card_text_alignment": "left",
+      "card_color_scheme": "background-2",
+      "card_border_thickness": 0,
+      "card_border_opacity": 10,
+      "card_corner_radius": 0,
+      "card_shadow_opacity": 0,
+      "card_shadow_horizontal_offset": 0,
+      "card_shadow_vertical_offset": 4,
+      "card_shadow_blur": 5,
+      "text_boxes_border_thickness": 0,
+      "text_boxes_border_opacity": 10,
+      "text_boxes_radius": 0,
+      "text_boxes_shadow_opacity": 0,
+      "text_boxes_shadow_horizontal_offset": 0,
+      "text_boxes_shadow_vertical_offset": 4,
+      "text_boxes_shadow_blur": 5,
+      "media_border_thickness": 1,
+      "media_border_opacity": 5,
+      "media_radius": 0,
+      "media_shadow_opacity": 0,
+      "media_shadow_horizontal_offset": 0,
+      "media_shadow_vertical_offset": 4,
+      "media_shadow_blur": 5,
+      "popup_border_thickness": 1,
+      "popup_border_opacity": 10,
+      "popup_corner_radius": 0,
+      "popup_shadow_opacity": 0,
+      "popup_shadow_horizontal_offset": 0,
+      "popup_shadow_vertical_offset": 4,
+      "popup_shadow_blur": 5,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "badge_position": "bottom left",
+      "badge_corner_radius": 40,
+      "sale_badge_color_scheme": "accent-2",
+      "sold_out_badge_color_scheme": "inverse",
+      "accent_icons": "text",
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_show_price": false,
+      "currency_code_enabled": true,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "background_color": "#000000",
+            "text_color": "#fff"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "menu_bg": "#fff",
+            "logo_position": "middle-left",
+            "menu": "main-menu",
+            "show_line_separator": true,
+            "enable_sticky_header": true,
+            "bgcolor_label1": "#ff0000",
+            "textcolor_label1": "#ffffff",
+            "bgcolor_label2": "#6461FF",
+            "textcolor_label2": "#ffffff"
+          }
+        },
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {}
+        }
+      }
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "@media (max-width: 1024px) {.announcement-bar {display: block; }}",
+      "[id*=\"product-form-installment-template\"] {display: none;}",
+      ".product__tax {display: none;}",
+      ".bottom-navbar {background-color: #a42e6b !important;}",
+      ".card-wrapper .price-item {color: #0f743b;}",
+      ".tp-product-detail__right .price__sale .price-item--last {color: #0f743b; font-size: var(--prd-detail-fz-price); font-weight: var(--prd-detail-fw-price); margin-right: 5px;}",
+      ".card .price__sale .price-item--regular {font-size: 14px;}",
+      ".tp-product-detail__right .price__sale .price-item--regular {color: var(--prd-detail-color-price-cp); font-size: 18px; font-weight: var(--prd-detail-fw-price-cp); text-decoration: line-through;}",
+      ".price--on-sale .price__sale {align-items: center;}",
+      ".percent-sale {color: #0f743b; font-weight: 500; font-size: 16px; line-height: 1.25; letter-spacing: 0.08px;}",
+      ".tp-product-detail__right .tp-product-title {font-size: 22px; font-weight: 300;}",
+      "[id*=\"shopify-block-judge_me_reviews_preview_badge\"] {margin-bottom: 20px; /* Adjust the 20px to whatever value you need */}",
+      ".jdgm-write-rev-link.jdgm-write-rev-link {color: white !important; background-color: #0b0b0b !important; border: 2px solid #0b0b0b !important; border-color: #0b0b0b !important;}",
+      ".percent-sale-2 {margin-top: 15px; color: #0f743b; font-weight: 500; font-size: 16px; line-height: 1.25; letter-spacing: 0.08px;}",
+      ".tp-product-detail__right .percent-sale-2 {display: none;}",
+      ".card-information .percent-sale {display: none;}",
+      ".sticky-product-detail .percent-sale {display: none;}",
+      ".product-description strong {color: #0f743b;}",
+      ".product-description table {width: 100%;}"
+    ]
+  }
+}

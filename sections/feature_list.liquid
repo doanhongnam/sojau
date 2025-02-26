@@ -1,0 +1,164 @@
+{% liquid
+  assign sheading = section.settings.heading
+  assign sdescription = section.settings.description
+  assign text_alignment = section.settings.text_alignment
+%}
+
+<div class="features-list__wrapper">
+  <div class="container">
+    <div class="features-list__heading {{ text_alignment }}">
+      {% if sheading %}
+        <h2 class="text-4xl font-medium mb-3.75">{{ sheading }}</h2>
+      {% endif %}
+
+      {% if sdescription %}
+        <p class="text-sm font-medium mb-12.5">{{ sdescription }}</p>
+      {% endif %}
+    </div>
+
+    {%- assign flexDirection = section.settings.flex_direction -%}
+    <div class="features-list__content flex {{ flexDirection }}" data-section-id="{{ section.id }}">
+      <div class="features-col-left w-5/12">
+        <div class="features-list__left">
+          <ul class="features-list__tab pr-20">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'item_name' -%}
+                <li class="features-list__item pl-6 pb-6 relative">
+                  <a class="features-list__link mb-2.5 font-medium relative item-{{ forloop.index }} {% if forloop.first %} active {% endif %}" data-index="{{ forloop.index  }}">{{ block.settings.heading }}</a>
+                  <p class="features-list__brief">{{ block.settings.description }}</p>
+                </li>
+              {%- endcase -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+
+      <div class="features-col-right w-7/12">
+        <div class="features-list__right">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'item_name' -%}
+              <div data-index="{{ forloop.index }}" class="features-list__image item-{{ section.id }} {% if forloop.first %}active{% endif %}">
+                {%- liquid
+                  assign image = block.settings.image
+                  -%}
+                {% if image %}
+                  {{ image | image_url: width: image.width | image_tag: class: '', loading: 'lazy' }}
+                {% else %}
+                  {% render 'no-image', width: 850, height: 450, text_size: '850x450' %}
+                {% endif %}
+              </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% render 'margin-bottom' %}
+{% schema %}
+  {
+    "name": "Feature List",
+    "class": "features-list",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Feature List Title"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Feature List Description"
+      },
+      {
+        "type":"select",
+        "id":"text_alignment",
+        "label":"Text Alignment",
+        "options":[
+            {
+            "value":"text-left",
+            "label":"Left"
+            },
+            {
+            "value":"text-center",
+            "label":"Center"
+            },
+            {
+            "value":"text-right",
+            "label":"Right"
+            }
+        ],
+        "default":"text-center"
+    },
+     {
+      "type": "select",
+      "id": "flex_direction",
+      "label": "Content reverse",
+      "options": [
+        {
+          "value": "flex-row",
+          "label": "Content on the left"
+        }, {
+          "value": "flex-row-reverse",
+          "label": "Content on the right"
+        }
+      ],
+      "default": "flex-row"
+    },
+      {
+        "type": "header",
+        "content": "t:sections.margin_bottom.content"
+      }, {
+        "type": "number",
+        "id": "margin_bottom_desktop",
+        "label": "t:sections.margin_bottom.desktop.label",
+        "default": 80
+      }, {
+        "type": "number",
+        "id": "margin_bottom_table",
+        "label": "t:sections.margin_bottom.tablet.label",
+        "default": 60
+      }, {
+        "type": "number",
+        "id": "margin_bottom_mobile",
+        "label": "t:sections.margin_bottom.mobile.label",
+        "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Item Name",
+        "type": "item_name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Lorem"
+          }, {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Manage students and instructor profiles directly from the admin panel."
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "650 x 400px recommended"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Feature List"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,16 @@
+<div class="announcement-bar announcement-bar--style2" role="region" {{ block.shopify_attributes }}>
+    <div class="{% if sst.container_check %}container{% else %}w-full{% endif %} flex flex-row items-center justify-between">
+        <div class="style2__left text-sm text-white flex items-center justify-center flex-1 text-center">
+            {{ bst.text_content }}
+            <a
+                    class=""
+                    href="{{ bst.collection.url | default: '#' }}"
+            >
+                {{ 'button.shop_now' | t }}
+            </a>
+            <div class="announcement-bar__close">
+                {% render 'icon', icon_name: 'icon-close' %}
+            </div>
+        </div>
+    </div>
+</div>

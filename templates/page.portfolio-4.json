@@ -1,0 +1,174 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1658976384ad46e5e5": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "1663068870fbdf68af": {
+      "type": "default-page-title",
+      "settings": {
+        "g_title": "",
+        "g_sub": "",
+        "horizontal_alignment": "center",
+        "margin_bottom_desktop": 30,
+        "margin_bottom_table": 20,
+        "margin_bottom_mobile": 20
+      }
+    },
+    "1661834783cbd1c6eb": {
+      "type": "tp-portfolio",
+      "blocks": {
+        "1661834783eb7fa3c0-0": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-1.png",
+            "title": "Contrary",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "1661834783eb7fa3c0-1": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-2.png",
+            "title": "Popular",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "1661834783eb7fa3c0-2": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-3.png",
+            "title": "Lorem",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "1661834783eb7fa3c0-3": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-4.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "1661834783eb7fa3c0-4": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-5.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "1661834783eb7fa3c0-5": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-6.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "1661834783eb7fa3c0-6": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-7.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Woman Fashion"
+          }
+        },
+        "1661834783eb7fa3c0-7": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-8.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "e7f476b6-9d6b-4a33-9629-1cf941aa436d": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-9_585da520-518c-4696-82f6-86edb87a6f7f.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "ee3c4691-9063-4146-bb0d-da5bb1d07f6c": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-10.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "6c63470f-e54e-4e5c-b64e-4b9395c99313": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-11.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        },
+        "6791e767-738f-4829-84da-b81e59317817": {
+          "type": "portfolio_item",
+          "settings": {
+            "image": "shopify://shop_images/portfolio-4-12.png",
+            "title": "Pharmacological",
+            "link": "",
+            "filter_tag": "Man Fashion"
+          }
+        }
+      },
+      "block_order": [
+        "1661834783eb7fa3c0-0",
+        "1661834783eb7fa3c0-1",
+        "1661834783eb7fa3c0-2",
+        "1661834783eb7fa3c0-3",
+        "1661834783eb7fa3c0-4",
+        "1661834783eb7fa3c0-5",
+        "1661834783eb7fa3c0-6",
+        "1661834783eb7fa3c0-7",
+        "e7f476b6-9d6b-4a33-9629-1cf941aa436d",
+        "ee3c4691-9063-4146-bb0d-da5bb1d07f6c",
+        "6c63470f-e54e-4e5c-b64e-4b9395c99313",
+        "6791e767-738f-4829-84da-b81e59317817"
+      ],
+      "settings": {
+        "portfolio_width": "full_width",
+        "type": "4",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 30,
+        "margin_bottom_mobile": 10
+      }
+    }
+  },
+  "order": [
+    "1658976384ad46e5e5",
+    "1663068870fbdf68af",
+    "1661834783cbd1c6eb"
+  ]
+}

@@ -1,0 +1,7 @@
+{% if block.settings.margin_bottom_block != blank %}
+    <style>
+        .{{ className }}{
+            margin-bottom: {{ block.settings.margin_bottom_block }}px
+        }
+    </style>
+{% endif %}

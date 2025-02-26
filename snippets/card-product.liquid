@@ -1,0 +1,13 @@
+{%- if card_product and card_product != empty -%}
+  {% if layoutProductItem == 'layout_1' %}
+    {% render 'card-product-layout-1', card_product: card_product, section: section, lazy_load: lazy_load, width: width, height: height, pricePos: pricePos %}
+  {% elsif layoutProductItem == 'layout_2' %}
+    {% render 'card-product-layout-2', card_product: card_product, section: section, lazy_load: lazy_load, width: width, height: height, pricePos: pricePos %}
+  {% else %}
+    {% if settings.product_item_layout == 'layout_1' %}
+      {% render 'card-product-layout-1', card_product: card_product, section: section, lazy_load: lazy_load, width: width, height: height, pricePos: pricePos %}
+    {% elsif settings.product_item_layout == 'layout_2' %}
+      {% render 'card-product-layout-2', card_product: card_product, section: section, lazy_load: lazy_load, width: width, height: height, pricePos: pricePos %}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}

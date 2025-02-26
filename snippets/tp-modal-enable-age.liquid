@@ -1,0 +1,17 @@
+{% assign ageEnable = settings.show_popup_enable_age_veri %}
+<div id="tp_modal_enable_age" class="tp-modal tp-modal-enable-age" data-enable="{{ ageEnable }}">
+  <div class="age-verify-txt">
+    <h4>{{ settings.age_veri_title }}</h4>
+    <p>{{ settings.age_veri_sub_title }}</p>
+  </div>
+
+  <div class="age-verify-txt-error hidden">
+    <h4>{{ settings.age_veri_title_error }}</h4>
+    <p>{{ settings.age_veri_sub_title_error }}</p>
+  </div>
+
+  <div class="age-verify-buttons">
+    <button class="border-button-radius btn-older-age mb-4">{{ settings.age_veri_btn_older }}</button>
+    <button class="border-button-radius btn-under-age mb-4">{{ settings.age_veri_btn_under }}</button>
+  </div>
+</div>

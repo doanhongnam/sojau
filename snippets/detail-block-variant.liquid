@@ -1,0 +1,191 @@
+{% assign finalTaglist = '' | split: ',' %}
+{% for i in (1..10) %}
+  {% capture text %}cvc_text_{{ i }}{% endcapture %}
+  {% capture color %}cvc_color_{{ i }}{% endcapture %}
+  {% assign newTagList = newTagList | append: ',' | append: settings[text] %}
+{% endfor %}
+{% assign newTagList = newTagList | remove_first: ',' | split: ',' %}
+{% assign joinedTagLists = finalTaglist | concat: newTagList %}
+
+{% if block.settings.use_spacing %}
+  {% render 'block-margin-bottom', className: 'variant-bottom', block: block %}
+  {% assign classDefault = '' %}
+{% else %}
+  {% assign classDefault = ' mb-3.75' %}
+{% endif %}
+
+{%- unless product.has_only_default_variant -%}
+  {%- if block.settings.picker_type == 'button' -%}
+    <variant-radios
+      class="no-js-hidden variant-bottom{{ classDefault }}"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      data-option="{{ option.position }}"
+      data-forloop-index="{{ forloop.index0 }} "
+      data-change-thumb="{{ dataImageChange }}"
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <fieldset class="js product-form__input {% unless forloop.last %}mb-5{% endunless %}">
+          <p class="form__label">{{ option.name }}</p>
+          {%- for value in option.values -%}
+            <input
+              style="display: none;"
+              type="radio"
+              id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              name="{{ option.name }}"
+              value="{{ value | escape }}"
+              {% if option.selected_value == value %}
+                checked
+              {% endif %}
+            >
+
+            <label
+              for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              {% if option.name == 'color' or option.name == 'Color' %}
+                {% if joinedTagLists contains value %}
+                  {% for cvc_list_text in joinedTagLists %}
+                    {% assign cvc_list_text = cvc_list_text | downcase %}
+                    {% assign value = value | downcase %}
+                    {% if cvc_list_text == value %}
+                      {% assign inDex = forloop.index %}
+                      {% assign variableTextColor = 'cvc_color_' | append: inDex %}
+                      {% assign variableColor = settings[variableTextColor] %}
+                      {% if variableColor != blank %}
+                        {% assign variableFullColor = variableColor %}
+                      {% else %}
+                        {% assign variableFullColor = 'none' %}
+                      {% endif %}
+                      class="variant-color{% if option.selected_value == value %} active{% endif %}"
+                        flow="up" tooltip="{{ variableFullColor }}"
+                      style="
+                                background-color: {{ variableFullColor }};
+                        {% if value == 'White' or value == 'white' %}
+                                border: 1px solid #d3c3c3;
+                        {% endif %}
+                      "
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                  class="variant-color{% if option.selected_value == value %} active{% endif %}"
+                  style="
+                            background-color: {{ value }};
+                    {% if value == 'White' or value == 'white' %}
+                            border: 1px solid #d3c3c3;
+                    {% endif %}
+                  "
+                {% endif %}
+
+              {% else %}
+                class="item-variant-size {% if option.selected_value == value %} active{% endif %}"
+              {% endif %}
+              flow="up" tooltip="{{ value }}"
+            >
+              {% if option.name != 'color' and option.name != 'Color' %}
+                {{ value }}
+              {% endif %}
+            </label>
+          {%- endfor -%}
+        </fieldset>
+      {%- endfor -%}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-radios>
+  {%- elsif block.settings.picker_type == 'dropdown' -%}
+    <variant-selects
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      data-option="{{ option.position }}"
+      data-forloop-index="{{ forloop.index0 }} "
+      data-change-thumb="{{ dataImageChange }}"
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <div class="product-form__input product-form__input--dropdown mb-3.75">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <div class="select">
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {%- for value in option.values -%}
+                <option
+                  value="{{ value | escape }}"
+                  {% if option.selected_value == value %}
+                    selected="selected"
+                  {% endif %}
+                >
+                  {{ value }}
+                </option>
+              {%- endfor -%}
+            </select>
+            {% comment %} {% render 'icon-caret' %} {% endcomment %}
+          </div>
+        </div>
+      {%- endfor -%}
+
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+  {% else %}
+    <variant-image-product
+      data-section="{{ section.id }}"
+      data-product-id="{{ product.id }}"
+      data-change-thumb="{{ dataImageChange }}"
+      class="image-variant-wrapper flex items-center justify-start gap-2.5 mb-5"
+    >
+      {%- for variant in product.variants -%}
+        {% if variant.featured_image != blank %}
+          <div
+            class="image-variant-item cursor-pointer {% if forloop.first %}active{% endif %}{% if variant.available == false %}variant-outstock{% endif %}"
+            data-id-position="{{ variant.featured_media.position }}"
+            data-price="{{ variant.price }}"
+            data-price-compare="{{ variant.compare_at_price }}"
+          >
+              <img
+                      data-index="{{ forloop.index }}"
+                      src="{{ variant | image_url: width: variant.width , height: variant.height }}"
+                      loading="lazy"
+                      width="{{ variant.featured_image.width }}"
+                      height="{{ variant.featured_image.height }}"
+                      alt="{{ variant.featured_image.alt | escape }}"
+              >
+          </div>
+        {% endif %}
+        <style>
+          .image-variant-item img{
+                max-width: {{ block.settings.width_variant_image | default: '40' }}px;
+            }
+          .image-variant-item.active {
+                box-shadow: 0 0 0 1px {{ block.settings.picker_type_active }};
+            }
+          .image-variant-item:hover {
+              box-shadow: 0 0 0 1px {{ block.settings.picker_type_hover }};
+            }
+        </style>
+      {%- endfor -%}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-image-product>
+  {%- endif -%}
+{%- endunless -%}
+{% if product.tags contains 'PS' or product.tags contains 'Personalized' %}
+  <p>
+    Add your personalization<span style="color: red;">*</span>:
+  </p>
+  {% assign personalizationMessage = product.metafields.custom.personalization_message  | replace: '<br>', '\n' | newline_to_br %}
+  <p class="line-item-property__field">
+    <label for="enter-your-personalized-message">{{ personalizationMessage }}</label>
+  </p>
+  <p style="margin-top: 20px; margin-bottom: 20px;">
+    <textarea required class="required" id="personalization-name" name="properties[Name]" rows = "3" style="width: 100%; border: 1px solid rgb(229, 231, 235); border-radius: 5px;"></textarea>
+  </p>
+{% endif %}

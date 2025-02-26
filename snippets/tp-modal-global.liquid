@@ -1,0 +1,31 @@
+{% liquid
+  if type == 'modal-video'
+    assign classModal = 'tp-modal-video'
+    assign classModalPopup = 'tp-modal-video-popup'
+  endif
+%}
+
+<div id="{{ id }}" class="tp-modal modal-global {{ classModalPopup }}">
+  <span class="cursor-pointer tp-modal__close">{% render 'icon', icon_name: 'icon-close' %}</span>
+  <div class="modal-content {{ classModal }}">
+    {% if type == 'modal-video' %}
+      {% if section.settings.text_button != blank %}
+        <h2 class="text-center py-2.5">{{ section.settings.text_button }}</h2>
+      {% endif %}
+      {% assign video_popup = section.settings.video_popup.sources %}
+      {% if video_popup %}
+        {% for video in video_popup %}
+          {% if video.format != 'm3u8' %}
+            <video controls muted>
+              <source src="{{ video.url }}">
+            </video>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+          <video controls muted>
+              <source src="https://cdn.shopify.com/videos/c/vp/79b341f79d3049789c9e3ebc78604476/79b341f79d3049789c9e3ebc78604476.HD-720p-3.0Mbps-11392224.mp4">
+          </video>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,263 @@
+{% comment %} 
+{% if template != 'cart' %}
+  <tp-cart-ajax class="tp-cart-ajax min-h-full bg-white z-50">
+    <div class="loading-cart-ajax hidden"></div>
+    <div class="tp-cart-ajax__wrapper">
+      <div class="tp-cart-ajax__header">
+        <h3 class="tp-cart-ajax__header__title">{{ 'general.cart.shopping_cart' | t }}</h3>
+        <button class="tp-cart-ajax__header__close">
+          <svg
+            class="w-[24px] h-[24px]"
+            fill="currentColor"
+            stroke="currentColor"
+            viewbox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="tp-cart-ajax__content">
+        <span class="mess-empty hidden">{{ 'general.cart.cart_empty' | t }}</span>
+        <form action="/cart" class="checkout-form" method="post" novalidate="">
+          <div class="tp-cart-notication hidden">
+            <svg fill="none" height="10" viewbox="0 0 13 10" width="13" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L4.5 8.5L11.5 1" stroke-linejoin="round" stroke-lipnotinecap="round" stroke-width="1.5" stroke="#688560"/>
+            </svg>
+            <span class="tp-cart-ajax__notifi"> Product added to cart successfully</span>
+          </div>
+          <div class="parent-list-item__wrapper">
+            <div class="parent-list-item">
+              <div class="list-item"></div>
+            </div>
+          </div>
+
+          <div class="tp-cart-ajax__footer">
+            {% liquid
+              assign fsactive = settings.free_shipping_active
+              assign fscode = settings.free_shipping_code
+            %}
+            {% if fsactive and fscode != blank  %}
+              <div class="tca-footer__freeship">
+                <div class="process-bar">
+                  <div class="process-bar__item relative">
+                    <input type="hidden" class="process-bar__data"
+                           data-ammount="{{ settings.free_shipping_amount | default: "100" }}"
+                           data-effect="{{ settings.free_shipping_effective | default: "false" }}"
+                           data-before="{{ settings.free_shipping_before_discount_code | default: "Congratulations! You've got free shipping!" }}"
+                           data-after="{{ settings.free_shipping_after_discount_code | default: "more to get free shipping" }}"
+                           data-fscode="{{ fscode }}"
+                    />
+                    <div class="process-bar__percent absolute"></div>
+                    <div class="text"></div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if settings.show_note or settings.show_shipping or settings.show_coupon %}
+              <div class="tca-icon mb-[20px]">
+                <ul>
+                  {% if settings.show_note %}
+                    <li flow="up" tooltip="Add Note" class="tca-icon__item" data-show="note">
+                      {% render 'icon', icon_name: 'icon-note' %}
+                    </li>
+                  {% endif %}
+                  {% if settings.show_coupon %}
+                    <li flow="up" tooltip="Add Coupon" class="tca-icon__item" data-show="coupon">
+                      {% render 'icon', icon_name: 'icon-coupon' %}
+                    </li>
+                  {% endif %}
+                  {% if settings.show_shipping %}
+                    <li flow="up" tooltip="Estimate Shipping" class="tca-icon__item" data-show="shipping">
+                      {% render 'icon', icon_name: 'icon-shipping' %}
+                    </li>
+                  {% endif %}
+                  {% if settings.show_gift_wrap and settings.collection_gift_wrap != blank %}
+                    <li flow="up" tooltip="Add A Gift Wrap" class="tca-icon__item" data-show="gift_wrap">
+                      {% render 'icon', icon_name: 'icon-gift-wrap' %}
+                    </li>
+                  {% endif %}
+
+                  <li class="tca-icon__item remove-cart-item-all">{{ 'general.cart.remove_all' | t }}</li>
+                </ul>
+              </div>
+            {% endif %}
+            <div class="tca__note tca_item ajc-hidden">
+              {% comment %} <div class="icon-note">
+                <svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.8462 15.8462H1.15385V3.15385H8.78077L9.93462 2H1.15385C0.847827 2 0.554342 2.12157 0.337954 2.33795C0.121566 2.55434 0 2.84783 0 3.15385V15.8462C0 16.1522 0.121566 16.4457 0.337954 16.662C0.554342 16.8784 0.847827 17 1.15385 17H13.8462C14.1522 17 14.4457 16.8784 14.662 16.662C14.8784 16.4457 15 16.1522 15 15.8462V7.19231L13.8462 8.34615V15.8462Z"
+                        fill="#CDCDCD"/>
+                  <path d="M16.7293 2.19468L14.8013 0.270183C14.7158 0.18454 14.6141 0.11659 14.5022 0.0702276C14.3903 0.0238649 14.2703 0 14.1491 0C14.028 0 13.908 0.0238649 13.7961 0.0702276C13.6842 0.11659 13.5825 0.18454 13.4969 0.270183L5.65341 8.1452L5.01838 10.892C4.99133 11.0252 4.99417 11.1627 5.02671 11.2946C5.05925 11.4265 5.12067 11.5496 5.20656 11.655C5.29245 11.7604 5.40067 11.8455 5.52344 11.9041C5.64621 11.9628 5.78048 11.9935 5.91658 11.9942C5.98693 12.0019 6.05791 12.0019 6.12826 11.9942L8.90296 11.3832L16.7293 3.49671C16.8151 3.41131 16.8832 3.30984 16.9296 3.19813C16.9761 3.08641 17 2.96665 17 2.8457C17 2.72475 16.9761 2.60498 16.9296 2.49327C16.8832 2.38156 16.8151 2.28009 16.7293 2.19468ZM8.30797 10.3267L6.21407 10.7892L6.70036 8.71627L12.6045 2.78288L14.2178 4.39329L8.30797 10.3267ZM14.8643 3.74798L13.2509 2.13757L14.1377 1.23529L15.7625 2.85712L14.8643 3.74798Z"
+                        fill="#CDCDCD"/>
+                </svg>
+              </div> {% endcomment %}
+              <div class="content-note">
+                <div class="content-note__note content-note__item">
+                  <cart-note-ajax class="cart__note field block mb-5">
+                    <div class="note-wapper flex items-center justify-between mb-3.75">
+                      <h5 class="title-item">{{ 'general.cart.note' | t }}</h5>
+                      <div class="icon-note">
+                        <svg fill="none" height="17" viewbox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.8462 15.8462H1.15385V3.15385H8.78077L9.93462 2H1.15385C0.847827 2 0.554342 2.12157 0.337954 2.33795C0.121566 2.55434 0 2.84783 0 3.15385V15.8462C0 16.1522 0.121566 16.4457 0.337954 16.662C0.554342 16.8784 0.847827 17 1.15385 17H13.8462C14.1522 17 14.4457 16.8784 14.662 16.662C14.8784 16.4457 15 16.1522 15 15.8462V7.19231L13.8462 8.34615V15.8462Z"
+                                fill="#CDCDCD"/>
+                          <path d="M16.7293 2.19468L14.8013 0.270183C14.7158 0.18454 14.6141 0.11659 14.5022 0.0702276C14.3903 0.0238649 14.2703 0 14.1491 0C14.028 0 13.908 0.0238649 13.7961 0.0702276C13.6842 0.11659 13.5825 0.18454 13.4969 0.270183L5.65341 8.1452L5.01838 10.892C4.99133 11.0252 4.99417 11.1627 5.02671 11.2946C5.05925 11.4265 5.12067 11.5496 5.20656 11.655C5.29245 11.7604 5.40067 11.8455 5.52344 11.9041C5.64621 11.9628 5.78048 11.9935 5.91658 11.9942C5.98693 12.0019 6.05791 12.0019 6.12826 11.9942L8.90296 11.3832L16.7293 3.49671C16.8151 3.41131 16.8832 3.30984 16.9296 3.19813C16.9761 3.08641 17 2.96665 17 2.8457C17 2.72475 16.9761 2.60498 16.9296 2.49327C16.8832 2.38156 16.8151 2.28009 16.7293 2.19468ZM8.30797 10.3267L6.21407 10.7892L6.70036 8.71627L12.6045 2.78288L14.2178 4.39329L8.30797 10.3267ZM14.8643 3.74798L13.2509 2.13757L14.1377 1.23529L15.7625 2.85712L14.8643 3.74798Z"
+                                fill="#CDCDCD"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <textarea
+                      class="text-area field__input input-note"
+                      form="cart"
+                      id="cart-note"
+                      name="note"
+                      placeholder="Enter note"
+                    >{{ cart.note }}</textarea>
+                  </cart-note-ajax>
+                  <button
+                          type="button"
+                          class="tp-btn tp-btn__secondary w-full mb-4 save-cart-note"
+                  >
+                    {{ 'general.cart.coupon_save' | t }}
+                  </button>
+                  <button type="button" data-cart-tool_close="" class="stp-tool__back w-full tp-btn tp-btn__secondary mb-5">
+                    {{ 'general.cart.cancel' | t }}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tca_coupon ajc-hidden tca_item">
+              <h5 class="mb-5">{{ 'general.cart.add_coupon' | t }}</h5>
+              <div class="tca-field mb-5">
+                <input type="text" data-name="discount" id="CartDiscountcode" value="" placeholder="Coupon code">
+              </div>
+              <div class="tca-field mb-5">
+                <button
+                  type="button"
+                  data-action="save-discountcode"
+                  data-cart-tool_close=""
+                  class="ajc-discount__push tp-btn tp-btn__secondary w-full mb-4"
+                >
+                  {{ 'general.cart.coupon_save' | t }}
+                </button>
+                <button type="button" data-cart-tool_close="" class="stp-tool__back w-full tp-btn tp-btn__secondary">
+                  {{ 'general.cart.cancel' | t }}
+                </button>
+              </div>
+            </div>
+            <div class="tca_shipping ajc-hidden tca_item">
+              {% render 'shipping-calculator', customer: customer %}
+              <button type="button" data-cart-tool_close="" class="mb-5 stp-tool__back w-full tp-btn tp-btn__secondary">
+                {{ 'general.cart.cancel' | t }}
+              </button>
+            </div>
+            {% if settings.show_gift_wrap and settings.collection_gift_wrap != blank %}
+              <div class="tca_gift_wrap ajc-hidden tca_item">
+                <div class="tca-mini_cart-tool__wrap">
+                  {% assign collection_gift_wrap = settings.collection_gift_wrap %}
+                  <div class="tca-field mb-6">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="tca-gift-svg"
+                    >
+                      <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                      <rect x="2" y="7" width="20" height="5"></rect>
+                      <line x1="12" y1="22" x2="12" y2="7"></line>
+                      <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                      <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                    </svg>
+                    <span class="tca-gift_wrap_text">
+                      <span class="cd">{{ settings.gift_wrap_text | default: 'Do you want a gift wrap?' }}</span>
+                      {{ settings.gift_wrap_sub_text -}}
+                    </span>
+                  </div>
+                  <div class="tca-field">
+                    <div class="tca-field mb-5">
+                      <button
+                        type="button"
+                        data-cart-tool_close=""
+                        class="tca-mini_cart-tool__add tca-truncate tp-btn tp-btn__primary w-full mb-4"
+                      >
+                        {% comment %}
+                          <script type="application/json">
+                            {{ gift_wrap_product.variants | json }}
+                          </script>
+                        {% endcomment %}
+                        {% comment %}
+                          {% if settings.gift_wrap_product != blank %}
+                          {% endif %}
+                        {% endcomment %}
+                        <span class="tca-txt-inner pointer-events-none">
+                          {{- settings.gift_wrap_button_text | default: 'Add A Gift Wrap' -}}
+                        </span>
+                      </button>
+                      <button
+                        type="button"
+                        data-cart-tool_close=""
+                        class="stp-tool__back w-full tp-btn tp-btn__secondary"
+                      >
+                        {{ 'general.cart.cancel' | t }}.
+
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="tp-cart-ajax__subtotal">
+              <label class="title-item">{{ 'general.cart.subtotal' | t }}</label>
+              <div class="zone-price">
+                <span class="subtotal-result-origin"></span>
+                <span class="subtotal-result"></span>
+              </div>
+            </div>
+            <button class="tp-btn tp-btn__primary mb-5 w-full" name="checkout" type="submit">
+              {{ 'sections.cart.checkout' | t }}
+            </button>
+            <a class="tp-btn tp-btn__secondary w-full tp-cart-ajax__view-cart" href="/cart">
+              {{ 'general.cart.view_cart' | t }}
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </tp-cart-ajax>
+
+  <script>
+    class CartNoteAjax extends HTMLElement {
+      constructor() {
+        super();
+
+        this.inputNote = this.querySelector('#cart-note');
+        this.inputNote.addEventListener('change', function () {
+          const body = JSON.stringify({ note: this.value });
+
+          setTimeout(function () {
+            fetch(`${routes.cart_update_url}`, {
+              method: 'POST',
+              body: body,
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: `application/json`,
+              },
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                // console.log(data)
+              });
+          }, 300);
+        });
+      }
+    }
+
+    customElements.define('cart-note-ajax', CartNoteAjax);
+  </script>
+{% endif %} {% endcomment %}

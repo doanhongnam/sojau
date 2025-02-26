@@ -1,0 +1,15 @@
+{% comment %}
+    Renders a div no image
+    
+    Accepts:
+    - text_size: {String} enter a string size image
+    - width: {Number} enter width image
+    - height: {Number} enter height image
+  
+    Usage:
+    {% render 'no-image', text_size:'200x30', width:200, height:30  %}
+{% endcomment %}
+
+<div class="no-image" style="width :{{ width }}px ; height: {{ height }}px">
+    <span>{{ text_size }}</span>
+</div>

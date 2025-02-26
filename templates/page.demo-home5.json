@@ -1,0 +1,278 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1660633109a295440e": {
+      "type": "slide",
+      "blocks": {
+        "74ab9d13-63bb-47a9-9a76-416e82c8ca90": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slide-demo-home-5-3.png",
+            "sub_title": "New In: Bags & Purses",
+            "title": "<p>Canvas shopper with compartment in natural</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#ffffff"
+          }
+        },
+        "00da59a4-14e5-4666-bc10-f5e42daddcfe": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slide-demo-home-5-2.png",
+            "sub_title": "New In: Clothing",
+            "title": "<p>Reclaimed Vintage inspired oversized</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#ffffff"
+          }
+        },
+        "a701c563-7473-4964-b0ee-5afcbc9c45cf": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slide-demo-home-5-1.png",
+            "sub_title": "New In: Dresses",
+            "title": "<p>Tiered broderie mini sundress in white</p>",
+            "description_1": "",
+            "description_2": "Sale $34.00",
+            "slide_url": "",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "74ab9d13-63bb-47a9-9a76-416e82c8ca90",
+        "00da59a4-14e5-4666-bc10-f5e42daddcfe",
+        "a701c563-7473-4964-b0ee-5afcbc9c45cf"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "left_center",
+        "pag_bg": "#ffffff",
+        "type_navigation": "button_icon_title",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660636195ce8bfdae": {
+      "type": "banner-image-card",
+      "blocks": {
+        "7ed8cc5c-1396-4203-845d-9ef5bc8cae3e": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-left",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/1_3.png",
+            "title": "",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "eb8cacd3-1677-43a1-8feb-18f9ca1ee078": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-right",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/2_2.png",
+            "title": "",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "e897ad89-6d09-41e9-958d-c9af54a26097": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-right",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/3_1.png",
+            "title": "",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "7ed8cc5c-1396-4203-845d-9ef5bc8cae3e",
+        "eb8cacd3-1677-43a1-8feb-18f9ca1ee078",
+        "e897ad89-6d09-41e9-958d-c9af54a26097"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "layout": "layout_1",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660636652392bb31c": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Customer Favorites",
+        "description": "",
+        "display_type": "normal",
+        "collection": "new-arrivals",
+        "products_to_show": 8,
+        "collection_list": [],
+        "type_button": "normal",
+        "text_button": "View More",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660636795ed3f50c3": {
+      "type": "our-testimonial",
+      "blocks": {
+        "6ef4f510-f13b-468b-a21b-60e85aa0bd7b": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_91.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "b08028f7-bdc8-4981-aec2-9ba33db8b8a6": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_92.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "6ef4f510-f13b-468b-a21b-60e85aa0bd7b",
+        "b08028f7-bdc8-4981-aec2-9ba33db8b8a6"
+      ],
+      "settings": {
+        "heading": "",
+        "background_testimonial": "#ffffff",
+        "display_type": "layout_2",
+        "padding_top_bottom": 0,
+        "show_pagination": false,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166035823932d23f32": {
+      "type": "list-collection",
+      "settings": {
+        "heading": "Popular Categories",
+        "display_type_collection": "slide"
+      }
+    },
+    "1660638813395ef623": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Latest News",
+        "sub_title": "<p>#to who loves fashion</p>",
+        "show_icon": false,
+        "display_type": "layout_2",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 80,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 50,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "16606388950089d05f": {
+      "type": "lastest-news",
+      "settings": {
+        "blog": "shopify-blog",
+        "width_blog": "container",
+        "position_content": "left",
+        "post_limit": 3,
+        "gap_item_blog": 30,
+        "show_date": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "1660639033818aed12": {
+      "type": "banner-image-card",
+      "blocks": {
+        "9c24cb01-5827-4c49-948a-62d3ab04e4b0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Rectangle_154.png",
+            "title": "",
+            "button_label": "Already up to 80% off",
+            "link": ""
+          }
+        },
+        "1f7e5b0f-fa98-43cc-ac46-d79553e769e4": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Rectangle_153.png",
+            "title": "",
+            "button_label": "Get 15% off all most everything",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "9c24cb01-5827-4c49-948a-62d3ab04e4b0",
+        "1f7e5b0f-fa98-43cc-ac46-d79553e769e4"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "layout": "layout_2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "1660633109a295440e",
+    "1660636195ce8bfdae",
+    "1660636652392bb31c",
+    "1660636795ed3f50c3",
+    "166035823932d23f32",
+    "1660638813395ef623",
+    "16606388950089d05f",
+    "1660639033818aed12"
+  ]
+}

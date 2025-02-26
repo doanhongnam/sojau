@@ -1,0 +1,203 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "slide",
+      "blocks": {
+        "19579fb8-6c88-414e-b6a3-a1605c3069f6": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/h22-slider1.jpg",
+            "sub_title": "Poolside daze",
+            "title": "<p>River Island ruched</p><p>sleeve blazer in beige</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "#",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "7f9baf9f-258e-4a54-9091-dc720c73b13f": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/h22-slider2.jpg",
+            "sub_title": "Poolside daze",
+            "title": "<p>Nike Futura cap in</p><p>light bone</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "#",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        },
+        "194b804a-f2eb-4dc4-830a-4b900ae2c589": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/h22-slider3.jpg",
+            "sub_title": "Poolside daze",
+            "title": "<p>London straw tote in </p><p>orange and pink</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "#",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#909090",
+            "color_title": "#000000",
+            "color_description": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "19579fb8-6c88-414e-b6a3-a1605c3069f6",
+        "7f9baf9f-258e-4a54-9091-dc720c73b13f",
+        "194b804a-f2eb-4dc4-830a-4b900ae2c589"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "left_bottom",
+        "pag_bg": "#000000",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "165664422642c82cdf": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New & Featured",
+        "description": "",
+        "display_type": "normal",
+        "collection": "men",
+        "products_to_show": 4,
+        "collection_list": [],
+        "type_button": "normal",
+        "text_button": "View More",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166150181728c40aaf": {
+      "type": "banner-image-card",
+      "blocks": {
+        "1263add0-6a8c-4da8-827d-9994efbaa6bd": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Banner_1.png",
+            "title": "",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        },
+        "19c70a03-d5ea-4702-97a1-de448cc97e8e": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/Banner_2.png",
+            "title": "",
+            "button_label": "Shop now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1263add0-6a8c-4da8-827d-9994efbaa6bd",
+        "19c70a03-d5ea-4702-97a1-de448cc97e8e"
+      ],
+      "settings": {
+        "width_layout": "container",
+        "layout": "layout_2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1661502063c30bf4f7": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New Arrivals",
+        "description": "",
+        "display_type": "normal",
+        "collection": "",
+        "products_to_show": 4,
+        "collection_list": [],
+        "type_button": "normal",
+        "text_button": "View More",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1656644345ad89ad4d": {
+      "type": "our-testimonial",
+      "blocks": {
+        "1abb1b4f-3b1c-424a-8bac-d6a07c530522": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_71.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#f9f9f9"
+          }
+        },
+        "a15a21c3-077c-41c6-911e-b540d21ba238": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_70.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#f9f9f9"
+          }
+        }
+      },
+      "block_order": [
+        "1abb1b4f-3b1c-424a-8bac-d6a07c530522",
+        "a15a21c3-077c-41c6-911e-b540d21ba238"
+      ],
+      "settings": {
+        "heading": "Our Testimonials",
+        "background_testimonial": "#ffffff",
+        "display_type": "layout_1",
+        "padding_top_bottom": 0,
+        "show_pagination": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165664422642c82cdf",
+    "166150181728c40aaf",
+    "1661502063c30bf4f7",
+    "1656644345ad89ad4d"
+  ]
+}

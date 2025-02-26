@@ -1,0 +1,499 @@
+{%  liquid 
+    assign WidthLayout = section.settings.width_layout
+%}
+<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="article-template-content {{ WidthLayout }}">
+        <div class="article-template__wp">
+            <div class="blog-slidebar">
+                {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                        {% when 'categories' %}
+                            {% if block.settings.menu.links != blank %}
+                                <div class="slider-categories">
+                                    {% if block.settings.title != blank and block.settings.menu.links != blank %}
+                                        <h3 class="slidebar-title">{{ block.settings.title }}</h3>
+                                    {% endif %}
+                                    {%- for link in block.settings.menu.links -%}
+                                        <div class="list-categories__item">
+                                            <a href="{{ link.url }}" class="categories__item" title="{{ link.title }}">
+                                                {{ link.title }}
+                                            </a>
+                                        </div>
+                                    {%- endfor -%}
+                                </div>
+                            {% endif %}
+                        {% when 'recent_post' %}
+                            <div class="recent-post">
+                                {% if blog.articles.size > 0 %}
+                                    {% if block.settings.title != blank %}
+                                        <h3 class="slidebar-title">{{ block.settings.title }}</h3>
+                                    {% endif %}
+
+                                    {%- paginate blog.articles by 3 -%}
+                                        {%- for article in blog.articles -%}
+                                            <div class="blog-item">
+                                                {%- render 'article-card-slidebar', show_date: section.settings.show_date, article: article -%}
+                                            </div>
+                                        {%- endfor -%}
+                                    {%- endpaginate -%}
+                                {% endif %}
+                            </div>
+
+                        {% when 'tags' %}
+                            <div class="tags">
+                                {% if block.settings.title != blank and blog.all_tags != blank %}
+                                    <h3 class="slidebar-title">{{ block.settings.title }}</h3>
+                                {% endif %}
+                                <div class="tags-list">
+                                    {%- for tag in blog.all_tags -%}
+                                        <div class="tags-item card__heading">{{ tag | link_to_tag: tag }}</div>
+                                    {%- endfor -%}
+                                </div>
+                            </div>
+                    {%- endcase -%}
+                {%- endfor -%}
+            </div>
+
+            <div class="article-template__remaining">
+                <div class="article-template-content__wrapper">
+                    {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                    {%- when '@app' -%}
+                    <div class="page-width page-width--narrow">
+                        {% render block %}
+                    </div>
+
+                    {%- when 'title' -%}
+                    <header class="page-width page-width--narrow mb-7.5" {{ block.shopify_attributes }}>
+                        <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+                        {%- if section.settings.show_date or section.settings.show_author -%}
+                        <div class="article-template-item flex flex-wrap justify-start">
+                            {%- if section.settings.show_date -%}
+                            <div class="article-template-item__date flex items-center pr-10">
+                                {% render 'icon', icon_name: 'icon-date' %}
+                                <span itemprop="dateCreated pubdate datePublished">{{ article.published_at | date: " %b
+                                    %d, %Y" }}</span>
+                            </div>
+                        {%- endif -%}
+                            {% if section.settings.show_author %}
+                            <div class="article-template-item__author flex justify-start">
+                                {% render 'icon', icon_name: 'icon-author' %}
+                                <span class="articleAuthor"></i>
+                                    <span>{{ 'blogs.article.by' | t }}</span>
+                                    {{ article.author }}
+                                </span>
+                            </div>
+                            {%- endif -%}
+                        </div>
+                    {%- endif -%}
+                    </header>
+                    {%- when 'content' -%}
+                    <div class="article-template__content page-width page-width--narrow rte" itemprop="articleBody" {{
+                        block.shopify_attributes }}>
+                        {{ article.content }}
+                    </div>
+                    {%- endcase -%}
+                    {%- endfor -%}
+                    {%- if section.settings.blog_show_social -%}
+                    <div class="article-template__social-sharing container" {{ block.shopify_attributes }} {% if section.settings.show_author %}style=" border-bottom: 1px solid #e7e7e7;"{% endif %}>
+                        <div class="socials">
+                            <div class="list-social flex items-center justify-start">
+                                <span class="span-social">{{ 'blogs.article.span_share' | t }}</span>
+                                <a class="list-social-item ml-5"
+                                    href="//www.facebook.com/sharer.php?u={{ shop.url }}{{ article.url }}">
+                                    {% render 'icon', icon_name: 'icon-facebook' %}
+                                </a>
+
+                                <a class="list-social-item ml-5"
+                                    href="https://twitter.com/share?url={{ shop.url }}{{ article.url }}"
+                                    data-via="your_screen_name" data-text="{{ article.title | escape }}"
+                                    data-count="horizontal">
+                                    {% render 'icon', icon_name: 'icon-twitter' %}
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="tags">
+                            {% if article.tags != blank %}
+                            <span class="span-social">{{ 'blogs.article.tags' | t }}</span>
+                            {% for tag in article.tags %}
+                            <a class="tag-font list-social-item ml-5"
+                                href="{{ blog.url }}/tagged/{{ tag | handleize }}">
+                                {{ tag }}
+                            </a>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if section.settings.show_author %}
+                        <div class="section-author">
+                            {% if article.user.image %}
+                            <div class="img-author {% if article.user.image %}mr-7.5{% endif %}">
+                                <img alt="{{ article.author }}"
+                                    src="{{ article.user.image | image_url: width: article.user.image.width, height: article.user.image.height }}"
+                                    width="{{ article.user.image.width }}" height="{{ article.user.image.height }}"
+                                    loading="lazy" />
+                            </div>
+                            {% endif %}
+                            <div class="info-author">
+                                <span class="name-author" itemprop="name">{{ article.author }}</span>
+                                {% if article.user.bio != blank %}
+                                <div class="bio__author">{{ article.user.bio }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="articleBoxExtend-container">
+        <div class="articleBoxExtend container clearfix">
+            {% if blog.next_article or blog.previous_article %}
+            {% liquid
+            assign current_found = false
+            assign done = false
+            for a in blog.articles
+            if current_found and done == false
+            assign next_article = a
+            assign done = true
+            endif
+            unless done
+            if a.id == article.id
+            assign current_found = true
+            else
+            assign prev_article = a
+            endif
+            endunless
+            endfor
+            %}
+            {% if prev_article %}
+            <div class="articleExtend articleExtendLeft">
+                <div class="articleExtendImage">
+                    <a href="{{ prev_article.url }}" class="article-img" title="{{ prev_article.title }}">
+                        {% render 'icon', icon_name: 'icon-prev-type2' %}
+                        <img class="article-img"
+                            src="{{ prev_article.image | image_url: width: prev_article.image.width, height: prev_article.image.height }}"
+                            alt="{{ prev_article.title }}" width="{{ prev_article.image.width }}"
+                            height="{{ prev_article.image.height }}" loading="lazy">
+                    </a>
+                </div>
+                <div class=" articleextendnavtext-container">
+                    <div class="articleExtendNavText">
+                        <a href="{{ prev_article.url }}" title="{{ prev_article.title }}">{{
+                            'blogs.article.previous_post' | t }}</a>
+                    </div>
+                    <div class="articleExtendTitle">
+                        <a href="{{ prev_article.url }}" title="{{ prev_article.title | strip_html | truncate: 80 }}">
+                            {{ prev_article.title | strip_html | truncate: 80 }}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+            {% if next_article %}
+            <div class="articleExtend articleExtendRight">
+                <div class="articleExtendNavText-container">
+                    <div class="articleExtendNavText">
+                        <a href="{{ next_article.url }}" title="{{ next_article.title }}">{{ 'blogs.article.next_post' |
+                            t }}</a>
+                    </div>
+                    <div class="articleExtendTitle">
+                        <a href="{{ next_article.url }}" title="{{ next_article.title | strip_html | truncate: 80 }}">
+                            {{ next_article.title | strip_html | truncate: 80 }}
+                        </a>
+                    </div>
+                </div>
+                <div class="articleExtendImage">
+                    <a href="{{ next_article.url }}" title="Next Article">
+                        {% render 'icon', icon_name: 'icon-next-type2' %}
+                        <img class="article-img"
+                            src="{{ next_article.image | image_url: width: next_article.image.width, height: next_article.image.height }}"
+                            alt="{{ next_article.title }}" width="{{ next_article.image.width }}"
+                            height="{{ next_article.image.height }}" loading="lazy">
+                    </a>
+                </div>
+            </div>
+
+            {% endif %}
+            {% endif %}
+
+        </div>
+    </div>
+
+    {%- if blog.comments_enabled? -%}
+
+    <div class="article-template__comment-wrapper container ">
+        <div class="page-width-comment " id="comments">
+            {%- if article.comments_count > 0 -%}
+            {%- assign anchorId = '#Comments-' | append: article.id -%}
+            <h2 class="comment-style comment-style_customer" id="Comments-{{ article.id }}">{{ 'blogs.article.comment' |
+                t }}
+                ({{ article.comments_count }})</h2>
+            {% paginate article.comments by 5 %}
+            <div class="article-template__comments">
+                {%- for comment in article.comments -%}
+                <article id="{{ comment.id }}" class="article-template__comments-comment">
+                    <div class="article-comment__left">
+                        <img alt="{{ article.author }}"
+                            src="{{ article.user.image | image_url: width: article.user.image.width, height: article.user.image.height }}"
+                            width="{{ article.user.image.width }}" height="{{ article.user.image.height }}"
+                            loading="lazy" />
+                    </div>
+                    <div class="article-comment__right">
+                        <div class="article-user-info-comment">
+                            <div class="date-comment">{{ comment.created_at | date: " %b %d, %Y" }}</div>
+                            <div class="author-comment">{{ comment.author }}</div>
+                        </div>
+                        <div class="article-user-content-comment">
+                            {{ comment.content }}
+                        </div>
+                    </div>
+
+                </article>
+                {%- endfor -%}
+
+                {%- if comment.status == 'pending' and comment.content -%}
+                <article id="{{ comment.id }}" class="">
+                    {{ comment.content }}
+                    <div class="">
+                        <span class="">{{ comment.author }}</span>
+                    </div>
+                </article>
+                {%- endif -%}
+                {% render 'pagination', paginate: paginate, anchor: anchorId %}
+            </div>
+            {% endpaginate %}
+            {%- endif -%}
+
+
+            {% form 'new_comment', article %}
+            {%- liquid
+            assign post_message = 'blogs.article.success'
+            if blog.moderated? and comment.status == 'unapproved'
+            assign post_message = 'blogs.article.success_moderated'
+            endif
+            -%}
+            <h2 class="comment-style">{{ 'blogs.article.comment' | t }}</h2>
+            {%- if form.errors -%}
+            <div class="form__message" role="alert">
+                <h3 autofocus class="form-status caption-large" tabindex="-1">
+                    {% render 'icon', icon_name: 'icon-error' %}
+                    {{ 'templates.contact.form.error_heading' | t }}
+                </h3>
+            </div>
+            <ul class="form-status-list caption-large">
+                {%- for field in form.errors -%}
+                <li>
+                    <a class="link" href="#CommentForm-{{ field }}">
+                        {%- if form.errors.translated_fields[field] contains 'author' -%}
+                        {{ 'blogs.article.name' | t }}
+                        {%- elsif form.errors.translated_fields[field] contains 'body' -%}
+                        {{ 'blogs.article.message' | t }}
+                        {%- else -%}
+                        {{ form.errors.translated_fields[field] }}
+                        {%- endif -%}
+                        {{ form.errors.messages[field] }}
+                    </a>
+                </li>
+                {%- endfor -%}
+            </ul>
+            {%- elsif form.posted_successfully? -%}
+            <div class="form-status-list form__message" role="status">
+                <h3 autofocus class="form-status" tabindex="-1">{% render 'icon', icon_name: 'icon-success' %}
+                    {{ post_message | t }}</h3>
+            </div>
+            {%- endif -%}
+
+                <div {% if blog.moderated? == false %} class="article-template__comments-fields" {% endif %}>
+                <div class="article-template__comment-fields">
+                    <div class="field field--with-error">
+                        <input type="text" name="comment[author]" id="CommentForm-author" class="field__input"
+                            autocomplete="name" value="{{ form.author }}" aria-required="true" {% if form.errors
+                            contains 'author' %} aria-invalid="true" aria-describedby="CommentForm-author-error" {%
+                            endif %} placeholder="{{ 'blogs.article.name' | t }}">
+                        <label class="field__label" for="CommentForm-author">{{ 'blogs.article.name' | t }}
+                            <span aria-hidden="true">*</span>
+                        </label>
+                        {%- if form.errors contains 'author' -%}
+                        <small id="CommentForm-author-error">
+                            <span class="form__message">{% render 'icon', icon_name: 'icon-error' %}{{
+                                'blogs.article.name' | t }}
+                                {{ form.errors.messages['author'] }}.</span>
+                        </small>
+                        {%- endif -%}
+                    </div>
+                    <div class="field field--with-error">
+
+
+                        <input type="email" name="comment[email]" id="CommentForm-email" autocomplete="email"
+                            class="field__input" value="{{ form.email }}" autocorrect="off" autocapitalize="off"
+                            aria-required="true" {% if form.errors contains 'email' %} aria-invalid="true"
+                            aria-describedby="CommentForm-email-error" {% endif %}
+                            placeholder="{{ 'blogs.article.email' | t }}">
+                        <label class="field__label" for="CommentForm-email">{{ 'blogs.article.email' | t }}
+                            <span aria-hidden="true">*</span>
+                        </label>
+                        {%- if form.errors contains 'email' -%}
+                        <small id="CommentForm-email-error">
+                            <span class="form__message">{% render 'icon', icon_name: 'icon-error' %}{{
+                                'blogs.article.email' | t }}
+                                {{ form.errors.messages['email'] }}.</span>
+                        </small>
+                        {%- endif -%}
+                    </div>
+                </div>
+                <div class="field field--with-error">
+                    <textarea rows="5" name="comment[body]" id="CommentForm-body" class="text-area field__input"
+                        aria-required="true" {% if form.errors contains 'body' %} aria-invalid="true"
+                        aria-describedby="CommentForm-body-error" {% endif %}
+                        placeholder="{{ 'blogs.article.message' | t }}">{{ form.body }}</textarea>
+                    <label class="form__label field__label" for="CommentForm-body">{{ 'blogs.article.message' | t }}
+                        <span aria-hidden="true">*</span>
+                    </label>
+                </div>
+                {%- if form.errors contains 'body' -%}
+                <small id="CommentForm-body-error">
+                    <span class="form__message">{% render 'icon', icon_name: 'icon-error' %}{{ 'blogs.article.message' |
+                        t }}
+                        {{ form.errors.messages['body'] }}.</span>
+                </small>
+                {%- endif -%}
+            </div>
+            {%- if blog.moderated? -%}
+            <p class="article-template__comment-warning caption mb-5">{{ 'blogs.article.moderated' | t }}</p>
+            {%- endif -%}
+            <button class="tp-btn tp-btn__secondary change-input" type="submit" value="Submit">Submit<button>
+            {% endform %}
+        </div>
+    </div>
+    {%- endif -%}
+
+</article>
+
+{% schema %}
+
+{
+    "name":"t:sections.main-article.name",
+    "class":"main-article-section",
+    "tag":"section",
+    "settings":[
+        {
+      "type": "select",
+      "id": "width_layout",
+      "label": "Width layout",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "width-full",
+          "label": "Width full"
+        }
+      ],
+      "default": "container"
+    },
+       {
+          "type":"checkbox",
+          "id":"blog_show_social",
+          "default":true,
+          "label":"Show share social"
+       },
+       {
+        "type":"checkbox",
+          "id":"show_date",
+          "default":true,
+          "label":"Show date"
+        },
+       {
+          "type":"checkbox",
+          "id":"show_author",
+          "default": false,
+          "label":"Show author"
+       }
+    ],
+    "blocks":[
+       {
+          "type":"categories",
+          "name":"Categories",
+          "limit":1,
+          "settings":[
+             {
+                "type":"text",
+                "id":"title",
+                "label":"Title",
+                "default":"Categories"
+             },
+             {
+                "type":"link_list",
+                "id":"menu",
+                "label":"Select categories menu"
+             }
+          ]
+       },
+       {
+          "type":"recent_post",
+          "name":"Recent Post",
+          "limit":1,
+          "settings":[
+             {
+                "type":"text",
+                "id":"title",
+                "label":"Title",
+                "default":"Recent Post"
+             },
+             {
+                "type":"blog",
+                "id":"sidebar_recent_blog_name",
+                "label":"Blog Name"
+             }
+          ]
+       },
+       {
+          "type":"tags",
+          "name":"Tags",
+          "limit":1,
+          "settings":[
+             {
+                "type":"text",
+                "id":"title",
+                "label":"Title",
+                "default":"Tags"
+             }
+          ]
+       },
+       {
+          "type":"@app"
+       },
+       {
+          "type":"title",
+          "name":"t:sections.main-article.blocks.title.name",
+          "limit":1,
+          "settings":[
+             {
+                "type":"checkbox",
+                "id":"blog_show_comment",
+                "label":"Show comment",
+                "default":true
+             }
+          ]
+       },
+       {
+          "type":"content",
+          "name":"t:sections.main-article.blocks.content.name",
+          "limit":1
+       }
+    ]
+ }
+
+{% endschema %}

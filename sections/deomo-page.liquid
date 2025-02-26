@@ -1,0 +1,695 @@
+{%- liquid
+   assign titleStatus = section.settings.title_status
+-%}
+
+<div class="demopage">
+  <div class="container container-size2">
+    <div class="demopage__wrap">
+
+      <div class="demopage__top {{ titleStatus }}">
+        <h1 class="demopage__title relative text-center mb-5">
+          {{ section.settings.title }}
+          <p class="num-demo absolute">{{ section.settings.number }}</p>
+        </h1>
+        <p class="demopage__brief text-center">
+          {{ section.settings.sub_title }}
+        </p>
+        <p class="page-subtitle text-highlight text-center mb-12.5">
+          Enter Password
+          <span class="highlight">1</span>
+          to view
+        </p>
+
+        <div class="button-group filter-button-group mb-15">
+          {% for i in (1..10) %}
+            {% capture text %}title_btn_{{ i }}{% endcapture %}
+            {% capture dataname %}data_name_{{ i }}{% endcapture %}
+
+            {% if section.settings[text] != blank %}
+              <button class="actions__btn {% if forloop.first %}active{% endif %}{% if forloop.index == 2 %}shake{% endif %}" data-name="{{ section.settings[dataname] }}">{{ section.settings[text] }}</button>
+            {% endif %}
+
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="gallery">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when "demo_item" -%}
+            {% assign topicName = block.settings.topic | split: "," %}
+            {%- comment -%} {%  assign topicName = block.settings.topic %} {%- endcomment -%}
+
+            {%- liquid
+            assign strTmp = '['
+
+            for tpName in topicName
+                assign strTmp = strTmp | strip
+                assign strTmp = strTmp | append: '"' | append: tpName | append: '"' 
+
+                unless forloop.last
+                  assign strTmp = strTmp | append: ","
+                endunless
+
+            endfor
+
+            assign strTmp = strTmp | append: ']' 
+            
+          -%}
+
+            <div class="image" data-name='{{ strTmp }}'>
+              <div class="gallery__items mb-3.75">
+                {% assign ImageDemo = block.settings.image_demo %}
+                {% if ImageDemo != blank %}
+                  <a
+                    title="{{ block.settings.heading }}"
+                    href=" {{ block.settings.demo_url }}"
+                    class="demopage__box__link">
+                    <img
+                      class="demopage__box__img mb-5"
+                      src="{{ ImageDemo | image_url: width: ImageDemo.width , height: ImageDemo.height }}"
+                      alt="slider background image"
+                      width="{{ ImageDemo.width }}"
+                      height="{{ ImageDemo.height }}"
+                      loading="lazy">
+                  {% else %}
+                    {% render 'no-image', text_size: '300x350', width: 300, height: 350 %}
+                  {% endif %}
+
+                  {% if block.settings.status_demo != blank %}
+                    <div class="demopage__box__stt demopage__box__stt-{{ block.id }}">
+                      <span class="demopage__box__status">
+                        {{ block.settings.status_demo }}
+                      </span>
+                    </div>
+                  {% endif %}
+                </a>
+              </div>
+
+              <a href=" {{ block.settings.demo_url }}">
+                <h4 class="demopage__box__title demopage__box__title-{{ block.id }} text-center">
+                  {{ block.settings.heading }}</h4>
+              </a>
+
+              <style>
+                .demopage__title {
+                  font-size: {{ section.settings.size_title }}
+                  px;
+                }
+
+                .demopage__box__title-{{ block.id }}{
+                  font-size: {{ block.settings.title_item }}
+                  px;
+                }
+
+                .demopage__box__stt-{{ block.id }}{
+                  background: {{ block.settings.color_status }}
+                  ;
+                }
+              </style>
+            </div>
+
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const filterbtn = document.querySelector(".button-group");
+  const filterImg = document.querySelectorAll(".image");
+
+  if (filterbtn) {
+    const demoBtns = filterbtn.querySelectorAll(".actions__btn");
+    if (demoBtns.length > 0) {
+      demoBtns.forEach(function(item) {
+        item.addEventListener("click", function(e) {
+          const activeCurrent = filterbtn.querySelector(".actions__btn.active");
+          activeCurrent.classList.remove("active");
+          e.target.classList.add("active");
+
+          let filterName = e.target.getAttribute("data-name");
+          console.log('filter name : ', filterName);
+          filterImg.forEach((image) => {
+            let filterImages = image.getAttribute("data-name");
+
+
+            if (JSON.parse(filterImages).includes(filterName) || JSON.parse(filterImages).includes(' ' + filterName) || filterName == "all") {
+              image.classList.remove("hide");
+              image.classList.add("show");
+            } else {
+              image.classList.add("hide");
+              image.classList.remove("show");
+            }
+          });
+        });
+      });
+    }
+  }
+</script>
+
+{% render 'margin-bottom' %}
+{% schema %}
+  {
+    "name": "DemoPage",
+    "tag": "section",
+    "class": "demopage",
+    "settings": [
+      {
+        "type": "radio",
+        "id": "title_status",
+        "label": "Title status",
+        "options": [
+          {
+            "value": "hidden",
+            "label": "Hidden"
+          }, {
+            "value": "visible",
+            "label": "Visible"
+          }
+        ],
+        "default": "visible"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Ultimate Demos"
+      },
+      {
+        "type": "text",
+        "id": "number",
+        "label": "Number demo",
+        "default": "10"
+      },
+      {
+        "type": "range",
+        "id": "size_title",
+        "min": 28,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title",
+        "default": 28
+      }, {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Sub title",
+        "default": "Storepify comes with 12+ pre-made dummy templates which are completely compatible with Drag & Drop Builder."
+      }, {
+        "type": "header",
+        "content": "Tabs demos 1"
+      }, {
+        "type": "text",
+        "id": "title_btn_1",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_1",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 2"
+      }, {
+        "type": "text",
+        "id": "title_btn_2",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_2",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 3"
+      }, {
+        "type": "text",
+        "id": "title_btn_3",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_3",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 4"
+      }, {
+        "type": "text",
+        "id": "title_btn_4",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_4",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 5"
+      }, {
+        "type": "text",
+        "id": "title_btn_5",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_5",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 6"
+      }, {
+        "type": "text",
+        "id": "title_btn_6",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_6",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 7"
+      }, {
+        "type": "text",
+        "id": "title_btn_7",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_7",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 8"
+      }, {
+        "type": "text",
+        "id": "title_btn_8",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_8",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 9"
+      }, {
+        "type": "text",
+        "id": "title_btn_9",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_9",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "header",
+        "content": "Tabs demos 10"
+      }, {
+        "type": "text",
+        "id": "title_btn_10",
+        "label": "Title button"
+      }, {
+        "type": "select",
+        "id": "data_name_10",
+        "label": "Data name",
+        "options": [
+          {
+            "value": "all",
+            "label": "All industries"
+          },
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "fashion",
+            "label": "Clothing & Fashion"
+          },
+          {
+            "value": "beauty",
+            "label": "Health & Beauty"
+          }, {
+            "value": "electronic",
+            "label": "Technology"
+          }, {
+            "value": "food",
+            "label": "Food & Beverage"
+          }, {
+            "value": "childthemes",
+            "label": "Childthemes"
+          }, {
+            "value": "miscellaneous",
+            "label": "Miscellaneous"
+          }
+        ],
+        "default": "all"
+      }, {
+        "type": "paragraph",
+        "content": "Unit: pixel"
+      }, {
+        "type": "number",
+        "id": "margin_bottom_desktop",
+        "label": "t:sections.margin_bottom.desktop.label",
+        "default": 80
+      }, {
+        "type": "number",
+        "id": "margin_bottom_table",
+        "label": "t:sections.margin_bottom.tablet.label",
+        "default": 60
+      }, {
+        "type": "number",
+        "id": "margin_bottom_mobile",
+        "label": "t:sections.margin_bottom.mobile.label",
+        "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Demo Item",
+        "type": "demo_item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_demo",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "demo_url",
+            "label": "Url demo"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Title demo",
+            "default": "Title"
+          },
+          {
+            "type": "range",
+            "id": "title_item",
+            "min": 16,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size title",
+            "default": 16
+          }, {
+            "type": "textarea",
+            "id": "topic",
+            "label": "Topic",
+            "default": "all"
+          }, {
+            "type": "text",
+            "id": "status_demo",
+            "label": "Status"
+          }, {
+            "type": "color",
+            "id": "color_status",
+            "label": "Background status",
+            "default": "#40d8cf"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Demo Page",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,61 @@
+{% if block.settings.use_spacing %}
+  {% render 'block-margin-bottom', className: 'tp-share', block: block %}
+  {% assign classDefault = '' %}
+{% else %}
+  {% assign classDefault = ' mb-2.5' %}
+{% endif %}
+
+{% liquid
+  assign show_pinterest = block.settings.show_pinterest
+  assign show_instagram = block.settings.show_instagram
+  assign show_facebook = block.settings.show_facebook
+  assign show_twitter = block.settings.show_twitter
+  assign show_copy = block.settings.show_copy
+%}
+<div class="tp-share flex items-center{{ classDefault }}">
+  <span class="add-social mr-3.75">{{ 'products.product.label_share' | t }}:</span>
+  <ul class="flex items-center">
+    {% if show_pinterest %}
+      <li class="mr-4" flow="up" tooltip="Pinterest">
+        <a href="//pinterest.com/share?url={{ shop.url | append: product.url }}">
+          {% render 'icon', icon_name: 'icon-pinterest' %}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if show_instagram %}
+      <li class="mr-4" flow="up" tooltip="Instagram">
+        <a href="//instagram.com/share?url={{ shop.url | append: product.url }}">
+          {% render 'icon', icon_name: 'icon-instagam' %}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if show_facebook %}
+      <li class="mr-4" flow="up" tooltip="Facebook">
+        <a href="//www.facebook.com/sharer.php?u={{ shop.url | append: product.url }}">
+          {% render 'icon', icon_name: 'icon-facebook' %}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if show_twitter %}
+      <li class="mr-4" flow="up" tooltip="Twitter">
+        <a href="//twitter.com/share?url={{ shop.url | append: product.url }}">
+          {% render 'icon', icon_name: 'icon-twitter' %}
+        </a>
+      </li>
+    {% endif %}
+
+    {% if show_copy %}
+      <li class="mr-2 flex flex-row items-center" flow="up" tooltip="Share">
+        <span class="product-share__link cursor-pointer" data-url="{{ shop.url | append: product.url }}">
+          {% render 'icon', icon_name: 'icon-copy' %}
+        </span>
+        <span class="text-copied hidden">
+          {{ 'products.product.label_copied' | t }}
+        </span>
+      </li>
+    {% endif %}
+  </ul>
+</div>

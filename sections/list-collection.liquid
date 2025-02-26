@@ -1,0 +1,547 @@
+{% liquid
+  assign displayTypeCollection = section.settings.display_type_collection
+  assign widthSection = section.settings.width_section
+%}
+<div
+  class="tp-list-collection tp-list-collection-{{ section.id }} {{ widthSection }}"
+>
+  {% if displayTypeCollection == 'slide' %}
+    {% render 'list-collection-type1', block: block %}
+  {% elsif displayTypeCollection == 'title' %}
+    <div class="tp-list-collection__type-title ">
+      <div class="tp-list-collection__type-title-list flex items-centerc justify-center">
+        {%- for block in section.blocks -%}
+          {% if block.type == 'collection_item' %}
+            {% assign collection = block.settings.collection %}
+            <div class="tp-list-collection__item">
+              <a class="tp-btn tp-btn__secondary" href="{{ collection.url | default: '#'  }}">
+                {% if collection != blank %}
+                  {{ collection.title }}
+                {% else %}
+                  Title
+                {% endif %}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% elsif displayTypeCollection == 'grid_2' %}
+    <div class="tp-list-collection__grid-2 flex">
+      <div class="tp-list-collection__grid-2-left">
+        {% if section.settings.heading != blank %}
+          <h2 class="grid-2-left-title">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <div class="grid-2-left-desc mb-2.5">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        {% assign bt = section.settings.button_type %}
+        <a
+          class="tp-btn {{ bt | default: "tp-btn__primary" }}
+          href="{% if section.settings.link_button_banner != blank %}{{ section.settings.link_button_banner }}{% else %}#{% endif %}"
+        >
+          {{ section.settings.text_button }}
+        </a>
+      </div>
+      <div class="tp-list-collection__grid-2-right flex items-center flex-wrap">
+        {%- for block in section.blocks limit: 4 -%}
+          {% if block.type == 'collection_item' %}
+            {% assign collection = block.settings.collection %}
+            {% if block.settings.item_image != blank %}
+              {% assign ImageCollection = block.settings.item_image %}
+            {% else %}
+              {% assign ImageCollection = collection.featured_image %}
+            {% endif %}
+            <div class="tp-list-collection__item">
+              <a href="{{ collection.url }}">
+                <div class="overflow-hidden relative mb-4">
+                  {% if ImageCollection != blank %}
+                    <img
+                      class="tp-list-collection__img"
+                      src="{{ ImageCollection | image_url: width: ImageCollection.width , height: ImageCollection.height }}"
+                      alt="image collection"
+                      width="{{ImageCollection.width}}"
+                      height="{{ImageCollection.height}}"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    {% render 'no-image', text_size: '300 x 300 px', width: 300, height: 300 %}
+                  {% endif %}
+                </div>
+                <div class="tp-list-collection__title">
+                  {% if collection.title != blank %}
+                    {{ collection.title }}
+                  {% else %}
+                    Title
+                  {% endif %}
+                </div>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% elsif displayTypeCollection == 'grid' %}
+    <div class="tp-list-collection__grid">
+      <div class="tp-list-collection__top d-flex align-items-center justify-content-between">
+        {% if section.settings.heading != blank %}
+          <h2 class="tp-title-section text-[2.25rem]">{{ section.settings.heading }}</h2>
+        {% endif %}
+      </div>
+      <div class="tp-list-collection__grid-main flex flex-wrap">
+        {%- for block in section.blocks -%}
+          {% if block.type == 'collection_item' %}
+            {% assign collection = block.settings.collection %}
+            {% if block.settings.item_image != blank %}
+              {% assign ImageCollection = block.settings.item_image %}
+            {% else %}
+              {% assign ImageCollection = collection.featured_image %}
+            {% endif %}
+            <div class="tp-list-collection__item">
+              <div class="overflow-hidden relative">
+                {% if ImageCollection != blank %}
+                  <img
+                    class="tp-list-collection__img"
+                    src="{{ ImageCollection | image_url: width: ImageCollection.width , height: ImageCollection.height }}"
+                    alt="image collection"
+                    width="{{ ImageCollection.width }}"
+                    height="{{ ImageCollection.height }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  {% render 'no-image', text_size: '300 x 300 px', width: 300, height: 300 %}
+                {% endif %}
+                <div class="tp-list-collecton__content">
+                  <a href="{{ collection.url }}" class="tp-content__title">
+                    {% if collection.title != blank %}
+                      {{ collection.title }}
+                    {% else %}
+                      Title
+                    {% endif %}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <style>
+              .tp-list-collection__grid-main{
+                margin-left: -{{ section.settings.gap_item | divided_by: 2 }}px;
+                margin-right: -{{ section.settings.gap_item | divided_by: 2 }}px;
+              }
+              .tp-list-collection__grid-main .tp-list-collection__item{
+                padding-left: {{ section.settings.gap_item | divided_by: 2 }}px;
+                padding-right: {{ section.settings.gap_item | divided_by: 2 }}px;
+              }
+            </style>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <div class="tp-list-collection__hv-change-img flex items-center">
+      <div class="tp-list-collecton__left w-1/2 flex flex-col items-center">
+        {%- for block in section.blocks -%}
+          {% if block.type == 'collection_item' %}
+            {% assign collection = block.settings.collection %}
+            <a
+              href="{{ collection.url }}"
+              class="tp-content__title {% if forloop.first %}active{% endif %}"
+              data-hover-index="{{ forloop.index }}"
+            >
+              {% if collection.title != blank %}
+                {{- collection.title -}}
+              {% else %}
+                Collection Title
+              {% endif %}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="tp-list-collection__right w-1/2">
+        {%- for block in section.blocks -%}
+          {% if block.type == 'collection_item' %}
+            {% assign collection = block.settings.collection %}
+            {% if block.settings.item_image != blank %}
+              {% assign ImageCollection = block.settings.item_image %}
+            {% else %}
+              {% assign ImageCollection = collection.featured_image %}
+            {% endif %}
+
+            <div class="tp-list-collection__item tp-list-collection__item-{{ forloop.index }} {% if forloop.first %} active {% else %}hidden{% endif %}">
+              <div class="overflow-hidden relative">
+                {% if ImageCollection != blank %}
+                  <img
+                    class="tp-list-collection__img zoom-in-out-box"
+                    src="{{ ImageCollection | image_url: width: ImageCollection.width , height: ImageCollection.height }}"
+                    alt="image collection"
+                    width="{{ ImageCollection.width }}"
+                    height="{{ ImageCollection.height }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  {% render 'no-image', text_size: '300 x 300 px', width: 300, height: 300 %}
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .tp-list-collection-{{ section.id }}{
+    background: {{ section.settings.background_collection }};
+  }
+  .tp-list-collection-{{ section.id }} .tp-content__title{
+    color: {{ section.settings.color_title }};
+    font-size: {{ section.settings.fz_title_collection }}px;
+  }
+  .tp-list-collection-{{ section.id }} .tp-content__title::before{
+    background:  {{ section.settings.color_title }};
+  }
+  {% if section.settings.border_radius_image %}
+  .tp-list-collection-{{ section.id }} .tp-list-collection__item img{
+    padding-top:10px;
+    border-radius: 50%;
+  }
+  {% endif %}
+  .tp-list-collection-{{ section.id }} .tp-list-collection__item:hover img{
+    {% if section.settings.hover_image == 'zoom' %}
+      transform: scale(1.05);
+    {% elsif section.settings.hover_image == 'translate_top' %}
+    transform: translateY(-5px);
+    {% endif %}
+  }
+
+  .tp-list-collection-{{ section.id }} .tp-list-collection__title{
+    font-size: {{ section.settings.fz_title_collection }}px;
+    color: {{ section.settings.color_title }};
+  }
+</style>
+{% render 'margin-bottom' %}
+
+{% schema %}
+{
+  "name": "List collection",
+  "tag": "section",
+  "class": "tp-list-collection",
+  "settings": [
+    {
+      "type": "select",
+      "id": "width_section",
+      "label": "Width section",
+      "options": [
+        {
+          "value": "container",
+          "label": "Container"
+        },
+        {
+          "value": "lg-container",
+          "label": "Large container"
+        },
+        {
+          "value": "fullwidth",
+          "label": "Full width"
+        }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "color",
+      "id": "background_collection",
+      "label": "Background"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Collection heading",
+      "default": "Coats & Jackets"
+    },
+    {
+      "type": "select",
+      "id": "display_type_collection",
+      "label": "Display type collection",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "grid_2",
+          "label": "Grid 2"
+        },
+        {
+          "value": "title",
+          "label": "Title"
+        },
+        {
+          "value": "hover_change_image",
+          "label": "Hover change image"
+        }
+      ]
+    },
+
+    {
+      "type": "checkbox",
+      "id": "border_radius_image",
+      "label": "Border radius image",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "hover_image",
+      "label": "Hover image",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "zoom",
+          "label": "Zoom"
+        },
+        {
+          "value": "translate_top",
+          "label": "Translate top"
+        }
+      ],
+      "default": "zoom"
+    },
+    {
+      "type": "range",
+      "id": "gap_item",
+      "label": "Gap item",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color title collection",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "fz_title_collection",
+      "label": "Font size collection",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Config type Slide"
+    },
+    {
+      "type": "select",
+      "id": "slide_perview",
+      "label": "Slides perview",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "4.5",
+          "label": "4.5"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        },
+        {
+          "value": "5.5",
+          "label": "5.5"
+        },
+        {
+          "value": "6",
+          "label": "6"
+        }
+      ],
+      "default": "4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show navigation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count_product",
+      "label": "Show count product",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_btn_shop_now",
+      "label": "Show button shop now",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "style_title_collection",
+      "label": "Style title collection",
+      "options": [
+        {
+          "value": "style_nomarl",
+          "label": "Nomarl"
+        },
+        {
+          "value": "style_1",
+          "label": "Style 1"
+        },
+        {
+          "value": "style_2",
+          "label": "Style 2"
+        },
+        {
+          "value": "style_3",
+          "label": "Style 3"
+        }
+      ],
+      "default": "style_1"
+    },
+    {
+      "type": "header",
+      "content": "Config type Grid 2"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "text_button",
+      "label": "Text button",
+      "default": "Shop collection"
+    },
+    {
+      "type": "url",
+      "id": "link_button_banner",
+      "label": "Link button banner"
+    },
+    {
+      "type": "paragraph",
+      "content": "========================="
+    },
+    {
+      "type": "header",
+      "content": "Button settings"
+    },
+    {
+      "type": "select",
+      "id": "button_type",
+      "options": [
+        {
+          "value": "tp-btn__primary",
+          "label": "Button primary"
+        },
+        {
+          "value": "tp-btn__secondary",
+          "label": "Button secondary"
+        },
+        {
+          "value": "tp-btn__alternate",
+          "label": "Button alternate"
+        },
+        {
+          "value": "tp-btn__underline",
+          "label": "Button underline"
+        }
+      ],
+      "label": "Button type",
+      "default": "tp-btn__primary"
+    },
+    {
+      "id": "button_title",
+      "type": "text",
+      "label": "Button title",
+      "default": "Shop Now"
+    },
+
+    {
+      "type": "header",
+      "content": "t:sections.margin_bottom.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Unit: pixel"
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_desktop",
+      "label": "t:sections.margin_bottom.desktop.label",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_table",
+      "label": "t:sections.margin_bottom.tablet.label",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom_mobile",
+      "label": "t:sections.margin_bottom.mobile.label",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_item",
+      "name": "Collection item",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "id": "item_image",
+          "type": "image_picker",
+          "label": "Image collection",
+          "info": "If not selected, will get the image collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "List collection",
+      "blocks": [
+        {
+          "type": "collection_item"
+        },
+        {
+          "type": "collection_item"
+        },
+        {
+          "type": "collection_item"
+        },
+        {
+          "type": "collection_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

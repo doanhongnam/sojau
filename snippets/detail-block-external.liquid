@@ -1,0 +1,27 @@
+{% liquid
+    assign exp_url = block.settings.exp_url
+    assign exp_title = block.settings.exp_title
+    assign exp_target = block.settings.exp_target
+
+    if block.settings.use_spacing
+        render 'block-margin-bottom', className: "exp-product", block: block
+        assign classDefault = ""
+    else
+        assign classDefault = " mb-3.75"
+    endif
+%}
+
+<div class="exp-product{{ classDefault }}">
+    {% if exp_url != blank and exp_title %}
+        <a
+                href="{{ exp_url }}"
+                title="{{ exp_title }}"
+                target="{% if exp_target == true %}_blank{% else %}_self{% endif %}"
+        >
+            {{ exp_title }}
+        </a>
+    {% else %}
+        <a href="#" title="Please enter link & title" target="_blank"> Please enter link & title </a>
+    {% endif %}
+    {% style %}.sticky-product-detail{display:none!important}{% endstyle %}
+</div>

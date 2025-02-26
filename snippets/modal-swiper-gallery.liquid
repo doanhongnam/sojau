@@ -1,0 +1,27 @@
+<div id="{{ id }}" class="modal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <span class="close">&times;</span>
+      <div class="wrapper-gallery">
+        <div class="swiper gallery-top {{ id }}">
+          <div class="swiper-wrapper">
+            {% for block in listItemGallery %}
+              <div class="swiper-slide">
+                <img src="{{ block.settings.image | image_url: width: block.settings.image.width, height: block.settings.image.height }}" alt="{{ block.settings.image.alt }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Arrows -->
+      <div class="swiper-button-prev swiper-button-white">
+        {% render 'icon', icon_name: 'icon-left-arrow' %}
+      </div>
+      <div class="swiper-button-next swiper-button-white">
+        {% render 'icon', icon_name: 'icon-right-arrow' %}
+      </div>
+    </div>
+  </div>
+
+</div>

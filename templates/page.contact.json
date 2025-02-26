@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "165931995121c8b8ef": {
+      "type": "breadcrumb",
+      "settings": {
+        "width_layout": "container",
+        "position_bread_crumb": "center",
+        "pbs_collection": "first",
+        "color_background": "#ffffff",
+        "show_image_collection": false,
+        "margin_bottom_desktop": 0,
+        "margin_bottom_table": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "1659319973f6bd5c76": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "blocks": {
+        "8f4f4259-b711-4098-a16f-5c7f54239606": {
+          "type": "contact-info",
+          "settings": {
+            "title_info": "Get in touch",
+            "info_description": "<p>Send us a note anytime — we welcome feedback and requests.</p>",
+            "label_phone": "",
+            "number_phone": "",
+            "label_address": "ADDRESS",
+            "address": "<p>SoJau LLC<br/>2724 Sleepy Hollow Rd</p><p>Athens, NY 12015</p><p>United States</p><p></p>",
+            "label_email": "EMAIL",
+            "address_email": "<p>contact@sojau.com</p>"
+          }
+        },
+        "f19b80ea-26fb-42fc-be6c-60d969a8b5d7": {
+          "type": "form",
+          "settings": {
+            "heading": "Drop us a line",
+            "description": "<p>We are here to help. Please complete the short form below and we`ll respond as soon as possible</p>"
+          }
+        }
+      },
+      "block_order": [
+        "8f4f4259-b711-4098-a16f-5c7f54239606",
+        "f19b80ea-26fb-42fc-be6c-60d969a8b5d7"
+      ],
+      "settings": {}
+    },
+    "1659318091e6bc96c5": {
+      "type": "iframe-maps",
+      "settings": {
+        "iframe_address": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.441585068408!2d-73.82074400476344!3d42.290442165243185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd950a840e0d83%3A0x7ced56db1d36929!2s2722%20Sleepy%20Hollow%20Rd%2C%20Athens%2C%20NY%2012015%2C%20USA!5e0!3m2!1sen!2s!4v1739575494949!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "165931995121c8b8ef",
+    "1659319973f6bd5c76",
+    "form",
+    "1659318091e6bc96c5"
+  ]
+}

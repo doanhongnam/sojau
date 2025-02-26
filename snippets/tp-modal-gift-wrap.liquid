@@ -1,0 +1,151 @@
+{%liquid  
+    assign countItem = settings.collection_gift_wrap.products.size
+    case countItem
+        when 1
+            assign gridTemplateColumns = 'auto auto'
+        when 2
+            assign gridTemplateColumns = 'auto auto'
+        when 3
+            assign gridTemplateColumns = 'auto auto auto'
+        when 4
+            assign gridTemplateColumns = 'auto auto auto'
+        else
+            assign gridTemplateColumns = 'auto auto auto'
+    endcase
+%}
+
+<style>
+  #tp_modal_gift_wrap {
+    grid-template-columns: {{ gridTemplateColumns }};
+  }
+</style>
+
+<div id="tp_modal_gift_wrap" class="tp-modal tp-modal-gift-wrap shadow-xl">
+  <span class="gift-wrap-close">
+    {% render 'icon', icon_name: 'icon-close' %}
+  </span>
+  {% liquid
+        assign existGiftWrap = false
+
+       assign arrTmp = '[' 
+       for item in settings.collection_gift_wrap.products
+        assign itemIndexLast = forloop.last
+        for variant in item.variants    
+            assign variantIndexLast = forloop.last
+            if itemIndexLast
+                if variantIndexLast
+                    assign arrTmp = arrTmp | append: variant.id
+                else
+                    assign arrTmp = arrTmp | append: variant.id | append : ','
+                endif
+            else
+                assign arrTmp = arrTmp | append: variant.id | append : ','
+            endif
+
+            for item in cart.items
+                if item.variant_id == variant.id
+                assign existGiftWrap = true
+                endif
+            endfor
+        endfor 
+       endfor 
+
+       assign arrTmp = arrTmp | append: ']' 
+    %}
+
+  <script type="application/json" id="collection_gift_wrap">
+    {{ settings.collection_gift_wrap.products | json }}
+  </script>
+
+  <input
+    type="hidden"
+    id="gift_wrap_variant_ids"
+    data-variant-ids="{{ arrTmp }}"
+    data-exist="{{ existGiftWrap }}"
+    >
+    
+  <script>
+    let arr = []
+    {% for product in settings.collection_gift_wrap.products %}
+        {% for variant in product.variants %}
+            arr.push({
+                variant_id: {{- variant.id -}},
+                qty: {{ variant.inventory_quantity }}
+            })
+        {% endfor %}
+    {% endfor %}
+
+    const gift_wrap_variant_ids = document.querySelector('#gift_wrap_variant_ids')
+    if (gift_wrap_variant_ids) {
+        gift_wrap_variant_ids.setAttribute('data-variant-qty', JSON.stringify(arr))
+    }
+  </script>
+
+  {% for item in settings.collection_gift_wrap.products %}
+    <div class="gift-wrap-item" data-id="{{ item.id }}">
+      <div class="gift-wrap-item__img">
+        <a href="{{ item.url }}">
+          <img src="{{ item.media[0] | image_url: width: item.media[0].width , height: item.media[0].height }}" alt="image">
+        </a>
+
+        {%- unless item.has_only_default_variant -%}
+          {% if item.options_with_values.size > 0 %}
+            <div class="gift-wrap-item__variants">
+              {% liquid  
+                assign hasCountMutil = false
+                if item.options_with_values.size > 1
+                    assign hasCountMutil = true
+                endif
+            %}
+              {%- for option in item.options_with_values -%}
+                {%liquid
+                    assign indexParent = forloop.index
+                %}
+                <div class="wrapper-variant variant-index-{{ forloop.index }}" {% if hasCountMutil %}style="margin-bottom: 5px;"{% endif %}>
+                  {%- for value in option.values -%}
+                    {% liquid 
+                            assign activeInit = false
+                            if forloop.first 
+                            assign activeInit = true
+                            endif 
+                        %}
+                    <span class="variant-item{% if activeInit %} active{% endif %}" data-index-parent="{{ indexParent }}">{{ value }}</span>
+                  {%- endfor -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          {% endif %}
+        {% endunless %}
+      </div>
+
+      <div class="gift-wrap-item__detail">
+        <div class="gift-wrap-item__info">
+          <a href="{{ item.url }}">
+            <h3 class="gift-wrap-item__title">
+              {{ item.title }}
+            </h3>
+          </a>
+          {%- render 'price' 
+            , product: item,
+            use_variant: true,
+            show_badges: false,
+            price_class: 'price--large price-product-detail-big' -%}
+        </div>
+
+        <div class="gift-wrap-item__action">
+          <button class="gift-wrap-item__action--select{% if existGiftWrap %} disabled-class{% endif %}" data-variant-id="{{ item.variants[0].id }}"
+            {% if existGiftWrap %}
+                disabled
+            {% endif %}
+          >
+            {% if item.variants[0].inventory_quantity > 0 %}
+            Select
+            {% else %}
+            Sold out
+            {% endif %}
+          </button>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

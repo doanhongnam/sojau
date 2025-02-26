@@ -1,0 +1,41 @@
+<div class="announcement-bar__translate mr-7.5 {{ device }}">
+     {% comment %}<h1>{{ localization.available_languages.size }}</h1>{% endcomment %}
+    {% if localization.available_languages.size > 1 %}
+        <localization-form>
+            {% assign device_id = 'localization-language' | append: device %}
+            {% form 'localization', id: device_id %}
+                <div class="disclosure relative">
+                    <button type="button" class="disclosure__button flex flex-row items-center font-normal text-[14px]">
+                        {{ localization.language.endonym_name | capitalize }}
+
+                        <svg width="10" height="10" aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                        </svg>
+                    </button>
+
+                    <div id="LanguageList" class="disclosure__list shadow">
+
+                        {% for language in localization.available_languages %}
+                            <div class="disclosure__item" tabindex="-1">
+                                {% if device == "desktop" %}
+                                    {% assign textCol = "text-white" %}
+                                {% else %}
+                                    {% if language.iso_code == localization.language.iso_code %}
+                                        {% assign textCol = "text-black" %}
+                                    {% else %}
+                                        {% assign textCol = "text-white" %}
+                                    {% endif %}
+                                {% endif %}
+                                <a class="{{ textCol }} text-[14px] font-normal" href="#"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
+                                    {{ language.endonym_name | capitalize }}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <input type="hidden" name="language_code" value="{{ localization.language.iso_code }}">
+                </div>
+            {% endform %}
+        </localization-form>
+    {% endif %}
+</div>

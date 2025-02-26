@@ -1,0 +1,105 @@
+{% liquid
+  assign gap_item = section.settings.gap_item
+  assign slide_perview = section.settings.slide_perview
+  assign show_navigation = section.settings.show_navigation
+  assign show_count_product = section.settings.show_count_product
+  assign show_btn_shop_now = section.settings.show_btn_shop_now
+  assign style_title_collection = section.settings.style_title_collection
+  if style_title_collection == 'style_nomarl'
+    assign style_title = 'tp-list-collection__title-style_nomarl absolute w-max left-1/2 bottom-5 bg-white py-2 px-5'
+  elsif style_title_collection == 'style_1'
+    assign style_title = 'tp-list-collection__title-style-1'
+  elsif style_title_collection == 'style_2'
+    assign style_title = 'tp-list-collection__title-style-2'
+  else
+    assign style_title = 'tp-list-collection__title-style-3 absolute bottom-0 left-0 w-full'
+  endif
+%}
+
+<div class="tp-list-collection__slider {{ widthSection }}">
+  {% if section.settings.heading != blank or show_navigation %}
+    <div class="tp-list-collection__top d-flex align-items-center justify-content-between">
+      {% if section.settings.heading != blank %}
+        <h2 class="tp-title-section text-[2.25rem]">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if show_navigation %}
+        <div class="tp-list-collection__navigation d-flex align-items-center justify-content-between">
+          <div class="tp-lcl-button-prev navigation-item">
+            {% render 'icon', icon_name: 'icon-prev-type2' %}
+          </div>
+          <div class="tp-lcl-button-next navigation-item">
+            {% render 'icon', icon_name: 'icon-next-type2' %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div
+    class="swiper tp-list-collection__main"
+    data-slides-perview="{{ slide_perview }}"
+    data-space-between="{{ gap_item }}"
+  >
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% assign collection = block.settings.collection %}
+        {% if block.type == 'collection_item' %}
+          {% if block.settings.item_image != blank %}
+            {% assign ImageCollection = block.settings.item_image %}
+          {% else %}
+            {% assign ImageCollection = collection.featured_image %}
+          {% endif %}
+          <div class="tp-list-collection__item swiper-slide relative">
+            <a href="{{ collection.url }}" >
+              {% if ImageCollection != blank %}
+                <div class="tp-list-collection__item-img overflow-hidden">
+                  <img
+                    class="tp-list-collection__img"
+                    src="{{ ImageCollection | image_url: width: ImageCollection.width, height: ImageCollection.height }}"
+                    alt="image collection"
+                    width="{{ ImageCollection.width }}"
+                    height="{{ ImageCollection.height }}"
+                    loading="lazy"
+                  >
+                </div>
+              {% else %}
+                {% render 'no-image-banner', text_size: '300 x 300 px' %}
+              {% endif %}
+              {% if show_btn_shop_now %}
+                <button class="shop-now absolute opacity-0 invisible transition duration-300 ease-in-out overflow-hidden">
+                  <a
+                    class="tp-btn tp-btn__primary"
+                    href="{{ collection.url }}"
+                    title="{{ collection.title | escape }}"
+                  >
+                    {% if section.settings.button_title != blank %}
+                      {{ section.settings.button_title }}
+                    {% endif %}
+                  </a>
+                </button>
+              {% endif %}
+              {% if show_count_product %}
+                <span class="tp-list-collection__number">
+                  {% if collection.products_count > 9 %}
+                    {{ collection.products_count }}
+                  {% elsif collection.products_count > 99 %}
+                    99+
+                  {% else %}
+                    0{{ collection.products_count }}
+                  {% endif %}
+                </span>
+              {% endif %}
+              {% if collection.title != blank %}
+                <span class="tp-list-collection__title {{ style_title }}">
+                  {{- collection.title -}}
+                </span>
+              {% else %}
+                <span class="tp-list-collection__title {{ style_title }}"> collection title </span>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

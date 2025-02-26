@@ -1,0 +1,22 @@
+{%- if product.metafields.custom.featured_description != null
+and product.metafields.product.metafields.custom.featured_description != ''
+-%}
+    {% if block.settings.use_spacing %}
+        {% render 'block-margin-bottom', className: "tp-product__features", block: block %}
+        {% assign classDefault = "" %}
+    {% else %}
+        {% assign classDefault = " mb-3.75" %}
+    {% endif %}
+    <div class="tp-product-brief tp-product__features{{ classDefault }}">
+        <div class="item-header flex justify-between items-center mb-5 showContent activeItemHeader">
+            <div class="item-wrap item-header-title flex items-center justify-between showContent">
+                {{ 'products.product.features' | t }}
+                {% render 'icon', icon_name: 'icon-plus' %}
+                {% render 'icon', icon_name: 'icon-close', width: 14, height: 14 %}
+            </div>
+        </div>
+        <div class="item-body-content" style="max-height: unset;">
+            <div>{{ product.metafields.custom.featured_description }}</div>
+        </div>
+    </div>
+{% endif %}

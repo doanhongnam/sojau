@@ -1,0 +1,12 @@
+
+
+
+{% if block.settings.use_spacing %}
+    {% render 'block-margin-bottom', className: "tp-product-title", block: block %}
+    {% assign classDefault = "" %}
+{% else %}
+    {% assign classDefault = " mb-3.75" %}
+{% endif %}
+<h1 class="tp-product-title{{ classDefault }}" {{ block.shopify_attributes }}>
+    {{ product.title | escape }}
+</h1>

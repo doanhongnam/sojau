@@ -1,0 +1,368 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1660875782c9d37716": {
+      "type": "slide",
+      "blocks": {
+        "4f21a9ff-003d-4aa1-a7ec-0bf8785b0dfd": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/Slider_5.png",
+            "overlay_slide": 0,
+            "position_content": "left-content",
+            "sub_title": "New In: Face & Body",
+            "title": "<p>Set of Skin </p><p>Care Package</p>",
+            "description_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing </p><p>elit, sed do eiusmod tempor incididunt ut lab</p>",
+            "description_2": "",
+            "slide_url": "shopify://collections/cosmetics",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#000000",
+            "color_title": "#000000",
+            "color_description": "#000000",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        },
+        "4b8a3072-2f55-4c13-9a71-966a5588de10": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/comestic4.png",
+            "overlay_slide": 0,
+            "position_content": "left-content",
+            "sub_title": "New In: Face & Body",
+            "title": "<p>Define Beauty</p><p>Define You</p>",
+            "description_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing </p><p>elit, sed do eiusmod tempor incididunt ut lab</p>",
+            "description_2": "",
+            "slide_url": "shopify://collections/cosmetics",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#000000",
+            "color_title": "#000000",
+            "color_description": "#000000",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        },
+        "0101cdbf-3992-4a20-a7a1-632f65acd495": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/cosmetic3.png",
+            "overlay_slide": 0,
+            "position_content": "left-content",
+            "sub_title": "New In: Face & Body",
+            "title": "<p>Be Gorgeous</p><p> Inside Out </p>",
+            "description_1": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing </p><p>elit, sed do eiusmod tempor incididunt ut lab</p>",
+            "description_2": "",
+            "slide_url": "shopify://collections/cosmetics",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 16,
+            "color_subtitle": "#000000",
+            "color_title": "#000000",
+            "color_description": "#000000",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "4f21a9ff-003d-4aa1-a7ec-0bf8785b0dfd",
+        "4b8a3072-2f55-4c13-9a71-966a5588de10",
+        "0101cdbf-3992-4a20-a7a1-632f65acd495"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "left_bottom",
+        "pag_bg": "#000000",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1660904654f6076da9": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Popular Items",
+        "sub_title": "",
+        "show_icon": true,
+        "display_type": "layout_1",
+        "position_title": "text-center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "font-size_title": 36,
+        "font-size_sub_title": 16,
+        "background_title": "",
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1660893483de1de3e8": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "",
+        "description": "",
+        "display_type": "normal",
+        "collection": "cosmetics",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 10,
+        "column_number": "5",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "sliders_perview": "4",
+        "product_item_layout": "use_global",
+        "type_button": "load_more",
+        "text_button": "Shop now",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660881382c5a232eb": {
+      "type": "banner",
+      "blocks": {
+        "06fd51d9-5851-43a3-a8f4-075bb3b1e8e3": {
+          "type": "banner_menu",
+          "settings": {
+            "image_banner": "shopify://shop_images/thumb1.png",
+            "menu_banner": "legal",
+            "title_menu": "Nail & Wax",
+            "text_button": "View all collection",
+            "link_button_banner": "shopify://collections/cosmetics",
+            "position_menu": "left"
+          }
+        }
+      },
+      "block_order": [
+        "06fd51d9-5851-43a3-a8f4-075bb3b1e8e3"
+      ],
+      "settings": {
+        "width_layout_banner": "container",
+        "background_banner": "rgba(0,0,0,0)",
+        "title": "",
+        "description": "",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "b80e565c-1cae-43fc-84be-4dd9e7d65b46": {
+      "type": "single-product-featured",
+      "blocks": {
+        "a43b25ba-6d9d-4240-985b-028d9817e341": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1207_2.png",
+            "name": "New",
+            "url": ""
+          }
+        },
+        "05f31214-2cab-4c2d-8933-5aa0dbe5a2af": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1206_1.png",
+            "name": "Makeup",
+            "url": ""
+          }
+        },
+        "4fc576e6-cc78-4e8e-a002-f28adaec5b2e": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1201_1.png",
+            "name": "Skincare",
+            "url": ""
+          }
+        },
+        "6a3c2ad4-9bfe-43ed-ae7c-bcbfb6d4228d": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1205_1.png",
+            "name": "Hair",
+            "url": ""
+          }
+        },
+        "763f81e8-13be-47e5-9260-c6cebba338df": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1202_1.png",
+            "name": "Tool & Bushes",
+            "url": ""
+          }
+        },
+        "10fff4ef-6164-414e-9927-77a5ae16ab12": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_1203_1.png",
+            "name": "Bath & body",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "a43b25ba-6d9d-4240-985b-028d9817e341",
+        "05f31214-2cab-4c2d-8933-5aa0dbe5a2af",
+        "4fc576e6-cc78-4e8e-a002-f28adaec5b2e",
+        "6a3c2ad4-9bfe-43ed-ae7c-bcbfb6d4228d",
+        "763f81e8-13be-47e5-9260-c6cebba338df",
+        "10fff4ef-6164-414e-9927-77a5ae16ab12"
+      ],
+      "settings": {
+        "heading": "List Collection",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16623503594f0e56ac": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#eeeeee",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "16608116276e6ea19c": {
+      "type": "our-testimonial",
+      "blocks": {
+        "5f13045c-7923-4220-89d3-30428703b525": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_91_3442e9b0-81c1-46cb-a857-5c88a77c79e1.png",
+            "title_testimonial": "Very best for choice",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach Newt Zealand smelt salmon false moray pelican eel stoneroller minnow.",
+            "name_testimonial": "Zenipher Lopez",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "430dd272-640e-4e92-b75b-60ad4aeb9d3a": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/Ellipse_92_c8f899ec-624a-42fb-990c-ceec40611e21.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "5f13045c-7923-4220-89d3-30428703b525",
+        "430dd272-640e-4e92-b75b-60ad4aeb9d3a"
+      ],
+      "settings": {
+        "heading": "",
+        "background_testimonial": "#ffffff",
+        "display_type": "layout_1",
+        "padding_top_bottom": 0,
+        "show_pagination": false,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "ed1738b2-24b2-4599-a56f-39d499791fa9": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Latest new & blog",
+        "sub_title": "<p>#to who loves fashion</p>",
+        "show_icon": false,
+        "display_type": "layout_2",
+        "position_title": "text-center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "font-size_title": 36,
+        "font-size_sub_title": 50,
+        "background_title": "",
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1660805664e1c77174": {
+      "type": "lastest-news",
+      "settings": {
+        "blog": "shopify-blog",
+        "width_blog": "full_width",
+        "position_content": "center",
+        "post_limit": 4,
+        "gap_item_blog": 15,
+        "show_date": true,
+        "show_button_discover": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "9737a2fd-0e83-424f-b3b3-303ca20f10da": {
+      "type": "newsletter",
+      "blocks": {
+        "template--15913573286082__9737a2fd-0e83-424f-b3b3-303ca20f10da-166763636666a1d5dd-0": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be in touch with us:</p>"
+          }
+        },
+        "template--15913573286082__9737a2fd-0e83-424f-b3b3-303ca20f10da-166763636666a1d5dd-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--15913573286082__9737a2fd-0e83-424f-b3b3-303ca20f10da-166763636666a1d5dd-0",
+        "template--15913573286082__9737a2fd-0e83-424f-b3b3-303ca20f10da-166763636666a1d5dd-1"
+      ],
+      "settings": {
+        "display_layout": "newsletter-layout_1",
+        "newsletter_background": "#f3f3f3",
+        "color_bg_button": "#2e2e2e",
+        "color_text_button": "#ffffff",
+        "color_newsletter": "#000000",
+        "show_social": false,
+        "padding_top": 18,
+        "padding_bottom": 18,
+        "margin_bottom_desktop": 80
+      }
+    }
+  },
+  "order": [
+    "1660875782c9d37716",
+    "1660904654f6076da9",
+    "1660893483de1de3e8",
+    "1660881382c5a232eb",
+    "b80e565c-1cae-43fc-84be-4dd9e7d65b46",
+    "16623503594f0e56ac",
+    "16608116276e6ea19c",
+    "ed1738b2-24b2-4599-a56f-39d499791fa9",
+    "1660805664e1c77174",
+    "9737a2fd-0e83-424f-b3b3-303ca20f10da"
+  ]
+}

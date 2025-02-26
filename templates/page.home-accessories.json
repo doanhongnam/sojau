@@ -1,0 +1,422 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1660633109a295440e": {
+      "type": "slide",
+      "blocks": {
+        "74ab9d13-63bb-47a9-9a76-416e82c8ca90": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/accessories1.png",
+            "position_content": "right-content",
+            "sub_title": "New In: Glasses & Purses",
+            "title": "<p>Canvas shopper</p><p>with compartment </p><p>in natural</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "shopify://collections/accessories",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#ffffff",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        },
+        "00da59a4-14e5-4666-bc10-f5e42daddcfe": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slider-accessories-2.png",
+            "position_content": "left-content",
+            "sub_title": "New In: Bags & Purses",
+            "title": "<p>Uniquely catering </p><p>to your </p><p>every need.</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "shopify://collections/accessories",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#ffffff",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        },
+        "a701c563-7473-4964-b0ee-5afcbc9c45cf": {
+          "type": "slide_item",
+          "settings": {
+            "image": "shopify://shop_images/slider-accessories-3.png",
+            "position_content": "left-content",
+            "sub_title": "New In: Bags & Purses",
+            "title": "<p>Hand-picked</p><p> style with you </p><p>in mind</p>",
+            "description_1": "",
+            "description_2": "",
+            "slide_url": "shopify://collections/accessories",
+            "font_size_subtitle": 18,
+            "font_size_title": 50,
+            "font_size_description": 18,
+            "color_subtitle": "#ffffff",
+            "color_title": "#ffffff",
+            "color_description": "#ffffff",
+            "color_description_2": "",
+            "button_type": "round-button"
+          }
+        }
+      },
+      "block_order": [
+        "74ab9d13-63bb-47a9-9a76-416e82c8ca90",
+        "00da59a4-14e5-4666-bc10-f5e42daddcfe",
+        "a701c563-7473-4964-b0ee-5afcbc9c45cf"
+      ],
+      "settings": {
+        "show_navigation": true,
+        "show_pagination": true,
+        "loop": true,
+        "autoplay": true,
+        "autoplay_time": 5,
+        "position_pagination": "center_bottom",
+        "pag_bg": "#ffffff",
+        "type_navigation": "button_icon",
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660636195ce8bfdae": {
+      "type": "banner-image-card",
+      "blocks": {
+        "7ed8cc5c-1396-4203-845d-9ef5bc8cae3e": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-left",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/banner-accessories-1_2fc273a6-dc98-48a4-9ee1-347314ed4e1a.png",
+            "title": "",
+            "font_size_title": 36,
+            "color_title": "#ffffff",
+            "color_background_title": "#ffffff",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": "shopify://collections/accessories"
+          }
+        },
+        "e897ad89-6d09-41e9-958d-c9af54a26097": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-right",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/banner-accessories-2_fc973fc4-01ee-4bbd-b9ff-4ebc9c6e67a2.png",
+            "title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": "shopify://collections/accessories"
+          }
+        },
+        "eb8cacd3-1677-43a1-8feb-18f9ca1ee078": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-bottom-right",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/banner-accessories-3.png",
+            "title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "button_type": "underline-button",
+            "button_label": "Shop now",
+            "link": "shopify://collections/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "7ed8cc5c-1396-4203-845d-9ef5bc8cae3e",
+        "e897ad89-6d09-41e9-958d-c9af54a26097",
+        "eb8cacd3-1677-43a1-8feb-18f9ca1ee078"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "layout": "layout_2",
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "c840d9ac-7766-4e34-9f33-8d3b2e264f8e": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Customer Favorites",
+        "sub_title": "<p>#it's soft girl storepify</p>",
+        "show_icon": false,
+        "display_type": "layout_2",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 47,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 70,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1660636652392bb31c": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "description": "",
+        "display_type": "normal",
+        "collection": "accessories",
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "type_button": "normal",
+        "text_button": "View More",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660636795ed3f50c3": {
+      "type": "our-testimonial",
+      "blocks": {
+        "6ef4f510-f13b-468b-a21b-60e85aa0bd7b": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/avatar-2-1.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        },
+        "b08028f7-bdc8-4981-aec2-9ba33db8b8a6": {
+          "type": "our_testimonial_item",
+          "settings": {
+            "image_testimonial": "shopify://shop_images/avatar-2-2.png",
+            "title_testimonial": "Love my new purchase",
+            "description_testimonial": "Noodlefish pipefish zebra shark beaked salmon hillstream loach New Zealand smelt salmon false moray",
+            "name_testimonial": "Maria Emilia",
+            "background_testimonial_item": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "6ef4f510-f13b-468b-a21b-60e85aa0bd7b",
+        "b08028f7-bdc8-4981-aec2-9ba33db8b8a6"
+      ],
+      "settings": {
+        "heading": "",
+        "background_testimonial": "#ffffff",
+        "display_type": "layout_2",
+        "padding_top_bottom": 0,
+        "show_pagination": false,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166035823932d23f32": {
+      "type": "list-collection",
+      "settings": {
+        "width_section": "container",
+        "heading": "Popular Categories",
+        "display_type_collection": "slide",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 40,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "1660638813395ef623": {
+      "type": "tp-title-section",
+      "settings": {
+        "heading": "Latest News",
+        "sub_title": "<p>#to who loves fashion</p>",
+        "show_icon": false,
+        "display_type": "layout_2",
+        "position_title": "text-center",
+        "font-size_title": 36,
+        "font-size_sub_title": 47,
+        "color_title": "#000000",
+        "color_sub_title": "#909090",
+        "margin_bottom_desktop": 60,
+        "margin_bottom_table": 50,
+        "margin_bottom_mobile": 30
+      }
+    },
+    "16606388950089d05f": {
+      "type": "lastest-news",
+      "settings": {
+        "blog": "shopify-blog",
+        "width_blog": "full_width",
+        "position_content": "center",
+        "post_limit": 3,
+        "gap_item_blog": 30,
+        "show_date": true,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "166245776237307677": {
+      "type": "border",
+      "settings": {
+        "type_border": "border_type1",
+        "border_width": "container",
+        "color_border": "#e5e5e5",
+        "height_border": 1,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1662448889d177d41b": {
+      "type": "service",
+      "blocks": {
+        "1d59b01f-0624-47ce-ab96-9754f3f28615": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-3-4.png",
+            "title_service": "Return Shipping",
+            "description_service": "On order over $150",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "link_service": ""
+          }
+        },
+        "b89585e4-52a0-4584-a713-d03a5cc5edef": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-3-1.png",
+            "title_service": "24/7 Customer services",
+            "description_service": "Call us 24/7 at 123-456-789",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "link_service": ""
+          }
+        },
+        "5f0bab3a-f036-46c3-9b33-667aba4803ca": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-3-3.png",
+            "title_service": "12 - Month Warranty",
+            "description_service": "On all ours products",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "link_service": ""
+          }
+        },
+        "51f7b3af-c475-432b-b6b3-b223b2caabc8": {
+          "type": "service_item",
+          "settings": {
+            "image_service": "shopify://shop_images/service-3-2.png",
+            "title_service": "Support",
+            "description_service": "We stand behind our products",
+            "padding_top_bottom": 0,
+            "background_item_service": "rgba(0,0,0,0)",
+            "service_title": "#000000",
+            "service_brief": "#909090",
+            "link_service": ""
+          }
+        }
+      },
+      "block_order": [
+        "1d59b01f-0624-47ce-ab96-9754f3f28615",
+        "b89585e4-52a0-4584-a713-d03a5cc5edef",
+        "5f0bab3a-f036-46c3-9b33-667aba4803ca",
+        "51f7b3af-c475-432b-b6b3-b223b2caabc8"
+      ],
+      "settings": {
+        "gap_item": 0,
+        "service_bg": "rgba(0,0,0,0)",
+        "show_border_right": false,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "1660639033818aed12": {
+      "type": "banner-image-card",
+      "blocks": {
+        "9c24cb01-5827-4c49-948a-62d3ab04e4b0": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/banner1.png",
+            "title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "button_type": "block-button",
+            "button_label": "Already up to 80% off",
+            "link": "shopify://collections/accessories"
+          }
+        },
+        "1f7e5b0f-fa98-43cc-ac46-d79553e769e4": {
+          "type": "item",
+          "settings": {
+            "content_position": "content-center",
+            "content_alignment": "left",
+            "image": "shopify://shop_images/banner2.png",
+            "title": "",
+            "font_size_title": 36,
+            "color_title": "#000000",
+            "color_background_title": "#ffffff",
+            "button_type": "block-button",
+            "button_label": "Get 15% off everything",
+            "link": "shopify://collections/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "9c24cb01-5827-4c49-948a-62d3ab04e4b0",
+        "1f7e5b0f-fa98-43cc-ac46-d79553e769e4"
+      ],
+      "settings": {
+        "width_layout": "width-full",
+        "layout": "layout_1",
+        "margin_top_desktop": 0,
+        "margin_top_table": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "1660633109a295440e",
+    "1660636195ce8bfdae",
+    "c840d9ac-7766-4e34-9f33-8d3b2e264f8e",
+    "1660636652392bb31c",
+    "1660636795ed3f50c3",
+    "166035823932d23f32",
+    "1660638813395ef623",
+    "16606388950089d05f",
+    "166245776237307677",
+    "1662448889d177d41b",
+    "1660639033818aed12"
+  ]
+}

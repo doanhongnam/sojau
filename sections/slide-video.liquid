@@ -1,0 +1,300 @@
+{%- liquid
+
+   assign sts = section.settings
+   assign layout = sts.layout
+   assign content_position = sts.content_position
+   assign content_alignment = sts.content_alignment
+   assign vid_subheading = sts.vid_subheading
+   assign vid_heading = sts.vid_heading
+   assign vid_desc = sts.vid_desc
+   assign text_color = sts.text_color
+   assign vid_button = sts.vid_button
+   assign vid_link = sts.vid_link
+
+   assign video_url = sts.video_url
+   assign video_id = ''
+   if video_url.type == 'youtube'
+     assign video_id = video_url | replace: 'https://www.youtube.com/watch?v=', ''
+   elsif video_url.type == 'vimeo'
+     assign video_id = video_url | replace: 'https://vimeo.com/', ''
+   endif
+
+   assign video_upload = sts.video_upload
+   assign vid_height_dt = sts.vid_height_dt
+   assign vid_height_mb = sts.vid_height_mb
+-%}
+
+{% style %}
+  .sl-video__control {
+     height: {{ vid_height_dt }}px;
+  }
+  @media (max-width: 767px) {
+   .sl-video__control {
+     height: {{ vid_height_mb }}px;
+  }
+  }
+{% endstyle %}
+<div class="sl-video vid-reset">
+   <div class="sl-video__layout {{ layout }}">
+       <div class="sl-video__box relative overflow-hidden">
+           <div class="sl-video__height">
+            {% if video_url.type != blank or video_url.type != blank %}
+               <div class="sl-video__link sl-video__control relative w-full h-full overflow-hidden">
+                  {%- if video_url.type == 'youtube' -%}
+                    <div id="player"></div>
+                    {% comment %} IFrame Player API {% endcomment %}
+                    <script>
+                      var tag = document.createElement('script');
+    
+                      tag.src = 'https://www.youtube.com/iframe_api';
+                      var firstScriptTag = document.getElementsByTagName('script')[0];
+                      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+                      var player;
+                      function onYouTubeIframeAPIReady() {
+                        player = new YT.Player('player', {
+                          videoId: '{{ video_id }}',
+                          playerVars: {
+                            controls: 0,
+                            loop: 1,
+                            playlist: '{{ video_id }}',
+                          },
+                          events: {
+                            onReady: onPlayerReady,
+                          },
+                        });
+                      }
+                      function onPlayerReady(event) {
+                        event.target.playVideo();
+                        event.target.mute();
+                      }
+                    </script>
+                  {%- elsif video_url.type == 'vimeo' -%}
+                    <iframe
+                      src="https://player.vimeo.com/video/{{ video_id }}?controls=0background=1&autoplay=1&muted=1&loop=1"
+                      frameborder="0"
+                      allowfullscreen
+                    ></iframe>
+                  {%- endif -%}
+                </div>
+            {%- else -%}
+            <div class="sl-video__upload sl-video__control relative w-full h-full overflow-hidden">
+               <video
+                 controls="true"
+                 loop="true"
+                 muted="true"
+                 playsinline="true"
+                 autoplay="true"
+                 src="{{video_upload.sources[1].url}}"
+               ></video>
+            </div>
+            {% endif %}
+           </div>
+
+           <div class="sl-video__content container absolute flex h-full {{ text_color }} {{ content_position }} {% if content_position == 'left-center' %}items-center justify-start{% endif %} {% if content_position == 'center-center' %}items-center justify-center{% endif %} {% if content_position == 'right-center' %}items-center justify-end{% endif %}">
+               <div class="sl-video__ctchild py-10 {{ content_alignment }}">
+                 {% if vid_subheading != blank %}
+                    <h5 class="sl-video__sub text-sm font-medium mb-3.75">{{ vid_subheading }}</h5>
+                 {% endif %}
+                 {% if vid_heading != blank %}
+                    <h2 class="sl-video__title text-4xl font-medium mb-3.75 md:text-7xl">{{ vid_heading }}</h2>
+                 {% endif %}
+                 {% if vid_desc != blank %}
+                    <div class="sl-video__brief text-sm font-medium mb-7.5">{{ vid_desc }}</div>
+                 {% endif %}
+                 {% if vid_button != blank %}
+                    <div class="sl-video__button">
+                       <a href="{{ vid_link }}" class="sl-video__button_link tp-btn tp-btn__primary">{{ vid_button }}</a>
+                   </div>
+                 {% endif %}
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+{% render 'margin-bottom' %}
+{% schema %}
+{
+   "name":"Slide Video",
+   "settings":[
+      {
+         "type":"header",
+         "content":"Settings"
+      },
+      {
+         "type":"select",
+         "id":"layout",
+         "label":"Layout",
+         "options":[
+            {
+               "value":"container",
+               "label":"Container"
+            },
+            {
+               "value":"container-fluid",
+               "label":"Fluid container"
+            }
+         ],
+         "default":"container-fluid"
+      },
+      {
+         "type":"select",
+         "id":"content_position",
+         "label":"Content position",
+         "options":[
+            {
+               "value":"left-center",
+               "label":"Left center"
+            },
+            {
+               "value":"right-center",
+               "label":"Right center"
+            },
+            {
+               "value":"center-center",
+               "label":"Center center"
+            }
+         ],
+         "default":"center-center"
+      },
+      {
+         "type":"select",
+         "id":"content_alignment",
+         "label":"Content alignment",
+         "options":[
+            {
+               "value":"text-left",
+               "label":"Left"
+            },
+            {
+               "value":"text-center",
+               "label":"Center"
+            },
+            {
+               "value":"text-right",
+               "label":"Right"
+            }
+         ],
+         "default":"text-center"
+      },
+      {
+         "type":"header",
+         "content":"Content"
+      },
+      {
+         "type":"text",
+         "id":"vid_subheading",
+         "label":"Subheading",
+         "default":"SALE UP TO 50% OFF"
+      },
+      {
+         "type":"text",
+         "id":"vid_heading",
+         "label":"Heading",
+         "default":"Fashion For Us"
+      },
+      {
+         "type":"richtext",
+         "id":"vid_desc",
+         "label":"Description",
+         "default":"<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>"
+      },
+       {
+       "type":"select",
+       "id":"text_color",
+       "label":"Text color",
+       "options":[
+           {
+               "value":"text-white",
+               "label":"Text white"
+           },
+           {
+               "value":"text-black",
+               "label":"Text black"
+           }
+       ],
+       "default":"text-white"
+       },
+      {
+         "type":"header",
+         "content":"Button"
+      },
+      {
+         "type":"text",
+         "id":"vid_button",
+         "label":"Button label",
+         "default":"Shop now"
+      },
+      {
+         "type":"url",
+         "id":"vid_link",
+         "label":"Button link"
+      },
+      {
+         "type":"header",
+         "content":"Video Setting",
+         "info": "Choose one of two upload types"
+      },
+      {
+         "type": "video",
+         "id": "video_upload",
+         "label": "Upload your Video"
+      },
+      {
+        "id": "video_url",
+        "type": "video_url",
+        "label": "Video url",
+        "accept": ["youtube", "vimeo"],
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      },
+      {
+         "type":"range",
+         "id":"vid_height_dt",
+         "min":500,
+         "max":1080,
+         "step":10,
+         "unit":"px",
+         "label":"Video height desktop",
+         "default":700
+      },
+      {
+         "type":"range",
+         "id":"vid_height_mb",
+         "min":350,
+         "max":650,
+         "step":10,
+         "unit":"px",
+         "label":"Video height mobile",
+         "default":350
+      },
+      {
+        "type":"header",
+        "content":"Margin"
+     },
+     {
+           "type": "number",
+           "id": "margin_bottom_desktop",
+           "label": "t:sections.margin_bottom.desktop.label",
+           "default": 80
+     },
+     {
+           "type": "number",
+           "id": "margin_bottom_table",
+           "label": "t:sections.margin_bottom.tablet.label",
+           "default": 60
+     },
+     {
+           "type": "number",
+           "id": "margin_bottom_mobile",
+           "label": "t:sections.margin_bottom.mobile.label",
+           "default": 40
+     }
+   ],
+   "presets":[
+      {
+         "name":"Slide Video"
+      }
+   ]
+}
+{% endschema %}

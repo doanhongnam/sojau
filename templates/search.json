@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1660032789f2a53a70": {
+      "type": "breadcrumb",
+      "settings": {
+        "position_bread_crumb": "left",
+        "pbs_collection": "first",
+        "color_background": "#f3f3f3",
+        "margin_bottom_desktop": 50,
+        "margin_bottom_table": 50,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "main": {
+      "type": "main-search",
+      "settings": {
+        "collection_list": [],
+        "products_per_page": 16,
+        "product_item_layout": "use_global",
+        "box_shadow": false,
+        "border_item": false,
+        "display_sale_badge": "text_sale",
+        "style_actions": "actions-circle",
+        "position_actions": "top_right",
+        "show_secondary_image": false,
+        "show_count_down": true,
+        "position_content": "content-left",
+        "font_weigh_title": 500,
+        "font_weight_price": 400,
+        "font_weight_price_compare": 400,
+        "color_price": "",
+        "style_price": "style_row",
+        "show_rating": false,
+        "variant_type": "radios_variant",
+        "style_size": "style_background",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "fsize_scale": 110,
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "1660032789f2a53a70",
+    "main"
+  ]
+}
