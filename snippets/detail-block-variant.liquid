@@ -105,28 +105,26 @@
       {%- for option in product.options_with_values -%}
         <div class="product-form__input product-form__input--dropdown mb-3.75">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
+            {{ option.name }}<span class="required">*</span>
           </label>
-          <div class="select">
-            <select
-              id="Option-{{ section.id }}-{{ forloop.index0 }}"
-              class="select__select"
-              name="options[{{ option.name | escape }}]"
-              form="{{ product_form_id }}"
-            >
-              {%- for value in option.values -%}
-                <option
-                  value="{{ value | escape }}"
-                  {% if option.selected_value == value %}
-                    selected="selected"
-                  {% endif %}
-                >
-                  {{ value }}
-                </option>
-              {%- endfor -%}
-            </select>
-            {% comment %} {% render 'icon-caret' %} {% endcomment %}
-          </div>
+          <select
+            id="Option-{{ section.id }}-{{ forloop.index0 }}"
+            class="select__select"
+            name="options[{{ option.name | escape }}]"
+            form="{{ product_form_id }}"
+          >
+            <option value="" disabled selected>Select an option</option>
+            {%- for value in option.values -%}
+              <option
+                value="{{ value | escape }}"
+                {% if option.selected_value == value %}
+                  selected="selected"
+                {% endif %}
+              >
+                {{ value }}
+              </option>
+            {%- endfor -%}
+          </select>
         </div>
       {%- endfor -%}
 
@@ -178,9 +176,9 @@
   {%- endif -%}
 {%- endunless -%}
 {% if product.tags contains 'PS' or product.tags contains 'Personalized' %}
-  <p>
-    Add your personalization<span style="color: red;">*</span>:
-  </p>
+  <label class="form__label">
+    YOUR PERSONALIZATION<span style="color: red;">*</span>:
+  </label>
   {% assign personalizationMessage = product.metafields.custom.personalization_message  | replace: '<br>', '\n' | newline_to_br %}
   <p class="line-item-property__field">
     <label for="enter-your-personalized-message">{{ personalizationMessage }}</label>
@@ -189,3 +187,49 @@
     <textarea required class="required" id="personalization-name" name="properties[Name]" rows = "3" style="width: 100%; border: 1px solid rgb(229, 231, 235); border-radius: 5px;"></textarea>
   </p>
 {% endif %}
+
+<style>
+.product-form__input--dropdown select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-color: white;
+    font-size: 20px;
+    color: #212529;
+}
+
+.product-form__input--dropdown select option:checked {
+    color: #212529;
+    font-weight: 400;
+}
+
+.product-form__input--dropdown select option:disabled {
+    color: #6c757d;
+}
+
+.form__label {
+    color: #6c757d;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 3300;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.form__label .required {
+    color: red;
+    margin-left: 4px;
+}
+
+.product-form__input--dropdown select:focus {
+    outline: none;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 1px #86b7fe;
+}
+</style>

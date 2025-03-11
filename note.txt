@@ -15,6 +15,10 @@ shopify theme serve
 Đẩy theme lên Shopify:
 shopify theme push
 
+
+cột trái (ảnh):  \snippets\tp-product-detail__left-vertical.liquid
+cột phải (info) :\snippets\detail-block-variant.liquid
+
 ===========================
 
 lay link github
