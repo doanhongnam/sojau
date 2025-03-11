@@ -61,7 +61,7 @@
         "62b72ba7-b927-4440-9eda-42d6b2f15b4d": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "dropdown",
             "picker_type_active": "#57da74",
             "picker_type_hover": "#57da74",
             "width_variant_image": 40,
