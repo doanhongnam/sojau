@@ -175,7 +175,7 @@
     </variant-image-product>
   {%- endif -%}
 {%- endunless -%}
-{% if product.tags contains 'PS' or product.tags contains 'Personalized' %}
+{% if product.metafields.custom.personalization_message != blank %}
   <label class="form__label">
     YOUR PERSONALIZATION<span style="color: red;">*</span>:
   </label>
