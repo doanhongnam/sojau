@@ -97,9 +97,6 @@
       class="no-js-hidden"
       data-section="{{ section.id }}"
       data-url="{{ product.url }}"
-      data-option="{{ option.position }}"
-      data-forloop-index="{{ forloop.index0 }} "
-      data-change-thumb="{{ dataImageChange }}"
       {{ block.shopify_attributes }}
     >
       {%- for option in product.options_with_values -%}
@@ -111,24 +108,17 @@
             id="Option-{{ section.id }}-{{ forloop.index0 }}"
             class="select__select"
             name="options[{{ option.name | escape }}]"
-            form="{{ product_form_id }}"
+            data-index="{{ forloop.index0 }}"
           >
-            <option value="" disabled selected>Select an option</option>
+            <option value="" disabled selected>Select {{ option.name }}</option>
             {%- for value in option.values -%}
-              <option
-                value="{{ value | escape }}"
-                {% if option.selected_value == value %}
-                  selected="selected"
-                {% endif %}
-              >
-                {{ value }}
-              </option>
+              <option value="{{ value | escape }}">{{ value }}</option>
             {%- endfor -%}
           </select>
         </div>
       {%- endfor -%}
 
-      <script type="application/json">
+      <script type="application/json" id="ProductVariants-{{ section.id }}">
         {{ product.variants | json }}
       </script>
     </variant-selects>
@@ -233,3 +223,49 @@
     box-shadow: 0 0 0 1px #86b7fe;
 }
 </style>
+
+<script>
+class VariantSelects extends HTMLElement {
+  constructor() {
+    super();
+    this.addEventListener('change', this.onVariantChange);
+    this.variants = JSON.parse(this.querySelector('script').textContent);
+    this.selects = Array.from(this.querySelectorAll('select'));
+  }
+
+  onVariantChange(event) {
+    const select = event.target;
+    const index = parseInt(select.dataset.index);
+    
+    if (index === 0) { // Nếu thay đổi option 1
+      const selectedOption1 = select.value;
+      
+      // Lọc ra các variants có option1 được chọn
+      const availableVariants = this.variants.filter(
+        variant => variant.option1 === selectedOption1 && variant.available
+      );
+      
+      // Lấy danh sách option2 khả dụng
+      const availableOption2Values = [...new Set(
+        availableVariants.map(variant => variant.option2)
+      )];
+      
+      // Cập nhật select option 2
+      const select2 = this.selects[1];
+      if (select2) {
+        Array.from(select2.options).forEach(option => {
+          if (option.value) { // Bỏ qua placeholder
+            const isAvailable = availableOption2Values.includes(option.value);
+            option.disabled = !isAvailable;
+            option.style.display = isAvailable ? '' : 'none';
+          }
+        });
+        // Reset option 2 về default
+        select2.value = '';
+      }
+    }
+  }
+}
+
+customElements.define('variant-selects', VariantSelects);
+</script>
