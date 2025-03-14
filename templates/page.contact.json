@@ -45,7 +45,7 @@
             "label_phone": "",
             "number_phone": "",
             "label_address": "ADDRESS",
-            "address": "<p>SoJau LLC<br/>2724 Sleepy Hollow Rd</p><p>Athens, NY 12015</p><p>United States</p><p></p>",
+            "address": "<p>SoJau LLC<br/>7102 Brody Ln,</p><p>Houston TX 77083</p><p>United States</p><p></p>",
             "label_email": "EMAIL",
             "address_email": "<p>contact@sojau.com</p>"
           }
@@ -67,7 +67,7 @@
     "1659318091e6bc96c5": {
       "type": "iframe-maps",
       "settings": {
-        "iframe_address": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.441585068408!2d-73.82074400476344!3d42.290442165243185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd950a840e0d83%3A0x7ced56db1d36929!2s2722%20Sleepy%20Hollow%20Rd%2C%20Athens%2C%20NY%2012015%2C%20USA!5e0!3m2!1sen!2s!4v1739575494949!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "iframe_address": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.665419646418!2d-95.6317656230096!3d29.700478534783304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640ddc6910e787f%3A0xef1f87d1407a3de!2s7102%20Brody%20Ln%2C%20Houston%2C%20TX%2077083%2C%20USA!5e0!3m2!1sen!2s!4v1741859512052!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
         "margin_bottom_desktop": 80,
         "margin_bottom_table": 60,
         "margin_bottom_mobile": 40

@@ -102,10 +102,10 @@
           <span class="percent-sale"
             >
             {{-
-              product.compare_at_price_max
+              product.compare_at_price
               | minus: product.price
               | times: 100.0
-              | divided_by: product.compare_at_price_max
+              | divided_by: product.compare_at_price
               | money_without_currency
               | times: 100
               | remove: '.0'
@@ -116,10 +116,10 @@
           <span class="percent-sale-2"
             >-
             {{-
-              product.compare_at_price_max
+              product.compare_at_price
               | minus: product.price
               | times: 100.0
-              | divided_by: product.compare_at_price_max
+              | divided_by: product.compare_at_price
               | money_without_currency
               | times: 100
               | remove: '.0'

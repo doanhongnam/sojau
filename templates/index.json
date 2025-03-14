@@ -564,14 +564,52 @@
         "margin_bottom_mobile": 20
       }
     },
+    "featured_collection_cJ4Fjb": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "Romper Kid",
+        "description": "",
+        "display_type": "normal",
+        "collection": "custom-underwear",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [
+          "custom-underwear"
+        ],
+        "style_button_tab": "tp-box-button__style-1",
+        "margin_bottom_button": 30,
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "text_uppercase": false,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "show_pagigation": true,
+        "sliders_perview": "4",
+        "title_banner": "",
+        "description_banner": "",
+        "position_collection": "position_left",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "button_type": "tp-btn__primary",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
     "852dd079-17bc-4541-a7bd-9d13d816304a": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "width_layout": "container",
         "title": "Bootleg Design",
         "description": "",
         "display_type": "normal",
-        "collection": "matching-underwear-for-couples",
+        "collection": "bootleg-design",
         "background_color": "",
         "padding_top_bottom": 0,
         "products_to_show": 4,
@@ -1058,43 +1096,6 @@
         "margin_bottom_mobile": 40
       }
     },
-    "featured_collection_cJ4Fjb": {
-      "type": "featured-collection",
-      "settings": {
-        "width_layout": "container",
-        "title": "Romper Kid",
-        "description": "",
-        "display_type": "normal",
-        "collection": "custom-underwear",
-        "background_color": "",
-        "padding_top_bottom": 0,
-        "products_to_show": 8,
-        "column_number": "4",
-        "collection_list": [
-          "custom-underwear"
-        ],
-        "style_button_tab": "tp-box-button__style-1",
-        "margin_bottom_button": 30,
-        "font_size_button": 16,
-        "font_weight_button_tab": 400,
-        "text_uppercase": false,
-        "layout_slider": "layout-slider-1",
-        "show_navigation": true,
-        "show_pagigation": true,
-        "sliders_perview": "4",
-        "title_banner": "",
-        "description_banner": "",
-        "position_collection": "position_left",
-        "product_item_layout": "use_global",
-        "type_button": "normal",
-        "text_button": "Shop now",
-        "button_type": "tp-btn__primary",
-        "mobile_columns": "2",
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
     "featured_collection_9TXy93": {
       "type": "featured-collection",
       "disabled": true,
@@ -1133,12 +1134,13 @@
     },
     "featured_collection_RPWA3m": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "width_layout": "container",
         "title": "Matching Family",
         "description": "",
         "display_type": "normal",
-        "collection": "custom-matching-underwear-for-couples",
+        "collection": "matching-family",
         "background_color": "",
         "padding_top_bottom": 0,
         "products_to_show": 8,
@@ -1180,6 +1182,7 @@
     "d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1",
     "3244a8df-66d5-4a64-961e-e779280c1ddd",
     "18e1b361-14a3-4697-9b37-e7909044bdbd",
+    "featured_collection_cJ4Fjb",
     "852dd079-17bc-4541-a7bd-9d13d816304a",
     "433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d",
     "185da6bd-cdc6-45d0-b037-8cef7d7fe854",
@@ -1192,7 +1195,6 @@
     "2aae1ae6-86f9-4a9a-94ba-274e310d707e",
     "0db43f8d-72d6-4725-8457-e45822471bdc",
     "ddfb89c0-ff64-4b4d-bdfe-272e76f66b8b",
-    "featured_collection_cJ4Fjb",
     "featured_collection_9TXy93",
     "featured_collection_RPWA3m"
   ]
