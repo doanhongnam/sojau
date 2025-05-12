@@ -54,4 +54,5 @@ git init
 
 shopify theme serve    # Chạy theme locally
 shopify theme push    # Đẩy thay đổi lên store
+
 shopify theme pull    # Kéo phiên bản mới nhất về

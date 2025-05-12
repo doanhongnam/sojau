@@ -2,6 +2,18 @@
   .drawer {
     visibility: hidden;
   }
+  .cart-item-photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .cart-item-photo-gallery img {
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    object-fit: cover;
+  }
 </style>
 <cart-drawer class="drawer">
   <div id="CartDrawer" class="cart-drawer">
@@ -103,23 +115,23 @@
                               {%- if property.last != blank and property_first_char != '_' -%}
                                 <div class="product-option">
                                   <span class="product-option__name">{{ property.first }}:</span>
-                                  <span class="product-option__value">{%- if property.first contains 'Photo' -%}
-          <!-- Display thumbnail for custom_image_url if it's an uploaded image -->
-          <a href="{{ property.last }}" class="link" target="_blank">
-            <img src="{{ property.last }}" alt="Uploaded Image" style="max-width: 50px; max-height: 50px;" />
-          </a>
-        {%- elsif property.last contains '/uploads/' -%}
-                                      <a
-                                        href="{{ property.last }}"
-                                        class="link"
-                                        target="_blank"
-                                        aria-describedby="a11y-new-window-message"
-                                      >
-                                        {{ property.last | split: '/' | last }}
+                                  <span class="product-option__value">
+                                    {% if property.first == "Photos" %}
+                                      {% assign photo_urls = property.last | split: '|' %}
+                                      <div class="cart-item-photo-gallery">
+                                        {% for photo_url in photo_urls %}
+                                          <a href="{{ photo_url }}" class="link" target="_blank">
+                                            <img src="{{ photo_url }}" alt="Uploaded Image" style="max-width: 50px; max-height: 50px; margin-right: 5px; margin-bottom: 5px;" />
+                                          </a>
+                                        {% endfor %}
+                                      </div>
+                                    {% elsif property.first == "Photo URL" %}
+                                      <a href="{{ property.last }}" class="link" target="_blank">
+                                        <img src="{{ property.last }}" alt="Uploaded Image" style="max-width: 50px; max-height: 50px;" />
                                       </a>
-                                    {%- else -%}
+                                    {% else %}
                                       {{ property.last }}
-                                    {%- endif -%}
+                                    {% endif %}
                                   </span>
                                 </div>
                               {%- endif -%}

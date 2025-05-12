@@ -15,7 +15,8 @@
             value="{{ product.selected_or_first_available_variant.id }}"
             class="input-detail-variant"
           >
-        <input type="hidden" id="hidden_name" name = "properties[Personalization]" value="">
+          <input type="hidden" id="hidden_name" name = "properties[Personalization]" value="">
+          <input type="hidden" id="uploaded_photos" name="properties[Photos]" value="">
           <input type="hidden" name="quantity" value="" class="input-detail-quantity">
           <div class="product-form__buttons">
             <button
@@ -56,6 +57,7 @@
   </div>
 </div>
 <!-- Modal HTML structure -->
+
 <div style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;" id="overlay">
   <div style="display: flex; justify-content: center; align-items: center; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 5px; z-index: 1001;" id="alertBox">
     Please enter your personalization.
@@ -64,17 +66,17 @@
 
 <script>
   const button = document.getElementById('abc');
-  const hiddenInput = document.getElementById('hidden_name');
   const overlay = document.getElementById('overlay');
 
- const textarea = document.getElementById('personalization-name');
+  const hiddenInput = document.getElementById('hidden_name');
+  const textarea = document.getElementById('personalization-name');
 
   // Add an event listener to the textarea
  textarea.addEventListener('input', function() {
     // Update the value of the hidden input with the value from the textarea
-  hiddenInput.value = textarea.value;
+    hiddenInput.value = textarea.value;
  });
-{% if product.tags contains 'PS' or product.tags contains 'Personalized' %}
+{% if product.metafields.custom.personalization_message != blank %}
   button.addEventListener('click', function(event) {
     if (hiddenInput.value.trim() === '') {
       event.preventDefault(); // Prevent form submission

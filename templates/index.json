@@ -9,152 +9,6 @@
  */
 {
   "sections": {
-    "banner_slide_QGjcGH": {
-      "type": "banner-slide",
-      "blocks": {
-        "bnslide_item_KUXRrp": {
-          "type": "bnslide_item",
-          "settings": {
-            "position_countdown": "right-countdown",
-            "image": "shopify://shop_images/banerSoJau.jpg",
-            "title": "Be UNIQUE!",
-            "percent": "20% off",
-            "sub_title": "Latest Product Offers",
-            "cd_year": 2022,
-            "cd_month": "12",
-            "cd_days": "28",
-            "color_text_count_down": "#ffffff",
-            "color_bg_count_down": "#71af19",
-            "link_button": "shopify://collections/matching-family",
-            "button_type": "tp-btn__secondary"
-          }
-        },
-        "bnslide_item_pgHEX6": {
-          "type": "bnslide_item",
-          "disabled": true,
-          "settings": {
-            "position_countdown": "right-countdown",
-            "title": "Save off",
-            "percent": "50%",
-            "sub_title": "New Offer Products",
-            "cd_year": 2023,
-            "cd_month": "12",
-            "cd_days": "28",
-            "color_text_count_down": "#ffffff",
-            "color_bg_count_down": "#71af19",
-            "link_button": "",
-            "button_type": "tp-btn__secondary"
-          }
-        },
-        "bnslide_item_rPpJcV": {
-          "type": "bnslide_item",
-          "disabled": true,
-          "settings": {
-            "position_countdown": "right-countdown",
-            "title": "Save off",
-            "percent": "50%",
-            "sub_title": "New Offer Products",
-            "cd_year": 2023,
-            "cd_month": "12",
-            "cd_days": "28",
-            "color_text_count_down": "#ffffff",
-            "color_bg_count_down": "#71af19",
-            "link_button": "",
-            "button_type": "tp-btn__secondary"
-          }
-        }
-      },
-      "block_order": [
-        "bnslide_item_KUXRrp",
-        "bnslide_item_pgHEX6",
-        "bnslide_item_rPpJcV"
-      ],
-      "settings": {
-        "width_layout": "width-full",
-        "show_navigation": true,
-        "show_pagination": true,
-        "margin_bottom_desktop": 10,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40,
-        "pagi_color": "#ffb12b"
-      }
-    },
-    "video_H6rknm": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "display_type": "video_upload",
-        "video_url": "",
-        "description": "",
-        "sub_title": "",
-        "text_title": "Someone just got married",
-        "description_upload": "",
-        "color_content": "#ffffff",
-        "fz_title": 40,
-        "button_type": "tp-btn__primary",
-        "text_button": "Shop for wedding guest dresses!",
-        "link_click": "btn_link",
-        "target_bl": true,
-        "link_button": "shopify://collections/beach-wedding-guest-dresses",
-        "margin_bottom_desktop": 15,
-        "margin_bottom_table": 15,
-        "margin_bottom_mobile": 15
-      }
-    },
-    "4e3fcfb3-92f6-422b-8c70-e54b7de6f75e": {
-      "type": "banner-image-card",
-      "blocks": {
-        "template--15634712723662__4e3fcfb3-92f6-422b-8c70-e54b7de6f75e-16724590132656245e-0": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "content_position": "content-center-left",
-            "content_alignment": "left",
-            "hover_item": "none",
-            "use_effect_hover": false,
-            "background_content": "",
-            "image": "shopify://shop_images/Bannerbaby.png",
-            "image_mobile": "shopify://shop_images/Bannerbaby.png",
-            "overlay_banner": 0,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Custom Cozy Zone</p>",
-            "sub_title": "<p> Ships Next Day</p>",
-            "font_size_title": 50,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 16,
-            "color_sub_title": "#ffffff",
-            "color_background_sub_title": "rgba(0,0,0,0)",
-            "button_type": "tp-btn__primary",
-            "button_label": "Shop now",
-            "link": "shopify://collections/custom-thongs"
-          }
-        }
-      },
-      "block_order": [
-        "template--15634712723662__4e3fcfb3-92f6-422b-8c70-e54b7de6f75e-16724590132656245e-0"
-      ],
-      "settings": {
-        "width_layout": "container",
-        "gap_item": 0,
-        "background_banner": "",
-        "title": "",
-        "description": "",
-        "content_alignment": "text-center",
-        "layout": "layout_1",
-        "absolute_content": true,
-        "padding_top": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom": 0,
-        "margin_top_desktop": 0,
-        "margin_top_table": 0,
-        "margin_top_mobile": 0,
-        "margin_bottom_desktop": 30,
-        "margin_bottom_table": 30,
-        "margin_bottom_mobile": 30
-      }
-    },
     "6e4b4c2f-8585-45f3-8e78-a8511bd37db3": {
       "type": "service",
       "blocks": {
@@ -234,8 +88,8 @@
         "layout_service": "layout-service-1",
         "max_width_image": "80px",
         "service_bg": "#ffffff",
-        "sv_pd_top": 0,
-        "sv_pd_bottom": 0,
+        "sv_pd_top": 40,
+        "sv_pd_bottom": 10,
         "show_border_right": false,
         "margin_bottom_desktop": 5,
         "margin_bottom_table": 5,
@@ -249,335 +103,61 @@
         "border_width": "container",
         "color_border": "#e5e5e5",
         "height_border": 1,
-        "margin_bottom_desktop": 80,
+        "margin_bottom_desktop": 60,
         "margin_bottom_table": 60,
         "margin_bottom_mobile": 40
       }
     },
-    "e30ca700-2310-4d4f-b502-8f517f8aac5e": {
-      "type": "banner-image-card",
-      "blocks": {
-        "template--15634712723662__e30ca700-2310-4d4f-b502-8f517f8aac5e-16724590132656245e-0": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Customize your ornaments</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Chrismast Ornaments",
-            "link": "shopify://collections/personalized-christmas-ornaments"
-          }
-        },
-        "template--15634712723662__e30ca700-2310-4d4f-b502-8f517f8aac5e-16724590132656245e-1": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>For your pets</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Send My Gift",
-            "link": "shopify://collections/personalized-pet-shirts-mugs-ornaments"
-          }
-        },
-        "template--15634712723662__e30ca700-2310-4d4f-b502-8f517f8aac5e-16724590132656245e-2": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Personalize your gifts</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Best friends ornaments",
-            "link": "shopify://collections/best-friends-ornament"
-          }
-        }
-      },
-      "block_order": [
-        "template--15634712723662__e30ca700-2310-4d4f-b502-8f517f8aac5e-16724590132656245e-0",
-        "template--15634712723662__e30ca700-2310-4d4f-b502-8f517f8aac5e-16724590132656245e-1",
-        "template--15634712723662__e30ca700-2310-4d4f-b502-8f517f8aac5e-16724590132656245e-2"
-      ],
-      "disabled": true,
+    "featured_collection_4CBDVt": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "width_layout": "container",
-        "gap_item": 0,
-        "background_banner": "",
-        "title": "Latest Collections",
+        "title": "Father's Day",
         "description": "",
-        "content_alignment": "text-center",
-        "layout": "layout_2",
-        "absolute_content": true,
-        "padding_top": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom": 0,
-        "margin_top_desktop": 0,
-        "margin_top_table": 0,
-        "margin_top_mobile": 0,
+        "display_type": "normal",
+        "collection": "fathers-day",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 8,
+        "column_number": "4",
+        "collection_list": [],
+        "style_button_tab": "tp-box-button__style-1",
+        "margin_bottom_button": 30,
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "text_uppercase": false,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "show_pagigation": true,
+        "sliders_perview": "4",
+        "title_banner": "Shop Pet Portraits",
+        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
+        "position_collection": "position_left",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "button_type": "tp-btn__primary",
+        "mobile_columns": "2",
         "margin_bottom_desktop": 80,
         "margin_bottom_table": 60,
         "margin_bottom_mobile": 40
-      }
-    },
-    "848f84a2-3b14-4c3d-99d9-c4a3552a8de0": {
-      "type": "banner-image-card",
-      "blocks": {
-        "template--15634712723662__848f84a2-3b14-4c3d-99d9-c4a3552a8de0-1672461104c7bb9a43-0": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": true,
-            "background_content": "",
-            "overlay_banner": 0,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Kate Spade Sparkle x BloomThis</p>",
-            "sub_title": "<p>Limited Edition Flowers + Free Gifts</p>",
-            "font_size_title": 36,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 16,
-            "color_sub_title": "#ffffff",
-            "color_background_sub_title": "rgba(0,0,0,0)",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Send Flowers",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15634712723662__848f84a2-3b14-4c3d-99d9-c4a3552a8de0-1672461104c7bb9a43-0"
-      ],
-      "disabled": true,
-      "settings": {
-        "width_layout": "container",
-        "gap_item": 0,
-        "background_banner": "",
-        "title": "Featured collection",
-        "description": "",
-        "content_alignment": "text-center",
-        "layout": "layout_1",
-        "absolute_content": true,
-        "padding_top": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom": 0,
-        "margin_top_desktop": 0,
-        "margin_top_table": 0,
-        "margin_top_mobile": 0,
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
-    "d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1": {
-      "type": "banner-image-card",
-      "blocks": {
-        "template--15634712723662__d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1-1672461104c7bb9a43-0": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Custom pet shirts</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop now",
-            "link": "shopify://collections/custom-pet-shirts"
-          }
-        },
-        "template--15634712723662__d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1-1672461104c7bb9a43-1": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Immortalize your pet</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop now",
-            "link": "shopify://collections/personalized-pet-shirts-mugs-ornaments"
-          }
-        },
-        "template--15634712723662__d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1-1672461104c7bb9a43-2": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Anniversary Gifts by Year</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop now",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15634712723662__d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1-1672461104c7bb9a43-0",
-        "template--15634712723662__d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1-1672461104c7bb9a43-1",
-        "template--15634712723662__d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1-1672461104c7bb9a43-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "width_layout": "container",
-        "gap_item": 0,
-        "background_banner": "",
-        "title": "",
-        "description": "",
-        "content_alignment": "text-center",
-        "layout": "layout_2",
-        "absolute_content": true,
-        "padding_top": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom": 0,
-        "margin_top_desktop": 0,
-        "margin_top_table": 0,
-        "margin_top_mobile": 0,
-        "margin_bottom_desktop": 50,
-        "margin_bottom_table": 30,
-        "margin_bottom_mobile": 30
-      }
-    },
-    "3244a8df-66d5-4a64-961e-e779280c1ddd": {
-      "type": "tp-title-section",
-      "disabled": true,
-      "settings": {
-        "heading": "Bestselling Collections",
-        "sub_title": "",
-        "show_icon": false,
-        "button_label": "View all",
-        "link": "",
-        "show_button": false,
-        "display_type": "layout_1",
-        "position_title": "text-center",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "font-size_title": 36,
-        "font_size_title_mobile": 30,
-        "font-weight_title": 500,
-        "font-size_sub_title": 16,
-        "background_title": "",
-        "color_title": "#000000",
-        "color_sub_title": "#909090",
-        "color_button": "#000000",
-        "margin_bottom_desktop": 50,
-        "margin_bottom_table": 40,
-        "margin_bottom_mobile": 30
-      }
-    },
-    "18e1b361-14a3-4697-9b37-e7909044bdbd": {
-      "type": "tp-title-section",
-      "disabled": true,
-      "settings": {
-        "heading": "Brand New",
-        "sub_title": "",
-        "show_icon": false,
-        "button_label": "View all",
-        "link": "",
-        "show_button": false,
-        "display_type": "layout_1",
-        "position_title": "text-center",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "font-size_title": 36,
-        "font_size_title_mobile": 30,
-        "font-weight_title": 500,
-        "font-size_sub_title": 16,
-        "background_title": "",
-        "color_title": "#000000",
-        "color_sub_title": "#909090",
-        "color_button": "#000000",
-        "margin_bottom_desktop": 20,
-        "margin_bottom_table": 20,
-        "margin_bottom_mobile": 20
       }
     },
     "featured_collection_cJ4Fjb": {
       "type": "featured-collection",
       "settings": {
         "width_layout": "container",
-        "title": "Romper Kid",
+        "title": "Kids' Long Sleeve Romper",
         "description": "",
         "display_type": "normal",
-        "collection": "custom-underwear",
+        "collection": "romper-kid",
         "background_color": "",
         "padding_top_bottom": 0,
-        "products_to_show": 8,
+        "products_to_show": 4,
         "column_number": "4",
         "collection_list": [
-          "custom-underwear"
+          "romper-kid"
         ],
         "style_button_tab": "tp-box-button__style-1",
         "margin_bottom_button": 30,
@@ -601,21 +181,57 @@
         "margin_bottom_mobile": 40
       }
     },
-    "852dd079-17bc-4541-a7bd-9d13d816304a": {
+    "featured_collection_9TXy93": {
       "type": "featured-collection",
-      "disabled": true,
       "settings": {
         "width_layout": "container",
-        "title": "Bootleg Design",
+        "title": "Kids' Short Sleeve Romper",
         "description": "",
         "display_type": "normal",
-        "collection": "bootleg-design",
+        "collection": "romper-kid-short-sleeve",
         "background_color": "",
         "padding_top_bottom": 0,
         "products_to_show": 4,
         "column_number": "4",
         "collection_list": [
-          "matching-underwear-for-couples"
+          "romper-kid-short-sleeve"
+        ],
+        "style_button_tab": "tp-box-button__style-3",
+        "margin_bottom_button": 30,
+        "font_size_button": 16,
+        "font_weight_button_tab": 400,
+        "text_uppercase": false,
+        "layout_slider": "layout-slider-1",
+        "show_navigation": true,
+        "show_pagigation": true,
+        "sliders_perview": "4",
+        "title_banner": "Shop Pet Portraits",
+        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
+        "position_collection": "position_left",
+        "product_item_layout": "use_global",
+        "type_button": "normal",
+        "text_button": "Shop now",
+        "button_type": "tp-btn__primary",
+        "mobile_columns": "2",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
+      }
+    },
+    "852dd079-17bc-4541-a7bd-9d13d816304a": {
+      "type": "featured-collection",
+      "settings": {
+        "width_layout": "container",
+        "title": "Kids' Set Bodysuit",
+        "description": "",
+        "display_type": "normal",
+        "collection": "set-bodysuit",
+        "background_color": "",
+        "padding_top_bottom": 0,
+        "products_to_show": 4,
+        "column_number": "4",
+        "collection_list": [
+          "set-bodysuit"
         ],
         "style_button_tab": "tp-box-button__style-1",
         "margin_bottom_button": 20,
@@ -639,404 +255,6 @@
         "margin_bottom_mobile": 20
       }
     },
-    "433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d": {
-      "type": "banner-image-card",
-      "blocks": {
-        "template--15634712723662__433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d-1672461104c7bb9a43-0": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Couple Valentine Underwears</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/custom-underwear"
-          }
-        },
-        "template--15634712723662__433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d-1672461104c7bb9a43-1": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Thongs with Name</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/custom-thongs"
-          }
-        },
-        "template--15634712723662__433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d-1672461104c7bb9a43-2": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Personalized Face Boxers</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop now",
-            "link": "shopify://collections/custom-underwear"
-          }
-        }
-      },
-      "block_order": [
-        "template--15634712723662__433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d-1672461104c7bb9a43-0",
-        "template--15634712723662__433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d-1672461104c7bb9a43-1",
-        "template--15634712723662__433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d-1672461104c7bb9a43-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "width_layout": "container",
-        "gap_item": 0,
-        "background_banner": "",
-        "title": "",
-        "description": "",
-        "content_alignment": "text-center",
-        "layout": "layout_2",
-        "absolute_content": true,
-        "padding_top": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom": 0,
-        "margin_top_desktop": 0,
-        "margin_top_table": 0,
-        "margin_top_mobile": 0,
-        "margin_bottom_desktop": 30,
-        "margin_bottom_table": 30,
-        "margin_bottom_mobile": 30
-      }
-    },
-    "185da6bd-cdc6-45d0-b037-8cef7d7fe854": {
-      "type": "banner-image-card",
-      "blocks": {
-        "template--15634712723662__185da6bd-cdc6-45d0-b037-8cef7d7fe854-1672461104c7bb9a43-0": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Snoopy with Hearts Garland</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop now",
-            "link": ""
-          }
-        },
-        "template--15634712723662__185da6bd-cdc6-45d0-b037-8cef7d7fe854-1672461104c7bb9a43-1": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Soleil Stretchy Ball Bead</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop now",
-            "link": ""
-          }
-        },
-        "template--15634712723662__185da6bd-cdc6-45d0-b037-8cef7d7fe854-1672461104c7bb9a43-2": {
-          "type": "item",
-          "settings": {
-            "content_position": "content-bottom-left",
-            "content_alignment": "left",
-            "hover_item": "zoom_image",
-            "use_effect_hover": false,
-            "background_content": "rgba(0,0,0,0)",
-            "overlay_banner": 5,
-            "fix_height_image": true,
-            "height_image_mobile": 50,
-            "title": "<p>Disney Birthday Parade</p>",
-            "sub_title": "",
-            "font_size_title": 30,
-            "color_title": "#ffffff",
-            "color_background_title": "rgba(0,0,0,0)",
-            "font_size_sub_title": 24,
-            "color_sub_title": "#000000",
-            "color_background_sub_title": "",
-            "button_type": "tp-btn__secondary",
-            "button_label": "Shop now",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15634712723662__185da6bd-cdc6-45d0-b037-8cef7d7fe854-1672461104c7bb9a43-0",
-        "template--15634712723662__185da6bd-cdc6-45d0-b037-8cef7d7fe854-1672461104c7bb9a43-1",
-        "template--15634712723662__185da6bd-cdc6-45d0-b037-8cef7d7fe854-1672461104c7bb9a43-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "width_layout": "container",
-        "gap_item": 0,
-        "background_banner": "",
-        "title": "",
-        "description": "",
-        "content_alignment": "text-center",
-        "layout": "layout_2",
-        "absolute_content": true,
-        "padding_top": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom": 0,
-        "margin_top_desktop": 0,
-        "margin_top_table": 0,
-        "margin_top_mobile": 0,
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
-    "1769a075-c463-48c5-892f-9849ba620201": {
-      "type": "border",
-      "disabled": true,
-      "settings": {
-        "type_border": "border_type1",
-        "border_width": "full_width",
-        "color_border": "#e5e5e5",
-        "height_border": 1,
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
-    "6dd9eecd-67bf-4153-b590-b2d3f83469c7": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "width_layout": "container",
-        "title": "Hoodies",
-        "description": "",
-        "display_type": "slide",
-        "collection": "hoodies",
-        "background_color": "",
-        "padding_top_bottom": 0,
-        "products_to_show": 8,
-        "column_number": "4",
-        "collection_list": [
-          "tops-tees",
-          "beach-wedding-guest-dresses",
-          "cocktail-dresses-for-wedding",
-          "black-wedding-guest-dress"
-        ],
-        "style_button_tab": "tp-box-button__style-1",
-        "margin_bottom_button": 30,
-        "font_size_button": 30,
-        "font_weight_button_tab": 500,
-        "text_uppercase": false,
-        "layout_slider": "layout-slider-1",
-        "show_navigation": true,
-        "show_pagigation": true,
-        "sliders_perview": "4",
-        "title_banner": "Shop Pet Portraits",
-        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
-        "position_collection": "position_left",
-        "product_item_layout": "use_global",
-        "type_button": "normal",
-        "text_button": "",
-        "button_type": "tp-btn__primary",
-        "mobile_columns": "2",
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
-    "654c15af-9655-4bb9-a885-0cb03f719eb0": {
-      "type": "banner",
-      "blocks": {
-        "453ff8fc-faf9-4823-bcd5-2d0b7f4bfa8c": {
-          "type": "banner_normal",
-          "settings": {
-            "layout_banner": "layout-normal_1",
-            "position_banner": "left",
-            "text_align_content": "text_left",
-            "max_width_content": 430,
-            "sub_title_banner": "",
-            "title_banner": "Flowers & Gifts for All Occasions",
-            "description_banner": "No matter what the occasion is, from birthdays to anniversaries, or to express your love and friendship, you’ll be able to find what you need to create special moments with the people you care about. From condolence flowers to grand opening flower stands — shop our collections, or speak to us for custom floral designs. If you’re buying flowers in Malaysia, we have gifts and bouquets for every occasion and major celebration.",
-            "color-title": "#000000",
-            "color-description": "#5e5e5e",
-            "button_type": "underline-button",
-            "text_button": "",
-            "link_button_banner": ""
-          }
-        }
-      },
-      "block_order": [
-        "453ff8fc-faf9-4823-bcd5-2d0b7f4bfa8c"
-      ],
-      "disabled": true,
-      "settings": {
-        "width_layout_banner": "container",
-        "background_banner": "rgba(0,0,0,0)",
-        "title": "",
-        "description": "",
-        "margin_bottom_desktop": 0,
-        "margin_bottom_table": 0,
-        "margin_bottom_mobile": 0
-      }
-    },
-    "e8db62c4-0f09-4d6e-9963-c5bd516ae124": {
-      "type": "banner",
-      "blocks": {
-        "e58e7035-fc46-4912-86b4-d927437734a9": {
-          "type": "banner_normal",
-          "settings": {
-            "layout_banner": "layout-normal_1",
-            "position_banner": "right",
-            "text_align_content": "text_left",
-            "max_width_content": 430,
-            "sub_title_banner": "",
-            "title_banner": "Malaysian Florists & Floral Designers",
-            "description_banner": "Our seasoned floral designers create flower arrangements that are designed to show off the best flowers of the season. No matter which bouquet you decide to buy, you’ll be receiving a premium selection of flowers arranged to complement each other perfectly. Each bouquet or floral design is carefully crafted by our in-house artisans, who take the designs visualised by our designers and turn it into pieces that are guaranteed to brighten up your loved one’s day!",
-            "color-title": "#000000",
-            "color-description": "#5e5e5e",
-            "button_type": "underline-button",
-            "text_button": "",
-            "link_button_banner": ""
-          }
-        }
-      },
-      "block_order": [
-        "e58e7035-fc46-4912-86b4-d927437734a9"
-      ],
-      "disabled": true,
-      "settings": {
-        "width_layout_banner": "container",
-        "background_banner": "rgba(0,0,0,0)",
-        "title": "",
-        "description": "",
-        "margin_bottom_desktop": 0,
-        "margin_bottom_table": 0,
-        "margin_bottom_mobile": 0
-      }
-    },
-    "8b5f93e2-7ccb-4ac4-bf84-a758f30bfae8": {
-      "type": "border",
-      "disabled": true,
-      "settings": {
-        "type_border": "border_type1",
-        "border_width": "full_width",
-        "color_border": "#e5e5e5",
-        "height_border": 1,
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
-    "31c6fe9f-bad2-4c05-9d75-35f306181cf2": {
-      "type": "tp-partner",
-      "blocks": {
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-0": {
-          "type": "item",
-          "settings": {
-            "text": "Item",
-            "item_link": ""
-          }
-        },
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-1": {
-          "type": "item",
-          "settings": {
-            "text": "Item",
-            "item_link": ""
-          }
-        },
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-2": {
-          "type": "item",
-          "settings": {
-            "text": "Item",
-            "item_link": ""
-          }
-        },
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-3": {
-          "type": "item",
-          "settings": {
-            "text": "Item",
-            "item_link": ""
-          }
-        },
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-4": {
-          "type": "item",
-          "settings": {
-            "text": "Item",
-            "item_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-0",
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-1",
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-2",
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-3",
-        "template--15634712723662__31c6fe9f-bad2-4c05-9d75-35f306181cf2-1672713274e7052e61-4"
-      ],
-      "disabled": true,
-      "settings": {
-        "partner_config": "slide_partner",
-        "partner_bg": "#ffffff",
-        "tt_pd_top": 0,
-        "tt_pd_bottom": 0,
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
     "2aae1ae6-86f9-4a9a-94ba-274e310d707e": {
       "type": "border",
       "settings": {
@@ -1049,153 +267,69 @@
         "margin_bottom_mobile": 40
       }
     },
-    "0db43f8d-72d6-4725-8457-e45822471bdc": {
-      "type": "tp-title-section",
+    "review_cK8hLb": {
+      "type": "review",
+      "blocks": {
+        "review_item_VBgRaF": {
+          "type": "review_item",
+          "settings": {
+            "title_review": "Rufus looks awesome in his Sherpa Vest and it fits really nicely!",
+            "customer_review": "Becky P.",
+            "date_review": "01/01/2022"
+          }
+        }
+      },
+      "block_order": [
+        "review_item_VBgRaF"
+      ],
       "disabled": true,
       "settings": {
-        "heading": "Latest Guides",
-        "sub_title": "",
-        "show_icon": false,
-        "button_label": "View all",
-        "link": "shopify://blogs/wahup-blogs",
-        "show_button": true,
-        "display_type": "layout_1",
-        "position_title": "text-center",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "font-size_title": 36,
-        "font_size_title_mobile": 30,
-        "font-weight_title": 500,
-        "font-size_sub_title": 16,
-        "background_title": "",
-        "color_title": "#000000",
-        "color_sub_title": "#909090",
-        "color_button": "#000000",
-        "margin_bottom_desktop": 50,
-        "margin_bottom_table": 40,
-        "margin_bottom_mobile": 30
+        "width_layout": "container",
+        "display_layout": "layout_1",
+        "title": "Reviews",
+        "description": "",
+        "review_bg": "rgba(0,0,0,0)",
+        "margin_bottom_desktop": 80,
+        "margin_bottom_table": 60,
+        "margin_bottom_mobile": 40
       }
     },
-    "ddfb89c0-ff64-4b4d-bdfe-272e76f66b8b": {
-      "type": "lastest-news",
-      "disabled": true,
+    "main_blog_xQCJT8": {
+      "type": "main-blog",
+      "blocks": {
+        "recent_post_7Ydpht": {
+          "type": "recent_post",
+          "settings": {
+            "title": "Recent Post",
+            "sidebar_recent_blog_name": "news"
+          }
+        }
+      },
+      "block_order": [
+        "recent_post_7Ydpht"
+      ],
+      "name": "Blog",
       "settings": {
-        "blog": "wahup-blogs",
-        "width_blog": "container",
-        "display_layout": "layout_2",
-        "position_content": "left",
-        "post_limit": 4,
-        "gap_item_blog": 30,
-        "box_shadow_item": true,
-        "show_date": false,
+        "width_layout": "container",
+        "show_date": true,
         "show_button_discover": true,
-        "content_text": "#000000",
-        "rgb_image": 17,
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
-    "featured_collection_9TXy93": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "width_layout": "container",
-        "title": "Pet & Owner",
-        "description": "",
-        "display_type": "slide",
-        "collection": "pet-owner",
-        "background_color": "",
-        "padding_top_bottom": 0,
-        "products_to_show": 8,
-        "column_number": "4",
-        "collection_list": [],
-        "style_button_tab": "tp-box-button__style-3",
-        "margin_bottom_button": 30,
-        "font_size_button": 16,
-        "font_weight_button_tab": 400,
-        "text_uppercase": false,
-        "layout_slider": "layout-slider-1",
-        "show_navigation": true,
-        "show_pagigation": true,
-        "sliders_perview": "4",
-        "title_banner": "Shop Pet Portraits",
-        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
-        "position_collection": "position_left",
-        "product_item_layout": "use_global",
-        "type_button": "normal",
-        "text_button": "Shop now",
-        "button_type": "tp-btn__primary",
-        "mobile_columns": "2",
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
-      }
-    },
-    "featured_collection_RPWA3m": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "width_layout": "container",
-        "title": "Matching Family",
-        "description": "",
-        "display_type": "normal",
-        "collection": "matching-family",
-        "background_color": "",
-        "padding_top_bottom": 0,
-        "products_to_show": 8,
-        "column_number": "4",
-        "collection_list": [
-          "matching-family"
-        ],
-        "style_button_tab": "tp-box-button__style-1",
-        "margin_bottom_button": 30,
-        "font_size_button": 16,
-        "font_weight_button_tab": 400,
-        "text_uppercase": false,
-        "layout_slider": "layout-slider-1",
-        "show_navigation": true,
-        "show_pagigation": true,
-        "sliders_perview": "4",
-        "title_banner": "Shop Pet Portraits",
-        "description_banner": "<p>Professionally designed based on your pet photos. Surprise the pet parent in your life with a truly unforgettable gift.</p>",
-        "position_collection": "position_left",
-        "product_item_layout": "use_global",
-        "type_button": "normal",
-        "text_button": "Shop now",
-        "button_type": "tp-btn__primary",
-        "mobile_columns": "2",
-        "margin_bottom_desktop": 80,
-        "margin_bottom_table": 60,
-        "margin_bottom_mobile": 40
+        "show_sidebar": true,
+        "layout": "left_column",
+        "view": "grid_3_column",
+        "show_loadmore_paginate": "paginate",
+        "show_item_per_row": 4
       }
     }
   },
   "order": [
-    "banner_slide_QGjcGH",
-    "video_H6rknm",
-    "4e3fcfb3-92f6-422b-8c70-e54b7de6f75e",
     "6e4b4c2f-8585-45f3-8e78-a8511bd37db3",
     "0916fc69-aee0-47b2-8ee8-8983ac34c3c8",
-    "e30ca700-2310-4d4f-b502-8f517f8aac5e",
-    "848f84a2-3b14-4c3d-99d9-c4a3552a8de0",
-    "d9baee42-dc4c-474b-8a5f-eb6d4b3e21a1",
-    "3244a8df-66d5-4a64-961e-e779280c1ddd",
-    "18e1b361-14a3-4697-9b37-e7909044bdbd",
+    "featured_collection_4CBDVt",
     "featured_collection_cJ4Fjb",
-    "852dd079-17bc-4541-a7bd-9d13d816304a",
-    "433bc71b-e0e1-448a-8ff1-59ffcd8d6a6d",
-    "185da6bd-cdc6-45d0-b037-8cef7d7fe854",
-    "1769a075-c463-48c5-892f-9849ba620201",
-    "6dd9eecd-67bf-4153-b590-b2d3f83469c7",
-    "654c15af-9655-4bb9-a885-0cb03f719eb0",
-    "e8db62c4-0f09-4d6e-9963-c5bd516ae124",
-    "8b5f93e2-7ccb-4ac4-bf84-a758f30bfae8",
-    "31c6fe9f-bad2-4c05-9d75-35f306181cf2",
-    "2aae1ae6-86f9-4a9a-94ba-274e310d707e",
-    "0db43f8d-72d6-4725-8457-e45822471bdc",
-    "ddfb89c0-ff64-4b4d-bdfe-272e76f66b8b",
     "featured_collection_9TXy93",
-    "featured_collection_RPWA3m"
+    "852dd079-17bc-4541-a7bd-9d13d816304a",
+    "2aae1ae6-86f9-4a9a-94ba-274e310d707e",
+    "review_cK8hLb",
+    "main_blog_xQCJT8"
   ]
 }

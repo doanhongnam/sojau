@@ -31,25 +31,28 @@
     "bg_btn_hover": "#f6f6f6",
     "show_announcement_bar": true,
     "header_design": "header_default",
-    "social_twitter_link": "",
-    "social_facebook_link": "https://facebook.com/wahupstore",
-    "social_pinterest_link": "https://www.pinterest.com/wahupstore/",
-    "social_instagram_link": "https://www.instagram.com/wahupstore/",
-    "social_tiktok_link": "https://tiktok.com/@wahupstore",
+    "social_twitter_link": "https://x.com/SoJau_com",
+    "social_facebook_link": "",
+    "social_pinterest_link": "https://www.pinterest.com/sojaucom/",
+    "social_instagram_link": "https://www.instagram.com/sojau_com/",
+    "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
-    "social_youtube_link": "",
+    "social_youtube_link": "https://www.youtube.com/@sojau_com",
     "social_vimeo_link": "",
     "favicon": "shopify://shop_images/baby-body.png",
     "default_sort_by": "best-selling",
     "column_number": "2",
-    "product_item_layout": "layout_2",
+    "product_item_layout": "layout_1",
     "gpi_show_quickview": false,
+    "gpi_show_atc": false,
     "text_tool_tip_wishlist": "Wishlist",
     "text_tool_tip_quick_view": "Quick view",
     "text_tool_tip_compare": "Compare",
+    "item_direction": "item_column",
+    "border_radius_image": true,
     "show_secondary_image": true,
-    "show_rating": false,
+    "show_rating": true,
     "color_bg_variant": "#f6f6f6",
     "instagram_token": "IGQVJYeHRiRUx1bjBvZAjF3NFQwQ3JfQzNlVVB4eVB4MjJHazV4RzZApQmlJR1JYYlpGbjVURGw3TWdablJTVmFjVzlpbW5zaUpYUEl1YnpYMDVQcnR4RTA2bVRhWGJMSkVUMnNteVVHZAU1YUEZALeGw5OQZDZD",
     "cvc_text_1": "tobaco brown",
@@ -67,7 +70,7 @@
     "currency_code_enabled": true,
     "custom_css": ".tp-product-detail__right .shopify-payment-button__button {\n    border: 0px solid #000000!important;\n    background-color: #ffffff !important;\n    color: #000000!important;\n}\n.card variant-radios-storepify {\n    display: none;\n}\n.modal-overlay {\n    position: relative !important;\n}",
     "qs_show": false,
-    "qs_listtext": "couples underwear, valentine boxer, etc.",
+    "qs_listtext": "Romper Kid, Matching Family, etc.",
     "predictive_search_enabled": true,
     "show_sticky_atc": false,
     "atc_buy_it_now": "add_to_cart",
@@ -176,9 +179,8 @@
         "blocks": {
           "295333f7-5d6a-42b0-91df-bd88c5c11954": {
             "type": "style2",
-            "disabled": true,
             "settings": {
-              "text_content": "<p>FREE SHIPPING on all orders over $199</p>",
+              "text_content": "<p>Use the code SOJAU45 for a 45% discount.</p>",
               "collection": "wedding-guest-dresses"
             }
           }
@@ -187,7 +189,7 @@
           "295333f7-5d6a-42b0-91df-bd88c5c11954"
         ],
         "settings": {
-          "background_color": "#231f20",
+          "background_color": "#d48e8e",
           "text_color": "#ffffff",
           "container_check": true
         }
@@ -226,7 +228,7 @@
         ],
         "settings": {
           "menu_bg": "#000000",
-          "logo": "shopify://shop_images/magin.png",
+          "logo": "shopify://shop_images/86DBB2.webp",
           "logo_position": "middle-left",
           "logo_width": "custom",
           "logo_width_custom_px": 250,
@@ -499,7 +501,28 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "button_color": "#e36666",
+          "secondary_color": "#FFFFFF",
+          "ternary_color": "#6A6A6A",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_left",
+          "button_vertical_position": "lowest",
+          "greeting_message": ""
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
