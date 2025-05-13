@@ -7,6 +7,8 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
+
+
 {
   "sections": {
     "16606322425b8cd0d3": {
@@ -23,10 +25,11 @@
       }
     },
     "main": {
-      "type": "wahup-personalized-product",
+      "type": "main-product-ai-render",
       "blocks": {
         "90ff711d-1a5a-4aac-883f-ce9ff8b4f705": {
           "type": "viewing",
+          "disabled": true,
           "settings": {
             "display_form": "display_column",
             "change_text_view": "people are viewing right now",
@@ -57,6 +60,10 @@
             "prev_change": "See Previous",
             "next_change": "See Next"
           }
+        },
+        "judge_me_reviews_preview_badge_7M6bNf": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
         "62b72ba7-b927-4440-9eda-42d6b2f15b4d": {
           "type": "variant_picker",
@@ -121,8 +128,8 @@
           "settings": {
             "ed_icon": false,
             "ed_text": "✓ Arrives soon! Get it by",
-            "ed_in": 6,
-            "ed_delay": 3,
+            "ed_in": 9,
+            "ed_delay": 4,
             "ed_additional": "",
             "ed_badges_text": "<p>Guarantee safe & secure checkout</p>",
             "use_spacing": true,
@@ -169,12 +176,20 @@
             "text": "Text block",
             "text_style": "body"
           }
+        },
+        "fbt_YX8Tdn": {
+          "type": "fbt",
+          "settings": {
+            "fbt_heading": "Frequently bought together",
+            "fbt_button": "Add To Cart"
+          }
         }
       },
       "block_order": [
         "90ff711d-1a5a-4aac-883f-ce9ff8b4f705",
         "price",
         "title",
+        "judge_me_reviews_preview_badge_7M6bNf",
         "62b72ba7-b927-4440-9eda-42d6b2f15b4d",
         "1f3b8053-3eec-4ea8-8951-4ae7fc0e045f",
         "73a4d26a-4b6b-429f-afd0-2cbaa945f84a",
@@ -184,13 +199,15 @@
         "126369a1-abb9-482b-a17d-126ff9e07cf0",
         "bcee6f30-94b8-4a9d-9e46-f2e9c73f3ef4",
         "a496ef59-2e78-4eac-8cde-ecb37683f821",
-        "text_yheK74"
+        "text_yheK74",
+        "fbt_YX8Tdn"
       ],
       "custom_css": [
-        ".tp-product-detail__right .shopify-payment-button__button {border: 0px solid #000000 !important; background-color: #ffffff !important; color: #000000 !important;}"
+        ".tp-product-detail__right .shopify-payment-button__button {border: 0px solid #000000 !important; background-color: #ffffff !important; color: #000000 !important;}",
+        ".jdgm-widget.jdgm-widget {margin-bottom: 15px;}"
       ],
       "settings": {
-        "width_layout": "container",
+        "width_layout": "sm-container",
         "image_display_type": "thumb_horizontal",
         "inner_zoom_image": false,
         "use_spacing_review": true,
@@ -250,8 +267,17 @@
         "product_list": []
       }
     },
-    "1663925088067ce9b8": {
+    "17433391891f115adf": {
       "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_wBBy8F": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_wBBy8F"
+      ],
       "settings": {
         "include_margins": true
       }
@@ -261,8 +287,8 @@
       "settings": {
         "width_layout": "container",
         "heading": "You may also like",
-        "products_to_show": 4,
-        "product_item_layout": "use_global",
+        "products_to_show": 5,
+        "product_item_layout": "layout_2",
         "margin_bottom_desktop": 80,
         "margin_bottom_table": 60,
         "margin_bottom_mobile": 40
@@ -270,7 +296,6 @@
     },
     "main-recently": {
       "type": "main-recently",
-      "disabled": true,
       "custom_css": [
         ".card variant-radios-storepify {display: none;}"
       ],
@@ -282,12 +307,6 @@
         "margin_bottom_table": 60,
         "margin_bottom_mobile": 40
       }
-    },
-    "1705818236dc481de7": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -295,9 +314,8 @@
     "main",
     "border_ipmLMH",
     "main-product-information",
-    "1663925088067ce9b8",
+    "17433391891f115adf",
     "product-recommendations",
-    "main-recently",
-    "1705818236dc481de7"
+    "main-recently"
   ]
 }

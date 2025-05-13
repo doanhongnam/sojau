@@ -1,0 +1,531 @@
+{% assign finalTaglist = '' | split: ',' %}
+{% for i in (1..10) %}
+  {% capture text %}cvc_text_{{ i }}{% endcapture %}
+  {% capture color %}cvc_color_{{ i }}{% endcapture %}
+  {% assign newTagList = newTagList | append: ',' | append: settings[text] %}
+{% endfor %}
+{% assign newTagList = newTagList | remove_first: ',' | split: ',' %}
+{% assign joinedTagLists = finalTaglist | concat: newTagList %}
+
+{% if block.settings.use_spacing %}
+  {% render 'block-margin-bottom', className: 'variant-bottom', block: block %}
+  {% assign classDefault = '' %}
+{% else %}
+  {% assign classDefault = ' mb-3.75' %}
+{% endif %}
+
+{%- unless product.has_only_default_variant -%}
+  {%- if block.settings.picker_type == 'button' -%}
+    <variant-radios
+      class="no-js-hidden variant-bottom{{ classDefault }}"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      data-option="{{ option.position }}"
+      data-forloop-index="{{ forloop.index0 }} "
+      data-change-thumb="{{ dataImageChange }}"
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <fieldset class="js product-form__input {% unless forloop.last %}mb-5{% endunless %}">
+          <p class="form__label">{{ option.name }}</p>
+          {%- for value in option.values -%}
+            <input
+              style="display: none;"
+              type="radio"
+              id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              name="{{ option.name }}"
+              value="{{ value | escape }}"
+              {% if option.selected_value == value %}
+                checked
+              {% endif %}
+            >
+
+            <label
+              for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+              {% if option.name == 'color' or option.name == 'Color' %}
+                {% if joinedTagLists contains value %}
+                  {% for cvc_list_text in joinedTagLists %}
+                    {% assign cvc_list_text = cvc_list_text | downcase %}
+                    {% assign value = value | downcase %}
+                    {% if cvc_list_text == value %}
+                      {% assign inDex = forloop.index %}
+                      {% assign variableTextColor = 'cvc_color_' | append: inDex %}
+                      {% assign variableColor = settings[variableTextColor] %}
+                      {% if variableColor != blank %}
+                        {% assign variableFullColor = variableColor %}
+                      {% else %}
+                        {% assign variableFullColor = 'none' %}
+                      {% endif %}
+                      class="variant-color{% if option.selected_value == value %} active{% endif %}"
+                        flow="up" tooltip="{{ variableFullColor }}"
+                      style="
+                                background-color: {{ variableFullColor }};
+                        {% if value == 'White' or value == 'white' %}
+                                border: 1px solid #d3c3c3;
+                        {% endif %}
+                      "
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                  class="variant-color{% if option.selected_value == value %} active{% endif %}"
+                  style="
+                            background-color: {{ value }};
+                    {% if value == 'White' or value == 'white' %}
+                            border: 1px solid #d3c3c3;
+                    {% endif %}
+                  "
+                {% endif %}
+
+              {% else %}
+                class="item-variant-size {% if option.selected_value == value %} active{% endif %}"
+              {% endif %}
+              flow="up" tooltip="{{ value }}"
+            >
+              {% if option.name != 'color' and option.name != 'Color' %}
+                {{ value }}
+              {% endif %}
+            </label>
+          {%- endfor -%}
+        </fieldset>
+      {%- endfor -%}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-radios>
+  {%- elsif block.settings.picker_type == 'dropdown' -%}
+    <variant-selects
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {{ block.shopify_attributes }}
+    >
+      {%- for option in product.options_with_values -%}
+        <div class="product-form__input product-form__input--dropdown mb-3.75">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+            {{ option.name }}<span class="required">*</span>
+          </label>
+          <select
+            id="Option-{{ section.id }}-{{ forloop.index0 }}"
+            class="select__select"
+            name="options[{{ option.name | escape }}]"
+            data-index="{{ forloop.index0 }}"
+          >
+            <option value="" disabled selected>Select {{ option.name }}</option>
+            {%- for value in option.values -%}
+              <option value="{{ value | escape }}">{{ value }}</option>
+            {%- endfor -%}
+          </select>
+        </div>
+      {%- endfor -%}
+
+      <script type="application/json" id="ProductVariants-{{ section.id }}">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+  {% else %}
+    <variant-image-product
+      data-section="{{ section.id }}"
+      data-product-id="{{ product.id }}"
+      data-change-thumb="{{ dataImageChange }}"
+      class="image-variant-wrapper flex items-center justify-start gap-2.5 mb-5"
+    >
+      {%- for variant in product.variants -%}
+        {% if variant.featured_image != blank %}
+          <div
+            class="image-variant-item cursor-pointer {% if forloop.first %}active{% endif %}{% if variant.available == false %}variant-outstock{% endif %}"
+            data-id-position="{{ variant.featured_media.position }}"
+            data-price="{{ variant.price }}"
+            data-price-compare="{{ variant.compare_at_price }}"
+          >
+              <img
+                      data-index="{{ forloop.index }}"
+                      src="{{ variant | image_url: width: variant.width , height: variant.height }}"
+                      loading="lazy"
+                      width="{{ variant.featured_image.width }}"
+                      height="{{ variant.featured_image.height }}"
+                      alt="{{ variant.featured_image.alt | escape }}"
+              >
+          </div>
+        {% endif %}
+        <style>
+          .image-variant-item img{
+                max-width: {{ block.settings.width_variant_image | default: '40' }}px;
+            }
+          .image-variant-item.active {
+                box-shadow: 0 0 0 1px {{ block.settings.picker_type_active }};
+            }
+          .image-variant-item:hover {
+              box-shadow: 0 0 0 1px {{ block.settings.picker_type_hover }};
+            }
+        </style>
+      {%- endfor -%}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-image-product>
+  {%- endif -%}
+{%- endunless -%}
+
+{% comment %} UP PHOTO {% endcomment %}
+{% if product.metafields.custom.images_message != blank %}
+  {% assign section_id_short = section.id | split: '--' | last | split: '__' | first %}
+  {% assign product_id_short = product.id %}
+  {% assign custom_photo_id = product_id_short | append: '-' | append: section_id_short %}
+  {% assign imagesMessage = product.metafields.custom.images_message | replace: '<br>', '\n' | newline_to_br %}
+  <label class="form__label" >
+    Your photos<span style="color: red;">*</span>: <span style="text-transform: none !important; color: #000000;">{{ imagesMessage }}</span>
+  </label>
+
+  <div class="image-upload-container">
+    <div class="file-upload-wrapper">
+      <button type="button" class="upload-button" onclick="document.getElementById('image_upload_{{ custom_photo_id }}').click()">Upload</button>
+      <input 
+        type="file" 
+        id="image_upload_{{ custom_photo_id }}" 
+        name="photo" 
+        accept="image/*" 
+        required 
+        class="image-upload-input"
+        style="display: none;"
+        multiple
+        onchange="uploadToCustomServer('{{ custom_photo_id }}')"
+      >
+      <input type="hidden" id="uploaded_image_url_{{ custom_photo_id }}" name="properties[Photo URL]" value="">
+    </div>
+    <div id="upload_status_{{ custom_photo_id }}" class="upload-status"></div>
+    <div id="image_preview_{{ custom_photo_id }}" class="image-preview"></div>
+  </div>
+{% endif %}
+
+{% comment %} CUSTOM {% endcomment %}
+{% if product.metafields.custom.personalization_message != blank %}
+  <label class="form__label">
+    YOUR PERSONALIZATION ---test<span style="color: red;">*</span>:
+  </label>
+  {% assign personalizationMessage = product.metafields.custom.personalization_message  | replace: '<br>', '\n' | newline_to_br %}
+  <p class="line-item-property__field">
+    <label for="enter-your-personalized-message">{{ personalizationMessage }}</label>
+  </p>
+  <p style="margin-top: 20px; margin-bottom: 20px;">
+    <textarea required class="required" id="personalization-name" name="properties[Personalization]" rows = "3" style="width: 100%; border: 1px solid rgb(229, 231, 235); border-radius: 5px;"></textarea>
+  </p>
+{% endif %}
+
+
+
+
+
+
+<script>
+
+  // UP PHOTOS
+  async function uploadToCustomServer(id) {
+    console.log('uploadToCustomServer', id);
+    const fileInput = document.getElementById(`image_upload_${id}`);
+    const statusElement = document.getElementById(`upload_status_${id}`);
+    const previewElement = document.getElementById(`image_preview_${id}`);
+    const hiddenInput = document.getElementById(`uploaded_image_url_${id}`);
+    const files = fileInput.files;
+    const uploadedUrls = [];
+    
+    if (!files || files.length === 0) {
+      statusElement.innerHTML = '<p style="color: red;">Please select files before uploading</p>';
+      return [];
+    }
+    
+    statusElement.innerHTML = '<p>Uploading...</p>';
+    
+    try {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        // Create new filename format: id_index.extension
+        const fileExtension = file.name.split('.').pop();
+        const newFileName = `${id}_${i+1}.${fileExtension}`;
+        
+        console.log(`Uploading file ${i+1}/${files.length}: ${newFileName}`);
+        
+        // Get signed URL for upload from server
+        const response = await fetch(`https://qr.stability.ltd/upfileocean?fileName=${encodeURIComponent(newFileName)}&folder=photos`);
+        
+        if (!response.ok) {
+          throw new Error(`Unable to get signed URL: ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        const url = data.url;
+        const urlIMG = url.split("?")[0];
+        
+        // Upload file to server
+        const uploadResponse = await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Content-Type": file.type,
+            "x-amz-acl": "public-read",
+          },
+          body: file,
+        });
+        
+        if (!uploadResponse.ok) {
+          throw new Error(`Upload failed: ${uploadResponse.statusText}`);
+        }
+        
+        console.log(`Successfully uploaded file: ${newFileName}`);
+        statusElement.innerHTML = `<p>Uploaded ${i+1}/${files.length} files</p>`;
+        
+        // Add URL to list of uploaded URLs
+        uploadedUrls.push({
+          fileName: newFileName,
+          url: urlIMG,
+          index: i+1
+        });
+      }
+      // Display list of uploaded files
+      previewElement.innerHTML = '<div class="uploaded-files-container"></div>';
+      const filesContainer = previewElement.querySelector('.uploaded-files-container');
+      
+      const imgsList = uploadedUrls.map(item => item.url).join('|');
+      document.getElementById('uploaded_photos').value = imgsList;
+
+      //https://stafaz.sgp1.digitaloceanspaces.com/photos/
+      console.log('uploadedPhotos', imgsList);
+      uploadedUrls.forEach(item => {
+        filesContainer.innerHTML += `
+          <div class="uploaded-file">
+            <img src="${item.url}" alt="${item.fileName}" loading="lazy">
+            <div class="file-name">${item.fileName.split('_')[1]}</div>
+          </div>
+        `;
+      });
+      statusElement.innerHTML = `<p style="color: green;">Successfully uploaded ${uploadedUrls.length} files!</p>`;
+      
+      // Save URLs to hidden input as JSON string
+      hiddenInput.value = JSON.stringify(uploadedUrls);
+      
+      return uploadedUrls;
+      
+    } catch (error) {
+      console.error("Error:", error);
+      statusElement.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+      return [];
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const variantSelectElements = document.querySelectorAll('variant-selects');
+    
+    variantSelectElements.forEach(element => {
+      if (!element.hasInitializedCustomLogic) {
+        try {
+          const variants = JSON.parse(element.querySelector('script').textContent);
+          const selects = Array.from(element.querySelectorAll('select'));
+          
+          // Thêm sự kiện change cho các select
+          selects.forEach(select => {
+            select.addEventListener('change', function(event) {
+              const index = parseInt(this.dataset.index);
+              
+              if (index === 0) { // Nếu thay đổi option 1
+                const selectedOption1 = this.value;
+                
+                // Lọc ra các variants có option1 được chọn
+                const availableVariants = variants.filter(
+                  variant => variant.option1 === selectedOption1 && variant.available
+                );
+                
+                // Lấy danh sách option2 khả dụng
+                const availableOption2Values = [...new Set(
+                  availableVariants.map(variant => variant.option2)
+                )];
+                
+                // Cập nhật select option 2
+                const select2 = selects[1];
+                if (select2) {
+                  Array.from(select2.options).forEach(option => {
+                    if (option.value) { // Bỏ qua placeholder
+                      const isAvailable = availableOption2Values.includes(option.value);
+                      option.disabled = !isAvailable;
+                      option.style.display = isAvailable ? '' : 'none';
+                    }
+                  });
+                  // Reset option 2 về default
+                  select2.value = '';
+                }
+              }
+            });
+          });
+          
+          // Đánh dấu đã khởi tạo
+          element.hasInitializedCustomLogic = true;
+        } catch (error) {
+          console.error('Lỗi khi khởi tạo logic cho variant-selects:', error);
+        }
+      }
+    });
+  });
+</script>
+
+
+<style>
+.image-upload-container {
+  margin-bottom: 20px;
+}
+
+.file-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.image-upload-input {
+  max-width: 300px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.upload-button {
+  padding: 8px 15px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  background-color: #333;
+}
+
+.upload-status {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #6c757d;
+}
+
+.image-preview {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.image-preview img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.normal-case {
+  text-transform: none !important;
+}
+
+.uploaded-files-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+  margin-top: 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+.uploaded-file {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 100px;
+  min-width: 100px;
+  margin-bottom: 0;
+}
+
+.uploaded-file img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.file-name {
+  font-size: 12px;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+/* Tùy chỉnh thanh cuộn */
+.uploaded-files-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.uploaded-files-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.uploaded-files-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.uploaded-files-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Thêm một số kiểu dáng bổ sung để tránh xuống dòng */
+.image-preview {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+</style>
+
+<style>
+.product-form__input--dropdown select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23212529' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-color: white;
+    font-size: 20px;
+    color: #212529;
+}
+
+.product-form__input--dropdown select option:checked {
+    color: #212529;
+    font-weight: 400;
+}
+
+.product-form__input--dropdown select option:disabled {
+    color: #6c757d;
+}
+
+.form__label {
+    color: #6c757d;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 3300;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.form__label .required {
+    color: red;
+    margin-left: 4px;
+}
+
+.product-form__input--dropdown select:focus {
+    outline: none;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 1px #86b7fe;
+}
+</style>

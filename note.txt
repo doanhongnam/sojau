@@ -35,16 +35,13 @@ git status
 
 Thêm các thay đổi vào staging:
 git add .
-
-Commit code mới:
 git commit -m "Cập nhật code mới: [Mô tả ngắn gọn]"
+git push origin main
 
 
 Kéo code từ repo từ xa (để tránh xung đột):
 git pull origin main --rebase
 
-Đẩy code mới lên repo từ xa:
-git push origin main
 
 //Bo het va keo ve
 git reset --hard

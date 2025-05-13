@@ -25,6 +25,8 @@
   endif
 %}
 
+
+
 {%- liquid
   assign previous_product = collection.previous_product
   assign next_product = collection.next_product
@@ -84,7 +86,6 @@
           {% endif %}
       {% endcase %}
     {% endfor %}
-    
     <div class="tp-product-detail__main {{ classImageDisplayType }} flex justify-between mb-12.5">
       <div class="tp-product-detail__left auto-height-{{ section.settings.image_height_auto }}">
         {% liquid
@@ -116,7 +117,7 @@
               {%- when 'viewing' -%}
                 {% render 'detail-block-view', product: product, block: block %}
               {%- when 'variant_picker' -%}
-                {% render 'detail-block-variant-wahup', product: product, block: block, dataImageChange: dataImageChange %}
+                {% render 'detail-block-variant-ai-render', product: product, block: block, dataImageChange: dataImageChange %}
               {% when 'box-btn' %}
                 {% if block.settings.use_spacing %}
                   {% render 'block-margin-bottom', className: 'box-btn__wrap', block: block %}
@@ -126,7 +127,7 @@
                 {% endif %}
                 <div class="box-btn__wrap flex flex-row items-stretch justify-start {{ classDefault }}">
                   {% render 'detail-block-quantity', product: product, block: block %}
-                  {% render 'detail-block-boxbtn-wahup', product: product, block: block %}
+                  {% render 'detail-block-boxbtn', product: product, block: block %}
                 </div>
               {%- when 'buy_buttons' -%}
                 {% render 'detail-block-buybtn', product: product, block: block %}
